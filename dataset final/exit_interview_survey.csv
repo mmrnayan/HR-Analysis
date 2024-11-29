@@ -1,0 +1,240 @@
+Employee ID,Exit Interview ID,Primary Resignation Reason,Work Environment Satisfaction Score,Support Received
+1006,1,Compensation,3,No
+1014,2,Career Growth,5,Yes
+1015,3,Manager Relationship,2,Yes
+1016,4,Manager Relationship,1,No
+1020,5,Career Growth,4,Yes
+1039,6,Manager Relationship,1,Yes
+1043,7,Compensation,1,No
+1047,8,Manager Relationship,1,No
+1055,9,Manager Relationship,3,Yes
+1058,10,Compensation,3,No
+1069,11,Compensation,3,Yes
+1070,12,Manager Relationship,5,Yes
+1073,13,Career Growth,2,No
+1091,14,Career Growth,4,No
+1094,15,Manager Relationship,1,Yes
+1101,16,Career Growth,1,Yes
+1119,17,Career Growth,1,No
+1122,18,Career Growth,2,No
+1127,19,Compensation,4,Yes
+1129,20,Manager Relationship,5,Yes
+1132,21,Career Growth,2,Yes
+1135,22,Career Growth,5,No
+1140,23,Compensation,2,Yes
+1158,24,Career Growth,5,No
+1168,25,Compensation,4,Yes
+1181,26,Career Growth,5,No
+1195,27,Compensation,2,Yes
+1197,28,Career Growth,3,No
+1204,29,Compensation,5,Yes
+1217,30,Compensation,4,Yes
+1222,31,Compensation,4,No
+1232,32,Career Growth,4,No
+1235,33,Career Growth,3,Yes
+1236,34,Compensation,5,Yes
+1240,35,Career Growth,3,Yes
+1244,36,Compensation,1,No
+1265,37,Compensation,5,Yes
+1276,38,Career Growth,2,Yes
+1293,39,Career Growth,5,Yes
+1296,40,Compensation,4,No
+1297,41,Manager Relationship,3,Yes
+1302,42,Manager Relationship,5,No
+1311,43,Compensation,2,Yes
+1312,44,Compensation,2,Yes
+1315,45,Career Growth,4,Yes
+1321,46,Manager Relationship,2,No
+1331,47,Career Growth,5,Yes
+1333,48,Career Growth,5,No
+1340,49,Career Growth,5,Yes
+1343,50,Manager Relationship,1,No
+1353,51,Career Growth,2,No
+1371,52,Manager Relationship,3,No
+1381,53,Manager Relationship,4,Yes
+1387,54,Manager Relationship,4,Yes
+1407,55,Career Growth,1,Yes
+1424,56,Compensation,1,No
+1429,57,Career Growth,1,Yes
+1432,58,Compensation,4,No
+1445,59,Career Growth,2,Yes
+1453,60,Career Growth,4,Yes
+1460,61,Manager Relationship,4,No
+1461,62,Career Growth,5,Yes
+1464,63,Career Growth,5,No
+1487,64,Compensation,4,No
+1495,65,Compensation,4,No
+1515,66,Compensation,4,No
+1537,67,Manager Relationship,4,Yes
+1542,68,Career Growth,5,Yes
+1555,69,Career Growth,2,No
+1575,70,Compensation,3,No
+1585,71,Manager Relationship,3,Yes
+1586,72,Manager Relationship,4,Yes
+1587,73,Career Growth,2,No
+1592,74,Career Growth,5,Yes
+1604,75,Career Growth,4,No
+1616,76,Compensation,1,Yes
+1626,77,Compensation,4,Yes
+1634,78,Manager Relationship,5,Yes
+1635,79,Manager Relationship,3,No
+1643,80,Compensation,1,No
+1645,81,Compensation,1,No
+1646,82,Career Growth,5,No
+1650,83,Compensation,5,No
+1652,84,Career Growth,1,Yes
+1662,85,Career Growth,3,Yes
+1665,86,Career Growth,5,Yes
+1667,87,Career Growth,2,Yes
+1668,88,Manager Relationship,3,No
+1672,89,Career Growth,3,Yes
+1675,90,Career Growth,3,Yes
+1679,91,Career Growth,4,No
+1685,92,Compensation,3,Yes
+1686,93,Career Growth,5,Yes
+1711,94,Compensation,2,Yes
+1716,95,Manager Relationship,2,No
+1721,96,Compensation,3,Yes
+1738,97,Manager Relationship,5,Yes
+1748,98,Career Growth,1,No
+1749,99,Compensation,3,No
+1781,100,Manager Relationship,2,No
+1790,101,Career Growth,5,Yes
+1792,102,Career Growth,3,Yes
+1797,103,Career Growth,5,Yes
+1799,104,Manager Relationship,4,No
+1800,105,Manager Relationship,4,Yes
+1806,106,Career Growth,3,No
+1809,107,Compensation,4,No
+1813,108,Compensation,1,Yes
+1824,109,Manager Relationship,5,Yes
+1829,110,Career Growth,2,No
+1835,111,Compensation,2,Yes
+1852,112,Career Growth,5,No
+1860,113,Compensation,2,Yes
+1861,114,Career Growth,3,Yes
+1868,115,Manager Relationship,5,Yes
+1877,116,Career Growth,1,No
+1889,117,Manager Relationship,4,No
+1890,118,Manager Relationship,2,Yes
+1893,119,Compensation,1,Yes
+1900,120,Compensation,2,Yes
+1904,121,Compensation,4,No
+1910,122,Compensation,1,Yes
+1916,123,Career Growth,5,Yes
+1930,124,Manager Relationship,2,No
+1939,125,Manager Relationship,5,Yes
+1952,126,Career Growth,4,Yes
+1958,127,Compensation,3,No
+1965,128,Compensation,2,No
+1968,129,Manager Relationship,1,No
+1976,130,Career Growth,1,Yes
+1987,131,Career Growth,3,No
+1989,132,Career Growth,5,No
+2016,133,Compensation,2,No
+2029,134,Manager Relationship,2,No
+2034,135,Compensation,4,No
+2035,136,Manager Relationship,1,Yes
+2043,137,Career Growth,2,No
+2054,138,Career Growth,3,No
+2069,139,Manager Relationship,5,No
+2071,140,Manager Relationship,5,Yes
+2073,141,Career Growth,4,No
+2075,142,Compensation,2,Yes
+2076,143,Career Growth,2,Yes
+2083,144,Career Growth,5,Yes
+2101,145,Manager Relationship,5,Yes
+2108,146,Compensation,1,No
+2120,147,Career Growth,2,No
+2138,148,Compensation,1,Yes
+2141,149,Compensation,4,Yes
+2142,150,Compensation,5,Yes
+2154,151,Career Growth,3,No
+2159,152,Career Growth,2,Yes
+2180,153,Compensation,1,Yes
+2186,154,Compensation,5,Yes
+2190,155,Compensation,4,Yes
+2198,156,Compensation,5,No
+2205,157,Compensation,1,Yes
+2210,158,Compensation,2,Yes
+2212,159,Manager Relationship,3,Yes
+2218,160,Career Growth,3,No
+2234,161,Manager Relationship,1,Yes
+2236,162,Compensation,2,Yes
+2237,163,Compensation,2,No
+2238,164,Manager Relationship,2,No
+2239,165,Compensation,4,No
+2249,166,Compensation,2,No
+2255,167,Career Growth,2,No
+2260,168,Manager Relationship,2,Yes
+2270,169,Compensation,2,No
+2293,170,Compensation,1,No
+2304,171,Manager Relationship,1,Yes
+2305,172,Career Growth,1,Yes
+2306,173,Career Growth,1,No
+2310,174,Compensation,5,No
+2312,175,Compensation,4,Yes
+2314,176,Manager Relationship,3,No
+2315,177,Compensation,3,Yes
+2318,178,Compensation,4,Yes
+2320,179,Compensation,4,No
+2323,180,Career Growth,3,Yes
+2330,181,Career Growth,2,No
+2331,182,Manager Relationship,5,No
+2335,183,Manager Relationship,1,No
+2339,184,Career Growth,5,No
+2341,185,Manager Relationship,2,No
+2345,186,Manager Relationship,3,No
+2346,187,Compensation,4,No
+2353,188,Manager Relationship,3,No
+2357,189,Manager Relationship,3,No
+2361,190,Career Growth,2,No
+2368,191,Career Growth,1,Yes
+2374,192,Compensation,1,No
+2386,193,Career Growth,3,No
+2400,194,Compensation,1,No
+2411,195,Career Growth,4,No
+2421,196,Manager Relationship,1,Yes
+2432,197,Career Growth,1,No
+2447,198,Manager Relationship,5,No
+2469,199,Manager Relationship,3,Yes
+2498,200,Manager Relationship,3,No
+2508,201,Career Growth,5,No
+2512,202,Compensation,3,Yes
+2516,203,Compensation,3,Yes
+2550,204,Manager Relationship,5,Yes
+2556,205,Career Growth,2,No
+2570,206,Manager Relationship,5,Yes
+2576,207,Compensation,3,No
+2594,208,Career Growth,3,No
+2608,209,Career Growth,2,Yes
+2609,210,Manager Relationship,3,No
+2611,211,Compensation,4,No
+2613,212,Manager Relationship,1,Yes
+2621,213,Manager Relationship,3,No
+2633,214,Manager Relationship,2,No
+2654,215,Compensation,5,No
+2655,216,Career Growth,1,Yes
+2663,217,Career Growth,2,No
+2665,218,Manager Relationship,3,Yes
+2668,219,Career Growth,4,No
+2678,220,Manager Relationship,1,Yes
+2680,221,Career Growth,1,No
+2696,222,Manager Relationship,4,No
+2699,223,Career Growth,2,No
+2701,224,Career Growth,1,No
+2718,225,Manager Relationship,1,No
+2720,226,Manager Relationship,2,No
+2732,227,Manager Relationship,1,Yes
+2734,228,Compensation,5,Yes
+2737,229,Career Growth,1,No
+2741,230,Career Growth,3,Yes
+2743,231,Manager Relationship,4,No
+2749,232,Manager Relationship,4,No
+2757,233,Compensation,1,No
+2760,234,Compensation,5,No
+2774,235,Manager Relationship,2,No
+2777,236,Career Growth,3,Yes
+2786,237,Manager Relationship,5,Yes
+2797,238,Career Growth,5,Yes
+2798,239,Manager Relationship,5,No

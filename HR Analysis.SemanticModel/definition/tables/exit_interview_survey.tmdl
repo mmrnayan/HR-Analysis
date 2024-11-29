@@ -1,0 +1,61 @@
+table exit_interview_survey
+	lineageTag: 962dcf3d-53c0-4da3-90aa-c40ad780fe00
+
+	column 'Employee ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: fdc4461f-ad06-4c09-b17c-7b9e0ac41873
+		summarizeBy: none
+		sourceColumn: Employee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Exit Interview ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f3e71f4-445d-4a6c-8e6a-0020301e79cf
+		summarizeBy: none
+		sourceColumn: Exit Interview ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Resignation Reason'
+		dataType: string
+		lineageTag: 056077a2-c063-4402-8917-b06132bf5716
+		summarizeBy: none
+		sourceColumn: Primary Resignation Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Work Environment Satisfaction Score'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a861f72-2614-4e3f-b966-ed70ec4ef8d6
+		summarizeBy: none
+		sourceColumn: Work Environment Satisfaction Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Support Received'
+		dataType: string
+		lineageTag: e24e622a-f08c-4166-9e62-0de7ba335da9
+		summarizeBy: none
+		sourceColumn: Support Received
+
+		annotation SummarizationSetBy = Automatic
+
+	partition exit_interview_survey = m
+		mode: import
+		queryGroup: Data\other
+		source =
+				let
+				    Source = Csv.Document(File.Contents(#"Folder Path" & "\exit_interview_survey.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Employee ID", Int64.Type}, {"Exit Interview ID", Int64.Type}, {"Primary Resignation Reason", type text}, {"Work Environment Satisfaction Score", Int64.Type}, {"Support Received", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

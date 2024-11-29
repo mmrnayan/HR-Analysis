@@ -1,0 +1,79 @@
+table dim_employee
+	lineageTag: 17b58dde-a5cd-4358-a7cf-80afe5bb402e
+
+	column 'Employee ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e3b28e2-166d-4b18-8862-9d88add70bc0
+		summarizeBy: none
+		sourceColumn: Employee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Full Name'
+		dataType: string
+		lineageTag: e6975e44-1f66-493a-8ac1-32b64358926c
+		summarizeBy: none
+		sourceColumn: Full Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date of Birth'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 850f4014-e32c-4a1a-a6b2-b9a73551b230
+		summarizeBy: none
+		sourceColumn: Date of Birth
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Gender
+		dataType: string
+		lineageTag: abff0abe-7fd8-4e23-ba1a-8d493cd8f074
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Education Level'
+		dataType: string
+		lineageTag: ed246723-7f75-4e00-afe5-e3513b623e58
+		summarizeBy: none
+		sourceColumn: Education Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: f34ec3ef-b5cd-429a-a729-672ce04f6232
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ethnicity
+		dataType: string
+		lineageTag: ecaf7422-9acc-4a63-bc5c-64bb47b23864
+		summarizeBy: none
+		sourceColumn: Ethnicity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_employee = m
+		mode: import
+		queryGroup: 'Data\dim tables'
+		source =
+				let
+				    Source = fact_employee,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Employee ID", "Full Name", "Date of Birth", "Gender", "Education Level", "Region", "Country", "Latitude", "Longitude", "Ethnicity"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Removed Other Columns",{"Region", "Latitude", "Longitude"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns", {"Employee ID"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,120 @@
+table fact_leave
+	lineageTag: 81376d4a-6a2f-4308-9e15-b8d0bb7595f0
+
+	column 'Employee ID'
+		dataType: string
+		lineageTag: 26127b9c-a0db-4b8d-abb2-a8098389c6f0
+		summarizeBy: none
+		sourceColumn: Employee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Leave Details'
+		dataType: string
+		lineageTag: f2ed6037-807a-4801-91f9-991febc5faf7
+		summarizeBy: none
+		sourceColumn: Leave Details
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Leave Type'
+		dataType: string
+		lineageTag: a9efbaf1-2460-422d-a4c8-e5e16b9521c2
+		summarizeBy: none
+		sourceColumn: Leave Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Leave Start Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b9b4ae5b-4049-444c-b4ff-948c9bf70480
+		summarizeBy: none
+		sourceColumn: Leave Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Leave End Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 53576719-c68d-40a1-b5a4-fe39d0405b61
+		summarizeBy: none
+		sourceColumn: Leave End Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Number of Leave Days Taken'
+		dataType: string
+		lineageTag: 006bb19d-6864-40f6-a5f5-f886fb3fc47b
+		summarizeBy: none
+		sourceColumn: Number of Leave Days Taken
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Leave Status'
+		dataType: string
+		lineageTag: ffe0b38f-e07d-4fec-a292-7800bdad9bed
+		summarizeBy: none
+		sourceColumn: Leave Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Leave Balance'
+		dataType: string
+		lineageTag: 4669615c-8398-4d91-84fd-123531706661
+		summarizeBy: none
+		sourceColumn: Leave Balance
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost of Leave ($)'
+		dataType: string
+		lineageTag: 951ecfe8-6c5d-4bdb-ab8d-ab6b30c8c29a
+		summarizeBy: none
+		sourceColumn: Cost of Leave ($)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Leave Liability Amount ($)'
+		dataType: string
+		lineageTag: 0fb6fc38-9530-4770-985d-c6c169be7a9c
+		summarizeBy: none
+		sourceColumn: Leave Liability Amount ($)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Absenteeism Cost Impact ($)'
+		dataType: string
+		lineageTag: b871671d-51da-47d1-9ad7-fd720794ca8a
+		summarizeBy: none
+		sourceColumn: Absenteeism Cost Impact ($)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Leave Reason ID'
+		dataType: string
+		lineageTag: e9798344-b3f9-44be-ade6-89ef1072eea6
+		summarizeBy: none
+		sourceColumn: Leave Reason ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_leave = m
+		mode: import
+		queryGroup: 'Data\fact tables'
+		source =
+				let
+				    Source = Csv.Document(File.Contents(#"Folder Path" & "\leave.csv"),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Leave Start Date", type date}, {"Leave End Date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

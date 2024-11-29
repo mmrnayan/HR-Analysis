@@ -1,0 +1,56 @@
+table fact_training
+	lineageTag: 65e70b9a-9f86-4935-b8a0-a5792cdf5d60
+
+	column 'Employee ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ad5fc14-3d08-4134-9013-b02ee289357a
+		summarizeBy: none
+		sourceColumn: Employee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Training Session ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8494885d-f837-4819-853c-5438c9016acc
+		summarizeBy: none
+		sourceColumn: Training Session ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Training Completion Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b6be5361-b33f-4093-b8d4-c7cd9f5605d2
+		summarizeBy: none
+		sourceColumn: Training Completion Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Certification Achieved'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8b95a351-f835-40b2-ae7c-7897b64a3b46
+		summarizeBy: none
+		sourceColumn: Certification Achieved
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_training = m
+		mode: import
+		queryGroup: 'Data\fact tables'
+		source =
+				let
+				    Source = Csv.Document(File.Contents(#"Folder Path" & "\training_development.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Employee ID", Int64.Type}, {"Training Session ID", Int64.Type}, {"Training Completion Date", type date}, {"Certification Achieved", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

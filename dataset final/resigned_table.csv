@@ -1,0 +1,240 @@
+Employee ID,Resigned Date,Resigned Type,Resigned Reason,Work Environment Feedback,Management/Team Experience Score,Level at Exit,Resignation Reason ID
+1006,2018-08-23,Voluntary,Moving to an organization with a better cultural fit.,Neutral,4,Mid-Level,9
+1014,2021-08-27,Voluntary,Transitioning to a role with greater job security.,Negative,2,Mid-Level,10
+1015,2023-03-26,Voluntary,Seeking improved work-life balance.,Neutral,4,Mid-Level,4
+1016,2020-03-20,Involuntary,Seeking a role with more challenging responsibilities.,Neutral,3,Operational,13
+1020,2021-01-18,Voluntary,Moving to an organization with a better cultural fit.,Negative,2,Entry,9
+1039,2018-02-21,Involuntary,Pursuing higher compensation or benefits.,Positive,5,Mid-Level,2
+1043,2023-03-07,Involuntary,Dissatisfaction with workload or job demands.,Negative,2,Operational,14
+1047,2022-06-16,Involuntary,Looking for a position with clearer career advancement.,Positive,2,Entry,11
+1055,2018-10-26,Voluntary,Pursuing higher compensation or benefits.,Positive,1,Mid-Level,2
+1058,2019-07-04,Voluntary,Pursuing higher compensation or benefits.,Neutral,5,Mid-Level,2
+1069,2021-01-20,Involuntary,Dissatisfaction with workload or job demands.,Positive,5,Entry,14
+1070,2021-08-01,Involuntary,Dissatisfaction with workload or job demands.,Positive,5,Mid-Level,14
+1073,2021-02-02,Voluntary,Health reasons requiring a career break.,Neutral,2,Mid-Level,7
+1091,2018-08-06,Involuntary,Looking for a position with clearer career advancement.,Negative,3,Entry,11
+1094,2020-01-18,Involuntary,Seeking a role with more challenging responsibilities.,Negative,5,Entry,13
+1101,2018-08-11,Involuntary,Looking for more flexibility or remote work options.,Positive,5,Entry,15
+1119,2020-06-12,Voluntary,Seeking a role with more challenging responsibilities.,Positive,3,Entry,13
+1122,2023-07-24,Voluntary,Seeking better career growth opportunities.,Positive,3,Operational,1
+1127,2023-04-29,Involuntary,Pursuing higher compensation or benefits.,Negative,4,Mid-Level,2
+1129,2022-10-18,Voluntary,Looking for a position with clearer career advancement.,Positive,3,Mid-Level,11
+1132,2022-09-30,Involuntary,Family responsibilities or personal obligations.,Negative,5,Entry,8
+1135,2023-04-29,Involuntary,Desire for a more supportive work environment.,Negative,1,Operational,5
+1140,2021-11-27,Involuntary,Family responsibilities or personal obligations.,Positive,2,Entry,8
+1158,2020-01-26,Voluntary,Seeking a role with more challenging responsibilities.,Positive,4,Operational,13
+1168,2021-05-28,Voluntary,Desire for a more supportive work environment.,Neutral,2,Operational,5
+1181,2020-11-28,Voluntary,Moving to an organization with a better cultural fit.,Neutral,2,Entry,9
+1195,2019-05-26,Voluntary,Looking for more flexibility or remote work options.,Negative,3,Mid-Level,15
+1197,2020-09-01,Voluntary,Looking for more flexibility or remote work options.,Negative,1,Mid-Level,15
+1204,2023-06-29,Voluntary,Seeking a role with more challenging responsibilities.,Neutral,4,Entry,13
+1217,2018-08-09,Involuntary,Pursuing higher compensation or benefits.,Positive,2,Operational,2
+1222,2023-09-01,Involuntary,Pursuing further education or professional development.,Positive,4,Entry,6
+1232,2021-12-09,Involuntary,Desire for a more supportive work environment.,Positive,3,Entry,5
+1235,2018-12-11,Involuntary,Looking for a position with clearer career advancement.,Neutral,2,Operational,11
+1236,2024-04-27,Involuntary,Seeking a role with more challenging responsibilities.,Negative,1,Operational,13
+1240,2021-08-24,Involuntary,Relocating to a new city or country.,Neutral,1,Mid-Level,3
+1244,2022-01-07,Voluntary,Relocating to a new city or country.,Negative,3,Operational,3
+1265,2024-12-11,Involuntary,Seeking a role with more challenging responsibilities.,Positive,1,Entry,13
+1276,2018-08-13,Voluntary,Looking for more flexibility or remote work options.,Positive,2,Operational,15
+1293,2018-11-15,Involuntary,Desire for a more supportive work environment.,Neutral,4,Entry,5
+1296,2022-01-26,Voluntary,Seeking better career growth opportunities.,Negative,2,Operational,1
+1297,2020-07-27,Voluntary,Looking for a position with clearer career advancement.,Positive,5,Entry,11
+1302,2024-05-07,Voluntary,Relocating to a new city or country.,Negative,1,Entry,3
+1311,2018-12-11,Voluntary,Discontent with current management or leadership style.,Negative,2,Entry,12
+1312,2023-12-01,Involuntary,Desire for a more supportive work environment.,Neutral,4,Senior,5
+1315,2022-08-17,Involuntary,Pursuing further education or professional development.,Negative,3,Mid-Level,6
+1321,2021-05-16,Voluntary,Transitioning to a role with greater job security.,Positive,1,Operational,10
+1331,2022-08-30,Involuntary,Discontent with current management or leadership style.,Negative,5,Entry,12
+1333,2023-09-03,Voluntary,Looking for more flexibility or remote work options.,Positive,4,Entry,15
+1340,2019-02-03,Involuntary,Looking for a position with clearer career advancement.,Neutral,3,Operational,11
+1343,2022-02-28,Involuntary,Pursuing further education or professional development.,Positive,2,Operational,6
+1353,2023-08-27,Involuntary,Looking for more flexibility or remote work options.,Neutral,1,Senior,15
+1371,2021-09-28,Voluntary,Family responsibilities or personal obligations.,Positive,2,Operational,8
+1381,2023-08-28,Involuntary,Pursuing further education or professional development.,Neutral,1,Operational,6
+1387,2022-07-21,Voluntary,Seeking better career growth opportunities.,Negative,4,Operational,1
+1407,2019-10-10,Involuntary,Seeking improved work-life balance.,Positive,3,Operational,4
+1424,2024-02-02,Involuntary,Seeking a role with more challenging responsibilities.,Negative,2,Mid-Level,13
+1429,2018-10-17,Voluntary,Family responsibilities or personal obligations.,Positive,3,Operational,8
+1432,2019-09-27,Voluntary,Pursuing further education or professional development.,Negative,4,Operational,6
+1445,2020-09-01,Voluntary,Transitioning to a role with greater job security.,Neutral,1,Entry,10
+1453,2020-12-08,Voluntary,Looking for a position with clearer career advancement.,Neutral,1,Entry,11
+1460,2023-12-02,Voluntary,Discontent with current management or leadership style.,Neutral,1,Mid-Level,12
+1461,2019-02-24,Involuntary,Looking for a position with clearer career advancement.,Positive,4,Operational,11
+1464,2024-09-02,Voluntary,Seeking a role with more challenging responsibilities.,Negative,1,Mid-Level,13
+1487,2021-02-18,Involuntary,Moving to an organization with a better cultural fit.,Positive,3,Operational,9
+1495,2018-03-02,Voluntary,Seeking better career growth opportunities.,Neutral,2,Entry,1
+1515,2018-12-02,Involuntary,Desire for a more supportive work environment.,Neutral,5,Mid-Level,5
+1537,2023-06-20,Voluntary,Seeking better career growth opportunities.,Negative,4,Mid-Level,1
+1542,2021-06-21,Involuntary,Seeking a role with more challenging responsibilities.,Positive,4,Entry,13
+1555,2019-03-10,Involuntary,Seeking better career growth opportunities.,Negative,1,Operational,1
+1575,2023-01-11,Involuntary,Seeking better career growth opportunities.,Neutral,4,Operational,1
+1585,2022-02-17,Involuntary,Relocating to a new city or country.,Negative,5,Operational,3
+1586,2020-05-19,Voluntary,Transitioning to a role with greater job security.,Neutral,1,Operational,10
+1587,2020-11-21,Involuntary,Family responsibilities or personal obligations.,Neutral,3,Entry,8
+1592,2018-08-20,Involuntary,Health reasons requiring a career break.,Negative,4,Operational,7
+1604,2023-09-05,Voluntary,Pursuing further education or professional development.,Negative,5,Senior,6
+1616,2022-12-22,Involuntary,Health reasons requiring a career break.,Neutral,4,Mid-Level,7
+1626,2020-12-26,Involuntary,Pursuing higher compensation or benefits.,Neutral,4,Entry,2
+1634,2018-01-07,Voluntary,Seeking a role with more challenging responsibilities.,Neutral,3,Operational,13
+1635,2019-10-22,Voluntary,Discontent with current management or leadership style.,Neutral,4,Mid-Level,12
+1643,2019-09-14,Voluntary,Dissatisfaction with workload or job demands.,Negative,5,Mid-Level,14
+1645,2020-07-31,Involuntary,Pursuing higher compensation or benefits.,Negative,5,Operational,2
+1646,2018-11-11,Involuntary,Pursuing further education or professional development.,Positive,1,Operational,6
+1650,2024-09-29,Voluntary,Desire for a more supportive work environment.,Positive,1,Entry,5
+1652,2022-09-19,Involuntary,Transitioning to a role with greater job security.,Negative,1,Mid-Level,10
+1662,2022-08-30,Involuntary,Relocating to a new city or country.,Neutral,4,Operational,3
+1665,2020-03-01,Voluntary,Family responsibilities or personal obligations.,Negative,1,Entry,8
+1667,2023-02-18,Involuntary,Family responsibilities or personal obligations.,Positive,1,Operational,8
+1668,2023-06-21,Involuntary,Looking for a position with clearer career advancement.,Positive,1,Mid-Level,11
+1672,2021-11-25,Voluntary,Discontent with current management or leadership style.,Positive,3,Entry,12
+1675,2020-12-08,Voluntary,Pursuing further education or professional development.,Neutral,4,Mid-Level,6
+1679,2022-08-19,Voluntary,Seeking better career growth opportunities.,Positive,3,Operational,1
+1685,2023-11-10,Voluntary,Pursuing higher compensation or benefits.,Neutral,2,Mid-Level,2
+1686,2024-05-26,Involuntary,Discontent with current management or leadership style.,Positive,2,Operational,12
+1711,2020-08-05,Involuntary,Dissatisfaction with workload or job demands.,Positive,1,Senior,14
+1716,2018-10-18,Involuntary,Seeking better career growth opportunities.,Negative,3,Senior,1
+1721,2024-07-09,Involuntary,Pursuing higher compensation or benefits.,Negative,4,Operational,2
+1738,2024-01-05,Voluntary,Desire for a more supportive work environment.,Negative,1,Mid-Level,5
+1748,2024-05-20,Voluntary,Desire for a more supportive work environment.,Neutral,5,Entry,5
+1749,2022-01-24,Involuntary,Relocating to a new city or country.,Positive,3,Entry,3
+1781,2024-07-13,Involuntary,Moving to an organization with a better cultural fit.,Negative,5,Senior,9
+1790,2021-12-08,Voluntary,Looking for a position with clearer career advancement.,Negative,5,Operational,11
+1792,2020-07-28,Voluntary,Dissatisfaction with workload or job demands.,Neutral,5,Entry,14
+1797,2023-12-10,Voluntary,Desire for a more supportive work environment.,Positive,4,Operational,5
+1799,2020-10-19,Voluntary,Pursuing higher compensation or benefits.,Positive,4,Entry,2
+1800,2024-05-15,Involuntary,Seeking a role with more challenging responsibilities.,Positive,2,Entry,13
+1806,2023-07-30,Involuntary,Discontent with current management or leadership style.,Negative,4,Mid-Level,12
+1809,2020-09-12,Involuntary,Transitioning to a role with greater job security.,Positive,1,Operational,10
+1813,2020-10-25,Voluntary,Seeking a role with more challenging responsibilities.,Neutral,3,Senior,13
+1824,2018-10-12,Voluntary,Looking for a position with clearer career advancement.,Neutral,1,Entry,11
+1829,2023-07-15,Involuntary,Seeking improved work-life balance.,Positive,2,Operational,4
+1835,2023-12-04,Involuntary,Discontent with current management or leadership style.,Negative,3,Mid-Level,12
+1852,2020-04-08,Involuntary,Desire for a more supportive work environment.,Negative,3,Operational,5
+1860,2020-07-23,Involuntary,Desire for a more supportive work environment.,Positive,1,Operational,5
+1861,2024-02-16,Voluntary,Seeking improved work-life balance.,Positive,5,Mid-Level,4
+1868,2019-11-12,Voluntary,Family responsibilities or personal obligations.,Neutral,5,Entry,8
+1877,2020-01-10,Involuntary,Seeking a role with more challenging responsibilities.,Positive,1,Operational,13
+1889,2018-03-23,Voluntary,Looking for a position with clearer career advancement.,Negative,1,Operational,11
+1890,2021-07-30,Involuntary,Relocating to a new city or country.,Neutral,4,Operational,3
+1893,2020-12-31,Voluntary,Health reasons requiring a career break.,Negative,4,Entry,7
+1900,2022-09-10,Voluntary,Dissatisfaction with workload or job demands.,Negative,2,Operational,14
+1904,2023-02-22,Voluntary,Discontent with current management or leadership style.,Neutral,5,Entry,12
+1910,2023-05-24,Voluntary,Seeking a role with more challenging responsibilities.,Negative,3,Entry,13
+1916,2021-04-18,Voluntary,Pursuing further education or professional development.,Negative,3,Mid-Level,6
+1930,2023-04-09,Voluntary,Seeking a role with more challenging responsibilities.,Neutral,4,Entry,13
+1939,2019-02-08,Voluntary,Health reasons requiring a career break.,Negative,2,Entry,7
+1952,2021-10-24,Voluntary,Moving to an organization with a better cultural fit.,Negative,4,Operational,9
+1958,2018-04-27,Involuntary,Pursuing further education or professional development.,Negative,4,Mid-Level,6
+1965,2021-03-16,Voluntary,Moving to an organization with a better cultural fit.,Positive,2,Operational,9
+1968,2021-04-15,Involuntary,Moving to an organization with a better cultural fit.,Negative,4,Mid-Level,9
+1976,2020-11-28,Voluntary,Transitioning to a role with greater job security.,Positive,3,Entry,10
+1987,2019-01-05,Voluntary,Seeking improved work-life balance.,Positive,3,Operational,4
+1989,2022-02-01,Involuntary,Desire for a more supportive work environment.,Negative,5,Operational,5
+2016,2020-02-05,Voluntary,Dissatisfaction with workload or job demands.,Negative,1,Entry,14
+2029,2024-11-22,Voluntary,Seeking improved work-life balance.,Negative,4,Operational,4
+2034,2018-05-13,Voluntary,Desire for a more supportive work environment.,Positive,5,Entry,5
+2035,2020-05-23,Voluntary,Seeking a role with more challenging responsibilities.,Positive,5,Mid-Level,13
+2043,2023-09-23,Involuntary,Desire for a more supportive work environment.,Negative,2,Mid-Level,5
+2054,2018-05-23,Involuntary,Pursuing further education or professional development.,Negative,4,Entry,6
+2069,2024-08-24,Voluntary,Seeking a role with more challenging responsibilities.,Positive,1,Entry,13
+2071,2024-06-12,Involuntary,Health reasons requiring a career break.,Positive,5,Operational,7
+2073,2020-09-21,Involuntary,Pursuing higher compensation or benefits.,Negative,5,Entry,2
+2075,2020-08-07,Voluntary,Seeking improved work-life balance.,Negative,1,Operational,4
+2076,2023-02-08,Involuntary,Family responsibilities or personal obligations.,Negative,2,Operational,8
+2083,2018-10-24,Voluntary,Transitioning to a role with greater job security.,Positive,2,Operational,10
+2101,2022-10-06,Involuntary,Dissatisfaction with workload or job demands.,Negative,3,Mid-Level,14
+2108,2024-11-12,Voluntary,Looking for a position with clearer career advancement.,Neutral,5,Entry,11
+2120,2018-08-14,Involuntary,Transitioning to a role with greater job security.,Neutral,4,Operational,10
+2138,2019-08-27,Involuntary,Seeking improved work-life balance.,Neutral,5,Entry,4
+2141,2022-06-09,Voluntary,Moving to an organization with a better cultural fit.,Positive,2,Entry,9
+2142,2024-10-13,Involuntary,Looking for a position with clearer career advancement.,Positive,1,Operational,11
+2154,2023-03-25,Involuntary,Family responsibilities or personal obligations.,Neutral,1,Senior,8
+2159,2023-03-19,Voluntary,Pursuing higher compensation or benefits.,Negative,1,Operational,2
+2180,2019-08-29,Involuntary,Desire for a more supportive work environment.,Negative,1,Operational,5
+2186,2022-11-22,Voluntary,Relocating to a new city or country.,Negative,1,Operational,3
+2190,2020-03-24,Involuntary,Looking for more flexibility or remote work options.,Negative,2,Operational,15
+2198,2020-02-22,Voluntary,Desire for a more supportive work environment.,Negative,5,Operational,5
+2205,2020-06-10,Voluntary,Discontent with current management or leadership style.,Neutral,2,Mid-Level,12
+2210,2019-12-24,Voluntary,Seeking improved work-life balance.,Positive,3,Entry,4
+2212,2018-01-29,Voluntary,Moving to an organization with a better cultural fit.,Positive,1,Operational,9
+2218,2024-09-06,Involuntary,Pursuing higher compensation or benefits.,Positive,2,Mid-Level,2
+2234,2022-12-01,Voluntary,Desire for a more supportive work environment.,Neutral,3,Entry,5
+2236,2020-12-06,Voluntary,Relocating to a new city or country.,Negative,4,Entry,3
+2237,2018-05-01,Involuntary,Seeking a role with more challenging responsibilities.,Neutral,3,Entry,13
+2238,2020-09-11,Voluntary,Dissatisfaction with workload or job demands.,Positive,5,Operational,14
+2239,2021-03-18,Voluntary,Discontent with current management or leadership style.,Negative,1,Entry,12
+2249,2020-02-05,Involuntary,Health reasons requiring a career break.,Positive,3,Entry,7
+2255,2020-11-30,Voluntary,Family responsibilities or personal obligations.,Positive,5,Entry,8
+2260,2021-10-06,Involuntary,Health reasons requiring a career break.,Neutral,3,Operational,7
+2270,2023-08-18,Voluntary,Seeking better career growth opportunities.,Positive,1,Operational,1
+2293,2019-01-08,Involuntary,Discontent with current management or leadership style.,Positive,1,Mid-Level,12
+2304,2021-03-04,Voluntary,Moving to an organization with a better cultural fit.,Neutral,4,Mid-Level,9
+2305,2022-09-09,Involuntary,Relocating to a new city or country.,Positive,1,Operational,3
+2306,2020-11-24,Involuntary,Transitioning to a role with greater job security.,Negative,4,Operational,10
+2310,2021-03-30,Involuntary,Pursuing higher compensation or benefits.,Negative,1,Operational,2
+2312,2023-07-31,Voluntary,Dissatisfaction with workload or job demands.,Positive,1,Entry,14
+2314,2020-01-14,Voluntary,Seeking improved work-life balance.,Neutral,5,Operational,4
+2315,2019-01-16,Involuntary,Seeking better career growth opportunities.,Positive,4,Entry,1
+2318,2023-06-14,Involuntary,Looking for more flexibility or remote work options.,Neutral,4,Entry,15
+2320,2023-08-10,Voluntary,Desire for a more supportive work environment.,Negative,2,Entry,5
+2323,2020-11-23,Involuntary,Looking for a position with clearer career advancement.,Positive,4,Mid-Level,11
+2330,2018-12-25,Involuntary,Seeking improved work-life balance.,Neutral,4,Entry,4
+2331,2021-02-12,Voluntary,Discontent with current management or leadership style.,Neutral,3,Mid-Level,12
+2335,2023-02-03,Involuntary,Relocating to a new city or country.,Negative,3,Operational,3
+2339,2018-09-13,Voluntary,Health reasons requiring a career break.,Positive,1,Operational,7
+2341,2019-05-05,Involuntary,Moving to an organization with a better cultural fit.,Neutral,1,Operational,9
+2345,2021-10-27,Involuntary,Family responsibilities or personal obligations.,Neutral,1,Operational,8
+2346,2018-03-02,Involuntary,Looking for more flexibility or remote work options.,Negative,5,Mid-Level,15
+2353,2024-10-16,Involuntary,Family responsibilities or personal obligations.,Neutral,3,Entry,8
+2357,2023-11-10,Involuntary,Looking for a position with clearer career advancement.,Positive,4,Senior,11
+2361,2022-08-04,Involuntary,Seeking a role with more challenging responsibilities.,Negative,5,Operational,13
+2368,2024-02-03,Voluntary,Transitioning to a role with greater job security.,Positive,3,Entry,10
+2374,2024-06-30,Voluntary,Pursuing higher compensation or benefits.,Neutral,2,Mid-Level,2
+2386,2022-09-19,Involuntary,Looking for more flexibility or remote work options.,Neutral,3,Mid-Level,15
+2400,2019-04-27,Voluntary,Health reasons requiring a career break.,Negative,3,Operational,7
+2411,2022-09-18,Involuntary,Looking for more flexibility or remote work options.,Positive,5,Operational,15
+2421,2018-04-02,Involuntary,Relocating to a new city or country.,Neutral,3,Operational,3
+2432,2020-04-01,Voluntary,Looking for a position with clearer career advancement.,Negative,5,Mid-Level,11
+2447,2019-11-04,Involuntary,Relocating to a new city or country.,Negative,2,Operational,3
+2469,2023-02-15,Voluntary,Relocating to a new city or country.,Negative,3,Mid-Level,3
+2498,2021-11-08,Voluntary,Seeking improved work-life balance.,Positive,4,Entry,4
+2508,2018-03-17,Involuntary,Seeking a role with more challenging responsibilities.,Neutral,1,Entry,13
+2512,2021-04-20,Involuntary,Pursuing further education or professional development.,Negative,4,Operational,6
+2516,2018-08-01,Voluntary,Seeking improved work-life balance.,Neutral,5,Operational,4
+2550,2024-02-11,Voluntary,Seeking a role with more challenging responsibilities.,Negative,1,Mid-Level,13
+2556,2020-08-09,Involuntary,Pursuing further education or professional development.,Negative,3,Operational,6
+2570,2018-10-16,Involuntary,Desire for a more supportive work environment.,Neutral,1,Operational,5
+2576,2020-05-30,Voluntary,Looking for more flexibility or remote work options.,Neutral,5,Entry,15
+2594,2018-11-22,Involuntary,Looking for a position with clearer career advancement.,Negative,4,Operational,11
+2608,2018-08-23,Voluntary,Health reasons requiring a career break.,Negative,4,Entry,7
+2609,2020-05-05,Involuntary,Relocating to a new city or country.,Positive,5,Senior,3
+2611,2024-03-07,Involuntary,Transitioning to a role with greater job security.,Positive,3,Mid-Level,10
+2613,2020-11-03,Involuntary,Desire for a more supportive work environment.,Positive,3,Operational,5
+2621,2023-12-18,Involuntary,Pursuing further education or professional development.,Neutral,3,Entry,6
+2633,2019-09-26,Involuntary,Seeking a role with more challenging responsibilities.,Negative,5,Operational,13
+2654,2022-03-24,Voluntary,Seeking better career growth opportunities.,Positive,4,Entry,1
+2655,2018-03-16,Voluntary,Pursuing further education or professional development.,Positive,2,Entry,6
+2663,2024-06-01,Involuntary,Desire for a more supportive work environment.,Neutral,1,Mid-Level,5
+2665,2019-06-30,Voluntary,Seeking a role with more challenging responsibilities.,Negative,5,Entry,13
+2668,2021-03-02,Involuntary,Transitioning to a role with greater job security.,Negative,1,Entry,10
+2678,2024-04-13,Involuntary,Relocating to a new city or country.,Negative,2,Entry,3
+2680,2020-04-21,Voluntary,Transitioning to a role with greater job security.,Positive,1,Operational,10
+2696,2018-06-19,Involuntary,Health reasons requiring a career break.,Positive,5,Operational,7
+2699,2019-06-21,Voluntary,Transitioning to a role with greater job security.,Negative,5,Operational,10
+2701,2021-12-27,Involuntary,Family responsibilities or personal obligations.,Positive,3,Mid-Level,8
+2718,2019-03-16,Voluntary,Pursuing further education or professional development.,Positive,3,Entry,6
+2720,2022-03-06,Voluntary,Health reasons requiring a career break.,Positive,3,Mid-Level,7
+2732,2021-06-15,Involuntary,Looking for a position with clearer career advancement.,Neutral,2,Senior,11
+2734,2020-04-30,Voluntary,Pursuing further education or professional development.,Positive,4,Entry,6
+2737,2024-07-28,Involuntary,Seeking a role with more challenging responsibilities.,Positive,5,Operational,13
+2741,2023-09-10,Voluntary,Discontent with current management or leadership style.,Positive,5,Operational,12
+2743,2024-09-15,Voluntary,Dissatisfaction with workload or job demands.,Positive,4,Entry,14
+2749,2020-12-06,Voluntary,Pursuing higher compensation or benefits.,Negative,4,Mid-Level,2
+2757,2019-11-12,Voluntary,Desire for a more supportive work environment.,Neutral,1,Entry,5
+2760,2022-06-25,Voluntary,Health reasons requiring a career break.,Neutral,5,Operational,7
+2774,2023-01-30,Voluntary,Pursuing further education or professional development.,Positive,1,Entry,6
+2777,2024-08-17,Voluntary,Looking for a position with clearer career advancement.,Negative,4,Entry,11
+2786,2023-09-13,Involuntary,Health reasons requiring a career break.,Negative,4,Operational,7
+2797,2024-08-19,Voluntary,Health reasons requiring a career break.,Negative,5,Entry,7
+2798,2022-05-07,Involuntary,Desire for a more supportive work environment.,Negative,3,Operational,5
