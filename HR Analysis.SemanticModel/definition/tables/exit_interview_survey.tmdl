@@ -30,7 +30,7 @@ table exit_interview_survey
 
 		annotation SummarizationSetBy = Automatic
 
-	///  Satisfaction rate with the work 
+	/// Satisfaction rate with the work
 	/// environment
 	column 'Work Environment Satisfaction Score'
 		dataType: int64

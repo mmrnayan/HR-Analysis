@@ -20,7 +20,7 @@ table dim_trainingSession
 
 		annotation SummarizationSetBy = Automatic
 
-	/// Type of training 
+	/// Type of training
 	column 'Training Type'
 		dataType: string
 		lineageTag: deb3c9ca-0f1a-4b58-8086-057aa9362fb1

@@ -54,6 +54,7 @@ ref table dim_jobtitle
 ref table dim_leaveReason
 ref table dim_leaveType
 ref table date
+ref table datadictionary
 
 ref cultureInfo en-US
 

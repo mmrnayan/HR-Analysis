@@ -98,7 +98,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
-	///  Country of the employee
+	/// Country of the employee
 	column Country
 		dataType: string
 		lineageTag: f7d94127-e57b-4656-ac79-7da65a3cf563
@@ -107,7 +107,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
-	/// Latitude coordinate of the employee’s 
+	/// Latitude coordinate of the employee’s
 	/// location
 	column Latitude
 		dataType: double

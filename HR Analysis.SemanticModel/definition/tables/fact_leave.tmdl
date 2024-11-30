@@ -1,7 +1,7 @@
 table fact_leave
 	lineageTag: 81376d4a-6a2f-4308-9e15-b8d0bb7595f0
 
-	/// Unique identifier for each employee 
+	/// Unique identifier for each employee
 	column 'Employee ID'
 		dataType: string
 		lineageTag: 26127b9c-a0db-4b8d-abb2-a8098389c6f0
@@ -79,7 +79,7 @@ table fact_leave
 
 		annotation SummarizationSetBy = Automatic
 
-	/// Monetary cost associated with the leave taken 
+	/// Monetary cost associated with the leave taken
 	column 'Cost of Leave ($)'
 		dataType: string
 		lineageTag: 951ecfe8-6c5d-4bdb-ab8d-ab6b30c8c29a

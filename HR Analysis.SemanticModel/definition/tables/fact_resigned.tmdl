@@ -1,7 +1,7 @@
 table fact_resigned
 	lineageTag: e4107b65-c226-4c19-8d5e-3dec769a38c0
 
-	/// Unique identifier for each employee 
+	/// Unique identifier for each employee
 	column 'Employee ID'
 		dataType: int64
 		formatString: 0
@@ -33,7 +33,7 @@ table fact_resigned
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	/// Type of resignation 
+	/// Type of resignation
 	column 'Resigned Type'
 		dataType: string
 		lineageTag: f38bf0cb-f921-46c3-9f29-17abc04d3452

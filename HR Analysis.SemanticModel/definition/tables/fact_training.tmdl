@@ -1,7 +1,7 @@
 table fact_training
 	lineageTag: 65e70b9a-9f86-4935-b8a0-a5792cdf5d60
 
-	/// Unique identifier for each employee 
+	/// Unique identifier for each employee
 	column 'Employee ID'
 		dataType: int64
 		formatString: 0
@@ -33,7 +33,7 @@ table fact_training
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	/// Indicates if certification was achieved post-training 
+	/// Indicates if certification was achieved post-training
 	column 'Certification Achieved'
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
