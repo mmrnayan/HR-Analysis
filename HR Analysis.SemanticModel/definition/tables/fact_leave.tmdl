@@ -1,6 +1,7 @@
 table fact_leave
 	lineageTag: 81376d4a-6a2f-4308-9e15-b8d0bb7595f0
 
+	/// Unique identifier for each employee 
 	column 'Employee ID'
 		dataType: string
 		lineageTag: 26127b9c-a0db-4b8d-abb2-a8098389c6f0
@@ -9,6 +10,7 @@ table fact_leave
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Short description of the reason for leave
 	column 'Leave Details'
 		dataType: string
 		lineageTag: f2ed6037-807a-4801-91f9-991febc5faf7
@@ -17,6 +19,7 @@ table fact_leave
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Type of leave taken by the employee
 	column 'Leave Type'
 		dataType: string
 		lineageTag: a9efbaf1-2460-422d-a4c8-e5e16b9521c2
@@ -25,6 +28,7 @@ table fact_leave
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Date the leave period begins
 	column 'Leave Start Date'
 		dataType: dateTime
 		formatString: Long Date
@@ -36,6 +40,7 @@ table fact_leave
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	/// Date the leave period ends
 	column 'Leave End Date'
 		dataType: dateTime
 		formatString: Long Date
@@ -47,6 +52,7 @@ table fact_leave
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	/// Total number of leave days taken in the review year
 	column 'Number of Leave Days Taken'
 		dataType: string
 		lineageTag: 006bb19d-6864-40f6-a5f5-f886fb3fc47b
@@ -55,6 +61,7 @@ table fact_leave
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Approval status of the leave request
 	column 'Leave Status'
 		dataType: string
 		lineageTag: ffe0b38f-e07d-4fec-a292-7800bdad9bed
@@ -63,6 +70,7 @@ table fact_leave
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Remaining leave days available to the employee
 	column 'Leave Balance'
 		dataType: string
 		lineageTag: 4669615c-8398-4d91-84fd-123531706661
@@ -71,6 +79,7 @@ table fact_leave
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Monetary cost associated with the leave taken 
 	column 'Cost of Leave ($)'
 		dataType: string
 		lineageTag: 951ecfe8-6c5d-4bdb-ab8d-ab6b30c8c29a
@@ -79,6 +88,7 @@ table fact_leave
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Cost of leave liability for the employee
 	column 'Leave Liability Amount ($)'
 		dataType: string
 		lineageTag: 0fb6fc38-9530-4770-985d-c6c169be7a9c
@@ -87,19 +97,12 @@ table fact_leave
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Financial impact of absenteeism on productivity or department costs
 	column 'Absenteeism Cost Impact ($)'
 		dataType: string
 		lineageTag: b871671d-51da-47d1-9ad7-fd720794ca8a
 		summarizeBy: none
 		sourceColumn: Absenteeism Cost Impact ($)
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Leave Reason ID'
-		dataType: string
-		lineageTag: e9798344-b3f9-44be-ade6-89ef1072eea6
-		summarizeBy: none
-		sourceColumn: Leave Reason ID
 
 		annotation SummarizationSetBy = Automatic
 
@@ -110,9 +113,10 @@ table fact_leave
 				let
 				    Source = Csv.Document(File.Contents(#"Folder Path" & "\leave.csv"),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Leave Start Date", type date}, {"Leave End Date", type date}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Leave Start Date", type date}, {"Leave End Date", type date}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Leave Reason ID"})
 				in
-				    #"Changed Type"
+				    #"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

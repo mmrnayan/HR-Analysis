@@ -1,6 +1,7 @@
 table employee_feedback_survey
 	lineageTag: 26403e01-807b-4741-af4f-62d5dbbe6240
 
+	/// Identifier for each employee
 	column 'Employee ID'
 		dataType: int64
 		formatString: 0
@@ -10,6 +11,7 @@ table employee_feedback_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Year of the feedback Survey
 	column Year
 		dataType: int64
 		formatString: 0
@@ -19,6 +21,7 @@ table employee_feedback_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Indetifier of the Survey
 	column 'Performance Feedback ID'
 		dataType: int64
 		formatString: 0
@@ -28,6 +31,7 @@ table employee_feedback_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Did the employee feel their goals and expectations were clearly communicated?
 	column 'Goal Clarity'
 		dataType: string
 		lineageTag: b6a0bb61-be0a-4aac-a4a8-8f3abab2ec00
@@ -36,6 +40,7 @@ table employee_feedback_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Did the employee receive adequate support to achieve their goals?
 	column 'Support for Goals'
 		dataType: string
 		lineageTag: 05722abe-3dea-4db4-a782-ee6753b29346
@@ -44,6 +49,7 @@ table employee_feedback_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	/// How effective was the feedback provided by their manager?
 	column 'Manager Feedback Effectiveness'
 		dataType: int64
 		formatString: 0
@@ -53,6 +59,7 @@ table employee_feedback_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	/// How well did the employees collaborate with their team to achieve goals?
 	column 'Team Collaboration Score'
 		dataType: int64
 		formatString: 0
@@ -62,6 +69,7 @@ table employee_feedback_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	/// What additional support would help improve their performance?
 	column 'Additional Support Needed'
 		dataType: string
 		lineageTag: 85eb0c8e-59cf-4c7c-8f69-61a5ebe6c747
@@ -70,6 +78,7 @@ table employee_feedback_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Are the employee satisfied with their career growth and opportunities?
 	column 'Career Growth Satisfaction'
 		dataType: string
 		lineageTag: 6fa5bcc3-f4fe-4615-b678-d0dbc280e94d
@@ -78,6 +87,7 @@ table employee_feedback_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	/// How would the employee rate their own overall performance this period?
 	column 'Overall Performance Rating'
 		dataType: int64
 		formatString: 0

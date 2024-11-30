@@ -1,6 +1,7 @@
 table fact_employee
 	lineageTag: e6a88bb3-3e63-4601-bbfd-7f75534a6f34
 
+	/// Unique identifier for each employee
 	column 'Employee ID'
 		dataType: int64
 		formatString: 0
@@ -10,6 +11,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Full name of the employee
 	column 'Full Name'
 		dataType: string
 		lineageTag: 0f34d61e-f590-4418-b29c-9c83ffa1882e
@@ -18,6 +20,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Birth date of the employee
 	column 'Date of Birth'
 		dataType: dateTime
 		formatString: Long Date
@@ -29,6 +32,7 @@ table fact_employee
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	/// Gender identity of the employee
 	column Gender
 		dataType: string
 		lineageTag: 1f12caee-9b9e-44ca-a2fd-b4fe86f5ae4e
@@ -37,6 +41,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Highest education level attained by the employee
 	column 'Education Level'
 		dataType: string
 		lineageTag: 33e7bd3a-c6f0-4081-9f00-95921877f651
@@ -45,6 +50,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Date the employee was hired
 	column 'Hire Date'
 		dataType: dateTime
 		formatString: Long Date
@@ -56,6 +62,7 @@ table fact_employee
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	/// Department or functional area the employee belongs to
 	column Department
 		dataType: string
 		lineageTag: 7d043d37-2d88-41cd-993f-a1f3ecf05dce
@@ -64,6 +71,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Job title or position held by the employee
 	column 'Job Title'
 		dataType: string
 		lineageTag: 8705da77-86f1-44e0-a683-98fd2a84c62f
@@ -72,6 +80,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Level in the organization hierarchy
 	column 'Organization Level'
 		dataType: string
 		lineageTag: a8654d4d-f4a3-4068-807b-aa6b61939879
@@ -80,6 +89,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Region of the country employee belong to
 	column Region
 		dataType: string
 		lineageTag: 22d15ccd-d610-4285-8e54-ea57e885b075
@@ -88,6 +98,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	///  Country of the employee
 	column Country
 		dataType: string
 		lineageTag: f7d94127-e57b-4656-ac79-7da65a3cf563
@@ -96,6 +107,8 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Latitude coordinate of the employee’s 
+	/// location
 	column Latitude
 		dataType: double
 		lineageTag: de659c86-57d2-4312-82dd-ad054e954878
@@ -106,6 +119,7 @@ table fact_employee
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	/// Longitude coordinate of the employee’s location
 	column Longitude
 		dataType: double
 		lineageTag: f16f2c4a-93a6-4e19-b3a8-0bb5fab02c76
@@ -116,6 +130,7 @@ table fact_employee
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	/// Onsite or remote work status
 	column 'Employment Status'
 		dataType: string
 		lineageTag: acea19cb-1347-41b0-8d5e-a77956fcc64a
@@ -124,6 +139,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Employment type, indicating full-time or part-time status
 	column 'Employment Type'
 		dataType: string
 		lineageTag: affd95fb-cbf2-4820-b2bf-677ce5e898b7
@@ -132,6 +148,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Yearly base salary of the employee
 	column 'Base Salary ($)'
 		dataType: double
 		lineageTag: 6ce1e629-a6bc-4bd9-8b2f-522323d29080
@@ -142,6 +159,7 @@ table fact_employee
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	/// Number of times the employee has been promoted
 	column 'Times Promoted'
 		dataType: int64
 		formatString: 0
@@ -151,6 +169,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Total number of years the employee has worked at the company
 	column 'Years at Company'
 		dataType: int64
 		formatString: 0
@@ -160,6 +179,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Employment status indicating active or resigned status
 	column 'Current Employment Status'
 		dataType: string
 		lineageTag: b8fe43ae-8fa4-4d09-885a-157d01a70c25
@@ -168,6 +188,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Total number of leave days the employee is entitled to annually
 	column 'Annual Leave Entitlement (days)'
 		dataType: int64
 		formatString: 0
@@ -177,6 +198,7 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Ethnic group employee belongs to
 	column Ethnicity
 		dataType: string
 		lineageTag: ab38479a-4f6a-432d-9338-15d01dcae2ae

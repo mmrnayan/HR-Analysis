@@ -1,6 +1,7 @@
 table exit_interview_survey
 	lineageTag: 962dcf3d-53c0-4da3-90aa-c40ad780fe00
 
+	/// Unique identifier for each employee
 	column 'Employee ID'
 		dataType: int64
 		formatString: 0
@@ -10,6 +11,7 @@ table exit_interview_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Unique identifier for each exit interview
 	column 'Exit Interview ID'
 		dataType: int64
 		formatString: 0
@@ -19,6 +21,7 @@ table exit_interview_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Primary reason for decision to leave
 	column 'Primary Resignation Reason'
 		dataType: string
 		lineageTag: 056077a2-c063-4402-8917-b06132bf5716
@@ -27,6 +30,8 @@ table exit_interview_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	///  Satisfaction rate with the work 
+	/// environment
 	column 'Work Environment Satisfaction Score'
 		dataType: int64
 		formatString: 0
@@ -36,6 +41,7 @@ table exit_interview_survey
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Did the employee feel supported in their role with adequate resources
 	column 'Support Received'
 		dataType: string
 		lineageTag: e24e622a-f08c-4166-9e62-0de7ba335da9

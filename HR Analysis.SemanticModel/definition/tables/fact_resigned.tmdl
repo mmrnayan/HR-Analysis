@@ -1,6 +1,7 @@
 table fact_resigned
 	lineageTag: e4107b65-c226-4c19-8d5e-3dec769a38c0
 
+	/// Unique identifier for each employee 
 	column 'Employee ID'
 		dataType: int64
 		formatString: 0
@@ -10,6 +11,7 @@ table fact_resigned
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Unique identifier for each resignation reason
 	column 'Resignation Reason ID'
 		dataType: int64
 		formatString: 0
@@ -19,6 +21,7 @@ table fact_resigned
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Date the employee resigned
 	column 'Resigned Date'
 		dataType: dateTime
 		formatString: Long Date
@@ -30,6 +33,7 @@ table fact_resigned
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	/// Type of resignation 
 	column 'Resigned Type'
 		dataType: string
 		lineageTag: f38bf0cb-f921-46c3-9f29-17abc04d3452
@@ -38,6 +42,7 @@ table fact_resigned
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Feedback on work environment
 	column 'Work Environment Feedback'
 		dataType: string
 		lineageTag: 020d871b-3232-4b97-a35c-e13d5f5b2d93
@@ -46,6 +51,7 @@ table fact_resigned
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Experience with Management/Team score with 1 to 5
 	column 'Management/Team Experience Score'
 		dataType: int64
 		formatString: 0
@@ -55,6 +61,7 @@ table fact_resigned
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Employee’s job role and organization level at the time of resignation
 	column 'Level at Exit'
 		dataType: string
 		lineageTag: 95937524-4124-49d7-b943-159caf8d5270
