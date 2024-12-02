@@ -4,6 +4,7 @@ table fact_leave
 	/// Unique identifier for each employee
 	column 'Employee ID'
 		dataType: string
+		isHidden
 		lineageTag: 26127b9c-a0db-4b8d-abb2-a8098389c6f0
 		summarizeBy: none
 		sourceColumn: Employee ID
@@ -13,6 +14,7 @@ table fact_leave
 	/// Short description of the reason for leave
 	column 'Leave Details'
 		dataType: string
+		isHidden
 		lineageTag: f2ed6037-807a-4801-91f9-991febc5faf7
 		summarizeBy: none
 		sourceColumn: Leave Details
@@ -22,6 +24,7 @@ table fact_leave
 	/// Type of leave taken by the employee
 	column 'Leave Type'
 		dataType: string
+		isHidden
 		lineageTag: a9efbaf1-2460-422d-a4c8-e5e16b9521c2
 		summarizeBy: none
 		sourceColumn: Leave Type
@@ -31,6 +34,7 @@ table fact_leave
 	/// Date the leave period begins
 	column 'Leave Start Date'
 		dataType: dateTime
+		isHidden
 		formatString: Long Date
 		lineageTag: b9b4ae5b-4049-444c-b4ff-948c9bf70480
 		summarizeBy: none
@@ -43,6 +47,7 @@ table fact_leave
 	/// Date the leave period ends
 	column 'Leave End Date'
 		dataType: dateTime
+		isHidden
 		formatString: Long Date
 		lineageTag: 53576719-c68d-40a1-b5a4-fe39d0405b61
 		summarizeBy: none

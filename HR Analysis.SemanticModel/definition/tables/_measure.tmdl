@@ -1,0 +1,77 @@
+table _measure
+	lineageTag: 1919ba0b-d570-4037-82be-76d2c015881f
+
+	measure '# of Employee' = COUNTROWS(fact_employee)
+		formatString: 0
+		lineageTag: 9870eb51-35fb-4b39-9840-2c0837313005
+
+	measure '# of Active Employees' = ```
+			
+			COUNTROWS(
+			    FILTER(fact_employee, 
+			           fact_employee[Current Employment Status]="Active")
+			)
+			```
+		formatString: 0
+		lineageTag: e8373169-50ef-4d74-9667-691d447c048f
+
+	measure '# of Resigned Employees' = [# of Employee]-[# of Active Employees]
+		formatString: 0
+		lineageTag: 49cd38a1-a11c-41f0-9adc-3875ee4d470a
+
+	measure '# of Female' = ```
+			
+			COUNTROWS(
+			    FILTER(fact_employee, 
+			           fact_employee[Gender]="Female")
+			)
+			```
+		formatString: 0
+		lineageTag: 506a76a0-5f3f-4291-87ec-4b28b5f688dd
+
+	measure '# of Male' = ```
+			
+			COUNTROWS(
+			    FILTER(fact_employee, 
+			           fact_employee[Gender]="Male")
+			)
+			```
+		formatString: 0
+		lineageTag: 926be376-df37-48f0-8df5-15d7db0c829a
+
+	measure '# of Other' = ```
+			
+			COUNTROWS(
+			    FILTER(fact_employee, 
+			           fact_employee[Gender]="Other")
+			)
+			```
+		formatString: 0
+		lineageTag: dacf613e-76b6-4526-9827-c849c6617c4f
+
+	measure %Female =
+			
+			DIVIDE([# of Female], [# of Employee],0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 209be2b2-f63e-4b3a-b492-ba463925effa
+
+	measure %Male =
+			
+			DIVIDE([# of Male], [# of Employee],0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: bbb8b413-088e-4fab-8edb-4c80170b00e9
+
+	partition _measure = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

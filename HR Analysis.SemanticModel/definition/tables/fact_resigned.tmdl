@@ -4,6 +4,7 @@ table fact_resigned
 	/// Unique identifier for each employee
 	column 'Employee ID'
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 613cd323-c0ce-4c77-90ef-b782d9ae08d4
 		summarizeBy: none
@@ -14,6 +15,7 @@ table fact_resigned
 	/// Unique identifier for each resignation reason
 	column 'Resignation Reason ID'
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 79f82322-1be1-4786-baab-afd831fdaaea
 		summarizeBy: none
@@ -24,6 +26,7 @@ table fact_resigned
 	/// Date the employee resigned
 	column 'Resigned Date'
 		dataType: dateTime
+		isHidden
 		formatString: Long Date
 		lineageTag: 69fed67f-12e4-47a1-ab39-60a473e8ca6f
 		summarizeBy: none

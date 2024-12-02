@@ -4,6 +4,7 @@ table fact_employee
 	/// Unique identifier for each employee
 	column 'Employee ID'
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 5cf91ff1-ed33-4718-93e7-c97c637556d1
 		summarizeBy: none
@@ -53,6 +54,7 @@ table fact_employee
 	/// Date the employee was hired
 	column 'Hire Date'
 		dataType: dateTime
+		isHidden
 		formatString: Long Date
 		lineageTag: d5fc471d-c165-454e-bc1e-30ebaada1b40
 		summarizeBy: none
@@ -65,6 +67,7 @@ table fact_employee
 	/// Department or functional area the employee belongs to
 	column Department
 		dataType: string
+		isHidden
 		lineageTag: 7d043d37-2d88-41cd-993f-a1f3ecf05dce
 		summarizeBy: none
 		sourceColumn: Department
@@ -74,6 +77,7 @@ table fact_employee
 	/// Job title or position held by the employee
 	column 'Job Title'
 		dataType: string
+		isHidden
 		lineageTag: 8705da77-86f1-44e0-a683-98fd2a84c62f
 		summarizeBy: none
 		sourceColumn: Job Title
@@ -83,27 +87,36 @@ table fact_employee
 	/// Level in the organization hierarchy
 	column 'Organization Level'
 		dataType: string
+		isHidden
 		lineageTag: a8654d4d-f4a3-4068-807b-aa6b61939879
 		summarizeBy: none
 		sourceColumn: Organization Level
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	/// Region of the country employee belong to
 	column Region
 		dataType: string
+		isHidden
 		lineageTag: 22d15ccd-d610-4285-8e54-ea57e885b075
 		summarizeBy: none
 		sourceColumn: Region
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	/// Country of the employee
 	column Country
 		dataType: string
+		isHidden
 		lineageTag: f7d94127-e57b-4656-ac79-7da65a3cf563
 		summarizeBy: none
 		sourceColumn: Country
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -111,9 +124,12 @@ table fact_employee
 	/// location
 	column Latitude
 		dataType: double
+		isHidden
 		lineageTag: de659c86-57d2-4312-82dd-ad054e954878
 		summarizeBy: sum
 		sourceColumn: Latitude
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -122,9 +138,12 @@ table fact_employee
 	/// Longitude coordinate of the employee’s location
 	column Longitude
 		dataType: double
+		isHidden
 		lineageTag: f16f2c4a-93a6-4e19-b3a8-0bb5fab02c76
 		summarizeBy: sum
 		sourceColumn: Longitude
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

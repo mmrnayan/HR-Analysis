@@ -20,6 +20,7 @@ table dim_employee
 
 	column 'Date of Birth'
 		dataType: dateTime
+		isHidden
 		formatString: Long Date
 		lineageTag: 850f4014-e32c-4a1a-a6b2-b9a73551b230
 		summarizeBy: none
@@ -47,6 +48,7 @@ table dim_employee
 
 	column Country
 		dataType: string
+		isHidden
 		lineageTag: f34ec3ef-b5cd-429a-a729-672ce04f6232
 		summarizeBy: none
 		sourceColumn: Country

@@ -4,6 +4,7 @@ table fact_training
 	/// Unique identifier for each employee
 	column 'Employee ID'
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 1ad5fc14-3d08-4134-9013-b02ee289357a
 		summarizeBy: none
@@ -14,6 +15,7 @@ table fact_training
 	/// References Dim_Training_Session, identifies the training session
 	column 'Training Session ID'
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 8494885d-f837-4819-853c-5438c9016acc
 		summarizeBy: none
@@ -24,6 +26,7 @@ table fact_training
 	/// Date training was completed
 	column 'Training Completion Date'
 		dataType: dateTime
+		isHidden
 		formatString: Long Date
 		lineageTag: b6be5361-b33f-4093-b8d4-c7cd9f5605d2
 		summarizeBy: none
@@ -50,9 +53,10 @@ table fact_training
 				let
 				    Source = Csv.Document(File.Contents(#"Folder Path" & "\training_development.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Employee ID", Int64.Type}, {"Training Session ID", Int64.Type}, {"Training Completion Date", type date}, {"Certification Achieved", type logical}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Employee ID", Int64.Type}, {"Training Session ID", Int64.Type}, {"Training Completion Date", type date}, {"Certification Achieved", type logical}}),
+				    #"Sorted Rows" = Table.Sort(#"Changed Type",{{"Training Completion Date", Order.Ascending}})
 				in
-				    #"Changed Type"
+				    #"Sorted Rows"
 
 	annotation PBI_NavigationStepName = Navigation
 

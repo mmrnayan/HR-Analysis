@@ -1,0 +1,73 @@
+{
+  "name": "Custom",
+  "textClasses": {
+    "label": {
+      "fontFace": "wf_standard-font, helvetica, arial, sans-serif",
+      "fontSize": 14
+    },
+    "callout": {
+      "fontSize": 20
+    },
+    "header": {
+      "fontFace": "wf_standard-font, helvetica, arial, sans-serif",
+      "fontSize": 16
+    },
+    "title": {
+      "fontSize": 16
+    }
+  },
+  "dataColors": [
+    "#2A72D6",
+    "#12239E",
+    "#4CAF50",
+    "#B0BEC5",
+    "#FF0000",
+    "#FFEB3B",
+    "#FF9800",
+    "#9C27B0"
+  ],
+  "bad": "#28A745",
+  "neutral": "#DC3545",
+  "good": "#FFC107",
+  "minimum": "#E91E63",
+  "center": "#FF6F00",
+  "maximum": "#007BFF",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "visualTooltip": [
+          {
+            "themedTitleFontColor": {
+              "solid": {
+                "color": "#A9A9A9"
+              }
+            },
+            "themedValueFontColor": {
+              "solid": {
+                "color": "#000000"
+              }
+            }
+          }
+        ],
+        "visualHeaderTooltip": [
+          {
+            "themedTitleFontColor": {
+              "solid": {
+                "color": "#A9A9A9"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "outspace": [
+          {
+            "transparency": 100
+          }
+        ]
+      }
+    }
+  }
+}

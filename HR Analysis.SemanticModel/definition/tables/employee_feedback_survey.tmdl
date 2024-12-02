@@ -4,6 +4,7 @@ table employee_feedback_survey
 	/// Identifier for each employee
 	column 'Employee ID'
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 39525a4f-1356-47dd-913b-79957010af9b
 		summarizeBy: count

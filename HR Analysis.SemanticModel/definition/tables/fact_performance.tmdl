@@ -4,6 +4,7 @@ table fact_performance
 	/// Unique identifier for each employee
 	column 'Employee ID'
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 566e5b82-58b2-4d8c-9010-94a77e0cedff
 		summarizeBy: none
