@@ -3,6 +3,7 @@ table _measure
 
 	measure '# of Employee' = COUNTROWS(fact_employee)
 		formatString: 0
+		displayFolder: Diversity
 		lineageTag: 9870eb51-35fb-4b39-9840-2c0837313005
 
 	measure '# of Active Employees' = ```
@@ -13,11 +14,8 @@ table _measure
 			)
 			```
 		formatString: 0
+		displayFolder: Diversity
 		lineageTag: e8373169-50ef-4d74-9667-691d447c048f
-
-	measure '# of Resigned Employees' = [# of Employee]-[# of Active Employees]
-		formatString: 0
-		lineageTag: 49cd38a1-a11c-41f0-9adc-3875ee4d470a
 
 	measure '# of Female' = ```
 			
@@ -27,6 +25,7 @@ table _measure
 			)
 			```
 		formatString: 0
+		displayFolder: Diversity
 		lineageTag: 506a76a0-5f3f-4291-87ec-4b28b5f688dd
 
 	measure '# of Male' = ```
@@ -37,6 +36,7 @@ table _measure
 			)
 			```
 		formatString: 0
+		displayFolder: Diversity
 		lineageTag: 926be376-df37-48f0-8df5-15d7db0c829a
 
 	measure '# of Other' = ```
@@ -47,19 +47,157 @@ table _measure
 			)
 			```
 		formatString: 0
+		displayFolder: Diversity
 		lineageTag: dacf613e-76b6-4526-9827-c849c6617c4f
 
 	measure %Female =
 			
 			DIVIDE([# of Female], [# of Employee],0)
 		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Diversity
 		lineageTag: 209be2b2-f63e-4b3a-b492-ba463925effa
 
 	measure %Male =
 			
 			DIVIDE([# of Male], [# of Employee],0)
 		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Diversity
 		lineageTag: bbb8b413-088e-4fab-8edb-4c80170b00e9
+
+	/// No of total Resignation
+	measure '# of Resignation' =
+			
+			CALCULATE(
+			    COUNTROWS(fact_employee),
+			    FILTER(
+			        fact_resigned,
+			        fact_resigned[Employee ID]
+			    )
+			)
+		formatString: 0
+		displayFolder: Resigned
+		lineageTag: 981b2ca8-d485-4fa9-b8e6-a92d8fb1ea49
+
+	/// No of total Voluntary Resignation
+	measure '# of Voluntary Resignation' =
+			
+			CALCULATE(
+			    COUNTROWS(fact_employee),
+			    FILTER(
+			        fact_resigned,
+			        fact_resigned[Resigned Type] = "Voluntary"
+			    )
+			)
+		formatString: 0
+		displayFolder: Resigned\resigned profile
+		lineageTag: d7dde708-1d10-4eaf-8d13-525fa442e096
+
+	/// No of total involuntary Resignation
+	measure '# of Involuntary Resignation' =
+			
+			CALCULATE(
+			    COUNTROWS(fact_employee),
+			    FILTER(
+			        fact_resigned,
+			        fact_resigned[Resigned Type] = "Involuntary"
+			    )
+			)
+		formatString: 0
+		displayFolder: Resigned\resigned profile
+		lineageTag: c1efdaba-db69-4d67-952c-5c7b216ba352
+
+	measure '# of First Year Resignation' =
+			
+			CALCULATE(
+			    [# of Resignation],
+			    FILTER(
+			        fact_resigned,
+			        DATEDIFF(
+			            RELATED(fact_employee[Hire Date]),
+			            fact_resigned[Resigned Date],
+			            YEAR
+			        ) <= 1
+			    )
+			)
+		formatString: 0
+		displayFolder: Resigned\resigned profile
+		lineageTag: 11c7d296-4291-44ff-a64a-4ca7673dcd4f
+
+	measure '% Voluntary Resignation' = DIVIDE([# of Voluntary Resignation], [# of Resignation],0)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Resigned\resigned profile
+		lineageTag: 21c09dcd-e770-4cdb-b271-984afb91d2a8
+
+	measure '% Involuntary Resignation' = DIVIDE([# of Involuntary Resignation], [# of Resignation],0)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Resigned\resigned profile
+		lineageTag: 1cc5baec-64cc-41e3-9afe-6d02b3c759f2
+
+	measure '% First Year Resignation' = DIVIDE([# of First Year Resignation], [# of Resignation],0)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Resigned\resigned profile
+		lineageTag: a7cb0e4c-737e-4b50-9d5a-d88fa1bc5202
+
+	measure '# of Resignation by Reason' =
+			
+			COUNTROWS(fact_resigned)
+		formatString: 0
+		displayFolder: Resigned\resigned profile\reason bar chart
+		lineageTag: 0235a7e8-5ed8-4152-8f5e-a2013616d94c
+
+	measure 'Labels PlaceHolders' = 0
+		formatString: 0
+		displayFolder: Resigned\resigned profile\reason bar chart
+		lineageTag: 51e6c791-6ce0-452d-80da-e8f66f0bebad
+
+	measure 'Label Bar Chart- Resignation Reason' =
+			
+			SELECTEDVALUE(dim_resignationReason[Reason Description])
+		displayFolder: Resigned\resigned profile\reason bar chart
+		lineageTag: e2065e24-dd1f-473e-82a3-595d70dd506c
+
+	measure 'Avg Resignation Per Month' =
+			
+			VAR _Resignation= [# of Resignation]
+			Var _MonthCount=
+			DATEDIFF(
+			    Date( 2018,1,1),
+			    TODAY(),
+			    MONTH
+			) +1
+			RETURN
+			DIVIDE(
+			    _Resignation,
+			    _MonthCount,
+			    0
+			)
+		displayFolder: Resigned
+		lineageTag: be15f5ee-d5a7-4d92-a132-12d6ef44420c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Time to Resign (Years)' =
+			
+			AVERAGEX(
+			    fact_resigned,
+			    DATEDIFF(
+			        RELATED(fact_employee[Hire Date]),
+			        fact_resigned[Resigned Date],
+			        YEAR
+			    )
+			)
+		displayFolder: Resigned
+		lineageTag: cf383107-93c3-4f03-873c-3d2373129167
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure #male = [# of Male]*-1
+		formatString: 0
+		lineageTag: d1f3c617-be48-47e0-96a7-2c4f7758351b
+
+	measure #female = [# of Female]*-1
+		formatString: 0
+		lineageTag: 95daf59e-58c7-4b41-b1f0-3ce358895b7e
 
 	partition _measure = m
 		mode: import

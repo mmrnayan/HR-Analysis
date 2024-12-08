@@ -31,10 +31,6 @@ relationship AutoDetected_75d24dcd-3a0a-456f-b7c5-67d67add5930
 	fromColumn: fact_training.'Training Session ID'
 	toColumn: dim_trainingSession.'Training Session ID'
 
-relationship 27a87cb6-8a1e-6f57-4ea8-43cf23c0e344
-	fromColumn: fact_employee.'Employee ID'
-	toColumn: fact_resigned.'Employee ID'
-
 relationship 233590bb-dd77-20a2-26bb-e6eee75dd3b0
 	fromColumn: fact_resigned.'Employee ID'
 	toColumn: exit_interview_survey.'Employee ID'
@@ -84,4 +80,8 @@ relationship b83f3a18-c589-84a3-9b0d-47489f748b50
 	isActive: false
 	fromColumn: dim_employee.'Date of Birth'
 	toColumn: date.Date
+
+relationship 2ff8e4e3-0591-a925-2ae6-1bb5abf655ad
+	fromColumn: fact_resigned.'Employee ID'
+	toColumn: fact_employee.'Employee ID'
 

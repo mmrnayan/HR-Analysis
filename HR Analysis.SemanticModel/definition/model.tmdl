@@ -32,7 +32,7 @@ queryGroup Calender
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBIDesktopVersion = 2.138.1004.0 (24.11)
+annotation PBIDesktopVersion = 2.138.1203.0 (24.11)
 
 annotation PBI_QueryOrder = ["Folder Path","fact_employee","employee_feedback_survey","exit_interview_survey","fact_leave","fact_performance","dim_resignationReason","fact_resigned","fact_training","dim_trainingSession","dim_employee","dim_location","dim_department","dim_jobtitle","dim_leaveReason","dim_leaveType","Date Parameter","date","_measure"]
 
@@ -58,6 +58,8 @@ ref table dim_leaveType
 ref table date
 ref table datadictionary
 ref table _measure
+ref table Age-tenure
+ref table 'Dept-Org Lvl'
 
 ref cultureInfo en-US
 

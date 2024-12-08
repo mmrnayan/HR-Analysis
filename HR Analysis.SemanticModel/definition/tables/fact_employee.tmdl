@@ -188,16 +188,6 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
-	/// Total number of years the employee has worked at the company
-	column 'Years at Company'
-		dataType: int64
-		formatString: 0
-		lineageTag: abc5c152-72c9-4b69-b44e-ceaff08391c3
-		summarizeBy: sum
-		sourceColumn: Years at Company
-
-		annotation SummarizationSetBy = Automatic
-
 	/// Employment status indicating active or resigned status
 	column 'Current Employment Status'
 		dataType: string
@@ -226,6 +216,34 @@ table fact_employee
 
 		annotation SummarizationSetBy = Automatic
 
+	column Age = ```
+			
+			DATEDIFF(fact_employee[Date of Birth], TODAY(), YEAR)
+			
+			```
+		lineageTag: efa5163c-847f-4d03-a4e2-b802211db055
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Age Banding' =
+			
+			SWITCH(
+			    TRUE(),
+			    fact_employee[Age] <= 25, "18-25",
+			    fact_employee[Age] <= 35, "26-35",
+			    fact_employee[Age] <= 45, "36-45",
+			    fact_employee[Age] <= 55, "46-55",
+			    fact_employee[Age] <= 66, "56-66",
+			    "Above 66"
+			)
+		lineageTag: f3603a80-be2d-48bd-a5db-68ed71497bc3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition fact_employee = m
 		mode: import
 		queryGroup: 'Data\fact tables'
@@ -233,9 +251,10 @@ table fact_employee
 				let
 				    Source = Csv.Document(File.Contents(#"Folder Path" & "\employee.csv"),[Delimiter=",", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Employee ID", Int64.Type}, {"Full Name", type text}, {"Date of Birth", type date}, {"Gender", type text}, {"Education Level", type text}, {"Hire Date", type date}, {"Department", type text}, {"Job Title", type text}, {"Organization Level", type text}, {"Region", type text}, {"Country", type text}, {"Latitude", type number}, {"Longitude", type number}, {"Employment Status", type text}, {"Employment Type", type text}, {"Base Salary ($)", type number}, {"Times Promoted", Int64.Type}, {"Years at Company", Int64.Type}, {"Current Employment Status", type text}, {"Annual Leave Entitlement (days)", Int64.Type}, {"Ethnicity", type text}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Employee ID", Int64.Type}, {"Full Name", type text}, {"Date of Birth", type date}, {"Gender", type text}, {"Education Level", type text}, {"Hire Date", type date}, {"Department", type text}, {"Job Title", type text}, {"Organization Level", type text}, {"Region", type text}, {"Country", type text}, {"Latitude", type number}, {"Longitude", type number}, {"Employment Status", type text}, {"Employment Type", type text}, {"Base Salary ($)", type number}, {"Times Promoted", Int64.Type}, {"Years at Company", Int64.Type}, {"Current Employment Status", type text}, {"Annual Leave Entitlement (days)", Int64.Type}, {"Ethnicity", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Years at Company"})
 				in
-				    #"Changed Type"
+				    #"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

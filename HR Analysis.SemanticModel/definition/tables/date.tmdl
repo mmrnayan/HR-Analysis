@@ -71,6 +71,9 @@ table date
 		lineageTag: 4f1648f4-80ad-46cd-9f4e-7358de6027e0
 		summarizeBy: none
 		sourceColumn: MonthInCalendar
+		sortByColumn: MonthnYear
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -96,6 +99,9 @@ table date
 		lineageTag: 85ad7232-8e43-45bf-80ab-7d59459156d0
 		summarizeBy: none
 		sourceColumn: DayOfWeekName
+		sortByColumn: DayInWeek
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -152,6 +158,25 @@ table date
 		sourceColumn: FY
 
 		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Year Hierarchy'
+		lineageTag: 316e71f2-41eb-44b6-bc9d-976347178aa6
+
+		level Year
+			lineageTag: df95ae7a-3bd2-487f-8636-239a7582c81c
+			column: Year
+
+		level QuarterInCalendar
+			lineageTag: 4ed4cc7b-c9ee-4c17-a470-485380a4013a
+			column: QuarterInCalendar
+
+		level MonthInCalendar
+			lineageTag: 8d8c9198-3bb3-4b47-9885-e4e819337b30
+			column: MonthInCalendar
+
+		level DayOfMonth
+			lineageTag: 23a85637-86b0-444d-acfd-823c78fc6321
+			column: DayOfMonth
 
 	partition date = m
 		mode: import

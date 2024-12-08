@@ -21,7 +21,7 @@ expression 'Date Parameter' = ```
 		    InsertDay = Table.AddColumn(InsertMonth, "DayOfMonth", each Date.Day([Date])),
 		    InsertDayInt = Table.AddColumn(InsertDay, "DateInt", each [Year] * 10000 + [MonthOfYear] * 100 + [DayOfMonth]),
 		    InsertMonthName = Table.AddColumn(InsertDayInt, "MonthName", each Date.ToText([Date], "MMMM"), type text),
-		    InsertCalendarMonth = Table.AddColumn(InsertMonthName, "MonthInCalendar", each (try(Text.Range([MonthName],0,3)) otherwise [MonthName]) & " " & Number.ToText([Year])),
+		    InsertCalendarMonth = Table.AddColumn(InsertMonthName, "MonthInCalendar", each (try(Text.Range([MonthName],0,3)) otherwise [MonthName]) & " " & Text.End(Number.ToText([Year]), 2)),
 		    InsertCalendarQtr = Table.AddColumn(InsertCalendarMonth, "QuarterInCalendar", each "Q" & Number.ToText([QuarterOfYear]) & " " & Number.ToText([Year])),
 		    InsertDayWeek = Table.AddColumn(InsertCalendarQtr, "DayInWeek", each if Date.DayOfWeek([Date], Day.Sunday) = 0 then 7 else Date.DayOfWeek([Date], Day.Sunday)),
 		    InsertDayName = Table.AddColumn(InsertDayWeek, "DayOfWeekName", each Date.ToText([Date], "dddd"), type text),

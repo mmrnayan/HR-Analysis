@@ -73,6 +73,30 @@ table fact_resigned
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Years at Company' =
+			
+			(    fact_resigned[Resigned Date]-RELATED(fact_employee[Hire Date])
+			)/365
+		formatString: 0
+		lineageTag: eed520cf-d986-4bde-8fa6-5c0574bf737b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tenure Banding' =
+			
+			SWITCH(
+			    TRUE(),
+			    fact_resigned[Years at Company] <= 2, "Less than 3",
+			    fact_resigned[Years at Company] <= 5, "3-5",
+			    fact_resigned[Years at Company] <= 7, "5-7",
+			    "Above 7"
+			)
+		lineageTag: faa1f5b7-f0ce-48d8-b566-33f71bc1cc0d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition fact_resigned = m
 		mode: import
 		queryGroup: 'Data\fact tables'

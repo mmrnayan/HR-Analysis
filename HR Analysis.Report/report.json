@@ -1,6 +1,11 @@
 {
-  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":1,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
   "layoutOptimization": 0,
+  "publicCustomVisuals": [
+    "AttributeSlicer1652434005853",
+    "populationpyramidDC1509F6C26AC5E67951F13AEFE20003",
+    "sankey02300D1BE6F5427989F3DE31CCA9E0F32020"
+  ],
   "resourcePackages": [
     {
       "resourcePackage": {
@@ -34,22 +39,151 @@
   "sections": [
     {
       "config": "{\"visibility\":0,\"type\":0}",
-      "displayName": "Page 1",
+      "displayName": "Resigned Profile",
       "displayOption": 1,
       "height": 1080.00,
       "name": "60b5dcf5af9667b5efcb",
       "visualContainers": [
         {
-          "config": "{\"name\":\"94df2616a82590c14054\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1275.4838709677417,\"y\":648.3870967741935,\"z\":0,\"width\":483.87096774193543,\"height\":102.5806451612903,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Values\":[{\"queryRef\":\"_measure.# of Employee\"},{\"queryRef\":\"_measure.# of Female\"},{\"queryRef\":\"_measure.%Female\"},{\"queryRef\":\"_measure.# of Male\"},{\"queryRef\":\"_measure.%Male\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Employee\"},\"Name\":\"_measure.# of Employee\",\"NativeReferenceName\":\"# of Employee\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Female\"},\"Name\":\"_measure.# of Female\",\"NativeReferenceName\":\"# of Female\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"%Female\"},\"Name\":\"_measure.%Female\",\"NativeReferenceName\":\"%Female\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"%Male\"},\"Name\":\"_measure.%Male\",\"NativeReferenceName\":\"%Male\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Male\"},\"Name\":\"_measure.# of Male\",\"NativeReferenceName\":\"# of Male\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Employee\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"14D\"}}}}}],\"columnHeaders\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"14D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"2ed4bc7146001297e030\",\"layouts\":[{\"id\":0,\"position\":{\"x\":603.4678767614043,\"y\":684.1748268449965,\"z\":7000,\"width\":497.08144256030573,\"height\":396.19775495581564,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dim_department.Department\",\"active\":true}],\"Y\":[{\"queryRef\":\"_measure.# of Resignation\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_department\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"},\"Name\":\"_measure.# of Resignation\",\"NativeReferenceName\":\"# of Resignation\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Department\"},\"Name\":\"dim_department.Department\",\"NativeReferenceName\":\"Department\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"}}}]},\"queryFieldParametersByRole\":{\"Category\":[{\"index\":0,\"length\":1,\"expr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Dept-Org Lvl\"}},\"Property\":\"Dept-Org Lvl\"}}}]},\"columnProperties\":{\"dim_department.Department\":{\"displayName\":\"Department\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{}}}",
           "filters": "[]",
-          "height": 102.58,
-          "width": 483.87,
-          "x": 1275.48,
-          "y": 648.39,
+          "height": 396.20,
+          "width": 497.08,
+          "x": 603.47,
+          "y": 684.17,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"413a90cec916d79dbb60\",\"layouts\":[{\"id\":0,\"position\":{\"x\":959.3121566754239,\"y\":231.11535705755912,\"z\":1000,\"width\":715.3570575591116,\"height\":308.15380941007885,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dim_resignationReason.Reason Description\",\"active\":true}],\"Y\":[{\"queryRef\":\"_measure.Labels PlaceHolders\"},{\"queryRef\":\"_measure.# of Resignation by Reason\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_resignationReason\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Reason Description\"},\"Name\":\"dim_resignationReason.Reason Description\",\"NativeReferenceName\":\"Reason Description\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation by Reason\"},\"Name\":\"_measure.# of Resignation by Reason\",\"NativeReferenceName\":\"# of Resignation by Reason\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Labels PlaceHolders\"},\"Name\":\"_measure.Labels PlaceHolders\",\"NativeReferenceName\":\"Labels PlaceHolders\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation by Reason\"}}}]},\"columnProperties\":{\"dim_resignationReason.Reason Description\":{\"formatString\":\"G\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"legend\":[{\"properties\":{\"showGradientLegend\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelPosition\":{\"expr\":{\"Literal\":{\"Value\":\"'InsideEnd'\"}}},\"enableTitleDataLabel\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"labelOverflow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"optimizeLabelDisplay\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"enableDetailDataLabel\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"labelContentLayout\":{\"expr\":{\"Literal\":{\"Value\":\"'SingleLine'\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}},{\"properties\":{\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.5}}}}},\"showSeries\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelPosition\":{\"expr\":{\"Literal\":{\"Value\":\"'Auto'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}},\"optimizeLabelDisplay\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"labelOverflow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"metadata\":\"_measure.Labels PlaceHolders\"}},{\"properties\":{\"dynamicLabelValue\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_measure\"}},\"Property\":\"Label Bar Chart- Resignation Reason\"}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"_measure.Labels PlaceHolders\",\"highlightMatching\":1}},{\"properties\":{\"showSeries\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"metadata\":\"_measure.# of Resignation by Reason\"}}],\"zoom\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"preferredCategoryWidth\":{\"expr\":{\"Literal\":{\"Value\":\"50D\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"innerPadding\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"maxMarginFactor\":{\"expr\":{\"Literal\":{\"Value\":\"15L\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":-0.25}}}}},\"borderShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"borderColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":-0.25}}}}},\"borderSize\":{\"expr\":{\"Literal\":{\"Value\":\"6D\"}}},\"borderColorMatchFill\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"metadata\":\"_measure.# of Resignation by Reason\"}},{\"properties\":{\"fillTransparency\":{\"expr\":{\"Literal\":{\"Value\":\"100D\"}}},\"borderShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"borderColorMatchFill\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"borderTransparency\":{\"expr\":{\"Literal\":{\"Value\":\"100D\"}}},\"borderSize\":{\"expr\":{\"Literal\":{\"Value\":\"3D\"}}}},\"selector\":{\"metadata\":\"_measure.Labels PlaceHolders\"}}],\"valueAxis\":[{\"properties\":{\"invertAxis\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"layout\":[{\"properties\":{\"clusteredGapSize\":{\"expr\":{\"Literal\":{\"Value\":\"7D\"}}},\"clusteredGapOverlaps\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"clusteredGapOverlapReverse\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"y1AxisReferenceLine\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"0\"}}]},\"vcObjects\":{\"spacing\":[{\"properties\":{\"customizeSpacing\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"spaceBelowTitle\":{\"expr\":{\"Literal\":{\"Value\":\"2D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Resignation by Reason'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 308.15,
+          "width": 715.36,
+          "x": 959.31,
+          "y": 231.12,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"46a4facb1000de089c00\",\"layouts\":[{\"id\":0,\"position\":{\"x\":447.9000223164472,\"y\":251.37246150412852,\"z\":3000,\"width\":447.9000223164472,\"height\":324.498995759875,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_measure.# of Resignation\"}],\"Category\":[{\"queryRef\":\"fact_resigned.Resigned Type\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"f1\",\"Entity\":\"fact_resigned\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"},\"Name\":\"_measure.# of Resignation\",\"NativeReferenceName\":\"# of Resignation\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f1\"}},\"Property\":\"Resigned Type\"},\"Name\":\"fact_resigned.Resigned Type\",\"NativeReferenceName\":\"Resigned Type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 324.50,
+          "width": 447.90,
+          "x": 447.90,
+          "y": 251.37,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"55e313257a2053c0042d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":958.7150405072208,\"y\":51.93941528707291,\"z\":9000,\"width\":398.202183867559,\"height\":140.66924973582246,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"date.Date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"date.Date\",\"NativeReferenceName\":\"Date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"slider\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 140.67,
+          "width": 398.20,
+          "x": 958.72,
+          "y": 51.94,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"b05c8b7124da7421790b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":18.805093046033303,\"y\":52.654260528893246,\"z\":0,\"width\":654.4172380019589,\"height\":174.8873653281097,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"_measure.# of Resignation\"},{\"queryRef\":\"_measure.# of Voluntary Resignation\"},{\"queryRef\":\"_measure.# of Involuntary Resignation\"},{\"queryRef\":\"_measure.# of First Year Resignation\"},{\"queryRef\":\"_measure.% Voluntary Resignation\"},{\"queryRef\":\"_measure.% Involuntary Resignation\"},{\"queryRef\":\"_measure.% First Year Resignation\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"},\"Name\":\"_measure.# of Resignation\",\"NativeReferenceName\":\"# of Resignation\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Voluntary Resignation\"},\"Name\":\"_measure.# of Voluntary Resignation\",\"NativeReferenceName\":\"# of Voluntary Resignation\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Involuntary Resignation\"},\"Name\":\"_measure.# of Involuntary Resignation\",\"NativeReferenceName\":\"# of Involuntary Resignation\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of First Year Resignation\"},\"Name\":\"_measure.# of First Year Resignation\",\"NativeReferenceName\":\"# of First Year Resignation\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"% Voluntary Resignation\"},\"Name\":\"_measure.% Voluntary Resignation\",\"NativeReferenceName\":\"% Voluntary Resignation\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"% Involuntary Resignation\"},\"Name\":\"_measure.% Involuntary Resignation\",\"NativeReferenceName\":\"% Involuntary Resignation\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"% First Year Resignation\"},\"Name\":\"_measure.% First Year Resignation\",\"NativeReferenceName\":\"% First Year Resignation\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 174.89,
+          "width": 654.42,
+          "x": 18.81,
+          "y": 52.65,
           "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"ba1f6933405ad431e60e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":603.4678767614043,\"y\":535.6006687365656,\"z\":6000,\"width\":221.9441127298782,\"height\":139.40291378074994,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dept-Org Lvl.Dept-Org Lvl\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Dept-Org Lvl\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Dept-Org Lvl\"},\"Name\":\"Dept-Org Lvl.Dept-Org Lvl\",\"NativeReferenceName\":\"Dept-Org Lvl\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Dept-Org Lvl\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Dept-Org Lvl Fields\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'''dim_department''[Department]'\"}}]]}}}]}}}}]},\"cachedFilterDisplayItems\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Dept-Org Lvl\"}},\"Property\":\"Dept-Org Lvl Fields\"}},\"Right\":{\"Literal\":{\"Value\":\"'''dim_department''[Department]'\"}}}}},\"displayName\":\"Department\"}]}}",
+          "filters": "[]",
+          "height": 139.40,
+          "width": 221.94,
+          "x": 603.47,
+          "y": 535.60,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"c4b65a914730cbb578c6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":18.342488655361834,\"y\":684.1748268449965,\"z\":4000,\"width\":585.1253881060426,\"height\":396.19775495581564,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"fact_employee.Age Banding\",\"active\":true}],\"Y\":[{\"queryRef\":\"_measure.# of Resignation\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"},\"Name\":\"_measure.# of Resignation\",\"NativeReferenceName\":\"# of Resignation\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Age Banding\"},\"Name\":\"fact_employee.Age Banding\",\"NativeReferenceName\":\"Age Banding\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Age Banding\"}}}]},\"queryFieldParametersByRole\":{\"Category\":[{\"index\":0,\"length\":1,\"expr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Age-tenure\"}},\"Property\":\"Age-Tenure\"}}}]},\"columnProperties\":{\"fact_employee.Age Banding\":{\"displayName\":\"Age Banding\"}},\"drillFilterOtherVisuals\":true,\"objects\":{}}}",
+          "filters": "[]",
+          "height": 396.20,
+          "width": 585.13,
+          "x": 18.34,
+          "y": 684.17,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"ca37086c30ed6b1872c9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":53.19321710054932,\"y\":632.8158586099833,\"z\":5000,\"width\":221.9441127298782,\"height\":174.25364222593743,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Parameter.Parameter\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Age-tenure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Age-Tenure\"},\"Name\":\"Parameter.Parameter\",\"NativeReferenceName\":\"Age-Tenure\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Age-tenure\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Parameter Fields\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'''fact_employee''[Age Banding]'\"}}]]}}}]}}}}]},\"cachedFilterDisplayItems\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Age-tenure\"}},\"Property\":\"Parameter Fields\"}},\"Right\":{\"Literal\":{\"Value\":\"'''fact_employee''[Age Banding]'\"}}}}},\"displayName\":\"Age Banding\"}]}}",
+          "filters": "[]",
+          "height": 174.25,
+          "width": 221.94,
+          "x": 53.19,
+          "y": 632.82,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"da361d8ca97589e6a646\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1252.7919751612133,\"y\":632.8158586099833,\"z\":8000,\"width\":585.1253881060426,\"height\":407.20324814903273,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"sankey02300D1BE6F5427989F3DE31CCA9E0F32020\",\"projections\":{\"Source\":[{\"queryRef\":\"dim_department.Department\"}],\"Destination\":[{\"queryRef\":\"fact_resigned.Resigned Type\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_resigned\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_department\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Resigned Type\"},\"Name\":\"fact_resigned.Resigned Type\",\"NativeReferenceName\":\"Resigned Type\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Department\"},\"Name\":\"dim_department.Department\",\"NativeReferenceName\":\"Department\"}]},\"queryFieldParametersByRole\":{\"Source\":[{\"index\":0,\"length\":1,\"expr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Dept-Org Lvl\"}},\"Property\":\"Dept-Org Lvl\"}}}]},\"columnProperties\":{\"dim_department.Department\":{\"displayName\":\"Department\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"linkLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"cyclesLinks\":[{\"properties\":{\"drawCycles\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 407.20,
+          "width": 585.13,
+          "x": 1252.79,
+          "y": 632.82,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"e3764b9d2ea3a7d65466\",\"layouts\":[{\"id\":0,\"position\":{\"x\":18.28163356393662,\"y\":281.08011604552553,\"z\":2000,\"width\":447.9000223164472,\"height\":324.498995759875,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_measure.# of Resignation\"}],\"Category\":[{\"queryRef\":\"fact_employee.Gender\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"},\"Name\":\"_measure.# of Resignation\",\"NativeReferenceName\":\"# of Resignation\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Gender\"},\"Name\":\"fact_employee.Gender\",\"NativeReferenceName\":\"Gender\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 324.50,
+          "width": 447.90,
+          "x": 18.28,
+          "y": 281.08,
+          "z": 2000.00
         }
       ],
       "width": 1920.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Resigned Analysis",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "9c5f825d9d713e57e250",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"291a420bd4158941ad0b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":298.05584117693587,\"y\":442.2241556592581,\"z\":2,\"width\":320.73400300561576,\"height\":236.50083049909043,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"funnel\",\"projections\":{\"Y\":[{\"queryRef\":\"_measure.# of Resignation\"}],\"Category\":[{\"queryRef\":\"dim_employee.Gender\",\"active\":true},{\"queryRef\":\"dim_jobtitle.Organization Level\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_jobtitle\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"dim_employee\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"},\"Name\":\"_measure.# of Resignation\",\"NativeReferenceName\":\"# of Resignation\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Organization Level\"},\"Name\":\"dim_jobtitle.Organization Level\",\"NativeReferenceName\":\"Organization Level\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Gender\"},\"Name\":\"dim_employee.Gender\",\"NativeReferenceName\":\"Gender\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"labelPosition\":{\"expr\":{\"Literal\":{\"Value\":\"'OutsideEnd'\"}}},\"funnelLabelStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'Data'\"}}},\"enableBackground\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"showAllDataPoints\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_employee\"}},\"Property\":\"Gender\"}},\"Right\":{\"Literal\":{\"Value\":\"'Male'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#DE4BCA'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_employee\"}},\"Property\":\"Gender\"}},\"Right\":{\"Literal\":{\"Value\":\"'Female'\"}}}}}]}}]},\"vcObjects\":{\"divider\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 236.50,
+          "width": 320.73,
+          "x": 298.06,
+          "y": 442.22,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"2a1876e2677b84d82794\",\"layouts\":[{\"id\":0,\"position\":{\"x\":421.16586253262676,\"y\":72.8940915921854,\"z\":1,\"width\":393.6280945978012,\"height\":233.2610930949933,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_measure.# of Resignation\"}],\"Category\":[{\"queryRef\":\"date.Year Hierarchy.Year\",\"active\":true},{\"queryRef\":\"date.Year Hierarchy.QuarterInCalendar\"},{\"queryRef\":\"date.Year Hierarchy.MonthInCalendar\"},{\"queryRef\":\"date.Year Hierarchy.DayOfMonth\"}],\"Series\":[{\"queryRef\":\"dim_employee.Gender\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"dim_employee\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"},\"Name\":\"_measure.# of Resignation\",\"NativeReferenceName\":\"# of Resignation\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Year Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"date.Year Hierarchy.Year\",\"NativeReferenceName\":\"Year Hierarchy Year\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Year Hierarchy\"}},\"Level\":\"QuarterInCalendar\"},\"Name\":\"date.Year Hierarchy.QuarterInCalendar\",\"NativeReferenceName\":\"Year Hierarchy QuarterInCalendar\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Year Hierarchy\"}},\"Level\":\"MonthInCalendar\"},\"Name\":\"date.Year Hierarchy.MonthInCalendar\",\"NativeReferenceName\":\"Year Hierarchy MonthInCalendar\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Year Hierarchy\"}},\"Level\":\"DayOfMonth\"},\"Name\":\"date.Year Hierarchy.DayOfMonth\",\"NativeReferenceName\":\"Year Hierarchy DayOfMonth\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Gender\"},\"Name\":\"dim_employee.Gender\",\"NativeReferenceName\":\"Gender\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 233.26,
+          "width": 393.63,
+          "x": 421.17,
+          "y": 72.89,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"51e75ebc162ccd0731a6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":704.6428853911256,\"y\":359.6108518547813,\"z\":3,\"width\":536.1765403780748,\"height\":280.2372854544017,\"tabOrder\":3}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_measure.#female\"},{\"queryRef\":\"_measure.#male\"}],\"Category\":[{\"queryRef\":\"dim_jobtitle.Organization Level\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_jobtitle\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"#female\"},\"Name\":\"_measure.#female\",\"NativeReferenceName\":\"#female\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"#male\"},\"Name\":\"_measure.#male\",\"NativeReferenceName\":\"#male\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Organization Level\"},\"Name\":\"dim_jobtitle.Organization Level\",\"NativeReferenceName\":\"Organization Level\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"#female\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.24,
+          "width": 536.18,
+          "x": 704.64,
+          "y": 359.61,
+          "z": 3.00
+        },
+        {
+          "config": "{\"name\":\"8a9b11964707e1968101\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":29.157636636874162,\"z\":0,\"width\":323.9737404097129,\"height\":160.36700150280788,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"_measure.# of Resignation\"},{\"queryRef\":\"_measure.Avg Resignation Per Month\"},{\"queryRef\":\"_measure.Avg Time to Resign\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Avg Resignation Per Month\"},\"Name\":\"_measure.Avg Resignation Per Month\",\"NativeReferenceName\":\"Avg Resignation Per Month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"},\"Name\":\"_measure.# of Resignation\",\"NativeReferenceName\":\"# of Resignation\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Avg Time to Resign (Years)\"},\"Name\":\"_measure.Avg Time to Resign\",\"NativeReferenceName\":\"Avg Time to Resign (Years)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 160.37,
+          "width": 323.97,
+          "x": 0.00,
+          "y": 29.16,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
     }
   ],
   "theme": "Custom03473850574089621.json"
