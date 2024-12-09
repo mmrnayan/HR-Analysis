@@ -171,7 +171,7 @@ table _measure
 			    _MonthCount,
 			    0
 			)
-		displayFolder: Resigned
+		displayFolder: Resigned\Resigned Analysis
 		lineageTag: be15f5ee-d5a7-4d92-a132-12d6ef44420c
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -186,17 +186,19 @@ table _measure
 			        YEAR
 			    )
 			)
-		displayFolder: Resigned
+		displayFolder: Resigned\Resigned Analysis
 		lineageTag: cf383107-93c3-4f03-873c-3d2373129167
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure #male = [# of Male]*-1
 		formatString: 0
+		displayFolder: Resigned\Resigned Analysis
 		lineageTag: d1f3c617-be48-47e0-96a7-2c4f7758351b
 
 	measure #female = [# of Female]*-1
 		formatString: 0
+		displayFolder: Resigned\Resigned Analysis
 		lineageTag: 95daf59e-58c7-4b41-b1f0-3ce358895b7e
 
 	measure '# of Resignation PY' =
@@ -206,7 +208,7 @@ table _measure
 			    YEAR(fact_resigned[Resigned Date]) = YEAR(TODAY()) - 1
 			)
 		formatString: 0
-		displayFolder: Resigned
+		displayFolder: Resigned\Resigned Analysis
 		lineageTag: 79ed1f5d-a625-4536-b5c7-dd9bd2a8fec7
 
 	measure '# of Resignation CY' = ```
@@ -218,12 +220,44 @@ table _measure
 			
 			```
 		formatString: 0
-		displayFolder: Resigned
+		displayFolder: Resigned\Resigned Analysis
 		lineageTag: b90eb4a3-8b7b-4391-beba-fe8ba891829b
 
 	measure 'New Hires' = COUNTROWS(fact_employee)
 		formatString: 0
+		displayFolder: Resigned\Resigned Analysis
 		lineageTag: 924cfdee-8c95-4737-8951-a2063265c345
+
+	measure 'Overall Attrition Rate' = ```
+			
+			DIVIDE(
+			    [# of Resignation], 
+			    [# of Employee], 
+			    0
+			)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 2f02b0a0-f0ec-46ad-bed8-9b4ad0969652
+
+	measure 'Voluntary Attrition Rate' =
+			
+			DIVIDE(
+			    [# of Voluntary Resignation],
+			    [# of Employee],
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7cf070bb-d849-4dff-b902-9d098c918b44
+
+	measure 'Involuntary Attrition Rate' =
+			
+			DIVIDE(
+			    [# of Involuntary Resignation],
+			    [# of Employee],
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: df55039d-15aa-4c59-826f-09a5ca3f380e
 
 	partition _measure = m
 		mode: import
