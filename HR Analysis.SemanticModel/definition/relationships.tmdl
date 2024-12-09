@@ -85,3 +85,8 @@ relationship 2ff8e4e3-0591-a925-2ae6-1bb5abf655ad
 	fromColumn: fact_resigned.'Employee ID'
 	toColumn: fact_employee.'Employee ID'
 
+relationship 89aabce8-b9d9-bed2-a985-fd934a185e58
+	isActive: false
+	fromColumn: fact_resigned.'Employee ID'
+	toColumn: dim_employee.'Employee ID'
+

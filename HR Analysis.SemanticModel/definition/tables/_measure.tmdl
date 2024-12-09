@@ -199,6 +199,32 @@ table _measure
 		formatString: 0
 		lineageTag: 95daf59e-58c7-4b41-b1f0-3ce358895b7e
 
+	measure '# of Resignation PY' =
+			
+			CALCULATE(
+			    [# of Resignation],
+			    YEAR(fact_resigned[Resigned Date]) = YEAR(TODAY()) - 1
+			)
+		formatString: 0
+		displayFolder: Resigned
+		lineageTag: 79ed1f5d-a625-4536-b5c7-dd9bd2a8fec7
+
+	measure '# of Resignation CY' = ```
+			
+			CALCULATE(
+			    [# of Resignation],
+			    YEAR(fact_resigned[Resigned Date]) = YEAR(TODAY())
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Resigned
+		lineageTag: b90eb4a3-8b7b-4391-beba-fe8ba891829b
+
+	measure 'New Hires' = COUNTROWS(fact_employee)
+		formatString: 0
+		lineageTag: 924cfdee-8c95-4737-8951-a2063265c345
+
 	partition _measure = m
 		mode: import
 		source =
