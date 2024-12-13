@@ -26250,8 +26250,7 @@
               "    COUNT(fact_employee[Employee ID]),",
               "    fact_employee[Current Employment Status] = \"Resigned\" || ",
               "    fact_employee[Current Employment Status] = \"Terminated\"",
-              ")",
-              ""
+              ")"
             ],
             "formatString": "0",
             "lineageTag": "245c7528-abf1-4a2b-9424-f2e06c8be702"

@@ -1,5 +1,3 @@
-**/.pbi/localSettings.json
-**/.pbi/cache.abf
 dataset final/.ipynb_checkpoints/
 dataset final/Untitled.ipynb
 dataset final/data dictionary.csv
@@ -9,3 +7,6 @@ dataset final/active_employee_resignation_probabilities.csv
 dataset final/active_employees_resignation_probabilities.csv
 dataset final/active_employees_with_resignation_probabilities.csv
 dataset final/employee_resignation_probabilities.csv
+dataset final/Untitled1.ipynb
+dataset final/Untitled2.ipynb
+dataset final/Attrition Prediction.ipynb
