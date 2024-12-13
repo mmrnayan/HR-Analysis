@@ -215,7 +215,7 @@
       "displayName": "Demographic Analysis",
       "displayOption": 1,
       "filters": "[]",
-      "height": 720.00,
+      "height": 1080.00,
       "name": "8cca40c23b80094cb284",
       "ordinal": 4,
       "visualContainers": [
@@ -256,13 +256,14 @@
           "z": 4.00
         }
       ],
-      "width": 1280.00
+      "width": 1920.00
     },
     {
       "config": "{}",
       "displayName": "Resigned Analysis",
       "displayOption": 1,
       "filters": "[]",
+
       "height": 1080.00,
       "name": "9c5f825d9d713e57e250",
       "ordinal": 1,
