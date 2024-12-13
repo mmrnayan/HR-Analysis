@@ -7959,6 +7959,256 @@
                   "day"
                 ]
               },
+              "fact_employee.average_annual_salary": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_employee",
+                    "ConceptualProperty": "Average Annual Salary"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "average annual salary": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "salary": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "annual salary": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "average annual income": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "average annual money": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "average annual remuneration": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "average annual payment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "annual income": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "annual money": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "annual remuneration": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "annual payment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "average annual pay": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "average annual wage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.492
+                    }
+                  }
+                ]
+              },
+              "fact_employee.average_tenure": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_employee",
+                    "ConceptualProperty": "Average Tenure"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "average tenure": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "tenure": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "average tenancy": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "average occupancy": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "average occupation": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "tenancy": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "occupancy": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "occupation": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "average freehold": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "average lease": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "average contract": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "freehold": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
               "fact_employee.base_salary": {
                 "Definition": {
                   "Binding": {
@@ -9616,6 +9866,135 @@
                   "Value": "Hidden"
                 }
               },
+              "fact_employee.tenure_band": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_employee",
+                    "ConceptualProperty": "tenure_band"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "tenure band": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "tenure_band": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  },
+                  {
+                    "band": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "tenure posse": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "posse": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "tenure group": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "tenure gang": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "tenure crew": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "tenure crowd": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "tenure mob": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "gang": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "crew": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "crowd": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
               "fact_employee.times_promoted": {
                 "Definition": {
                   "Binding": {
@@ -9735,6 +10114,129 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.461
+                    }
+                  }
+                ]
+              },
+              "fact_employee.year_at_company": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_employee",
+                    "ConceptualProperty": "years_at_company"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "year at company": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "years_at_company": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  },
+                  {
+                    "yr at company": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.762
+                    }
+                  },
+                  {
+                    "year at co": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.609
+                    }
+                  },
+                  {
+                    "year at corp": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.609
+                    }
+                  },
+                  {
+                    "year at corporation": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.609
+                    }
+                  },
+                  {
+                    "year at corps": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.609
+                    }
+                  },
+                  {
+                    "year at employer": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.609
+                    }
+                  },
+                  {
+                    "year at enterprise": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.609
+                    }
+                  },
+                  {
+                    "year at business": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.591
+                    }
+                  },
+                  {
+                    "year at group": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.591
+                    }
+                  },
+                  {
+                    "year at conglomerate": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.591
                     }
                   }
                 ]
@@ -10110,7 +10612,7 @@
                     }
                   },
                   {
-                    "rate": {
+                    "fee": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -10120,13 +10622,13 @@
                     }
                   },
                   {
-                    "fee": {
+                    "budget of leave": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
                       "State": "Suggested",
                       "Type": "Noun",
-                      "Weight": 0.476
+                      "Weight": 0.468
                     }
                   }
                 ],
@@ -14429,6 +14931,32 @@
                   "year"
                 ]
               },
+              "v_measure_measure.ethnicity_count": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Ethnicity Count"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "ethnicity count": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "ethnicity amount": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.727
+                    }
+                  }
+                ]
+              },
               "v_measure_measure.female": {
                 "Definition": {
                   "Binding": {
@@ -14673,6 +15201,190 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.489
+                    }
+                  }
+                ]
+              },
+              "v_measure_measure.hires": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Hires"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "hires": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "rental": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "rent": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "letting": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "lease": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "v_measure_measure.involuntary_attrition_rate": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Involuntary Attrition Rate"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "involuntary attrition rate": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "rate": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "attrition rate": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "involuntary attrition degree": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "involuntary attrition frequency": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "involuntary attrition percentage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "involuntary attrition ratio": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "involuntary attrition quotient": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "attrition degree": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "attrition frequency": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "attrition percentage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "attrition ratio": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "attrition quotient": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
                     }
                   }
                 ]
@@ -15193,6 +15905,208 @@
                   }
                 ]
               },
+              "v_measure_measure.net_change_in_headcount": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Net Change in Headcount"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "net change in headcount": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "headcount": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "in headcount": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "change in headcount": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "change": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "net change": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "net alteration in headcount": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.514
+                    }
+                  },
+                  {
+                    "net modification in headcount": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.514
+                    }
+                  },
+                  {
+                    "net variation in headcount": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.514
+                    }
+                  },
+                  {
+                    "net transformation in headcount": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.514
+                    }
+                  },
+                  {
+                    "net revolution in headcount": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.514
+                    }
+                  },
+                  {
+                    "net conversion in headcount": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.514
+                    }
+                  },
+                  {
+                    "net adjustment in headcount": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.514
+                    }
+                  },
+                  {
+                    "net amendment in headcount": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.514
+                    }
+                  },
+                  {
+                    "alteration in headcount": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "modification in headcount": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  }
+                ]
+              },
+              "v_measure_measure.new_hires": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "New Hires"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "new hires": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "new rental": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "new rent": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "new letting": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "new lease": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  }
+                ]
+              },
               "v_measure_measure.of_active_employees": {
                 "Definition": {
                   "Binding": {
@@ -15581,6 +16495,98 @@
                   }
                 ]
               },
+              "v_measure_measure.of_resignation_CY": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "# of Resignation CY"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "# of resignation CY": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "no of resignation cy": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.748
+                    }
+                  },
+                  {
+                    "num of resignation cy": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.748
+                    }
+                  },
+                  {
+                    "number of resignation cy": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.748
+                    }
+                  }
+                ]
+              },
+              "v_measure_measure.of_resignation_PY": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "# of Resignation PY"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "# of resignation PY": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "no of resignation py": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.748
+                    }
+                  },
+                  {
+                    "num of resignation py": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.748
+                    }
+                  },
+                  {
+                    "number of resignation py": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.748
+                    }
+                  }
+                ]
+              },
               "v_measure_measure.of_resignation_by_reason": {
                 "Definition": {
                   "Binding": {
@@ -15669,6 +16675,278 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.748
+                    }
+                  }
+                ]
+              },
+              "v_measure_measure.overall_attrition_rate": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Overall Attrition Rate"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "overall attrition rate": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "rate": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "attrition rate": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "overall attrition degree": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "overall attrition frequency": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "overall attrition percentage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "overall attrition ratio": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "overall attrition quotient": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "attrition degree": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "attrition frequency": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "attrition percentage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "attrition ratio": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "attrition quotient": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  }
+                ]
+              },
+              "v_measure_measure.terminations": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Terminations"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "terminations": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "v_measure_measure.voluntary_attrition_rate": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Voluntary Attrition Rate"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "voluntary attrition rate": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "rate": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "attrition rate": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "voluntary attrition degree": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "voluntary attrition frequency": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "voluntary attrition percentage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "voluntary attrition ratio": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "voluntary attrition quotient": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "attrition degree": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "attrition frequency": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "attrition percentage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "attrition ratio": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "attrition quotient": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
                     }
                   }
                 ]
@@ -18634,6 +19912,72 @@
                 },
                 "State": "Generated"
               },
+              "fact_employee_has_average_annual_salary": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "fact_employee.average_annual_salary"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_average_annual_salaries",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "fact_employee.average_annual_salary": {
+                    "Target": {
+                      "Entity": "fact_employee.average_annual_salary"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_average_tenure": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "fact_employee.average_tenure"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_average_tenures",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "fact_employee.average_tenure": {
+                    "Target": {
+                      "Entity": "fact_employee.average_tenure"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "fact_employee_has_base_salary": {
                 "Binding": {
                   "ConceptualEntity": "fact_employee"
@@ -19135,6 +20479,39 @@
                 },
                 "State": "Generated"
               },
+              "fact_employee_has_tenure_band": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "fact_employee.tenure_band"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_tenure_bands",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "fact_employee.tenure_band": {
+                    "Target": {
+                      "Entity": "fact_employee.tenure_band"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "fact_employee_has_times_promoted": {
                 "Binding": {
                   "ConceptualEntity": "fact_employee"
@@ -19163,6 +20540,39 @@
                   "fact_employee.times_promoted": {
                     "Target": {
                       "Entity": "fact_employee.times_promoted"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_v_measure_measure_ethnicity_count": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_measure_measure.ethnicity_count"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_ethnicity_count",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "v_measure_measure.ethnicity_count": {
+                    "Target": {
+                      "Entity": "v_measure_measure.ethnicity_count"
                     }
                   }
                 },
@@ -19201,6 +20611,72 @@
                 },
                 "State": "Generated"
               },
+              "fact_employee_has_v_measure_measure_hires": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_measure_measure.hires"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_hires",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "v_measure_measure.hires": {
+                    "Target": {
+                      "Entity": "v_measure_measure.hires"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_v_measure_measure_involuntary_attrition_rate": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_measure_measure.involuntary_attrition_rate"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_involuntary_attrition_rate",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "v_measure_measure.involuntary_attrition_rate": {
+                    "Target": {
+                      "Entity": "v_measure_measure.involuntary_attrition_rate"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "fact_employee_has_v_measure_measure_involuntary_resignation": {
                 "Binding": {
                   "ConceptualEntity": "fact_employee"
@@ -19229,6 +20705,72 @@
                   "v_measure_measure.involuntary_resignation": {
                     "Target": {
                       "Entity": "v_measure_measure.involuntary_resignation"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_v_measure_measure_net_change_in_headcount": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_measure_measure.net_change_in_headcount"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_net_change_in_headcount",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "v_measure_measure.net_change_in_headcount": {
+                    "Target": {
+                      "Entity": "v_measure_measure.net_change_in_headcount"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_v_measure_measure_new_hires": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_measure_measure.new_hires"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_new_hires",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "v_measure_measure.new_hires": {
+                    "Target": {
+                      "Entity": "v_measure_measure.new_hires"
                     }
                   }
                 },
@@ -19366,6 +20908,72 @@
                 },
                 "State": "Generated"
               },
+              "fact_employee_has_v_measure_measure_of_resignation_CY": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_measure_measure.of_resignation_CY"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have__of_resignation_CY",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "v_measure_measure.of_resignation_CY": {
+                    "Target": {
+                      "Entity": "v_measure_measure.of_resignation_CY"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_v_measure_measure_of_resignation_PY": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_measure_measure.of_resignation_PY"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have__of_resignation_PY",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "v_measure_measure.of_resignation_PY": {
+                    "Target": {
+                      "Entity": "v_measure_measure.of_resignation_PY"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "fact_employee_has_v_measure_measure_of_voluntary_resignation": {
                 "Binding": {
                   "ConceptualEntity": "fact_employee"
@@ -19399,6 +21007,105 @@
                 },
                 "State": "Generated"
               },
+              "fact_employee_has_v_measure_measure_overall_attrition_rate": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_measure_measure.overall_attrition_rate"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_overall_attrition_rate",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "v_measure_measure.overall_attrition_rate": {
+                    "Target": {
+                      "Entity": "v_measure_measure.overall_attrition_rate"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_v_measure_measure_terminations": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_measure_measure.terminations"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_terminations",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "v_measure_measure.terminations": {
+                    "Target": {
+                      "Entity": "v_measure_measure.terminations"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_v_measure_measure_voluntary_attrition_rate": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_measure_measure.voluntary_attrition_rate"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_voluntary_attrition_rate",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "v_measure_measure.voluntary_attrition_rate": {
+                    "Target": {
+                      "Entity": "v_measure_measure.voluntary_attrition_rate"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "fact_employee_has_v_measure_measure_voluntary_resignation": {
                 "Binding": {
                   "ConceptualEntity": "fact_employee"
@@ -19427,6 +21134,39 @@
                   "v_measure_measure.voluntary_resignation": {
                     "Target": {
                       "Entity": "v_measure_measure.voluntary_resignation"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_year_at_company": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "fact_employee.year_at_company"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_year_at_company",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "fact_employee.year_at_company": {
+                    "Target": {
+                      "Entity": "fact_employee.year_at_company"
                     }
                   }
                 },
@@ -21609,6 +23349,11 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "description": "Unique identifier for each employee",
             "formatString": "0",
@@ -21990,6 +23735,90 @@
             "isDataTypeInferred": true,
             "lineageTag": "f3603a80-be2d-48bd-a5db-68ed71497bc3",
             "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "years_at_company",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "DATEDIFF(fact_employee[Hire Date],TODAY(),YEAR)",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "bf8357b5-e278-44f9-8dce-15375e1f7050",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "tenure_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(TRUE(),",
+              "fact_employee[years_at_company]<1,\"<1 Year\",",
+              "fact_employee[years_at_company]>=1 &&fact_employee[years_at_company]<=3,\"1-3 Years\",",
+              "fact_employee[years_at_company]>=4 && fact_employee[years_at_company]<=7,\"4-7 Years\",\"8+ Years\")"
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "8391f283-e97a-4c7a-853f-2f0fd91bf7b2",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Average Tenure",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "expression": [
+              "",
+              "AVERAGEX(VALUES(fact_employee[Employee ID]),fact_employee[years_at_company])"
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "01a651f2-fed5-446f-8501-f3ed5edff163",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Average Annual Salary",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "expression": [
+              "",
+              "AVERAGEX(",
+              "    VALUES(fact_employee[Employee ID]),",
+              "    fact_employee[Base Salary ($)]",
+              ")",
+              ""
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "9e3d164f-bf33-4a61-a3ae-f19ee7408e5b",
+            "summarizeBy": "sum",
             "type": "calculated"
           }
         ],
@@ -22528,6 +24357,11 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "int64",
@@ -23268,8 +25102,12 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
-            "isHidden": true,
             "lineageTag": "f34ec3ef-b5cd-429a-a729-672ce04f6232",
             "sourceColumn": "Country",
             "summarizeBy": "none"
@@ -24383,6 +26221,63 @@
             ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "df55039d-15aa-4c59-826f-09a5ca3f380e"
+          },
+          {
+            "name": "Ethnicity Count",
+            "expression": "COUNTROWS(fact_employee)",
+            "formatString": "0",
+            "lineageTag": "bcf08fb4-80d4-4f49-9411-cca7f800042e"
+          },
+          {
+            "name": "Hires",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNT(fact_employee[Employee ID]),",
+              "    fact_employee[Hire Date] >= MIN('Date'[Date]),",
+              "    fact_employee[Hire Date] <= MAX('Date'[Date])",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "30425783-3171-485d-99ea-822a02d149ce"
+          },
+          {
+            "name": "Terminations",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNT(fact_employee[Employee ID]),",
+              "    fact_employee[Current Employment Status] = \"Resigned\" || ",
+              "    fact_employee[Current Employment Status] = \"Terminated\"",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "245c7528-abf1-4a2b-9424-f2e06c8be702"
+          },
+          {
+            "name": "Net Change in Headcount",
+            "expression": [
+              "",
+              "[Hires] - [Terminations]",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "3085b68f-6b86-480b-8af2-e0672147aff8"
+          },
+          {
+            "name": "Overtime Headcount",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNT(fact_performance[Employee ID]),",
+              "    fact_performance[Overtime] > 0",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "0a1239a6-0b9f-45a8-96d6-ff524acb60d6"
           }
         ],
         "partitions": [
