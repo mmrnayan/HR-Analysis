@@ -8,7 +8,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.138.1203.0 (24.11)"
+        "value": "2.138.1452.0 (24.11)"
       },
       {
         "name": "PBI_QueryOrder",
@@ -7959,256 +7959,6 @@
                   "day"
                 ]
               },
-              "fact_employee.average_annual_salary": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "fact_employee",
-                    "ConceptualProperty": "Average Annual Salary"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "average annual salary": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "salary": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  },
-                  {
-                    "annual salary": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  },
-                  {
-                    "average annual income": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.508
-                    }
-                  },
-                  {
-                    "average annual money": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.508
-                    }
-                  },
-                  {
-                    "average annual remuneration": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.508
-                    }
-                  },
-                  {
-                    "average annual payment": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.508
-                    }
-                  },
-                  {
-                    "annual income": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "annual money": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "annual remuneration": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "annual payment": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "average annual pay": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.492
-                    }
-                  },
-                  {
-                    "average annual wage": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.492
-                    }
-                  }
-                ]
-              },
-              "fact_employee.average_tenure": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "fact_employee",
-                    "ConceptualProperty": "Average Tenure"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "average tenure": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "tenure": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  },
-                  {
-                    "average tenancy": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "average occupancy": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "average occupation": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "tenancy": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "occupancy": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "occupation": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "average freehold": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.485
-                    }
-                  },
-                  {
-                    "average lease": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.485
-                    }
-                  },
-                  {
-                    "average contract": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.485
-                    }
-                  },
-                  {
-                    "freehold": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.476
-                    }
-                  }
-                ]
-              },
               "fact_employee.base_salary": {
                 "Definition": {
                   "Binding": {
@@ -14929,32 +14679,6 @@
                 ],
                 "Units": [
                   "year"
-                ]
-              },
-              "v_measure_measure.ethnicity_count": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "_measure",
-                    "ConceptualProperty": "Ethnicity Count"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "ethnicity count": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "ethnicity amount": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.727
-                    }
-                  }
                 ]
               },
               "v_measure_measure.female": {
@@ -23772,54 +23496,6 @@
             "lineageTag": "8391f283-e97a-4c7a-853f-2f0fd91bf7b2",
             "summarizeBy": "none",
             "type": "calculated"
-          },
-          {
-            "name": "Average Tenure",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "expression": [
-              "",
-              "AVERAGEX(VALUES(fact_employee[Employee ID]),fact_employee[years_at_company])"
-            ],
-            "isDataTypeInferred": true,
-            "lineageTag": "01a651f2-fed5-446f-8501-f3ed5edff163",
-            "summarizeBy": "sum",
-            "type": "calculated"
-          },
-          {
-            "name": "Average Annual Salary",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "expression": [
-              "",
-              "AVERAGEX(",
-              "    VALUES(fact_employee[Employee ID]),",
-              "    fact_employee[Base Salary ($)]",
-              ")",
-              ""
-            ],
-            "isDataTypeInferred": true,
-            "lineageTag": "9e3d164f-bf33-4a61-a3ae-f19ee7408e5b",
-            "summarizeBy": "sum",
-            "type": "calculated"
           }
         ],
         "lineageTag": "e6a88bb3-3e63-4601-bbfd-7f75534a6f34",
@@ -24143,7 +23819,7 @@
           },
           {
             "name": "PBI_ResultType",
-            "value": "Exception"
+            "value": "Table"
           }
         ],
         "columns": [
@@ -26223,12 +25899,6 @@
             "lineageTag": "df55039d-15aa-4c59-826f-09a5ca3f380e"
           },
           {
-            "name": "Ethnicity Count",
-            "expression": "COUNTROWS(fact_employee)",
-            "formatString": "0",
-            "lineageTag": "bcf08fb4-80d4-4f49-9411-cca7f800042e"
-          },
-          {
             "name": "Hires",
             "expression": [
               "",
@@ -26278,6 +25948,76 @@
             ],
             "formatString": "0",
             "lineageTag": "0a1239a6-0b9f-45a8-96d6-ff524acb60d6"
+          },
+          {
+            "name": "Average Tenure",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "AVERAGE(fact_employee[years_at_company])",
+              ""
+            ],
+            "lineageTag": "2ac284fd-8a0f-4d92-9392-729bd79bf1d7"
+          },
+          {
+            "name": "Average Annual Salary",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "AVERAGE(fact_employee[Base Salary ($)])",
+              ""
+            ],
+            "lineageTag": "3049678d-7c0a-48d6-a2f0-193b50f5ecc0"
+          },
+          {
+            "name": "Max_age_female",
+            "expression": "CALCULATE(MAX(fact_employee[Age]),fact_employee[Gender]=\"Female\")",
+            "formatString": "0",
+            "lineageTag": "f55345a8-c51d-41a7-9163-87e603987769"
+          },
+          {
+            "name": "Max_age_male",
+            "expression": "CALCULATE(MAX(fact_employee[Age]),fact_employee[Gender]=\"Male\")",
+            "formatString": "0",
+            "lineageTag": "1646bc81-78f6-49df-a31f-fd381d179553"
+          },
+          {
+            "name": "Max-salary(female)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": "CALCULATE(MAX(fact_employee[Base Salary ($)]),fact_employee[Gender]=\"Female\")",
+            "lineageTag": "33552117-728d-425d-a94f-01efe91ddf31"
+          },
+          {
+            "name": "Max-salary(male)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": "CALCULATE(MAX(fact_employee[Base Salary ($)]),fact_employee[Gender]=\"Male\")",
+            "lineageTag": "c8445b71-cd44-472b-b2fb-9820a25aada4"
+          },
+          {
+            "name": "ethnicity_count",
+            "expression": "DISTINCTCOUNT(fact_employee[Ethnicity])",
+            "formatString": "0",
+            "lineageTag": "2ce5eae2-9e21-4612-a8cc-f649bc0f86b9"
           }
         ],
         "partitions": [
