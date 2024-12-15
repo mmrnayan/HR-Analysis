@@ -7959,134 +7959,6 @@
                   "day"
                 ]
               },
-              "fact_employee.average_annual_salary": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "fact_employee",
-                    "ConceptualProperty": "Average Annual Salary"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "average annual salary": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "salary": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  },
-                  {
-                    "annual salary": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  },
-                  {
-                    "average annual income": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.508
-                    }
-                  },
-                  {
-                    "average annual money": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.508
-                    }
-                  },
-                  {
-                    "average annual remuneration": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.508
-                    }
-                  },
-                  {
-                    "average annual payment": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.508
-                    }
-                  },
-                  {
-                    "annual income": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "annual money": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "annual remuneration": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "annual payment": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "average annual pay": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.492
-                    }
-                  },
-                  {
-                    "average annual wage": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.492
-                    }
-                  }
-                ]
-              },
               "fact_employee.average_tenure": {
                 "Definition": {
                   "Binding": {
@@ -23801,65 +23673,70 @@
             "type": "calculated"
           },
           {
-            "name": "Average Annual Salary",
+            "name": "Risk Category",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
               }
             ],
-            "dataType": "double",
+            "dataType": "string",
             "expression": [
               "",
-              "AVERAGEX(",
-              "    VALUES(fact_employee[Employee ID]),",
-              "    fact_employee[Base Salary ($)]",
-              ")",
-              ""
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Resignation Probability] >= 75, \"Very High Risk\",",
+              "    [Resignation Probability] >= 50, \"High Risk\",",
+              "    [Resignation Probability] >= 25, \"Medium Risk\",",
+              "    [Resignation Probability] >= 0, \"Low Risk\",",
+              "    \"Unknown\"",
+              ")"
             ],
             "isDataTypeInferred": true,
-            "lineageTag": "9e3d164f-bf33-4a61-a3ae-f19ee7408e5b",
+            "lineageTag": "4cb97585-9403-4f02-b7b7-6a609cbdd74b",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Actual Value",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": [
+              "",
+              "IF(fact_employee[Current Employment Status] = \"Resigned\", 1, 0)"
+            ],
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "f9c932e6-72f9-426c-a9ce-0ab756515a36",
             "summarizeBy": "sum",
             "type": "calculated"
           },
           {
-            "name": "Categorical Score",
+            "name": "Predicted Value",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
               }
             ],
-            "dataType": "double",
+            "dataType": "int64",
             "expression": [
               "",
-              "VAR DepartmentScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Department]))",
-              "VAR JobTitleScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Job Title]))",
-              "VAR LocationScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Country]))",
-              "VAR EthnicityScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Ethnicity]))",
-              "VAR OrgLevelScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Organization Level]))",
-              "VAR EducationScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Education Level]))",
-              "VAR GenderScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Gender]))",
-              "VAR EmpStatusScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Employment Status]))",
-              "VAR EmpTypeScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Employment Type]))",
-              "RETURN",
-              "(DepartmentScore + JobTitleScore + LocationScore + EthnicityScore + OrgLevelScore + EducationScore + GenderScore + EmpStatusScore + EmpTypeScore) / 9 * 0.4"
+              "IF([Resignation Probability] >= 30, 1, 0)"
             ],
+            "formatString": "0",
             "isDataTypeInferred": true,
-            "lineageTag": "844482fb-9566-458d-8403-d8fc6acc5e4d",
+            "lineageTag": "465e7243-4cc4-4f5b-ad76-6c742f6ac247",
             "summarizeBy": "sum",
             "type": "calculated"
           },
           {
-            "name": "Numerical Score",
+            "name": "Resignation Probability",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -23873,70 +23750,19 @@
             "dataType": "double",
             "expression": [
               "",
-              "VAR PromotionScore = 1 - DIVIDE(",
-              "    SUM(fact_employee[Times Promoted]), ",
-              "    CALCULATE(MAX(fact_employee[Times Promoted]), ALL(fact_employee)), ",
-              "    0",
-              ")",
-              "",
-              "VAR TenureScore = SWITCH(",
-              "    SELECTEDVALUE(fact_employee[tenure_band]),",
-              "    \"<1 Year\", 1,",
-              "    \"1-3 Years\", 0.7,",
-              "    \"3-6 Years\", 0.4,",
-              "    \"6+ Years\", 0.2,",
-              "    0 // Default case",
-              ")",
-              "",
-              "VAR MgmtExpScore = 1 - DIVIDE(",
-              "    AVERAGE(fact_resigned[Management/Team Experience Score]), ",
-              "    5, ",
-              "    0",
-              ")",
-              "",
-              "VAR SatisfactionScore = 1 - DIVIDE(",
-              "    AVERAGE(exit_interview_survey[Work Environment Satisfaction Score]), ",
-              "    5, ",
-              "    0",
-              ")",
-              "",
-              "VAR TeamSizeScore = DIVIDE(",
-              "    AVERAGE(fact_performance[Team Size]), ",
-              "    CALCULATE(MAX(fact_performance[Team Size]), ALL(fact_performance)), ",
-              "    0",
-              ")",
-              "",
-              "VAR WorkingHoursScore = DIVIDE(",
-              "    AVERAGE(fact_performance[Working Hours]), ",
-              "    CALCULATE(MAX(fact_performance[Working Hours]), ALL(fact_performance)), ",
-              "    0",
-              ")",
-              "",
-              "VAR ProjectScore = DIVIDE(",
-              "    SUM(fact_performance[Projects Handled]), ",
-              "    SUM(fact_performance[Project Target]), ",
-              "    0",
-              ")",
-              "",
-              "VAR IncentiveScore = 1 - DIVIDE(",
-              "    SUM(fact_performance[Incentive Amount ($)]), ",
-              "    CALCULATE(MAX(fact_performance[Incentive Amount ($)]), ALL(fact_performance)), ",
-              "    0",
-              ")",
-              "",
-              " VAR BonusScore = 1 - DIVIDE(",
-              "    SUM(fact_performance[Bonus ($)]), ",
-              "    CALCULATE(MAX(fact_performance[Bonus ($)]), ALL(fact_performance)), ",
-              "    0",
-              ")",
-              "",
+              "VAR CurrentEmpID = fact_employee[Employee ID]",
+              "VAR CurrentStatus = fact_employee[Current Employment Status]",
+              "VAR MaxScore = 1",
+              "VAR MinScore = 0",
               "RETURN",
-              "(PromotionScore + TenureScore + MgmtExpScore + SatisfactionScore + ",
-              " TeamSizeScore + WorkingHoursScore + ProjectScore + IncentiveScore + ",
-              " BonusScore) / 9 * 0.6"
+              "IF(",
+              "    NOT(ISBLANK([Risk Score])),",
+              "    MIN(MAX(DIVIDE([Risk Score] - MinScore, MaxScore - MinScore) * 100, 0), 100),",
+              "    0",
+              ")"
             ],
             "isDataTypeInferred": true,
-            "lineageTag": "2588de62-3a63-4eba-8ce4-dab44de5995a",
+            "lineageTag": "2a6f5fc7-a170-4857-932f-4053e3310ba9",
             "summarizeBy": "sum",
             "type": "calculated"
           }
@@ -26304,7 +26130,7 @@
           },
           {
             "name": "Overall Attrition Rate",
-            "displayFolder": "Resigned",
+            "displayFolder": "Resigned\\Attrition Analysis",
             "expression": [
               "",
               "DIVIDE(",
@@ -26318,7 +26144,7 @@
           },
           {
             "name": "Voluntary Attrition Rate",
-            "displayFolder": "Resigned",
+            "displayFolder": "Resigned\\Attrition Analysis",
             "expression": [
               "",
               "DIVIDE(",
@@ -26332,7 +26158,7 @@
           },
           {
             "name": "Involuntary Attrition Rate",
-            "displayFolder": "Resigned",
+            "displayFolder": "Resigned\\Attrition Analysis",
             "expression": [
               "",
               "DIVIDE(",
@@ -26408,7 +26234,7 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
-            "displayFolder": "Resigned",
+            "displayFolder": "Resigned\\Attrition Analysis",
             "expression": [
               "",
               "CALCULATE([Overall Attrition Rate], ",
@@ -26425,7 +26251,7 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
-            "displayFolder": "Resigned",
+            "displayFolder": "Resigned\\Attrition Prediction",
             "expression": [
               "",
               "VAR DepartmentScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Department]))",
@@ -26450,7 +26276,7 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
-            "displayFolder": "Resigned",
+            "displayFolder": "Resigned\\Attrition Prediction",
             "expression": [
               "",
               "VAR PromotionScore = 1 - DIVIDE(",
@@ -26525,7 +26351,7 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
-            "displayFolder": "Resigned",
+            "displayFolder": "Resigned\\Attrition Prediction",
             "expression": "[Categorical Score] + [Numerical Score]",
             "lineageTag": "f0a4adb5-2455-4f60-9382-94a793fa58e1"
           },
@@ -26537,7 +26363,7 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
-            "displayFolder": "Resigned",
+            "displayFolder": "Resigned\\Attrition Analysis",
             "expression": [
               "",
               "VAR CurrentEmpID = SELECTEDVALUE(fact_employee[Employee ID])",
@@ -26563,6 +26389,7 @@
           },
           {
             "name": "Risk Category",
+            "displayFolder": "Resigned\\Attrition Prediction",
             "expression": [
               "",
               "SWITCH(",
@@ -26577,57 +26404,211 @@
             "lineageTag": "935a708b-4aac-4d4c-aeb8-28a10b669979"
           },
           {
-            "name": "Risk Score1",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "expression": "[Categorical Score] + [Numerical Score]",
-            "lineageTag": "4dc879fa-3cf2-4569-81ca-c90aa864d022"
-          },
-          {
-            "name": "_Resignation Probability",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "expression": [
-              "",
-              "VAR CurrentEmpID = SELECTEDVALUE(fact_employee[Employee ID])",
-              "VAR CurrentStatus = SELECTEDVALUE(fact_employee[Current Employment Status])",
-              "VAR MaxScore = 1",
-              "VAR MinScore = 0",
-              "RETURN",
-              "IF(",
-              "    AND(",
-              "        NOT(ISBLANK([Risk Score1])),",
-              "        CurrentStatus = \"Active\"",
-              "    ),",
-              "    MIN(MAX(DIVIDE([Risk Score] - MinScore, MaxScore - MinScore) * 100, 0), 100),",
-              "    IF(",
-              "        CurrentStatus = \"Resigned\",",
-              "        BLANK(),",
-              "        0",
-              "    )",
-              ")",
-              ""
-            ],
-            "lineageTag": "038b28fa-bf41-4755-823c-da9f16273f12"
-          },
-          {
             "name": "Very High Risk Employee",
+            "displayFolder": "Resigned\\Attrition Prediction",
             "expression": [
               "",
               "CALCULATE(",
               "    COUNTROWS(fact_employee),",
-              "    [Risk Category]=\"Very High Risk\"",
+              "    fact_employee[Risk Category]=\"Very High Risk\" && fact_employee[Current Employment Status]=\"Active\"",
               ")"
             ],
+            "formatString": "0",
             "lineageTag": "93de24d2-2e23-49d5-903a-6134db67390b"
+          },
+          {
+            "name": "High Risk Employee",
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_employee),",
+              "    fact_employee[Risk Category]=\"High Risk\" && fact_employee[Current Employment Status]=\"Active\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "69d23417-fc81-4d0d-b70f-3d2326604d4d"
+          },
+          {
+            "name": "Medium Risk Employee",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_employee),",
+              "    fact_employee[Risk Category]=\"Medium Risk\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "29ea97dd-0d88-420d-818a-a762b1b197ef"
+          },
+          {
+            "name": "Low Risk Employee",
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_employee),",
+              "    fact_employee[Risk Category]=\"Low Risk\" && fact_employee[Current Employment Status]=\"Active\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "17789e82-490d-4f9c-847d-c52e7af0bc47"
+          },
+          {
+            "name": "True Positives",
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_employee),",
+              "    fact_employee[Current Employment Status] = \"Resigned\",",
+              "    fact_employee[Resignation Probability] >= 30",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "7998f9a6-a09a-4210-9bf3-3667dc3475f9"
+          },
+          {
+            "name": "False Positives",
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_employee),",
+              "    FILTER(",
+              "        fact_employee,",
+              "        fact_employee[Current Employment Status] = \"Active\" &&",
+              "        [Resignation Probability] >= 30",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "9aa06805-fb88-467c-9d07-f97f22486bb5"
+          },
+          {
+            "name": "False Negetives",
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_employee),",
+              "    FILTER(",
+              "        fact_employee,",
+              "        fact_employee[Current Employment Status] = \"Resigned\" &&",
+              "        [Resignation Probability] < 30",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "311a161b-2249-44ca-8ba1-0a9c4eb6aca6"
+          },
+          {
+            "name": "Precision",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    [True Positives],",
+              "    [True Positives] + [False Positives],",
+              "    0",
+              ")"
+            ],
+            "lineageTag": "2965059d-521b-4f6e-80d7-9a9ca91fefea"
+          },
+          {
+            "name": "Recall",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    [True Positives],",
+              "    [True Positives] + [False Negetives],",
+              "    0",
+              ")"
+            ],
+            "lineageTag": "0aab47b2-073a-4086-be32-51d4384abc30"
+          },
+          {
+            "name": "F1 Score",
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": [
+              "",
+              "VAR _Precision = [Precision]",
+              "VAR _Recall = [Recall]",
+              "RETURN",
+              "2 * DIVIDE(_Precision * _Recall, _Precision + _Recall, 0)"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "7dea056a-e904-4462-8bfb-d2360d0e7f1c"
+          },
+          {
+            "name": "F1 Score Not Resigned",
+            "displayFolder": "Resigned\\Attrition Analysis",
+            "expression": [
+              "",
+              "VAR _TruePositives = ",
+              "    CALCULATE(",
+              "        [True Positives],",
+              "        fact_employee[Current Employment Status] = \"Active\"",
+              "    )",
+              "VAR _FalsePositives = ",
+              "    CALCULATE(",
+              "        [False Positives],",
+              "        fact_employee[Current Employment Status] = \"Active\"",
+              "    )",
+              "VAR _FalseNegatives = ",
+              "    CALCULATE(",
+              "        [False Negetives],",
+              "        fact_employee[Current Employment Status] = \"Active\"",
+              "    )",
+              "VAR _Precision = DIVIDE(_TruePositives, _TruePositives + _FalsePositives, 0)",
+              "VAR _Recall = DIVIDE(_TruePositives, _TruePositives + _FalseNegatives, 0)",
+              "RETURN",
+              "2 * DIVIDE(_Precision * _Recall, _Precision + _Recall, 0)"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "283f1abf-2835-457c-ab0e-0af5fe9964de"
+          },
+          {
+            "name": "F1 Score Resigned",
+            "displayFolder": "Resigned\\Attrition Analysis",
+            "expression": [
+              "",
+              "VAR _TruePositives = ",
+              "    CALCULATE(",
+              "        [True Positives],",
+              "        fact_employee[Current Employment Status] = \"Resigned\"",
+              "    )",
+              "VAR _FalsePositives = ",
+              "    CALCULATE(",
+              "        [False Positives],",
+              "        fact_employee[Current Employment Status] = \"Resigned\"",
+              "    )",
+              "VAR _FalseNegatives = ",
+              "    CALCULATE(",
+              "        [False Negetives],",
+              "        fact_employee[Current Employment Status] = \"Resigned\"",
+              "    )",
+              "VAR _Precision = DIVIDE(_TruePositives, _TruePositives + _FalsePositives, 0)",
+              "VAR _Recall = DIVIDE(_TruePositives, _TruePositives + _FalseNegatives, 0)",
+              "RETURN",
+              "2 * DIVIDE(_Precision * _Recall, _Precision + _Recall, 0)",
+              ""
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "ffb3e192-ba08-430f-8c08-93bd9d4c5f1a"
           }
         ],
         "partitions": [
