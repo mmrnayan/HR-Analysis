@@ -12,7 +12,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"dim_salary\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -23060,7 +23060,7 @@
             "value": "Text"
           }
         ],
-        "expression": "\"D:\\high performance project\\project\\dataset final\" meta [IsParameterQuery=true, Type=\"Any\", IsParameterQueryRequired=true]",
+        "expression": "\"\"\"D:\\high performance project\\project\\dataset final\\HR-Analysis\\dataset final\"\"\" meta [IsParameterQuery=true, Type=\"Any\", IsParameterQueryRequired=true]",
         "kind": "m",
         "lineageTag": "ff0fe4ac-6dc7-4cf2-8195-dba1ca802663",
         "queryGroup": "folder path"
@@ -23324,6 +23324,25 @@
         "isActive": false,
         "toColumn": "Employee ID",
         "toTable": "dim_employee"
+      },
+      {
+        "name": "AutoDetected_3fc28cf7-b8f0-4581-b746-70bbea756013",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "Employee ID",
+        "fromTable": "dim_salary",
+        "toColumn": "Employee ID",
+        "toTable": "dim_employee"
+      },
+      {
+        "name": "AutoDetected_83c6f69d-2661-44cb-a917-0a95bdeaa3c7",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "Base Salary ($)",
+        "fromTable": "dim_salary",
+        "isActive": false,
+        "toColumn": "Base Salary ($)",
+        "toTable": "fact_employee"
       }
     ],
     "sourceQueryCulture": "en-US",
@@ -23831,7 +23850,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\employee.csv\"),[Delimiter=\",\", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\HR-Analysis\\dataset final\\employee.csv\"),[Delimiter=\",\", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Full Name\", type text}, {\"Date of Birth\", type date}, {\"Gender\", type text}, {\"Education Level\", type text}, {\"Hire Date\", type date}, {\"Department\", type text}, {\"Job Title\", type text}, {\"Organization Level\", type text}, {\"Region\", type text}, {\"Country\", type text}, {\"Latitude\", type number}, {\"Longitude\", type number}, {\"Employment Status\", type text}, {\"Employment Type\", type text}, {\"Base Salary ($)\", type number}, {\"Times Promoted\", Int64.Type}, {\"Years at Company\", Int64.Type}, {\"Current Employment Status\", type text}, {\"Annual Leave Entitlement (days)\", Int64.Type}, {\"Ethnicity\", type text}}),",
                 "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Years at Company\"})",
@@ -24013,7 +24032,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" &  \"\\employee_feedback_survey.csv\"),[Delimiter=\",\", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\HR-Analysis\\dataset final\\employee_feedback_survey.csv\"),[Delimiter=\",\", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Year\", Int64.Type}, {\"Performance Feedback ID\", Int64.Type}, {\"Goal Clarity\", type text}, {\"Support for Goals\", type text}, {\"Manager Feedback Effectiveness\", Int64.Type}, {\"Team Collaboration Score\", Int64.Type}, {\"Additional Support Needed\", type text}, {\"Career Growth Satisfaction\", type text}, {\"Overall Performance Rating\", Int64.Type}})",
                 "in",
@@ -24123,7 +24142,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\exit_interview_survey.csv\"),[Delimiter=\",\", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\HR-Analysis\\dataset final\\exit_interview_survey.csv\"),[Delimiter=\",\", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Exit Interview ID\", Int64.Type}, {\"Primary Resignation Reason\", type text}, {\"Work Environment Satisfaction Score\", Int64.Type}, {\"Support Received\", type text}})",
                 "in",
@@ -24143,7 +24162,7 @@
           },
           {
             "name": "PBI_ResultType",
-            "value": "Exception"
+            "value": "Table"
           }
         ],
         "columns": [
@@ -24326,7 +24345,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\leave.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\HR-Analysis\\dataset final\\leave.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Leave Start Date\", type date}, {\"Leave End Date\", type date}}),",
                 "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Leave Reason ID\"})",
@@ -24552,7 +24571,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\HR-Analysis\\dataset final\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}})",
                 "in",
@@ -24615,7 +24634,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\resignation_reason.csv\"),[Delimiter=\",\", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\HR-Analysis\\dataset final\\resignation_reason.csv\"),[Delimiter=\",\", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Resignation Reason ID\", Int64.Type}, {\"Reason Description\", type text}})",
                 "in",
@@ -24802,7 +24821,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\resigned_table.csv\"),[Delimiter=\",\", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\HR-Analysis\\dataset final\\resigned_table.csv\"),[Delimiter=\",\", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Resigned Date\", type date}, {\"Resigned Type\", type text}, {\"Resigned Reason\", type text}, {\"Work Environment Feedback\", type text}, {\"Management/Team Experience Score\", Int64.Type}, {\"Level at Exit\", type text}, {\"Resignation Reason ID\", Int64.Type}}),",
                 "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Resigned Reason\"}),",
@@ -24905,7 +24924,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\training_development.csv\"),[Delimiter=\",\", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\HR-Analysis\\dataset final\\training_development.csv\"),[Delimiter=\",\", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Training Session ID\", Int64.Type}, {\"Training Completion Date\", type date}, {\"Certification Achieved\", type logical}}),",
                 "    #\"Sorted Rows\" = Table.Sort(#\"Changed Type\",{{\"Training Completion Date\", Order.Ascending}})",
@@ -24998,7 +25017,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\training_session.csv\"),[Delimiter=\",\", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\HR-Analysis\\dataset final\\training_session.csv\"),[Delimiter=\",\", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Training Session ID\", Int64.Type}, {\"Training Name\", type text}, {\"Training Type\", type text}, {\"Duration Hours\", Int64.Type}})",
                 "in",
@@ -26487,6 +26506,191 @@
                 "}"
               ],
               "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_salary",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "Name"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1f51a133-2e42-47b5-a0f1-91d734d95f70",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Base Salary ($)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "85e7ca3d-d8bd-4df3-a640-fc7fca9a726c",
+            "sourceColumn": "Base Salary ($)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Home Rent",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "expression": "dim_salary[Base Salary ($)]*.40",
+            "isDataTypeInferred": true,
+            "lineageTag": "f312be6c-0c8e-4c8c-a9fe-6e1807c127f3",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Conveyance allowance",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "expression": "dim_salary[Base Salary ($)]*.08",
+            "isDataTypeInferred": true,
+            "lineageTag": "ad0f25c2-9027-4499-8b80-f4540f00ad5a",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Medical",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "expression": "dim_salary[Base Salary ($)]*.05",
+            "isDataTypeInferred": true,
+            "lineageTag": "ae95c945-b66b-42f3-8bc9-899e7277c3cb",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Gross Salary",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "expression": "dim_salary[Base Salary ($)]+dim_salary[Home Rent]+dim_salary[Conveyance allowance]+dim_salary[Medical]",
+            "isDataTypeInferred": true,
+            "lineageTag": "5f1bc706-3510-496b-b86f-0d9bc8248732",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Provident Fund",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "expression": "dim_salary[Base Salary ($)]*.12",
+            "isDataTypeInferred": true,
+            "lineageTag": "37a51b53-2a63-46ee-8b2c-ddfc58b17746",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Salary",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "expression": "dim_salary[Gross Salary]-dim_salary[Provident Fund]",
+            "isDataTypeInferred": true,
+            "lineageTag": "a1be4bc5-298a-461e-88bd-100965ce0d5b",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "0068e122-415a-4a47-a0bb-d8e4060f78b3",
+        "partitions": [
+          {
+            "name": "dim_salary",
+            "mode": "import",
+            "queryGroup": "Data\\dim tables",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\HR-Analysis\\dataset final\\employee.csv\"),[Delimiter=\",\", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Full Name\", type text}, {\"Date of Birth\", type date}, {\"Gender\", type text}, {\"Education Level\", type text}, {\"Hire Date\", type date}, {\"Department\", type text}, {\"Job Title\", type text}, {\"Organization Level\", type text}, {\"Region\", type text}, {\"Country\", type text}, {\"Latitude\", type number}, {\"Longitude\", type number}, {\"Employment Status\", type text}, {\"Employment Type\", type text}, {\"Base Salary ($)\", type number}, {\"Times Promoted\", Int64.Type}, {\"Years at Company\", Int64.Type}, {\"Current Employment Status\", type text}, {\"Annual Leave Entitlement (days)\", Int64.Type}, {\"Ethnicity\", type text}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Years at Company\", \"Full Name\", \"Date of Birth\", \"Gender\", \"Education Level\", \"Hire Date\", \"Department\", \"Job Title\", \"Organization Level\", \"Region\", \"Country\", \"Latitude\", \"Longitude\", \"Employment Status\", \"Employment Type\", \"Times Promoted\", \"Current Employment Status\", \"Annual Leave Entitlement (days)\", \"Ethnicity\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ],
+              "type": "m"
             }
           }
         ]

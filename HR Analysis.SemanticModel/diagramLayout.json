@@ -11,7 +11,7 @@
         {
           "location": {
             "x": 2249.3004256491868,
-            "y": 1563.4421345421331
+            "y": 2856.7287379624822
           },
           "nodeIndex": "date",
           "nodeLineageTag": "afc9da10-b4d1-40a7-b953-63256aeaaca5",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 521.71941313856814,
-            "y": 1580.2926785578209
+            "y": 2873.5792819781695
           },
           "nodeIndex": "dim_department",
           "nodeLineageTag": "c3f47ab2-8172-4af8-be4f-bb5e2174ab1d",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 1075.9683186093434,
-            "y": 1306.7313138091456
+            "y": 2600.0179172294943
           },
           "nodeIndex": "dim_employee",
           "nodeLineageTag": "17b58dde-a5cd-4358-a7cf-80afe5bb402e",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 1551.622887069756,
-            "y": 1578.4609745520427
+            "y": 2871.7475779723914
           },
           "nodeIndex": "dim_jobtitle",
           "nodeLineageTag": "80c626fc-bd47-43e1-8ded-26e9380e64fa",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 2330.8522016711831,
-            "y": 2429.7464513601972
+            "y": 3723.0330547805456
           },
           "nodeIndex": "dim_leaveReason",
           "nodeLineageTag": "e21939e8-df7f-442b-8be1-d2d4240124ce",
@@ -76,7 +76,7 @@
         {
           "location": {
             "x": 2041.9453126243466,
-            "y": 2453.5618780900586
+            "y": 3746.8484815104071
           },
           "nodeIndex": "dim_leaveType",
           "nodeLineageTag": "7bd7c101-5aa8-4a2a-973a-1ca83d7c99f0",
@@ -89,7 +89,7 @@
         {
           "location": {
             "x": 1062.5254023091536,
-            "y": 1034.6292827362788
+            "y": 2327.9158861566275
           },
           "nodeIndex": "dim_location",
           "nodeLineageTag": "da0152a7-7864-45be-a65e-896f2fb909e5",
@@ -102,7 +102,7 @@
         {
           "location": {
             "x": 99.4112123165715,
-            "y": 2242.0738740961742
+            "y": 3535.3604775165227
           },
           "nodeIndex": "dim_resignationReason",
           "nodeLineageTag": "4e2d9ba2-9896-4b4d-9c44-d2c1150f3ef0",
@@ -115,7 +115,7 @@
         {
           "location": {
             "x": 1708.0238052025127,
-            "y": 2896.6567857363279
+            "y": 4189.9433891566769
           },
           "nodeIndex": "dim_trainingSession",
           "nodeLineageTag": "f50332de-e497-4b96-b6a1-28823abf69d9",
@@ -128,7 +128,7 @@
         {
           "location": {
             "x": 159.52431675013463,
-            "y": 2470.1797281567833
+            "y": 3763.4663315771318
           },
           "nodeIndex": "employee_feedback_survey",
           "nodeLineageTag": "26403e01-807b-4741-af4f-62d5dbbe6240",
@@ -141,7 +141,7 @@
         {
           "location": {
             "x": 82.2132461917318,
-            "y": 1943.8132180107934
+            "y": 3237.0998214311421
           },
           "nodeIndex": "exit_interview_survey",
           "nodeLineageTag": "962dcf3d-53c0-4da3-90aa-c40ad780fe00",
@@ -154,7 +154,7 @@
         {
           "location": {
             "x": 1110.4233260480671,
-            "y": 1757.4273126208248
+            "y": 3050.7139160411734
           },
           "nodeIndex": "fact_employee",
           "nodeLineageTag": "e6a88bb3-3e63-4601-bbfd-7f75534a6f34",
@@ -167,7 +167,7 @@
         {
           "location": {
             "x": 1743.8682391853511,
-            "y": 2228.2622177687563
+            "y": 3521.5488211891047
           },
           "nodeIndex": "fact_leave",
           "nodeLineageTag": "81376d4a-6a2f-4308-9e15-b8d0bb7595f0",
@@ -180,7 +180,7 @@
         {
           "location": {
             "x": 489.97675763049017,
-            "y": 2471.5194744798337
+            "y": 3764.8060779001821
           },
           "nodeIndex": "fact_performance",
           "nodeLineageTag": "daefe653-4dbd-4cff-818a-b13040e6f3d4",
@@ -193,7 +193,7 @@
         {
           "location": {
             "x": 615.83222192177743,
-            "y": 2063.9219324230044
+            "y": 3357.2085358433528
           },
           "nodeIndex": "fact_resigned",
           "nodeLineageTag": "e4107b65-c226-4c19-8d5e-3dec769a38c0",
@@ -206,7 +206,7 @@
         {
           "location": {
             "x": 1452.8001691578443,
-            "y": 2619.5231014914207
+            "y": 3912.8097049117691
           },
           "nodeIndex": "fact_training",
           "nodeLineageTag": "65e70b9a-9f86-4935-b8a0-a5792cdf5d60",
@@ -219,7 +219,7 @@
         {
           "location": {
             "x": 2532.6389554794514,
-            "y": 1862.8113825283174
+            "y": 3156.0979859486661
           },
           "nodeIndex": "datadictionary",
           "size": {
@@ -231,7 +231,7 @@
         {
           "location": {
             "x": 2734.4257092877197,
-            "y": 1865.3955566743241
+            "y": 3158.6821600946728
           },
           "nodeIndex": "_measure",
           "nodeLineageTag": "1919ba0b-d570-4037-82be-76d2c015881f",
@@ -244,7 +244,7 @@
         {
           "location": {
             "x": 2936.2124630959879,
-            "y": 1671.0862097218503
+            "y": 2964.372813142199
           },
           "nodeIndex": "Age-tenure",
           "size": {
@@ -256,7 +256,7 @@
         {
           "location": {
             "x": 3137.9992169042562,
-            "y": 1517.8077974646237
+            "y": 2811.0944008849724
           },
           "nodeIndex": "Dept-Org Lvl",
           "nodeLineageTag": "802f68c5-b81e-4bc2-8be3-4e1575985901",
@@ -265,6 +265,18 @@
             "width": 234
           },
           "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 3339.7859707125244,
+            "y": 1730.9857135522336
+          },
+          "nodeIndex": "dim_salary",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
