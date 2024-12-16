@@ -8,7 +8,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.138.1452.0 (24.11)"
+        "value": "2.138.1004.0 (24.11)"
       },
       {
         "name": "PBI_QueryOrder",
@@ -24781,10 +24781,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "description": "Unique identifier for each employee",
             "formatString": "0",
-            "isHidden": true,
             "lineageTag": "1ad5fc14-3d08-4134-9013-b02ee289357a",
             "sourceColumn": "Employee ID",
             "summarizeBy": "none"
@@ -24797,10 +24801,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "description": "References Dim_Training_Session, identifies the training session",
             "formatString": "0",
-            "isHidden": true,
             "lineageTag": "8494885d-f837-4819-853c-5438c9016acc",
             "sourceColumn": "Training Session ID",
             "summarizeBy": "none"
@@ -24817,10 +24825,14 @@
                 "value": "Date"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "dateTime",
             "description": "Date training was completed",
             "formatString": "Long Date",
-            "isHidden": true,
             "lineageTag": "b6be5361-b33f-4093-b8d4-c7cd9f5605d2",
             "sourceColumn": "Training Completion Date",
             "summarizeBy": "none"
@@ -24839,6 +24851,47 @@
             "lineageTag": "8b95a351-f835-40b2-ae7c-7897b64a3b46",
             "sourceColumn": "Certification Achieved",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Training Completion Duration",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": [
+              "",
+              "DATEDIFF(fact_training[Training Completion Date], TODAY(), DAY)"
+            ],
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "416f9eb1-0d31-44b6-915a-74b2a084a8c5",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Training Impact Index",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "",
+              "IF(",
+              "    [Training Completion Rate (%)] > 80, ",
+              "    \"High Impact\", ",
+              "    IF([Training Completion Rate (%)] > 50, \"Medium Impact\", \"Low Impact\")",
+              ")"
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "dfd9c0df-0f5d-4f75-b042-2660654f3d42",
+            "summarizeBy": "none",
+            "type": "calculated"
           }
         ],
         "lineageTag": "65e70b9a-9f86-4935-b8a0-a5792cdf5d60",
@@ -26228,6 +26281,7 @@
           },
           {
             "name": "Resignation Rate by Age Band",
+            "name": "Training Completion Rate (%)",
             "annotations": [
               {
                 "name": "PBI_FormatHint",
@@ -26609,6 +26663,106 @@
             ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "ffb3e192-ba08-430f-8c08-93bd9d4c5f1a"
+            "expression": [
+              "",
+              "VAR TotalEmployees = DISTINCTCOUNT(fact_training[Employee ID])",
+              "VAR CompletedTrainings = ",
+              "    CALCULATE(",
+              "        DISTINCTCOUNT(fact_training[Employee ID]), ",
+              "        fact_training[Certification Achieved] = TRUE()",
+              "    )",
+              "RETURN",
+              "    DIVIDE(CompletedTrainings, TotalEmployees, 0) * 100"
+            ],
+            "lineageTag": "da20dd37-b86f-4d9e-a4c3-17addd4169b7"
+          },
+          {
+            "name": "Total Training Hours",
+            "expression": [
+              "",
+              "SUMX(",
+              "    fact_training,",
+              "    RELATED(dim_trainingSession[Duration Hours])",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "ffd33518-e79b-4a51-b2ea-d9e56d72e995"
+          },
+          {
+            "name": "Employees with Uncompleted Training",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    DISTINCTCOUNT(fact_training[Employee ID]),",
+              "    fact_training[Certification Achieved] = FALSE()",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "05962a45-c699-44db-962e-b53b25b9f739"
+          },
+          {
+            "name": "Training Completion by Type",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_training), ",
+              "    fact_training[Certification Achieved] = TRUE(),",
+              "    ALLEXCEPT(fact_training, dim_trainingSession[Training Type])",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "a82aa9bc-bf94-4a75-96a2-3e9954fa34f9"
+          },
+          {
+            "name": "Count of Trainings",
+            "expression": "COUNTROWS(fact_training)",
+            "formatString": "0",
+            "lineageTag": "88da5f04-f331-41f8-8533-cf35c14e2887"
+          },
+          {
+            "name": "Count of High Impact Categories",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_training),",
+              "    fact_training[Training Impact Index] = \"High Impact\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "97f1e168-8af6-42a0-b78c-0f5dc2809ada"
+          },
+          {
+            "name": "Count of Low Impact Trainings",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_training),",
+              "    fact_training[Training Impact Index] = \"Low Impact\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "b8bed26e-f050-4c29-a265-7b8885225344"
+          },
+          {
+            "name": "Performance vs. Training Completion",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "AVERAGEX(",
+              "    fact_training,",
+              "    [Training Completion Rate (%)] * ",
+              "    LOOKUPVALUE(",
+              "        fact_performance[Performance Rating],",
+              "        fact_performance[Employee ID], fact_training[Employee ID]",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "7c3cb4a0-be2e-4212-8db1-2c2b7380587e"
           }
         ],
         "partitions": [
