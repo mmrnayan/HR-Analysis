@@ -1,0 +1,56 @@
+DEFINE
+	VAR __DS0FilterTable = 
+		TREATAS({"Active"}, 'fact_employee'[Current Employment Status])
+
+	VAR __ValueFilterDM1 = 
+		FILTER(
+			KEEPFILTERS(
+				SUMMARIZECOLUMNS(
+					'dim_employee'[Employee ID],
+					'fact_employee'[Current Employment Status],
+					'fact_employee'[Full Name],
+					__DS0FilterTable,
+					"Resignation_Probability", '_measure'[Resignation Probability],
+					"Risk_Category", '_measure'[Risk Category]
+				)
+			),
+			[Resignation_Probability] > 0
+		)
+
+	VAR __DS0Core = 
+		SUMMARIZECOLUMNS(
+			ROLLUPADDISSUBTOTAL(
+				ROLLUPGROUP(
+					'dim_employee'[Employee ID],
+					'fact_employee'[Current Employment Status],
+					'fact_employee'[Full Name]
+				), "IsGrandTotalRowTotal"
+			),
+			__DS0FilterTable,
+			__ValueFilterDM1,
+			"Resignation_Probability", '_measure'[Resignation Probability],
+			"Risk_Category", '_measure'[Risk Category]
+		)
+
+	VAR __DS0PrimaryWindowed = 
+		TOPN(
+			502,
+			__DS0Core,
+			[IsGrandTotalRowTotal],
+			0,
+			'dim_employee'[Employee ID],
+			1,
+			'fact_employee'[Current Employment Status],
+			1,
+			'fact_employee'[Full Name],
+			1
+		)
+
+EVALUATE
+	__DS0PrimaryWindowed
+
+ORDER BY
+	[IsGrandTotalRowTotal] DESC,
+	'dim_employee'[Employee ID],
+	'fact_employee'[Current Employment Status],
+	'fact_employee'[Full Name]
