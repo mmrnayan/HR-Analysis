@@ -1,0 +1,26 @@
+table dim_department
+	lineageTag: c3f47ab2-8172-4af8-be4f-bb5e2174ab1d
+
+	column Department
+		dataType: string
+		lineageTag: 0ba3a342-9c00-49c8-9bfc-4eb20d9ae7a1
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_department = m
+		mode: import
+		queryGroup: 'Data\dim tables'
+		source =
+				let
+				    Source = fact_employee,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Department"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

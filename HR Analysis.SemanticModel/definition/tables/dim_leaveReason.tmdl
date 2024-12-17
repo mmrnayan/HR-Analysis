@@ -1,0 +1,27 @@
+table dim_leaveReason
+	lineageTag: e21939e8-df7f-442b-8be1-d2d4240124ce
+
+	column 'Leave Details'
+		dataType: string
+		lineageTag: adfef3d4-e539-4c93-bd51-d0ced64e475f
+		summarizeBy: none
+		sourceColumn: Leave Details
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_leaveReason = m
+		mode: import
+		queryGroup: 'Data\dim tables'
+		source =
+				let
+				    Source = fact_leave,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Leave Details", "Leave Type"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Removed Other Columns",{"Leave Type"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

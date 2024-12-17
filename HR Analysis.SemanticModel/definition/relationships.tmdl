@@ -1,0 +1,92 @@
+relationship AutoDetected_d9a350a3-8d47-4bb9-895c-36a300aaca9a
+	fromColumn: fact_leave.'Employee ID'
+	toColumn: fact_employee.'Employee ID'
+
+relationship AutoDetected_06532fbf-9cf2-41fd-99f0-b79f36529192
+	fromColumn: fact_performance.'Employee ID'
+	toColumn: fact_employee.'Employee ID'
+
+relationship AutoDetected_81ce10c7-dae6-450d-89ed-4d3cc91fb9ca
+	fromColumn: fact_training.'Employee ID'
+	toColumn: fact_employee.'Employee ID'
+
+relationship AutoDetected_a428936d-116f-4d5c-8dc5-79601860a859
+	isActive: false
+	fromColumn: dim_employee.Country
+	toColumn: dim_location.Country
+
+relationship AutoDetected_658e591b-899a-4c4d-9af3-46c7167e88d1
+	fromColumn: fact_leave.'Leave Details'
+	toColumn: dim_leaveReason.'Leave Details'
+
+relationship AutoDetected_80558a47-a8b6-4f55-a5bf-3f12f0edba7f
+	fromColumn: fact_leave.'Leave Type'
+	toColumn: dim_leaveType.'Leave Type'
+
+relationship AutoDetected_5fa65ad6-a4b2-4fe2-9b13-7a221bc0d25a
+	fromColumn: fact_resigned.'Resignation Reason ID'
+	toColumn: dim_resignationReason.'Resignation Reason ID'
+
+relationship AutoDetected_75d24dcd-3a0a-456f-b7c5-67d67add5930
+	fromColumn: fact_training.'Training Session ID'
+	toColumn: dim_trainingSession.'Training Session ID'
+
+relationship 233590bb-dd77-20a2-26bb-e6eee75dd3b0
+	fromColumn: fact_resigned.'Employee ID'
+	toColumn: exit_interview_survey.'Employee ID'
+
+relationship 34b4582f-a601-2eda-3b26-5732f9c682b7
+	fromColumn: fact_employee.Department
+	toColumn: dim_department.Department
+
+relationship d4b052f7-4f8f-3fad-ebac-4da8630293e8
+	fromColumn: fact_employee.'Job Title'
+	toColumn: dim_jobtitle.'Job Title'
+
+relationship 56a77f6f-a7bb-c282-cd11-89ba1dd085b8
+	fromColumn: fact_employee.'Employee ID'
+	toColumn: dim_employee.'Employee ID'
+
+relationship 57d3b46f-cd35-649d-950e-c71283c8975c
+	isActive: false
+	fromColumn: employee_feedback_survey.'Employee ID'
+	toColumn: fact_employee.'Employee ID'
+
+relationship a5451bef-f212-7b9b-8316-595258eac298
+	fromColumn: fact_employee.'Hire Date'
+	toColumn: date.Date
+
+relationship 38946a96-8f44-668a-93ed-072f935d0a5e
+	isActive: false
+	fromColumn: fact_leave.'Leave Start Date'
+	toColumn: date.Date
+
+relationship cfa48681-87f3-6093-4e08-ea2b6df4c45c
+	isActive: false
+	fromColumn: fact_leave.'Leave End Date'
+	toColumn: date.Date
+
+relationship 504fbd3f-d7b3-b4bf-a0ea-6e52511bdd12
+	isActive: false
+	fromColumn: fact_training.'Training Completion Date'
+	toColumn: date.Date
+
+relationship e1fe8253-8d2d-4712-5ed9-b9845f41e460
+	isActive: false
+	fromColumn: fact_resigned.'Resigned Date'
+	toColumn: date.Date
+
+relationship b83f3a18-c589-84a3-9b0d-47489f748b50
+	isActive: false
+	fromColumn: dim_employee.'Date of Birth'
+	toColumn: date.Date
+
+relationship 2ff8e4e3-0591-a925-2ae6-1bb5abf655ad
+	fromColumn: fact_resigned.'Employee ID'
+	toColumn: fact_employee.'Employee ID'
+
+relationship 89aabce8-b9d9-bed2-a985-fd934a185e58
+	isActive: false
+	fromColumn: fact_resigned.'Employee ID'
+	toColumn: dim_employee.'Employee ID'
+

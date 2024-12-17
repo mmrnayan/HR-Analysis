@@ -1,0 +1,56 @@
+table dim_trainingSession
+	lineageTag: f50332de-e497-4b96-b6a1-28823abf69d9
+
+	/// Unique identifier for each training session
+	column 'Training Session ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ad976b1-5390-4770-920c-a0641d239716
+		summarizeBy: none
+		sourceColumn: Training Session ID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of the training session
+	column 'Training Name'
+		dataType: string
+		lineageTag: fa05709d-54f2-4e6d-880b-6927b0f2fa53
+		summarizeBy: none
+		sourceColumn: Training Name
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Type of training
+	column 'Training Type'
+		dataType: string
+		lineageTag: deb3c9ca-0f1a-4b58-8086-057aa9362fb1
+		summarizeBy: none
+		sourceColumn: Training Type
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Duration of the training session in hours
+	column 'Duration Hours'
+		dataType: int64
+		formatString: 0
+		lineageTag: eca1799a-9ff9-455d-ba1f-cb3ea83dca88
+		summarizeBy: none
+		sourceColumn: Duration Hours
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_trainingSession = m
+		mode: import
+		queryGroup: 'Data\dim tables'
+		source =
+				let
+				    Source = Csv.Document(File.Contents(#"Folder Path" & "\training_session.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Training Session ID", Int64.Type}, {"Training Name", type text}, {"Training Type", type text}, {"Duration Hours", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
