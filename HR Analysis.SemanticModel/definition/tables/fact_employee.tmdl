@@ -1,0 +1,350 @@
+table fact_employee
+	lineageTag: e6a88bb3-3e63-4601-bbfd-7f75534a6f34
+
+	/// Unique identifier for each employee
+	column 'Employee ID'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5cf91ff1-ed33-4718-93e7-c97c637556d1
+		summarizeBy: none
+		sourceColumn: Employee ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Full name of the employee
+	column 'Full Name'
+		dataType: string
+		lineageTag: 0f34d61e-f590-4418-b29c-9c83ffa1882e
+		summarizeBy: none
+		sourceColumn: Full Name
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Birth date of the employee
+	column 'Date of Birth'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fbf472c5-a687-46fe-a325-915a927d6e15
+		summarizeBy: none
+		sourceColumn: Date of Birth
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Gender identity of the employee
+	column Gender
+		dataType: string
+		lineageTag: 1f12caee-9b9e-44ca-a2fd-b4fe86f5ae4e
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Highest education level attained by the employee
+	column 'Education Level'
+		dataType: string
+		lineageTag: 33e7bd3a-c6f0-4081-9f00-95921877f651
+		summarizeBy: none
+		sourceColumn: Education Level
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Date the employee was hired
+	column 'Hire Date'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: d5fc471d-c165-454e-bc1e-30ebaada1b40
+		summarizeBy: none
+		sourceColumn: Hire Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Department or functional area the employee belongs to
+	column Department
+		dataType: string
+		isHidden
+		lineageTag: 7d043d37-2d88-41cd-993f-a1f3ecf05dce
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Job title or position held by the employee
+	column 'Job Title'
+		dataType: string
+		isHidden
+		lineageTag: 8705da77-86f1-44e0-a683-98fd2a84c62f
+		summarizeBy: none
+		sourceColumn: Job Title
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Level in the organization hierarchy
+	column 'Organization Level'
+		dataType: string
+		isHidden
+		lineageTag: a8654d4d-f4a3-4068-807b-aa6b61939879
+		summarizeBy: none
+		sourceColumn: Organization Level
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Region of the country employee belong to
+	column Region
+		dataType: string
+		isHidden
+		lineageTag: 22d15ccd-d610-4285-8e54-ea57e885b075
+		summarizeBy: none
+		sourceColumn: Region
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Country of the employee
+	column Country
+		dataType: string
+		isHidden
+		lineageTag: f7d94127-e57b-4656-ac79-7da65a3cf563
+		summarizeBy: none
+		sourceColumn: Country
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Latitude coordinate of the employee’s
+	/// location
+	column Latitude
+		dataType: double
+		isHidden
+		lineageTag: de659c86-57d2-4312-82dd-ad054e954878
+		summarizeBy: sum
+		sourceColumn: Latitude
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Longitude coordinate of the employee’s location
+	column Longitude
+		dataType: double
+		isHidden
+		lineageTag: f16f2c4a-93a6-4e19-b3a8-0bb5fab02c76
+		summarizeBy: sum
+		sourceColumn: Longitude
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Onsite or remote work status
+	column 'Employment Status'
+		dataType: string
+		lineageTag: acea19cb-1347-41b0-8d5e-a77956fcc64a
+		summarizeBy: none
+		sourceColumn: Employment Status
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Employment type, indicating full-time or part-time status
+	column 'Employment Type'
+		dataType: string
+		lineageTag: affd95fb-cbf2-4820-b2bf-677ce5e898b7
+		summarizeBy: none
+		sourceColumn: Employment Type
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Yearly base salary of the employee
+	column 'Base Salary ($)'
+		dataType: double
+		lineageTag: 6ce1e629-a6bc-4bd9-8b2f-522323d29080
+		summarizeBy: sum
+		sourceColumn: Base Salary ($)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Number of times the employee has been promoted
+	column 'Times Promoted'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d73fbfb-58ad-4d4f-8231-ce7b896bee07
+		summarizeBy: sum
+		sourceColumn: Times Promoted
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Employment status indicating active or resigned status
+	column 'Current Employment Status'
+		dataType: string
+		lineageTag: b8fe43ae-8fa4-4d09-885a-157d01a70c25
+		summarizeBy: none
+		sourceColumn: Current Employment Status
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Total number of leave days the employee is entitled to annually
+	column 'Annual Leave Entitlement (days)'
+		dataType: int64
+		formatString: 0
+		lineageTag: fc8171a9-ccd0-45a9-bd01-92e511f241ca
+		summarizeBy: sum
+		sourceColumn: Annual Leave Entitlement (days)
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Ethnic group employee belongs to
+	column Ethnicity
+		dataType: string
+		lineageTag: ab38479a-4f6a-432d-9338-15d01dcae2ae
+		summarizeBy: none
+		sourceColumn: Ethnicity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age = ```
+			
+			DATEDIFF(fact_employee[Date of Birth], TODAY(), YEAR)
+			
+			```
+		lineageTag: efa5163c-847f-4d03-a4e2-b802211db055
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Age Banding' =
+			
+			SWITCH(
+			    TRUE(),
+			    fact_employee[Age] <= 25, "18-25",
+			    fact_employee[Age] <= 35, "26-35",
+			    fact_employee[Age] <= 45, "36-45",
+			    fact_employee[Age] <= 55, "46-55",
+			    fact_employee[Age] <= 66, "56-66",
+			    "Above 66"
+			)
+		lineageTag: f3603a80-be2d-48bd-a5db-68ed71497bc3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column years_at_company = DATEDIFF(fact_employee[Hire Date],TODAY(),YEAR)
+		formatString: 0
+		lineageTag: bf8357b5-e278-44f9-8dce-15375e1f7050
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenure_band =
+			SWITCH(TRUE(),
+			fact_employee[years_at_company]<1,"<1 Year",
+			fact_employee[years_at_company]>=1 &&fact_employee[years_at_company]<=3,"1-3 Years",
+			fact_employee[years_at_company]>=4 && fact_employee[years_at_company]<=7,"4-6 Years","6+ Years")
+		lineageTag: 8391f283-e97a-4c7a-853f-2f0fd91bf7b2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Salary Band' =
+			
+			SWITCH(
+			    TRUE(),
+			    fact_employee[Base Salary ($)] < 30000, "Below Range",
+			    fact_employee[Base Salary ($)] <= 50000, "30K-50K",
+			    fact_employee[Base Salary ($)] <= 75000, "50K-75K",
+			    fact_employee[Base Salary ($)] <= 100000, "75K-100K",
+			    fact_employee[Base Salary ($)] <= 125000, "100K-125K",
+			    fact_employee[Base Salary ($)] <= 150000, "125K-150K",
+			    "Above 150K"
+			)
+		lineageTag: 01a651f2-fed5-446f-8501-f3ed5edff163
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Risk Category' =
+			
+			SWITCH(
+			    TRUE(),
+			    [Resignation Probability] >= 75, "Very High Risk",
+			    [Resignation Probability] >= 50, "High Risk",
+			    [Resignation Probability] >= 25, "Medium Risk",
+			    [Resignation Probability] >= 0, "Low Risk",
+			    "Unknown"
+			)
+		lineageTag: 4cb97585-9403-4f02-b7b7-6a609cbdd74b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual Value' =
+			
+			IF(fact_employee[Current Employment Status] = "Resigned", 1, 0)
+		formatString: 0
+		lineageTag: f9c932e6-72f9-426c-a9ce-0ab756515a36
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Predicted Value' =
+			
+			IF([Resignation Probability] >= 30, 1, 0)
+		formatString: 0
+		lineageTag: 465e7243-4cc4-4f5b-ad76-6c742f6ac247
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resignation Probability' =
+			
+			VAR CurrentEmpID = fact_employee[Employee ID]
+			VAR CurrentStatus = fact_employee[Current Employment Status]
+			VAR MaxScore = 1
+			VAR MinScore = 0
+			RETURN
+			IF(
+			    NOT(ISBLANK([Risk Score])),
+			    MIN(MAX(DIVIDE([Risk Score] - MinScore, MaxScore - MinScore) * 100, 0), 100),
+			    0
+			)
+		lineageTag: 2a6f5fc7-a170-4857-932f-4053e3310ba9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_employee = m
+		mode: import
+		queryGroup: 'Data\fact tables'
+		source =
+				let
+				    Source = Csv.Document(File.Contents(#"Folder Path" & "\employee.csv"),[Delimiter=",", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Employee ID", Int64.Type}, {"Full Name", type text}, {"Date of Birth", type date}, {"Gender", type text}, {"Education Level", type text}, {"Hire Date", type date}, {"Department", type text}, {"Job Title", type text}, {"Organization Level", type text}, {"Region", type text}, {"Country", type text}, {"Latitude", type number}, {"Longitude", type number}, {"Employment Status", type text}, {"Employment Type", type text}, {"Base Salary ($)", type number}, {"Times Promoted", Int64.Type}, {"Years at Company", Int64.Type}, {"Current Employment Status", type text}, {"Annual Leave Entitlement (days)", Int64.Type}, {"Ethnicity", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Years at Company"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

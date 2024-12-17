@@ -1,0 +1,37 @@
+table dim_resignationReason
+	lineageTag: 4e2d9ba2-9896-4b4d-9c44-d2c1150f3ef0
+
+	/// Unique identifier for each resignation reason
+	column 'Resignation Reason ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c350945-0da4-48e3-b372-f88002535f2a
+		summarizeBy: none
+		sourceColumn: Resignation Reason ID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Description of the resignation reason
+	column 'Reason Description'
+		dataType: string
+		lineageTag: 2fac942f-53ba-43c4-8a80-73d9c6cda13a
+		summarizeBy: none
+		sourceColumn: Reason Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_resignationReason = m
+		mode: import
+		queryGroup: 'Data\dim tables'
+		source =
+				let
+				    Source = Csv.Document(File.Contents(#"Folder Path" & "\resignation_reason.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Resignation Reason ID", Int64.Type}, {"Reason Description", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

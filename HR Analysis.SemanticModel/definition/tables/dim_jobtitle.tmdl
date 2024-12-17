@@ -1,0 +1,34 @@
+table dim_jobtitle
+	lineageTag: 80c626fc-bd47-43e1-8ded-26e9380e64fa
+
+	column 'Job Title'
+		dataType: string
+		lineageTag: 1184e8ce-fd2c-4c25-a1f2-800496efddee
+		summarizeBy: none
+		sourceColumn: Job Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Organization Level'
+		dataType: string
+		lineageTag: fb572ccd-c79c-489d-bdac-de202fcfaffb
+		summarizeBy: none
+		sourceColumn: Organization Level
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_jobtitle = m
+		mode: import
+		queryGroup: 'Data\dim tables'
+		source =
+				let
+				    Source = fact_employee,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Job Title", "Organization Level"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
