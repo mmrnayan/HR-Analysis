@@ -22950,34 +22950,34 @@
           }
         ],
         "expression": [
-          "let fnDateTable = (StartDate as date, EndDate as date, FYStartMonth as number) as table =>\r",
-          "  let\r",
-          "    DayCount = Duration.Days(Duration.From(EndDate - StartDate)),\r",
-          "    Source = List.Dates(StartDate,DayCount,#duration(1,0,0,0)),\r",
-          "    TableFromList = Table.FromList(Source, Splitter.SplitByNothing()),   \r",
-          "    ChangedType = Table.TransformColumnTypes(TableFromList,{{\"Column1\", type date}}),\r",
-          "    RenamedColumns = Table.RenameColumns(ChangedType,{{\"Column1\", \"Date\"}}),\r",
-          "    InsertYear = Table.AddColumn(RenamedColumns, \"Year\", each Date.Year([Date]),type text),\r",
-          "    InsertYearNumber = Table.AddColumn(RenamedColumns, \"YearNumber\", each Date.Year([Date])),\r",
-          "    InsertQuarter = Table.AddColumn(InsertYear, \"QuarterOfYear\", each Date.QuarterOfYear([Date])),\r",
-          "    InsertMonth = Table.AddColumn(InsertQuarter, \"MonthOfYear\", each Date.Month([Date]), type text),\r",
-          "    InsertDay = Table.AddColumn(InsertMonth, \"DayOfMonth\", each Date.Day([Date])),\r",
-          "    InsertDayInt = Table.AddColumn(InsertDay, \"DateInt\", each [Year] * 10000 + [MonthOfYear] * 100 + [DayOfMonth]),\r",
-          "    InsertMonthName = Table.AddColumn(InsertDayInt, \"MonthName\", each Date.ToText([Date], \"MMMM\"), type text),\r",
-          "    InsertCalendarMonth = Table.AddColumn(InsertMonthName, \"MonthInCalendar\", each (try(Text.Range([MonthName],0,3)) otherwise [MonthName]) & \" \" & Text.End(Number.ToText([Year]), 2)),\r",
-          "    InsertCalendarQtr = Table.AddColumn(InsertCalendarMonth, \"QuarterInCalendar\", each \"Q\" & Number.ToText([QuarterOfYear]) & \" \" & Number.ToText([Year])),\r",
-          "    InsertDayWeek = Table.AddColumn(InsertCalendarQtr, \"DayInWeek\", each if Date.DayOfWeek([Date], Day.Sunday) = 0 then 7 else Date.DayOfWeek([Date], Day.Sunday)),\r",
-          "    InsertDayName = Table.AddColumn(InsertDayWeek, \"DayOfWeekName\", each Date.ToText([Date], \"dddd\"), type text),\r",
-          "    InsertWeekEnding = Table.AddColumn(InsertDayName, \"WeekEnding\", each Date.EndOfWeek([Date]), type date),\r",
-          "    InsertWeekNumber= Table.AddColumn(InsertWeekEnding, \"Week Number\", each Date.WeekOfYear([Date])),\r",
-          "    InsertMonthnYear = Table.AddColumn(InsertWeekNumber,\"MonthnYear\", each [Year] * 10000 + [MonthOfYear] * 100),\r",
-          "    InsertQuarternYear = Table.AddColumn(InsertMonthnYear,\"QuarternYear\", each [Year] * 10000 + [QuarterOfYear] * 100),\r",
-          "    ChangedType1 = Table.TransformColumnTypes(InsertQuarternYear,{{\"QuarternYear\", Int64.Type},{\"Week Number\", Int64.Type},{\"Year\", type text},{\"MonthnYear\", Int64.Type}, {\"DateInt\", Int64.Type}, {\"DayOfMonth\", Int64.Type}, {\"MonthOfYear\", Int64.Type}, {\"QuarterOfYear\", Int64.Type}, {\"MonthInCalendar\", type text}, {\"QuarterInCalendar\", type text}, {\"DayInWeek\", Int64.Type}}),\r",
-          "    InsertShortYear = Table.AddColumn(ChangedType1, \"ShortYear\", each Text.End(Text.From([Year]), 2), type text),\r",
-          "    AddFY = Table.AddColumn(InsertShortYear, \"FY\", each \"FY\"&(if [MonthOfYear]>=FYStartMonth then Text.From(Number.From([ShortYear])+1) else [ShortYear]))\r",
-          "in\r",
-          "    AddFY\r",
-          "in\r",
+          "let fnDateTable = (StartDate as date, EndDate as date, FYStartMonth as number) as table =>",
+          "  let",
+          "    DayCount = Duration.Days(Duration.From(EndDate - StartDate)),",
+          "    Source = List.Dates(StartDate,DayCount,#duration(1,0,0,0)),",
+          "    TableFromList = Table.FromList(Source, Splitter.SplitByNothing()),   ",
+          "    ChangedType = Table.TransformColumnTypes(TableFromList,{{\"Column1\", type date}}),",
+          "    RenamedColumns = Table.RenameColumns(ChangedType,{{\"Column1\", \"Date\"}}),",
+          "    InsertYear = Table.AddColumn(RenamedColumns, \"Year\", each Date.Year([Date]),type text),",
+          "    InsertYearNumber = Table.AddColumn(RenamedColumns, \"YearNumber\", each Date.Year([Date])),",
+          "    InsertQuarter = Table.AddColumn(InsertYear, \"QuarterOfYear\", each Date.QuarterOfYear([Date])),",
+          "    InsertMonth = Table.AddColumn(InsertQuarter, \"MonthOfYear\", each Date.Month([Date]), type text),",
+          "    InsertDay = Table.AddColumn(InsertMonth, \"DayOfMonth\", each Date.Day([Date])),",
+          "    InsertDayInt = Table.AddColumn(InsertDay, \"DateInt\", each [Year] * 10000 + [MonthOfYear] * 100 + [DayOfMonth]),",
+          "    InsertMonthName = Table.AddColumn(InsertDayInt, \"MonthName\", each Date.ToText([Date], \"MMMM\"), type text),",
+          "    InsertCalendarMonth = Table.AddColumn(InsertMonthName, \"MonthInCalendar\", each (try(Text.Range([MonthName],0,3)) otherwise [MonthName]) & \" \" & Text.End(Number.ToText([Year]), 2)),",
+          "    InsertCalendarQtr = Table.AddColumn(InsertCalendarMonth, \"QuarterInCalendar\", each \"Q\" & Number.ToText([QuarterOfYear]) & \" \" & Number.ToText([Year])),",
+          "    InsertDayWeek = Table.AddColumn(InsertCalendarQtr, \"DayInWeek\", each if Date.DayOfWeek([Date], Day.Sunday) = 0 then 7 else Date.DayOfWeek([Date], Day.Sunday)),",
+          "    InsertDayName = Table.AddColumn(InsertDayWeek, \"DayOfWeekName\", each Date.ToText([Date], \"dddd\"), type text),",
+          "    InsertWeekEnding = Table.AddColumn(InsertDayName, \"WeekEnding\", each Date.EndOfWeek([Date]), type date),",
+          "    InsertWeekNumber= Table.AddColumn(InsertWeekEnding, \"Week Number\", each Date.WeekOfYear([Date])),",
+          "    InsertMonthnYear = Table.AddColumn(InsertWeekNumber,\"MonthnYear\", each [Year] * 10000 + [MonthOfYear] * 100),",
+          "    InsertQuarternYear = Table.AddColumn(InsertMonthnYear,\"QuarternYear\", each [Year] * 10000 + [QuarterOfYear] * 100),",
+          "    ChangedType1 = Table.TransformColumnTypes(InsertQuarternYear,{{\"QuarternYear\", Int64.Type},{\"Week Number\", Int64.Type},{\"Year\", type text},{\"MonthnYear\", Int64.Type}, {\"DateInt\", Int64.Type}, {\"DayOfMonth\", Int64.Type}, {\"MonthOfYear\", Int64.Type}, {\"QuarterOfYear\", Int64.Type}, {\"MonthInCalendar\", type text}, {\"QuarterInCalendar\", type text}, {\"DayInWeek\", Int64.Type}}),",
+          "    InsertShortYear = Table.AddColumn(ChangedType1, \"ShortYear\", each Text.End(Text.From([Year]), 2), type text),",
+          "    AddFY = Table.AddColumn(InsertShortYear, \"FY\", each \"FY\"&(if [MonthOfYear]>=FYStartMonth then Text.From(Number.From([ShortYear])+1) else [ShortYear]))",
+          "in",
+          "    AddFY",
+          "in",
           "    fnDateTable"
         ],
         "kind": "m",
@@ -23424,7 +23424,7 @@
             ],
             "dataType": "double",
             "description": [
-              "Latitude coordinate of the employee’s\r",
+              "Latitude coordinate of the employee’s",
               "location"
             ],
             "isHidden": true,
@@ -24036,7 +24036,7 @@
             ],
             "dataType": "int64",
             "description": [
-              "Satisfaction rate with the work\r",
+              "Satisfaction rate with the work",
               "environment"
             ],
             "formatString": "0",
@@ -26609,6 +26609,96 @@
             ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "ffb3e192-ba08-430f-8c08-93bd9d4c5f1a"
+          },
+          {
+            "name": "Average Training Hours",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Training",
+            "expression": [
+              "",
+              "AVERAGE(dim_trainingSession[Duration Hours])"
+            ],
+            "lineageTag": "17feb73f-1034-46f1-8a87-684717b631c9"
+          },
+          {
+            "name": "Completed Trainings",
+            "displayFolder": "Training",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "COUNTROWS(fact_training),",
+              "fact_training[Certification Achieved] = TRUE()",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "69c64ba4-e155-45d4-94ec-707974c2bc41"
+          },
+          {
+            "name": "Total Employees Trained",
+            "displayFolder": "Training",
+            "expression": "DISTINCTCOUNT(fact_training[Employee ID])",
+            "formatString": "0",
+            "lineageTag": "1addf775-feca-43c0-add2-74ab350c3a2a"
+          },
+          {
+            "name": "Total Training Hours",
+            "displayFolder": "Training",
+            "expression": [
+              "",
+              "SUMX(",
+              "fact_training, ",
+              "RELATED(dim_trainingSession[Duration Hours])",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "94aab7a7-a4fa-4046-a133-fd8231e2b429"
+          },
+          {
+            "name": "Total Training Sessions Completed",
+            "displayFolder": "Training",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "COUNT(fact_training[Training Session ID]),",
+              "fact_training[Certification Achieved] = TRUE()",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "5621fe5d-e4b1-4f8d-a1ef-085bdd114ca4"
+          },
+          {
+            "name": "Training Completion Rate",
+            "displayFolder": "Training",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "[Total Training Sessions Completed], ",
+              "COUNT(fact_training[Training Session ID]),",
+              "0",
+              ")"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "b914eb26-333a-47ea-85c5-5c46a584ebbd"
+          },
+          {
+            "name": "Skill Gap Percentage",
+            "displayFolder": "Training",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    DISTINCTCOUNT(fact_training[Employee ID]) - ",
+              "    CALCULATE(DISTINCTCOUNT(fact_training[Employee ID]), fact_training[Certification Achieved] = TRUE()),",
+              "    DISTINCTCOUNT(fact_training[Employee ID]),",
+              "    0",
+              ")"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "f88d1c55-702d-49fb-a306-684d7b447c0a"
           }
         ],
         "partitions": [
