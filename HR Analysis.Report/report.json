@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":5,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":5,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
   "layoutOptimization": 0,
   "publicCustomVisuals": [
     "sankey02300D1BE6F5427989F3DE31CCA9E0F32020"
@@ -118,7 +118,44 @@
       "height": 720.00,
       "name": "4979a1e46a7e820e4552",
       "ordinal": 5,
-      "visualContainers": [],
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1d38f46994b9807761c0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":671.0526315789474,\"y\":0,\"z\":3,\"width\":388.1578947368421,\"height\":225,\"tabOrder\":3}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_measure.Average Salary\"}],\"Category\":[{\"queryRef\":\"fact_employee.Country\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Average Salary\"},\"Name\":\"_measure.Average Salary\",\"NativeReferenceName\":\"Average Salary\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Country\"},\"Name\":\"fact_employee.Country\",\"NativeReferenceName\":\"Country\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Average Salary\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 225.00,
+          "width": 388.16,
+          "x": 671.05,
+          "y": 0.00,
+          "z": 3.00
+        },
+        {
+          "config": "{\"name\":\"72fec715792ebcbac057\",\"layouts\":[{\"id\":0,\"position\":{\"x\":365.7894736842105,\"y\":0,\"z\":2,\"width\":305.2631578947368,\"height\":239.4736842105263,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"fact_employee.Organization Level\",\"active\":true}],\"Series\":[{\"queryRef\":\"fact_employee.Gender\"}],\"Y\":[{\"queryRef\":\"_measure.Average Salary\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Organization Level\"},\"Name\":\"fact_employee.Organization Level\",\"NativeReferenceName\":\"Organization Level\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Gender\"},\"Name\":\"fact_employee.Gender\",\"NativeReferenceName\":\"Gender\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Average Salary\"},\"Name\":\"_measure.Average Salary\",\"NativeReferenceName\":\"Average Salary\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Average Salary\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelPosition\":{\"expr\":{\"Literal\":{\"Value\":\"'Auto'\"}}},\"optimizeLabelDisplay\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"enableValueDataLabel\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"visualTooltip\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 239.47,
+          "width": 305.26,
+          "x": 365.79,
+          "y": 0.00,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"8fbf1ebf58197671a848\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1059.2105263157894,\"y\":0,\"z\":4,\"width\":221.05263157894737,\"height\":110.52631578947368,\"tabOrder\":4}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(dim_salary.Annual Salary)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_salary\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Annual Salary\"}},\"Function\":0},\"Name\":\"Sum(dim_salary.Annual Salary)\",\"NativeReferenceName\":\"Total Annual Salary\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Annual Salary\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(dim_salary.Annual Salary)\":{\"displayName\":\"Total Annual Salary\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"wordWrap\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000000D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"visualTooltip\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 110.53,
+          "width": 221.05,
+          "x": 1059.21,
+          "y": 0.00,
+          "z": 4.00
+        },
+        {
+          "config": "{\"name\":\"e0a08bd03dc42235e772\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.605521030503024,\"y\":0,\"z\":0,\"width\":356.77649541868374,\"height\":279.9323271746596,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_measure.Average Salary\"}],\"Series\":[{\"queryRef\":\"fact_employee.Gender\"}],\"Category\":[{\"queryRef\":\"dim_employee.Age Range\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_employee\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Average Salary\"},\"Name\":\"_measure.Average Salary\",\"NativeReferenceName\":\"Average Salary\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Gender\"},\"Name\":\"fact_employee.Gender\",\"NativeReferenceName\":\"Gender\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Age Range\"},\"Name\":\"dim_employee.Age Range\",\"NativeReferenceName\":\"Age Range\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Average Salary\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"e822242879d4839e9801\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"fact_employee\"}},\"Property\":\"Gender\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Gender\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Female'\"}}],[{\"Literal\":{\"Value\":\"'Male'\"}}],[{\"Literal\":{\"Value\":\"'Other'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 279.93,
+          "width": 356.78,
+          "x": 9.61,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
       "width": 1280.00
     },
     {

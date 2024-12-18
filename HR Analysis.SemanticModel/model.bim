@@ -2988,6 +2988,198 @@
                   }
                 ]
               },
+              "dim_employee.age": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_employee",
+                    "ConceptualProperty": "Age"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "age": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "oldness": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "stage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "phase": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "era": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.466
+                    }
+                  },
+                  {
+                    "epoch": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.466
+                    }
+                  },
+                  {
+                    "period": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.452
+                    }
+                  }
+                ]
+              },
+              "dim_employee.age_range": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_employee",
+                    "ConceptualProperty": "Age Range"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "age range": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "age variety": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "age series": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "age assortment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "age collection": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "age gamut": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "age selection": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "age choice": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "age array": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "age kind": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "age sort": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  }
+                ]
+              },
               "dim_employee.country": {
                 "Definition": {
                   "Binding": {
@@ -3012,10 +3204,7 @@
                       "Weight": 0.736
                     }
                   }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
+                ]
               },
               "dim_employee.date_of_birth": {
                 "Definition": {
@@ -5002,6 +5191,995 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.5
+                    }
+                  }
+                ]
+              },
+              "dim_salary": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_salary"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "dim salary": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "dim_salary": {
+                      "State": "Generated",
+                      "Type": "Noun",
+                      "Weight": 0.99
+                    }
+                  },
+                  {
+                    "dim income": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "dim money": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "dim remuneration": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "dim payment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "dim pay": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "dim wage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  }
+                ]
+              },
+              "dim_salary.annual_salary": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_salary",
+                    "ConceptualProperty": "Annual Salary"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "annual salary": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "annual income": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "annual money": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "annual remuneration": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "annual payment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "annual pay": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "annual wage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  }
+                ]
+              },
+              "dim_salary.base_salary": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_salary",
+                    "ConceptualProperty": "Base Salary ($)"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "base salary": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "base salary ($)": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "base salary ( dollar )": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.624
+                    }
+                  },
+                  {
+                    "base income": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "base money": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "base remuneration": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "base payment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "base pay": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "base wage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  }
+                ],
+                "Units": [
+                  "dollar",
+                  "$"
+                ]
+              },
+              "dim_salary.conveyance_allowance": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_salary",
+                    "ConceptualProperty": "Conveyance allowance"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "conveyance allowance": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "allowance": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "conveyance payment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "conveyance stipend": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "payment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "stipend": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "conveyance grant": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "conveyance budget": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "grant": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "budget": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "dim_salary.employee_ID": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_salary",
+                    "ConceptualProperty": "Employee ID"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "employee ID": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "employee": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "employee identification": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "employee identity": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "employee identifier": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "employee credential": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.727
+                    }
+                  },
+                  {
+                    "worker": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "servant": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "member": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "underling": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "operative": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "hand": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "dim_salary.gross_salary": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_salary",
+                    "ConceptualProperty": "Gross Salary"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "gross salary": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "aggregate salary": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.647
+                    }
+                  },
+                  {
+                    "overall salary": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.647
+                    }
+                  },
+                  {
+                    "whole salary": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.647
+                    }
+                  },
+                  {
+                    "sum salary": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.582
+                    }
+                  },
+                  {
+                    "total salary": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.582
+                    }
+                  },
+                  {
+                    "gross income": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "gross money": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "gross remuneration": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "gross payment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "gross pay": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  }
+                ]
+              },
+              "dim_salary.home_rent": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_salary",
+                    "ConceptualProperty": "Home Rent"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "home rent": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "rent": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "home payment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "payment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "home rental": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "home fee": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "home charge": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "home lease": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "rental": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "fee": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "charge": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "lease": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "dim_salary.medical": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_salary",
+                    "ConceptualProperty": "Medical"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "medical": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "health": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "curative": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "healing": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "restorative": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "checkup": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.466
+                    }
+                  },
+                  {
+                    "examination": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.466
+                    }
+                  }
+                ]
+              },
+              "dim_salary.provident_fund": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_salary",
+                    "ConceptualProperty": "Provident Fund"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "provident fund": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "fund": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "provident endowment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "endowment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "provident account": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "provident trust": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "provident deposit": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "provident supply": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "provident stock": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "provident reserve": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "account": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "trust": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "dim_salary.salary": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_salary",
+                    "ConceptualProperty": "Salary"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "salary": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "income": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "money": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "remuneration": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "payment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "pay": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "wage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.476
                     }
                   }
                 ]
@@ -7974,18 +9152,6 @@
                     }
                   },
                   {
-                    "salary": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  },
-                  {
-                    "annual salary": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  },
-                  {
                     "average annual income": {
                       "Source": {
                         "Agent": "Thesaurus"
@@ -8023,46 +9189,6 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.508
-                    }
-                  },
-                  {
-                    "annual income": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "annual money": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "annual remuneration": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
-                    }
-                  },
-                  {
-                    "annual payment": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.5
                     }
                   },
                   {
@@ -8229,12 +9355,6 @@
                     }
                   },
                   {
-                    "salary": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  },
-                  {
                     "base salary ( dollar )": {
                       "Source": {
                         "Agent": "Thesaurus"
@@ -8285,47 +9405,17 @@
                     }
                   },
                   {
-                    "income": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "money": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "remuneration": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "payment": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
                     "base pay": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "base wage": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -9394,10 +10484,7 @@
                       "Weight": 0.727
                     }
                   }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
+                ]
               },
               "fact_employee.job_title": {
                 "Definition": {
@@ -9638,10 +10725,7 @@
                       "Weight": 0.452
                     }
                   }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
+                ]
               },
               "fact_employee.longitude": {
                 "Definition": {
@@ -9657,10 +10741,7 @@
                       "State": "Generated"
                     }
                   }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
+                ]
               },
               "fact_employee.organization_level": {
                 "Definition": {
@@ -9782,10 +10863,7 @@
                       "Weight": 0.714
                     }
                   }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
+                ]
               },
               "fact_employee.region": {
                 "Definition": {
@@ -9861,10 +10939,7 @@
                       "Weight": 0.714
                     }
                   }
-                ],
-                "Visibility": {
-                  "Value": "Hidden"
-                }
+                ]
               },
               "fact_employee.tenure_band": {
                 "Definition": {
@@ -14731,6 +15806,82 @@
                   }
                 ]
               },
+              "v_measure_measure.average_salary": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Average Salary"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "average salary": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "average income": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "average money": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "average remuneration": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "average payment": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "average pay": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "average wage": {
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "State": "Suggested",
+                      "Type": "Noun",
+                      "Weight": 0.485
+                    }
+                  }
+                ]
+              },
               "v_measure_measure.avg_resignation_per_month": {
                 "Definition": {
                   "Binding": {
@@ -15221,16 +16372,6 @@
                   },
                   {
                     "rental": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.476
-                    }
-                  },
-                  {
-                    "rent": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -16803,6 +17944,28 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.5
+                    }
+                  }
+                ]
+              },
+              "v_measure_measure.overtime_headcount": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Overtime Headcount"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "overtime headcount": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "headcount": {
+                      "State": "Generated",
+                      "Weight": 0.97
                     }
                   }
                 ]
@@ -18524,6 +19687,105 @@
                 },
                 "State": "Generated"
               },
+              "dim_employee_has_age_range": {
+                "Binding": {
+                  "ConceptualEntity": "dim_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_employee.age_range"
+                      },
+                      "Subject": {
+                        "Role": "dim_employee"
+                      }
+                    },
+                    "ID": "dim_employees_have_age_ranges",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_employee": {
+                    "Target": {
+                      "Entity": "dim_employee"
+                    }
+                  },
+                  "dim_employee.age_range": {
+                    "Target": {
+                      "Entity": "dim_employee.age_range"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_employee_has_country": {
+                "Binding": {
+                  "ConceptualEntity": "dim_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_employee.country"
+                      },
+                      "Subject": {
+                        "Role": "dim_employee"
+                      }
+                    },
+                    "ID": "dim_employees_have_countries",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_employee": {
+                    "Target": {
+                      "Entity": "dim_employee"
+                    }
+                  },
+                  "dim_employee.country": {
+                    "Target": {
+                      "Entity": "dim_employee.country"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_employee_has_dim_salary": {
+                "Binding": {
+                  "ConceptualEntity": "dim_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_salary"
+                      },
+                      "Subject": {
+                        "Role": "dim_employee"
+                      }
+                    },
+                    "ID": "dim_employees_have_dim_salaries",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_employee": {
+                    "Target": {
+                      "Entity": "dim_employee"
+                    }
+                  },
+                  "dim_salary": {
+                    "Target": {
+                      "Entity": "dim_salary"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "dim_employee_has_education_level": {
                 "Binding": {
                   "ConceptualEntity": "dim_employee"
@@ -18710,6 +19972,111 @@
                   "dim_employee.gender": {
                     "Target": {
                       "Entity": "dim_employee.gender"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_employee_in_country": {
+                "Binding": {
+                  "ConceptualEntity": "dim_employee"
+                },
+                "Phrasings": [
+                  {
+                    "ID": "dim_employees_are_in_countries",
+                    "Preposition": {
+                      "Object": {
+                        "Role": "dim_employee.country"
+                      },
+                      "Prepositions": [
+                        {
+                          "in": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Subject": {
+                        "Role": "dim_employee"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_employee": {
+                    "Target": {
+                      "Entity": "dim_employee"
+                    }
+                  },
+                  "dim_employee.country": {
+                    "Target": {
+                      "Entity": "dim_employee.country"
+                    }
+                  }
+                },
+                "SemanticSlots": {
+                  "Where": {
+                    "Role": "dim_employee.country"
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_employee_is_old": {
+                "Binding": {
+                  "ConceptualEntity": "dim_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Adjective": {
+                      "Adjectives": [
+                        {
+                          "old": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Antonyms": [
+                        {
+                          "young": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Measurement": {
+                        "Role": "dim_employee.age"
+                      },
+                      "Subject": {
+                        "Role": "dim_employee"
+                      }
+                    },
+                    "ID": "age_indicates_how_old_dim_employees_are",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_employee.age"
+                      },
+                      "Subject": {
+                        "Role": "dim_employee"
+                      }
+                    },
+                    "ID": "dim_employees_have_ages",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_employee": {
+                    "Target": {
+                      "Entity": "dim_employee"
+                    }
+                  },
+                  "dim_employee.age": {
+                    "Target": {
+                      "Entity": "dim_employee.age"
                     }
                   }
                 },
@@ -19148,6 +20515,369 @@
                 },
                 "State": "Generated"
               },
+              "dim_salary_has_annual_salary": {
+                "Binding": {
+                  "ConceptualEntity": "dim_salary"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_salary.annual_salary"
+                      },
+                      "Subject": {
+                        "Role": "dim_salary"
+                      }
+                    },
+                    "ID": "dim_salaries_have_annual_salaries",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_salary": {
+                    "Target": {
+                      "Entity": "dim_salary"
+                    }
+                  },
+                  "dim_salary.annual_salary": {
+                    "Target": {
+                      "Entity": "dim_salary.annual_salary"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_salary_has_base_salary": {
+                "Binding": {
+                  "ConceptualEntity": "dim_salary"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_salary.base_salary"
+                      },
+                      "Subject": {
+                        "Role": "dim_salary"
+                      }
+                    },
+                    "ID": "dim_salaries_have_base_salaries",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_salary": {
+                    "Target": {
+                      "Entity": "dim_salary"
+                    }
+                  },
+                  "dim_salary.base_salary": {
+                    "Target": {
+                      "Entity": "dim_salary.base_salary"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_salary_has_conveyance_allowance": {
+                "Binding": {
+                  "ConceptualEntity": "dim_salary"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_salary.conveyance_allowance"
+                      },
+                      "Subject": {
+                        "Role": "dim_salary"
+                      }
+                    },
+                    "ID": "dim_salaries_have_conveyance_allowances",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_salary": {
+                    "Target": {
+                      "Entity": "dim_salary"
+                    }
+                  },
+                  "dim_salary.conveyance_allowance": {
+                    "Target": {
+                      "Entity": "dim_salary.conveyance_allowance"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_salary_has_dim_employee": {
+                "Binding": {
+                  "ConceptualEntity": "dim_salary"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_employee"
+                      },
+                      "Subject": {
+                        "Role": "dim_salary"
+                      }
+                    },
+                    "ID": "dim_salaries_have_dim_employees",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_employee": {
+                    "Target": {
+                      "Entity": "dim_employee"
+                    }
+                  },
+                  "dim_salary": {
+                    "Target": {
+                      "Entity": "dim_salary"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_salary_has_employee_ID": {
+                "Binding": {
+                  "ConceptualEntity": "dim_salary"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_salary.employee_ID"
+                      },
+                      "Subject": {
+                        "Role": "dim_salary"
+                      }
+                    },
+                    "ID": "dim_salaries_have_employee_ID",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_salary": {
+                    "Target": {
+                      "Entity": "dim_salary"
+                    }
+                  },
+                  "dim_salary.employee_ID": {
+                    "Target": {
+                      "Entity": "dim_salary.employee_ID"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_salary_has_gross_salary": {
+                "Binding": {
+                  "ConceptualEntity": "dim_salary"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_salary.gross_salary"
+                      },
+                      "Subject": {
+                        "Role": "dim_salary"
+                      }
+                    },
+                    "ID": "dim_salaries_have_gross_salaries",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_salary": {
+                    "Target": {
+                      "Entity": "dim_salary"
+                    }
+                  },
+                  "dim_salary.gross_salary": {
+                    "Target": {
+                      "Entity": "dim_salary.gross_salary"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_salary_has_home_rent": {
+                "Binding": {
+                  "ConceptualEntity": "dim_salary"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_salary.home_rent"
+                      },
+                      "Subject": {
+                        "Role": "dim_salary"
+                      }
+                    },
+                    "ID": "dim_salaries_have_home_rents",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_salary": {
+                    "Target": {
+                      "Entity": "dim_salary"
+                    }
+                  },
+                  "dim_salary.home_rent": {
+                    "Target": {
+                      "Entity": "dim_salary.home_rent"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_salary_has_medical": {
+                "Binding": {
+                  "ConceptualEntity": "dim_salary"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_salary.medical"
+                      },
+                      "Subject": {
+                        "Role": "dim_salary"
+                      }
+                    },
+                    "ID": "dim_salaries_have_medicals",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_salary": {
+                    "Target": {
+                      "Entity": "dim_salary"
+                    }
+                  },
+                  "dim_salary.medical": {
+                    "Target": {
+                      "Entity": "dim_salary.medical"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_salary_has_provident_fund": {
+                "Binding": {
+                  "ConceptualEntity": "dim_salary"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_salary.provident_fund"
+                      },
+                      "Subject": {
+                        "Role": "dim_salary"
+                      }
+                    },
+                    "ID": "dim_salaries_have_provident_funds",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_salary": {
+                    "Target": {
+                      "Entity": "dim_salary"
+                    }
+                  },
+                  "dim_salary.provident_fund": {
+                    "Target": {
+                      "Entity": "dim_salary.provident_fund"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_salary_has_salary": {
+                "Binding": {
+                  "ConceptualEntity": "dim_salary"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_salary.salary"
+                      },
+                      "Subject": {
+                        "Role": "dim_salary"
+                      }
+                    },
+                    "ID": "dim_salaries_have_salaries",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_salary": {
+                    "Target": {
+                      "Entity": "dim_salary"
+                    }
+                  },
+                  "dim_salary.salary": {
+                    "Target": {
+                      "Entity": "dim_salary.salary"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_salary_has_v_measure_measure_average_salary": {
+                "Binding": {
+                  "ConceptualEntity": "dim_salary"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_measure_measure.average_salary"
+                      },
+                      "Subject": {
+                        "Role": "dim_salary"
+                      }
+                    },
+                    "ID": "dim_salaries_have_average_salary",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_salary": {
+                    "Target": {
+                      "Entity": "dim_salary"
+                    }
+                  },
+                  "v_measure_measure.average_salary": {
+                    "Target": {
+                      "Entity": "v_measure_measure.average_salary"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "dim_training_session_has_duration_hour": {
                 "Binding": {
                   "ConceptualEntity": "dim_trainingSession"
@@ -19354,6 +21084,52 @@
                   "employee_feedback_survey.career_growth_satisfaction": {
                     "Target": {
                       "Entity": "employee_feedback_survey.career_growth_satisfaction"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "employee_feedback_survey_has_dim_employee": {
+                "Binding": {
+                  "ConceptualEntity": "employee_feedback_survey"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_employee"
+                      },
+                      "Subject": {
+                        "Role": "employee_feedback_survey"
+                      }
+                    },
+                    "ID": "employee_feedback_surveys_have_dim_employees",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "employee_feedback_survey"
+                      },
+                      "Subject": {
+                        "Role": "dim_employee"
+                      }
+                    },
+                    "ID": "dim_employees_have_employee_feedback_surveys",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_employee": {
+                    "Target": {
+                      "Entity": "dim_employee"
+                    }
+                  },
+                  "employee_feedback_survey": {
+                    "Target": {
+                      "Entity": "employee_feedback_survey"
                     }
                   }
                 },
@@ -20268,6 +22044,52 @@
                 },
                 "State": "Generated"
               },
+              "fact_employee_has_dim_location": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_location"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_dim_locations",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "fact_employee"
+                      },
+                      "Subject": {
+                        "Role": "dim_location"
+                      }
+                    },
+                    "ID": "dim_locations_have_fact_employees",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_location": {
+                    "Target": {
+                      "Entity": "dim_location"
+                    }
+                  },
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "fact_employee_has_education_level": {
                 "Binding": {
                   "ConceptualEntity": "fact_employee"
@@ -20474,6 +22296,171 @@
                   "fact_employee.gender": {
                     "Target": {
                       "Entity": "fact_employee.gender"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_hire_date": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "fact_employee.hire_date"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_hire_dates",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "fact_employee.hire_date": {
+                    "Target": {
+                      "Entity": "fact_employee.hire_date"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_latitude": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "fact_employee.latitude"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_latitudes",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "fact_employee.latitude": {
+                    "Target": {
+                      "Entity": "fact_employee.latitude"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_longitude": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "fact_employee.longitude"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_longitudes",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "fact_employee.longitude": {
+                    "Target": {
+                      "Entity": "fact_employee.longitude"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_organization_level": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "fact_employee.organization_level"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_organization_levels",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "fact_employee.organization_level": {
+                    "Target": {
+                      "Entity": "fact_employee.organization_level"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_has_region": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "fact_employee.region"
+                      },
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "ID": "fact_employees_have_regions",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "fact_employee.region": {
+                    "Target": {
+                      "Entity": "fact_employee.region"
                     }
                   }
                 },
@@ -21172,6 +23159,96 @@
                 },
                 "State": "Generated"
               },
+              "fact_employee_in_dim_location": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "ID": "fact_employees_are_in_dim_locations",
+                    "Preposition": {
+                      "Object": {
+                        "Role": "dim_location"
+                      },
+                      "Prepositions": [
+                        {
+                          "in": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_location": {
+                    "Target": {
+                      "Entity": "dim_location"
+                    }
+                  },
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  }
+                },
+                "SemanticSlots": {
+                  "Where": {
+                    "Role": "dim_location"
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_in_region": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "ID": "fact_employees_are_in_regions",
+                    "Preposition": {
+                      "Object": {
+                        "Role": "fact_employee.region"
+                      },
+                      "Prepositions": [
+                        {
+                          "in": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Subject": {
+                        "Role": "fact_employee"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "fact_employee.region": {
+                    "Target": {
+                      "Entity": "fact_employee.region"
+                    }
+                  }
+                },
+                "SemanticSlots": {
+                  "Where": {
+                    "Role": "fact_employee.region"
+                  }
+                },
+                "State": "Generated"
+              },
               "fact_employee_is_born_on_date_of_birth": {
                 "Binding": {
                   "ConceptualEntity": "fact_employee"
@@ -21210,6 +23287,48 @@
                 "SemanticSlots": {
                   "When": {
                     "Role": "fact_employee.date_of_birth"
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_employee_is_hired_on_hire_date": {
+                "Binding": {
+                  "ConceptualEntity": "fact_employee"
+                },
+                "Phrasings": [
+                  {
+                    "ID": "fact_employees_are_hired_on_hire_dates",
+                    "State": "Generated",
+                    "Verb": {
+                      "Object": {
+                        "Role": "fact_employee"
+                      },
+                      "Verbs": [
+                        {
+                          "hire": {
+                            "State": "Generated"
+                          }
+                        }
+                      ]
+                    },
+                    "Weight": 0.9
+                  }
+                ],
+                "Roles": {
+                  "fact_employee": {
+                    "Target": {
+                      "Entity": "fact_employee"
+                    }
+                  },
+                  "fact_employee.hire_date": {
+                    "Target": {
+                      "Entity": "fact_employee.hire_date"
+                    }
+                  }
+                },
+                "SemanticSlots": {
+                  "When": {
+                    "Role": "fact_employee.hire_date"
                   }
                 },
                 "State": "Generated"
@@ -21921,6 +24040,39 @@
                   "fact_performance.team_size": {
                     "Target": {
                       "Entity": "fact_performance.team_size"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "fact_performance_has_v_measure_measure_overtime_headcount": {
+                "Binding": {
+                  "ConceptualEntity": "fact_performance"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "v_measure_measure.overtime_headcount"
+                      },
+                      "Subject": {
+                        "Role": "fact_performance"
+                      }
+                    },
+                    "ID": "fact_performances_have_overtime_headcount",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_performance": {
+                    "Target": {
+                      "Entity": "fact_performance"
+                    }
+                  },
+                  "v_measure_measure.overtime_headcount": {
+                    "Target": {
+                      "Entity": "v_measure_measure.overtime_headcount"
                     }
                   }
                 },
@@ -23250,6 +25402,7 @@
       },
       {
         "name": "56a77f6f-a7bb-c282-cd11-89ba1dd085b8",
+        "crossFilteringBehavior": "bothDirections",
         "fromColumn": "Employee ID",
         "fromTable": "fact_employee",
         "toColumn": "Employee ID",
@@ -23343,6 +25496,46 @@
         "isActive": false,
         "toColumn": "Base Salary ($)",
         "toTable": "fact_employee"
+      },
+      {
+        "name": "ac56f78a-e341-e911-5b86-bea160d8bb45",
+        "fromColumn": "Employee ID",
+        "fromTable": "employee_feedback_survey",
+        "toColumn": "Employee ID",
+        "toTable": "dim_employee"
+      },
+      {
+        "name": "ab7a6661-f506-fa1a-973e-c81680612020",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "Employee ID",
+        "fromTable": "exit_interview_survey",
+        "isActive": false,
+        "toColumn": "Employee ID",
+        "toTable": "dim_employee"
+      },
+      {
+        "name": "359f7ca0-a703-69c7-2332-ae39c13fb9d0",
+        "fromColumn": "Employee ID",
+        "fromTable": "fact_performance",
+        "isActive": false,
+        "toColumn": "Employee ID",
+        "toTable": "dim_employee"
+      },
+      {
+        "name": "1df4e169-ce13-c3fb-5e92-5af1608978e9",
+        "fromColumn": "Employee ID",
+        "fromTable": "fact_training",
+        "isActive": false,
+        "toColumn": "Employee ID",
+        "toTable": "dim_employee"
+      },
+      {
+        "name": "7b45ea62-8b1a-298e-42f8-4665f41d6ff3",
+        "fromColumn": "Country",
+        "fromTable": "fact_employee",
+        "toColumn": "Country",
+        "toTable": "dim_location"
       }
     ],
     "sourceQueryCulture": "en-US",
@@ -23376,7 +25569,6 @@
             "dataType": "int64",
             "description": "Unique identifier for each employee",
             "formatString": "0",
-            "isHidden": true,
             "lineageTag": "5cf91ff1-ed33-4718-93e7-c97c637556d1",
             "sourceColumn": "Employee ID",
             "summarizeBy": "none"
@@ -23387,6 +25579,11 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "string",
@@ -23407,6 +25604,11 @@
                 "value": "Date"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "dateTime",
             "description": "Birth date of the employee",
             "formatString": "Long Date",
@@ -23422,6 +25624,11 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
             "description": "Gender identity of the employee",
             "lineageTag": "1f12caee-9b9e-44ca-a2fd-b4fe86f5ae4e",
@@ -23434,6 +25641,11 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "string",
@@ -23454,10 +25666,14 @@
                 "value": "Date"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "dateTime",
             "description": "Date the employee was hired",
             "formatString": "Long Date",
-            "isHidden": true,
             "lineageTag": "d5fc471d-c165-454e-bc1e-30ebaada1b40",
             "sourceColumn": "Hire Date",
             "summarizeBy": "none"
@@ -23470,9 +25686,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
             "description": "Department or functional area the employee belongs to",
-            "isHidden": true,
             "lineageTag": "7d043d37-2d88-41cd-993f-a1f3ecf05dce",
             "sourceColumn": "Department",
             "summarizeBy": "none"
@@ -23485,9 +25705,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
             "description": "Job title or position held by the employee",
-            "isHidden": true,
             "lineageTag": "8705da77-86f1-44e0-a683-98fd2a84c62f",
             "sourceColumn": "Job Title",
             "summarizeBy": "none"
@@ -23507,7 +25731,6 @@
             ],
             "dataType": "string",
             "description": "Level in the organization hierarchy",
-            "isHidden": true,
             "lineageTag": "a8654d4d-f4a3-4068-807b-aa6b61939879",
             "sourceColumn": "Organization Level",
             "summarizeBy": "none"
@@ -23527,7 +25750,6 @@
             ],
             "dataType": "string",
             "description": "Region of the country employee belong to",
-            "isHidden": true,
             "lineageTag": "22d15ccd-d610-4285-8e54-ea57e885b075",
             "sourceColumn": "Region",
             "summarizeBy": "none"
@@ -23547,7 +25769,6 @@
             ],
             "dataType": "string",
             "description": "Country of the employee",
-            "isHidden": true,
             "lineageTag": "f7d94127-e57b-4656-ac79-7da65a3cf563",
             "sourceColumn": "Country",
             "summarizeBy": "none"
@@ -23571,10 +25792,9 @@
             ],
             "dataType": "double",
             "description": [
-              "Latitude coordinate of the employee’s\r",
+              "Latitude coordinate of the employee’s",
               "location"
             ],
-            "isHidden": true,
             "lineageTag": "de659c86-57d2-4312-82dd-ad054e954878",
             "sourceColumn": "Latitude",
             "summarizeBy": "sum"
@@ -23598,7 +25818,6 @@
             ],
             "dataType": "double",
             "description": "Longitude coordinate of the employee’s location",
-            "isHidden": true,
             "lineageTag": "f16f2c4a-93a6-4e19-b3a8-0bb5fab02c76",
             "sourceColumn": "Longitude",
             "summarizeBy": "sum"
@@ -23609,6 +25828,11 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "string",
@@ -23625,6 +25849,11 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
             "description": "Employment type, indicating full-time or part-time status",
             "lineageTag": "affd95fb-cbf2-4820-b2bf-677ce5e898b7",
@@ -23636,18 +25865,23 @@
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
               },
               {
                 "name": "PBI_FormatHint",
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "double",
             "description": "Yearly base salary of the employee",
             "lineageTag": "6ce1e629-a6bc-4bd9-8b2f-522323d29080",
             "sourceColumn": "Base Salary ($)",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "Times Promoted",
@@ -23655,6 +25889,11 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "int64",
@@ -23672,6 +25911,11 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
             "description": "Employment status indicating active or resigned status",
             "lineageTag": "b8fe43ae-8fa4-4d09-885a-157d01a70c25",
@@ -23684,6 +25928,11 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "int64",
@@ -23699,6 +25948,11 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "string",
@@ -23719,6 +25973,11 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "expression": [
               "",
@@ -23736,6 +25995,11 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "string",
@@ -23764,6 +26028,11 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "int64",
             "expression": "DATEDIFF(fact_employee[Hire Date],TODAY(),YEAR)",
             "formatString": "0",
@@ -23778,6 +26047,11 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "string",
@@ -23804,6 +26078,11 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "double",
             "expression": [
               "",
@@ -23824,6 +26103,11 @@
               {
                 "name": "PBI_FormatHint",
                 "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "double",
@@ -23889,7 +26173,7 @@
             "isHidden": true,
             "lineageTag": "39525a4f-1356-47dd-913b-79957010af9b",
             "sourceColumn": "Employee ID",
-            "summarizeBy": "count"
+            "summarizeBy": "none"
           },
           {
             "name": "Year",
@@ -25143,6 +27427,51 @@
             "lineageTag": "ecaf7422-9acc-4a63-bc5c-64bb47b23864",
             "sourceColumn": "Ethnicity",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Age Range",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    'dim_employee'[Age]>= 0 && 'dim_employee'[Age] <= 19, \"0-19\",",
+              "    'dim_employee'[Age] >= 20 && 'dim_employee'[Age] <= 29, \"20-29\",",
+              "    'dim_employee'[Age] >= 30 && 'dim_employee'[Age] <= 39, \"30-39\",",
+              "    'dim_employee'[Age] >= 40 && 'dim_employee'[Age] <= 49, \"40-49\",",
+              "    'dim_employee'[Age] >= 50, \"50+\", \"Unknown\"",
+              ")"
+            ],
+            "lineageTag": "f05f79bc-1427-4a13-bd48-06448ed10a3d",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Age",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "DATEDIFF(dim_employee[Date of Birth],TODAY(),YEAR)",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "ccd3b731-f77f-47ed-bc2b-64b662d10c1b",
+            "summarizeBy": "sum",
+            "type": "calculated"
           }
         ],
         "lineageTag": "17b58dde-a5cd-4358-a7cf-80afe5bb402e",
@@ -25157,9 +27486,12 @@
                 "    Source = fact_employee,",
                 "    #\"Removed Other Columns\" = Table.SelectColumns(Source,{\"Employee ID\", \"Full Name\", \"Date of Birth\", \"Gender\", \"Education Level\", \"Region\", \"Country\", \"Latitude\", \"Longitude\", \"Ethnicity\"}),",
                 "    #\"Removed Columns\" = Table.RemoveColumns(#\"Removed Other Columns\",{\"Region\", \"Latitude\", \"Longitude\"}),",
-                "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Columns\", {\"Employee ID\"})",
+                "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Columns\", {\"Employee ID\"}),",
+                "    #\"Added Custom\" = Table.AddColumn(#\"Removed Duplicates\", \"Age\", each Date.Year(DateTime.LocalNow())-Date.Year([Date of Birth])),",
+                "    #\"Added Conditional Column\" = Table.AddColumn(#\"Added Custom\", \"Custom\", each if [Age] = 37 then \"If Age=37, then \"\"30-99\"\"\" else if [Age] = 22 then \"If Age=22, then \"\"20-29\"\"\" else null, type text),",
+                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Added Conditional Column\",{\"Custom\", \"Age\"})",
                 "in",
-                "    #\"Removed Duplicates\""
+                "    #\"Removed Columns1\""
               ],
               "type": "m"
             }
@@ -25207,7 +27539,7 @@
             "dataType": "double",
             "lineageTag": "852c8f87-fbd9-4f76-9bd2-56911690fbec",
             "sourceColumn": "Latitude",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "Longitude",
@@ -25224,7 +27556,7 @@
             "dataType": "double",
             "lineageTag": "d3e23b30-69d3-47f8-9152-679ca3b59994",
             "sourceColumn": "Longitude",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "Region",
@@ -26296,6 +28628,12 @@
             ],
             "formatString": "0",
             "lineageTag": "0a1239a6-0b9f-45a8-96d6-ff524acb60d6"
+          },
+          {
+            "name": "Average Salary",
+            "expression": "AVERAGE(dim_salary[Salary])",
+            "formatString": "0",
+            "lineageTag": "a3806d68-cd59-41cb-9d08-3ec0b1b52837"
           }
         ],
         "partitions": [
@@ -26547,7 +28885,7 @@
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
               },
               {
                 "name": "PBI_FormatHint",
@@ -26557,14 +28895,14 @@
             "dataType": "double",
             "lineageTag": "85e7ca3d-d8bd-4df3-a640-fc7fca9a726c",
             "sourceColumn": "Base Salary ($)",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "Home Rent",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
               },
               {
                 "name": "PBI_FormatHint",
@@ -26575,7 +28913,7 @@
             "expression": "dim_salary[Base Salary ($)]*.40",
             "isDataTypeInferred": true,
             "lineageTag": "f312be6c-0c8e-4c8c-a9fe-6e1807c127f3",
-            "summarizeBy": "sum",
+            "summarizeBy": "none",
             "type": "calculated"
           },
           {
@@ -26640,7 +28978,7 @@
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
               },
               {
                 "name": "PBI_FormatHint",
@@ -26651,11 +28989,30 @@
             "expression": "dim_salary[Base Salary ($)]*.12",
             "isDataTypeInferred": true,
             "lineageTag": "37a51b53-2a63-46ee-8b2c-ddfc58b17746",
-            "summarizeBy": "sum",
+            "summarizeBy": "none",
             "type": "calculated"
           },
           {
             "name": "Salary",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "expression": "dim_salary[Gross Salary]-dim_salary[Provident Fund]",
+            "isDataTypeInferred": true,
+            "lineageTag": "a1be4bc5-298a-461e-88bd-100965ce0d5b",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Annual Salary",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -26667,9 +29024,9 @@
               }
             ],
             "dataType": "double",
-            "expression": "dim_salary[Gross Salary]-dim_salary[Provident Fund]",
+            "expression": "dim_salary[Salary]*12",
             "isDataTypeInferred": true,
-            "lineageTag": "a1be4bc5-298a-461e-88bd-100965ce0d5b",
+            "lineageTag": "dc11a287-4e78-4e10-a57c-64f995091baa",
             "summarizeBy": "sum",
             "type": "calculated"
           }

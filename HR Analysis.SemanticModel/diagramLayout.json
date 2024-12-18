@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 40.974755363972434,
-        "y": 1719.1582498257362
+        "x": 115.79822408152627,
+        "y": 2538.653374094999
       },
       "nodes": [
         {
@@ -16,7 +16,7 @@
           "nodeIndex": "date",
           "nodeLineageTag": "afc9da10-b4d1-40a7-b953-63256aeaaca5",
           "size": {
-            "height": 564.99978203272349,
+            "height": 159.70599774738139,
             "width": 234
           },
           "zIndex": 18
@@ -42,8 +42,8 @@
           "nodeIndex": "dim_employee",
           "nodeLineageTag": "17b58dde-a5cd-4358-a7cf-80afe5bb402e",
           "size": {
-            "height": 265.81511139715792,
-            "width": 234
+            "height": 285.85711171896071,
+            "width": 423.28555859480252
           },
           "zIndex": 6
         },
@@ -226,27 +226,28 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 1
-        },
-        {
-          "location": {
-            "x": 2734.4257092877197,
-            "y": 3158.6821600946728
-          },
-          "nodeIndex": "_measure",
-          "nodeLineageTag": "1919ba0b-d570-4037-82be-76d2c015881f",
-          "size": {
-            "height": 104,
-            "width": 234
-          },
           "zIndex": 2
         },
         {
           "location": {
-            "x": 2936.2124630959879,
-            "y": 2964.372813142199
+            "x": 2905.8961564853639,
+            "y": 3107.4637148278434
+          },
+          "nodeIndex": "_measure",
+          "nodeLineageTag": "1919ba0b-d570-4037-82be-76d2c015881f",
+          "size": {
+            "height": 302.19311429338177,
+            "width": 234
+          },
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 2856.0444618087772,
+            "y": 2821.8519219649361
           },
           "nodeIndex": "Age-tenure",
+          "nodeLineageTag": "86a858c1-9031-4875-8b3d-cf0023556ecf",
           "size": {
             "height": 152,
             "width": 234
@@ -268,15 +269,16 @@
         },
         {
           "location": {
-            "x": 3339.7859707125244,
-            "y": 1730.9857135522336
+            "x": 2475.3077309409919,
+            "y": 2539.3463931982728
           },
           "nodeIndex": "dim_salary",
+          "nodeLineageTag": "0068e122-415a-4a47-a0bb-d8e4060f78b3",
           "size": {
             "height": 128,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         }
       ],
       "name": "All tables",
