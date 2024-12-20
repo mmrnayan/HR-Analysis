@@ -23209,7 +23209,7 @@
           },
           {
             "name": "PBI_ResultType",
-            "value": "Exception"
+            "value": "Table"
           }
         ],
         "columns": [
@@ -23806,6 +23806,25 @@
             "lineageTag": "48847b6c-77ed-40ff-9c44-6d9c728755dd",
             "sourceColumn": "Age Category",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": [
+              "YEAR(fact_employee[Hire Date])",
+              ""
+            ],
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "5621182a-065b-498f-89b7-9f87a8b2a2e6",
+            "summarizeBy": "sum",
+            "type": "calculated"
           }
         ],
         "lineageTag": "e6a88bb3-3e63-4601-bbfd-7f75534a6f34",
@@ -26786,6 +26805,83 @@
             "expression": "SUM(fact_performance[Projects Handled])",
             "formatString": "0",
             "lineageTag": "7d31e886-499c-43b0-a7e1-7b26369857b3"
+          },
+          {
+            "name": "Slope",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "VAR AvgX = AVERAGEX(ALL(fact_employee[Year]), fact_employee[Year])",
+              "VAR AvgY = AVERAGEX(ALL(fact_employee[Year]), [#female])",
+              "VAR Numerator = ",
+              "    SUMX(",
+              "        ALL(fact_employee[Year]),",
+              "        (fact_employee[Year] - AvgX) * ([%Female] - AvgY)",
+              "    )",
+              "VAR Denominator = ",
+              "    SUMX(",
+              "        ALL(fact_employee[Year]),",
+              "        (fact_employee[Year] - AvgX) ^ 2",
+              "    )",
+              "RETURN",
+              "DIVIDE(Numerator, Denominator, 0)",
+              ""
+            ],
+            "lineageTag": "10d598e3-1fe5-4868-8162-b99f49a70123"
+          },
+          {
+            "name": "Intercept",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "VAR AvgX = AVERAGEX(ALL(fact_employee[Year]), fact_employee[Year])",
+              "VAR AvgY = AVERAGEX(ALL(fact_employee[Year]), [%Female])",
+              "VAR SlopeValue = [Slope]",
+              "RETURN",
+              "AvgY - (SlopeValue * AvgX)",
+              ""
+            ],
+            "lineageTag": "d2aabcf3-afed-4b66-b8d0-1e96560320a1"
+          },
+          {
+            "name": "predicted %Female_2024",
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "VAR SlopeValue = [Slope]",
+              "VAR InterceptValue = [Intercept]",
+              "RETURN",
+              "InterceptValue + (SlopeValue * 2024)",
+              ""
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "7cd6b813-001e-42b3-a8bd-0dc6801e3b20"
+          },
+          {
+            "name": "predicted % Female_2025",
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "VAR SlopeValue = [Slope]",
+              "VAR InterceptValue = [Intercept]",
+              "RETURN",
+              "InterceptValue + (SlopeValue * 2025)",
+              ""
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "1661498d-77cb-4e34-9219-7e51f28bb6d1"
           }
         ],
         "partitions": [

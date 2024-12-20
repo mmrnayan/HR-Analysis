@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":7,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":5,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
   "layoutOptimization": 0,
   "publicCustomVisuals": [
     "sankey02300D1BE6F5427989F3DE31CCA9E0F32020"
@@ -428,7 +428,7 @@
     },
     {
       "config": "{}",
-      "displayName": "Demographic Analysis",
+      "displayName": "Diversity & inclusion2",
       "displayOption": 1,
       "filters": "[]",
       "height": 1080.00,
@@ -454,6 +454,15 @@
           "z": 0.00
         },
         {
+          "config": "{\"name\":\"9ca49b079395170aa865\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1410.537377597325,\"y\":122.89467399092429,\"z\":3003,\"width\":509.92118461905903,\"height\":755.7105326009076,\"tabOrder\":3003}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"fact_employee.Ethnicity\",\"active\":true}],\"Y\":[{\"queryRef\":\"_measure.predicted % Female_2025\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Ethnicity\"},\"Name\":\"fact_employee.Ethnicity\",\"NativeReferenceName\":\"Ethnicity\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"predicted % Female_2025\"},\"Name\":\"_measure.predicted % Female_2025\",\"NativeReferenceName\":\"predicted % Female_2025\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"predicted % Female_2025\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"labelStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'Percent of total'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 755.71,
+          "width": 509.92,
+          "x": 1410.54,
+          "y": 122.89,
+          "z": 3003.00
+        },
+        {
           "config": "{\"name\":\"a35088578308516a97b3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":477,\"width\":612,\"height\":211,\"z\":3000,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dim_employee.Country\",\"active\":true}],\"Y\":[{\"queryRef\":\"_measure.# of Employee\"}],\"Series\":[{\"queryRef\":\"fact_employee.Employment Type\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_employee\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Country\"},\"Name\":\"dim_employee.Country\",\"NativeReferenceName\":\"Country\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Employee\"},\"Name\":\"_measure.# of Employee\",\"NativeReferenceName\":\"# of Employee\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Employment Type\"},\"Name\":\"fact_employee.Employment Type\",\"NativeReferenceName\":\"Employment Type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Employee\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
           "filters": "[]",
           "height": 211.00,
@@ -461,6 +470,15 @@
           "x": 10.00,
           "y": 477.00,
           "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"c37802ebb8507a360060\",\"layouts\":[{\"id\":0,\"position\":{\"x\":632.8158586099833,\"y\":102.71793647002627,\"z\":3001,\"width\":750.207786004299,\"height\":566.7828994506807,\"tabOrder\":3001}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"fact_employee.Department\",\"active\":true},{\"queryRef\":\"fact_employee.Job Title\",\"active\":true}],\"Values\":[{\"queryRef\":\"_measure.%Female\"},{\"queryRef\":\"_measure.predicted %Female_2024\"},{\"queryRef\":\"_measure.predicted % Female_2025\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"%Female\"},\"Name\":\"_measure.%Female\",\"NativeReferenceName\":\"%Female\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"predicted % Female_2025\"},\"Name\":\"_measure.predicted % Female_2025\",\"NativeReferenceName\":\"predicted % Female_2025\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"predicted %Female_2024\"},\"Name\":\"_measure.predicted %Female_2024\",\"NativeReferenceName\":\"predicted %Female_2024\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Department\"},\"Name\":\"fact_employee.Department\",\"NativeReferenceName\":\"Department\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Job Title\"},\"Name\":\"fact_employee.Job Title\",\"NativeReferenceName\":\"Job Title\"}]},\"expansionStates\":[{\"roles\":[\"Rows\"],\"levels\":[{\"queryRefs\":[\"fact_employee.Department\"],\"isPinned\":true},{\"queryRefs\":[\"fact_employee.Job Title\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null}}],\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 566.78,
+          "width": 750.21,
+          "x": 632.82,
+          "y": 102.72,
+          "z": 3001.00
         },
         {
           "config": "{\"name\":\"c554101aa7550c457008\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.170869868860091,\"y\":254.2717467215023,\"z\":2000,\"width\":611.523550865213,\"height\":211.0455497788469,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dim_employee.Country\",\"active\":true}],\"Y\":[{\"queryRef\":\"_measure.# of Active Employees\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_employee\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Country\"},\"Name\":\"dim_employee.Country\",\"NativeReferenceName\":\"Country\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Active Employees\"},\"Name\":\"_measure.# of Active Employees\",\"NativeReferenceName\":\"# of Active Employees\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Active Employees\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
