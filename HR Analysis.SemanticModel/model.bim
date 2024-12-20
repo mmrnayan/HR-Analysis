@@ -27369,6 +27369,334 @@
             }
           }
         ]
+      },
+      {
+        "name": "Measures_Payroll_Gap",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "adc85da58de943de9497ec329e7dc625"
+          },
+          {
+            "name": "436ba87b-9c83-4389-a31b-ebd06a36be98",
+            "value": "{\"Expression\":\"\"}"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Measure",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "77a82b4a-a765-435b-a92e-7f9a1c60e4db",
+            "sourceColumn": "[Measure]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "7b75a822-fb69-4465-9a77-9e9f78d5c01b",
+        "measures": [
+          {
+            "name": "Cal_House_Rent",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Cal_Basic_Salary]*0.4",
+            "isHidden": true,
+            "lineageTag": "3e6c698f-e60b-49ad-8f46-9b933bd262aa"
+          },
+          {
+            "name": "Cal_Provident_Fund",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Cal_Basic_Salary]*0.05",
+            "isHidden": true,
+            "lineageTag": "48ca9a10-fe53-49e8-80c6-955cd97ab780"
+          },
+          {
+            "name": "Cal_Insuarence",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Cal_Basic_Salary]*0.05",
+            "isHidden": true,
+            "lineageTag": "06abff75-27e2-4180-8fd8-fba6e66c008a"
+          },
+          {
+            "name": "Cal_Total_Payable",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Cal_Basic_Salary]+[Cal_House_Rent]+[Cal_Insuarence]+ [Cal_Provident_Fund]",
+            "isHidden": true,
+            "lineageTag": "0c68f301-c563-4eb6-851e-3cac750b3938"
+          },
+          {
+            "name": "Cal_Tax",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Cal_Total_Payable]*0.009",
+            "isHidden": true,
+            "lineageTag": "56e010c2-95e7-4caa-b449-6b74367b838d"
+          },
+          {
+            "name": "Cal_Total_Payroll",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Cal_Total_Payable]-[Cal_Tax]-[Cal_Provident_Fund]-[Cal_Insuarence]",
+            "isHidden": true,
+            "lineageTag": "041ba5e9-2abd-4c18-bf89-07cfdfcbb7f3"
+          },
+          {
+            "name": "Cal_AVG_Payroll",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGEX(Measures_Payroll_Gap,[Cal_Total_Payroll])",
+            "isHidden": true,
+            "lineageTag": "b710dc46-c047-4502-94d0-250a75a8a40a"
+          },
+          {
+            "name": "Cal_Meadium_Payroll",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "MEDIANX(Measures_Payroll_Gap,Measures_Payroll_Gap[Cal_Total_Payroll])",
+            "isHidden": true,
+            "lineageTag": "20761ee9-e765-4352-a097-93ecf845773d"
+          },
+          {
+            "name": "Cal_Overtime",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Cal_Basic_Salary]*1.5*(Sum(fact_performance[Overtime])/ (8*5*4*12))",
+            "lineageTag": "a790f7f3-cd2e-4e2f-8f03-9e29169f98ae"
+          },
+          {
+            "name": "Previous_Period",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    MAX('date'[Date]),",
+              "    FILTER(",
+              "        ALLEXCEPT('date', 'date'[Year]),",
+              "        DATEADD('date'[Year], -2, YEAR) = MAX('date'[Year])",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "11c6d79a-3b66-405f-8ab7-954539826993"
+          },
+          {
+            "name": "Cal_Basic_Salary",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR CurrentDate = MAX('date'[Date])",
+              "VAR EmployeeID = SELECTEDVALUE(fact_employee[Employee ID])",
+              "VAR StartDate = LOOKUPVALUE(fact_employee[Hire Date], fact_employee[Employee ID], EmployeeID)",
+              "VAR ResignationDate = LOOKUPVALUE(fact_resigned[Resigned Date], fact_resigned[Employee ID], EmployeeID)",
+              "VAR PromotionTime = LOOKUPVALUE(fact_employee[Times Promoted], fact_employee[Employee ID], EmployeeID)",
+              "VAR BaseSalary = LOOKUPVALUE(fact_employee[Base Salary ($)], fact_employee[Employee ID], EmployeeID)",
+              "",
+              "-- Calculate how long the employee has worked",
+              "VAR YearsWorked = DATEDIFF(StartDate, CurrentDate, YEAR)",
+              "",
+              "-- Define the percentage increase for each promotion (10% per promotion)",
+              "VAR SalaryIncreasePerPromotion = 0.10",
+              "",
+              "-- Calculate the total promotion factor based on YearsWorked and PromotionTime",
+              "VAR PromotionFactor = IF(YearsWorked >= PromotionTime, PromotionTime, YearsWorked)",
+              "",
+              "-- Calculate the promoted salary with the promotion factor applied",
+              "VAR FinalSalary = BaseSalary * (1 + SalaryIncreasePerPromotion * PromotionFactor)",
+              "",
+              "RETURN",
+              "    -- If the employee resigned and CurrentDate is after the resignation date, set salary to 0",
+              "    IF(",
+              "        NOT(ISBLANK(ResignationDate)) && CurrentDate > ResignationDate,",
+              "        0,",
+              "        -- If the current date is before the start date, set salary to 0",
+              "        IF(",
+              "            CurrentDate < StartDate,",
+              "            0,",
+              "            -- Otherwise, calculate the final salary",
+              "            FinalSalary",
+              "        )",
+              "    )",
+              ""
+            ],
+            "lineageTag": "25c54c91-ca8d-4490-bb1c-a24fdd825d00"
+          },
+          {
+            "name": "Cal_Previous_Period",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    MAX('date'[Date]),",
+              "    FILTER(",
+              "        ALLEXCEPT('date', 'date'[Year]),",
+              "        DATEADD('date'[Year], -2, YEAR) = MAX('date'[Year])",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "d8ae81a3-2d06-4e42-94d8-4863d89b49fa"
+          },
+          {
+            "name": "Cal_Previous_Basic_Salary",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    [Cal_Basic_Salary],",
+              "    DATEADD('date'[Date], -1, YEAR)",
+              ")"
+            ],
+            "lineageTag": "1df8bc13-4939-4a6f-ad7a-fa9fa36d47d1"
+          },
+          {
+            "name": "Cal_Salary_Growth_%",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "DIVIDE([Cal_Basic_Salary] - [Cal_Previous_Basic_Salary], [Cal_Previous_Basic_Salary], 0)",
+            "lineageTag": "f09edcd2-781b-4e45-bec0-8f155b9619e9"
+          },
+          {
+            "name": "Cal_Gender_Pay_Gap_%",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    CALCULATE([Cal_AVG_Payroll], fact_employee[Gender] = \"Male\") - ",
+              "    CALCULATE([Cal_AVG_Payroll], fact_employee[Gender] = \"Female\"),",
+              "    CALCULATE([Cal_AVG_Payroll], fact_employee[Gender] = \"Male\"),",
+              "    0",
+              ")"
+            ],
+            "lineageTag": "b93dfc2d-2f98-401d-b871-2e7561ce5877"
+          },
+          {
+            "name": "Gap_Eucation_Pay%",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    CALCULATE([Cal_AVG_Payroll], fact_employee[Education Level]= \"\") - ",
+              "    CALCULATE([Cal_AVG_Payroll], fact_employee[Education Level] = \"\"),",
+              "    CALCULATE([Cal_AVG_Payroll], fact_employee[Education Level] = \"\"),",
+              "    0",
+              ")"
+            ],
+            "lineageTag": "bbfc81ba-838b-4ab0-b165-28c934ae3799"
+          },
+          {
+            "name": "Var_Salary_Variance",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VARX.P(Measures_Payroll_Gap,[Cal_Total_Payroll]-[Cal_AVG_Payroll]/COUNTAX(dim_employee,dim_employee[Employee ID]))"
+            ],
+            "lineageTag": "60e06d24-86d2-4dc6-a792-14195fd4e441"
+          },
+          {
+            "name": "Var_StandardDeviation_Payroll",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "STDEVX.P(",
+              "    ALL(Measures_Payroll_Gap),",
+              "    [Cal_Total_Payroll]",
+              ")",
+              ""
+            ],
+            "lineageTag": "17353dd6-7595-4dfc-9de5-49800e24000f"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Measures_Payroll_Gap",
+            "mode": "import",
+            "source": {
+              "expression": "Row(\"Measure\", BLANK())",
+              "type": "calculated"
+            }
+          }
+        ]
       }
     ]
   }
