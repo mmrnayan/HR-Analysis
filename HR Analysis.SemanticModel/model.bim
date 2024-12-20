@@ -12,7 +12,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"final_data\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -22915,6 +22915,7 @@
       }
     ],
     "dataAccessOptions": {
+      "fastCombine": true,
       "legacyRedirects": true,
       "returnErrorValuesAsNull": true
     },
@@ -23196,6 +23197,38 @@
         "isActive": false,
         "toColumn": "Employee ID",
         "toTable": "dim_employee"
+      },
+      {
+        "name": "AutoDetected_d3684b0d-27c5-42aa-b58c-f67324eee3a3",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "Employee ID",
+        "fromTable": "final_data",
+        "toColumn": "Employee ID",
+        "toTable": "dim_employee"
+      },
+      {
+        "name": "AutoDetected_c3778869-948d-4eec-ab02-30b93f2975a8",
+        "fromColumn": "Department",
+        "fromTable": "final_data",
+        "isActive": false,
+        "toColumn": "Department",
+        "toTable": "dim_department"
+      },
+      {
+        "name": "AutoDetected_64a9a0cf-2442-4a69-b3d6-ac5e7fd4d8c5",
+        "fromColumn": "Job Title",
+        "fromTable": "final_data",
+        "isActive": false,
+        "toColumn": "Job Title",
+        "toTable": "dim_jobtitle"
+      },
+      {
+        "name": "AutoDetected_069028b7-8827-4948-afb3-2c190b2d45ce",
+        "fromColumn": "Country",
+        "fromTable": "final_data",
+        "toColumn": "Country",
+        "toTable": "dim_location"
       }
     ],
     "sourceQueryCulture": "en-US",
@@ -25218,7 +25251,7 @@
             "dataType": "double",
             "lineageTag": "852c8f87-fbd9-4f76-9bd2-56911690fbec",
             "sourceColumn": "Latitude",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "Longitude",
@@ -25235,7 +25268,7 @@
             "dataType": "double",
             "lineageTag": "d3e23b30-69d3-47f8-9152-679ca3b59994",
             "sourceColumn": "Longitude",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "Region",
@@ -27691,6 +27724,433 @@
                 "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Age Banding\", type text}, {\"Age Category\", type text}})",
                 "in",
                 "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "final_data",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "094d7d87-5728-40f9-9b65-51e995618d68",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Gender",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e0953d02-7147-4170-a8c6-8f21d10fc441",
+            "sourceColumn": "Gender",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Education Level",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b249140e-0b7d-48d3-84bf-776829ca06ce",
+            "sourceColumn": "Education Level",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Department",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2c756f15-d120-40ad-8d06-294733684ba2",
+            "sourceColumn": "Department",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Job Title",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8254effc-3910-4d47-9075-630dedffd72d",
+            "sourceColumn": "Job Title",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Organization Level",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ad2d0805-c555-46cf-a43a-866ab2664af1",
+            "sourceColumn": "Organization Level",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e981f970-feef-4844-87c7-7223aba53e56",
+            "sourceColumn": "Region",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "82364e16-6460-4a9c-bec7-18425a096639",
+            "sourceColumn": "Country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Employment Status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "68e80234-0db5-47e6-9c18-8c8ff4b5144e",
+            "sourceColumn": "Employment Status",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Employment Type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f749d82f-b604-4852-977d-3a4da2ebdc16",
+            "sourceColumn": "Employment Type",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Times Promoted",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0e557fad-2c67-4665-8f85-ac5daf0b4953",
+            "sourceColumn": "Times Promoted",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Ethnicity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b9cceeb2-f65a-4a00-877b-fc3fea23ed96",
+            "sourceColumn": "Ethnicity",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Tenure (Years)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "fd6c22e6-f430-49ab-ab87-5e756679c726",
+            "sourceColumn": "Tenure (Years)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Age (Years)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "791ff411-fa21-4473-964f-ba86a2edf3f8",
+            "sourceColumn": "Age (Years)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Salary Band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bcfcbcd6-4971-4f6b-a7d9-232cf0794fd3",
+            "sourceColumn": "Salary Band",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Performance Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "f21ee00f-de41-4317-94cc-091c90d58b55",
+            "sourceColumn": "Performance Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Projects Handled",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7a5fbfe7-d48c-4f20-8261-66a3387840b4",
+            "sourceColumn": "Projects Handled",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Project Target",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2b3e7764-1fe9-4368-a0ae-66be41dfc068",
+            "sourceColumn": "Project Target",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Team Size",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "3d154f0a-1895-422c-b7b8-19e86efa570c",
+            "sourceColumn": "Team Size",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Satisfaction Score",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "670dab98-fc16-4397-a51f-9c093aa5bfab",
+            "sourceColumn": "Satisfaction Score",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Incentive Amount ($) Band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a79572fc-4958-4b2c-877e-9df1ed37a3b5",
+            "sourceColumn": "Incentive Amount ($) Band",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Bonus ($) Band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "33b4c8c5-35ab-46c5-9ab2-7d2ff8be26dd",
+            "sourceColumn": "Bonus ($) Band",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Working Hours Band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "cda0b0cd-ea3a-4926-bcbb-9f18f5fff897",
+            "sourceColumn": "Working Hours Band",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Overtime Band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d1374198-32eb-41ea-ac93-e1e03dd94be7",
+            "sourceColumn": "Overtime Band",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Actual",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e1710c75-1be7-49fa-bd39-c2ab873e6935",
+            "sourceColumn": "Actual",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Predict",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2905aa20-9d3b-4450-863c-ef508974bed1",
+            "sourceColumn": "Predict",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Probability",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "c16be63e-8551-43ac-9bff-d108d7b597ef",
+            "sourceColumn": "Probability",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "24b5c18d-87f2-415d-bf65-36f89420f2c8",
+        "partitions": [
+          {
+            "name": "final_data",
+            "mode": "import",
+            "queryGroup": "Data\\other",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\final_data.csv\"),[Delimiter=\",\", Columns=45, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Full Name\", type text}, {\"Date of Birth\", type date}, {\"Gender\", type text}, {\"Education Level\", type text}, {\"Hire Date\", type date}, {\"Department\", type text}, {\"Job Title\", type text}, {\"Organization Level\", type text}, {\"Region\", type text}, {\"Country\", type text}, {\"Latitude\", type number}, {\"Longitude\", type number}, {\"Employment Status\", type text}, {\"Employment Type\", type text}, {\"Base Salary ($)\", type number}, {\"Times Promoted\", Int64.Type}, {\"Current Employment Status\", type text}, {\"Annual Leave Entitlement (days)\", Int64.Type}, {\"Ethnicity\", type text}, {\"Tenure (Years)\", Int64.Type}, {\"Age (Years)\", Int64.Type}, {\"Age Band\", type text}, {\"Tenure Band\", type text}, {\"Salary Band\", type text}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", type number}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", type number}, {\"Overtime\", type number}, {\"Team Size\", type number}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", type number}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}, {\"Incentive Amount ($) Band\", type text}, {\"Bonus ($) Band\", type text}, {\"Satisfaction Score Band\", type text}, {\"Team Size Band\", type text}, {\"Performance Rating Band\", type text}, {\"Projects Handled Band\", type text}, {\"Project Target Band\", type text}, {\"Working Hours Band\", type text}, {\"Overtime Band\", type text}}),",
+                "    #\"Run Python script\" = Python.Execute(\"# Import necessary libraries#(lf)from sklearn.ensemble import GradientBoostingClassifier#(lf)from sklearn.preprocessing import LabelEncoder, StandardScaler#(lf)from sklearn.model_selection import train_test_split#(lf)from sklearn.metrics import classification_report, accuracy_score, roc_auc_score#(lf)import pandas as pd#(lf)import numpy as np#(lf)#(lf)# Load and preprocess the dataset#(lf)df = pd.read_csv('D:\\\\high performance project\\\\project\\\\dataset final\\\\final_data.csv')#(lf)#(lf)# Retain Employee ID for later use and drop irrelevant columns#(lf)employee_ids = df['Employee ID']  # Save Employee ID separately#(lf)df.drop(['Employee ID', 'Full Name', 'Date of Birth', 'Hire Date',#(lf)         'Latitude', 'Longitude', 'Incentive Amount ($)', 'Bonus ($)',#(lf)         'Base Salary ($)', 'Annual Leave Entitlement (days)', 'Age Band', #(lf)         'Tenure Band', 'Performance Review Year', 'Potential Rating',#(lf)         'Satisfaction Score Band', 'Team Size Band', 'Performance Rating Band',#(lf)         'Projects Handled Band', 'Project Target Band', 'Working Hours',#(lf)         'Overtime'], axis=1, inplace=True)#(lf)#(lf)# List of columns to round up#(lf)columns_to_round = ['Team Size', 'Satisfaction Score', 'Performance Rating']#(lf)#(lf)# Apply rounding up (ceil) and convert to integers#(lf)df[columns_to_round] = df[columns_to_round].apply(np.ceil).astype(int)#(lf)#(lf)# Encode categorical variables#(lf)categorical_cols = ['Gender', 'Education Level', 'Department', 'Job Title', #(lf)                    'Organization Level', 'Region', 'Country', #(lf)                    'Employment Status', 'Employment Type',#(lf)                    'Current Employment Status', 'Ethnicity', #(lf)                    'Salary Band', 'Incentive Amount ($) Band',#(lf)                    'Bonus ($) Band', 'Working Hours Band', #(lf)                    'Overtime Band']#(lf)#(lf)for col in categorical_cols:#(lf)    le = LabelEncoder()#(lf)    df[col] = le.fit_transform(df[col])#(lf)#(lf)# Preprocessing Function#(lf)def preprocess_inputs(df):#(lf)    df = df.copy()#(lf)    #(lf)    # Separate features and target variable#(lf)    y = df['Current Employment Status']#(lf)    X = df.drop('Current Employment Status', axis=1)#(lf)    #(lf)    # Split into train and test sets (70% train, 30% test)#(lf)    X_train, X_test, y_train, y_test = train_test_split(#(lf)        X, y, train_size=0.7, shuffle=True, random_state=1#(lf)    )#(lf)    #(lf)    # Standardize numerical columns only (if applicable)#(lf)    scaler = StandardScaler()#(lf)    num_cols = X_train.select_dtypes(include=['float64', 'int64']).columns  # Select numeric columns#(lf)    scaler.fit(X_train[num_cols])#(lf)    #(lf)    X_train[num_cols] = scaler.transform(X_train[num_cols])#(lf)    X_test[num_cols] = scaler.transform(X_test[num_cols])#(lf)    #(lf)    return X_train, X_test, y_train, y_test, X, y  # Return full dataset (X, y) for predictions later#(lf)#(lf)# Preprocess inputs#(lf)X_train, X_test, y_train, y_test, X, y = preprocess_inputs(df)#(lf)#(lf)# Initialize GradientBoostingClassifier with default hyperparameters#(lf)gbc = GradientBoostingClassifier(#(lf)    n_estimators=100,#(lf)    learning_rate=0.1,#(lf)    max_depth=3,#(lf)    random_state=1#(lf))#(lf)#(lf)# Train the model on the training set#(lf)gbc.fit(X_train, y_train)#(lf)#(lf)# Predict labels and probabilities for all employees (entire dataset)#(lf)all_predictions = gbc.predict(X)#(lf)all_probabilities = gbc.predict_proba(X)[:, 1]#(lf)#(lf)# Create a DataFrame with all results (for Power BI visualization)#(lf)all_results = X.copy()#(lf)all_results['Employee ID'] = employee_ids  # Add Employee ID back to results#(lf)all_results['Actual'] = y.values  # Actual labels#(lf)all_results['Predict'] = all_predictions  # Predicted labels#(lf)all_results['Probability'] = all_probabilities  # Predicted probabilities\",[dataset=#\"Changed Type\"]),",
+                "    all_results = #\"Run Python script\"{[Name=\"all_results\"]}[Value],",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(all_results,{{\"Gender\", Int64.Type}, {\"Education Level\", Int64.Type}, {\"Department\", Int64.Type}, {\"Job Title\", Int64.Type}, {\"Organization Level\", Int64.Type}, {\"Region\", Int64.Type}, {\"Country\", Int64.Type}, {\"Employment Status\", Int64.Type}, {\"Employment Type\", Int64.Type}, {\"Times Promoted\", Int64.Type}, {\"Ethnicity\", Int64.Type}, {\"Tenure (Years)\", Int64.Type}, {\"Age (Years)\", Int64.Type}, {\"Salary Band\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($) Band\", Int64.Type}, {\"Bonus ($) Band\", Int64.Type}, {\"Working Hours Band\", Int64.Type}, {\"Overtime Band\", Int64.Type}, {\"Employee ID\", Int64.Type}, {\"Actual\", Int64.Type}, {\"Predict\", Int64.Type}, {\"Probability\", type number}})",
+                "in",
+                "    #\"Changed Type1\""
               ],
               "type": "m"
             }
