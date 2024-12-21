@@ -12,7 +12,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"final_data\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"final_data\",\"Performance-9Box\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -23229,6 +23229,13 @@
         "fromTable": "final_data",
         "toColumn": "Country",
         "toTable": "dim_location"
+      },
+      {
+        "name": "AutoDetected_d14f4b16-9bcf-48a3-a28f-54109c47def7",
+        "fromColumn": "Employee ID",
+        "fromTable": "Performance-9Box",
+        "toColumn": "Employee ID",
+        "toTable": "dim_employee"
       }
     ],
     "sourceQueryCulture": "en-US",
@@ -28151,6 +28158,83 @@
                 "    #\"Changed Type1\" = Table.TransformColumnTypes(all_results,{{\"Gender\", Int64.Type}, {\"Education Level\", Int64.Type}, {\"Department\", Int64.Type}, {\"Job Title\", Int64.Type}, {\"Organization Level\", Int64.Type}, {\"Region\", Int64.Type}, {\"Country\", Int64.Type}, {\"Employment Status\", Int64.Type}, {\"Employment Type\", Int64.Type}, {\"Times Promoted\", Int64.Type}, {\"Ethnicity\", Int64.Type}, {\"Tenure (Years)\", Int64.Type}, {\"Age (Years)\", Int64.Type}, {\"Salary Band\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($) Band\", Int64.Type}, {\"Bonus ($) Band\", Int64.Type}, {\"Working Hours Band\", Int64.Type}, {\"Overtime Band\", Int64.Type}, {\"Employee ID\", Int64.Type}, {\"Actual\", Int64.Type}, {\"Predict\", Int64.Type}, {\"Probability\", type number}})",
                 "in",
                 "    #\"Changed Type1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Performance-9Box",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "536bbfc6-6838-40b0-82f5-eaf0a9debd8d",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Performance Review Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5f24f25b-bf7a-4094-b5ef-320b40b40199",
+            "sourceColumn": "Performance Review Year",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Performance Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "9de36690-eb89-41ce-a67b-58ad8e23a4ec",
+            "sourceColumn": "Performance Rating",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "4456bd69-d7a0-495f-a60b-4fef2f5bcd09",
+        "partitions": [
+          {
+            "name": "Performance-9Box",
+            "mode": "import",
+            "queryGroup": "Data\\fact tables",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"})",
+                "in",
+                "    #\"Removed Other Columns\""
               ],
               "type": "m"
             }
