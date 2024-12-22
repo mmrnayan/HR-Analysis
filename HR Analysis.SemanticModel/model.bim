@@ -23309,16 +23309,19 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
               },
               {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
+                "property": "DataType"
               }
             ],
             "dataType": "dateTime",
             "description": "Date the employee was hired",
             "formatString": "Long Date",
-            "isHidden": true,
             "lineageTag": "d5fc471d-c165-454e-bc1e-30ebaada1b40",
             "sourceColumn": "Hire Date",
             "summarizeBy": "none"
@@ -23331,9 +23334,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
             "description": "Department or functional area the employee belongs to",
-            "isHidden": true,
             "lineageTag": "7d043d37-2d88-41cd-993f-a1f3ecf05dce",
             "sourceColumn": "Department",
             "summarizeBy": "none"
@@ -24193,9 +24200,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
             "description": "Unique identifier for each employee",
-            "isHidden": true,
             "lineageTag": "26127b9c-a0db-4b8d-abb2-a8098389c6f0",
             "sourceColumn": "Employee ID",
             "summarizeBy": "none"
@@ -24242,10 +24253,14 @@
                 "value": "Date"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "dateTime",
             "description": "Date the leave period begins",
             "formatString": "Long Date",
-            "isHidden": true,
             "lineageTag": "b9b4ae5b-4049-444c-b4ff-948c9bf70480",
             "sourceColumn": "Leave Start Date",
             "summarizeBy": "none"
@@ -24262,10 +24277,14 @@
                 "value": "Date"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "dateTime",
             "description": "Date the leave period ends",
             "formatString": "Long Date",
-            "isHidden": true,
             "lineageTag": "53576719-c68d-40a1-b5a4-fe39d0405b61",
             "sourceColumn": "Leave End Date",
             "summarizeBy": "none"
@@ -24356,6 +24375,32 @@
           }
         ],
         "lineageTag": "81376d4a-6a2f-4308-9e15-b8d0bb7595f0",
+        "measures": [
+          {
+            "name": "Total Leave Days Taken",
+            "expression": "SUM('date'[Week Number])",
+            "formatString": "0",
+            "lineageTag": "e42d759c-7086-4a2b-bb8f-149a726f903c"
+          },
+          {
+            "name": "Total Working Days",
+            "expression": "SUM(fact_employee[Annual Leave Entitlement (days)])",
+            "formatString": "0",
+            "lineageTag": "5fc0d256-f910-42d9-9849-1f7c803a40ef"
+          },
+          {
+            "name": "Absenteeism Rate(%)",
+            "expression": "DIVIDE(SUM(fact_leave[Number of Leave Days Taken]),SUM(fact_employee[Annual Leave Entitlement (days)]),0)*100",
+            "formatString": "0",
+            "lineageTag": "19af28ca-27bd-4940-84d8-805b0e9358a4"
+          },
+          {
+            "name": "Total Leave Days taken by Business UNit",
+            "expression": "CALCULATE(SUM(fact_leave[Number of Leave Days Taken]),fact_leave[Leave Status]=\"Approved\")",
+            "formatString": "0",
+            "lineageTag": "0df9b2eb-c771-4d03-a88f-008620716e13"
+          }
+        ],
         "partitions": [
           {
             "name": "fact_leave",
