@@ -27510,6 +27510,7 @@
               }
             ],
             "expression": "[Cal_Basic_Salary]*1.5*(Sum(fact_performance[Overtime])/ (8*5*4*12))",
+            "isHidden": true,
             "lineageTag": "a790f7f3-cd2e-4e2f-8f03-9e29169f98ae"
           },
           {
@@ -27525,6 +27526,7 @@
               ")"
             ],
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "11c6d79a-3b66-405f-8ab7-954539826993"
           },
           {
@@ -27571,6 +27573,7 @@
               "    )",
               ""
             ],
+            "isHidden": true,
             "lineageTag": "25c54c91-ca8d-4490-bb1c-a24fdd825d00"
           },
           {
@@ -27586,6 +27589,7 @@
               ")"
             ],
             "formatString": "0",
+            "isHidden": true,
             "lineageTag": "d8ae81a3-2d06-4e42-94d8-4863d89b49fa"
           },
           {
@@ -27603,6 +27607,7 @@
               "    DATEADD('date'[Date], -1, YEAR)",
               ")"
             ],
+            "isHidden": true,
             "lineageTag": "1df8bc13-4939-4a6f-ad7a-fa9fa36d47d1"
           },
           {
@@ -27614,6 +27619,7 @@
               }
             ],
             "expression": "DIVIDE([Cal_Basic_Salary] - [Cal_Previous_Basic_Salary], [Cal_Previous_Basic_Salary], 0)",
+            "isHidden": true,
             "lineageTag": "f09edcd2-781b-4e45-bec0-8f155b9619e9"
           },
           {
@@ -27633,6 +27639,7 @@
               "    0",
               ")"
             ],
+            "isHidden": true,
             "lineageTag": "b93dfc2d-2f98-401d-b871-2e7561ce5877"
           },
           {
@@ -27652,6 +27659,7 @@
               "    0",
               ")"
             ],
+            "isHidden": true,
             "lineageTag": "bbfc81ba-838b-4ab0-b165-28c934ae3799"
           },
           {
@@ -27666,6 +27674,7 @@
               "",
               "VARX.P(Measures_Payroll_Gap,[Cal_Total_Payroll]-[Cal_AVG_Payroll]/COUNTAX(dim_employee,dim_employee[Employee ID]))"
             ],
+            "isHidden": true,
             "lineageTag": "60e06d24-86d2-4dc6-a792-14195fd4e441"
           },
           {
@@ -27684,7 +27693,76 @@
               ")",
               ""
             ],
+            "isHidden": true,
             "lineageTag": "17353dd6-7595-4dfc-9de5-49800e24000f"
+          },
+          {
+            "name": "Equity_Above_Benchmark_Gender_%",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    COUNTROWS(",
+              "        FILTER(",
+              "            ALL(fact_employee),",
+              "            fact_employee[Base Salary ($)] > ",
+              "            CALCULATE(",
+              "                AVERAGEX(ALL(fact_employee), fact_employee[Base Salary ($)]),",
+              "                fact_employee[Gender] = \"Female\"",
+              "            )",
+              "        )",
+              "    ),",
+              "    COUNTROWS(ALL(fact_employee)),",
+              "    0",
+              ")"
+            ],
+            "isHidden": true,
+            "lineageTag": "26281f3e-0426-41f7-bf25-117e928973d0"
+          },
+          {
+            "name": "Equity_Compliance_Rate",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    COUNTROWS(",
+              "        FILTER(",
+              "            ALL(dim_employee),",
+              "            [Cal_Basic_Salary] >= [Cal_Min_Basic] && [Cal_Basic_Salary] <= [Cal_Max_Basic]",
+              "        )",
+              "    ),",
+              "    COUNTROWS(ALL(dim_employee)),",
+              "    0",
+              ")"
+            ],
+            "isHidden": true,
+            "lineageTag": "444c89c6-994b-4ca4-ad18-4419e8507d69"
+          },
+          {
+            "name": "Cal_Min_Basic",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "MIN(fact_employee[Base Salary ($)])",
+            "lineageTag": "a5bcf47d-9b0d-47dc-a4e0-069899fe6122"
+          },
+          {
+            "name": "MeasureCal_Max_Basic",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "MAX(fact_employee[Base Salary ($)])",
+            "lineageTag": "89f84b7e-2a08-4aad-93f2-3bf92f97955a"
           }
         ],
         "partitions": [
