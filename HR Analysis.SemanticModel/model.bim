@@ -27933,6 +27933,53 @@
             "lineageTag": "1f13610a-e0d8-496b-8ae5-b568e7b03287",
             "sourceColumn": "2024",
             "summarizeBy": "sum"
+          },
+          {
+            "name": "Average Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "bcd86780-63de-4e10-b75d-cd2e534cbb63",
+            "sourceColumn": "Average Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Assessment Performance Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "b3201d24-a42a-472c-a642-2e5f295f5d24",
+            "sourceColumn": "Assessment Performance Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "assessment Performance Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "393c1b6b-fa57-4edd-afd2-b47bb0aafb76",
+            "sourceColumn": "assessment Performance Category",
+            "summarizeBy": "none"
           }
         ],
         "description": " 9-Box grid for Performance Analysis",
@@ -27964,9 +28011,38 @@
                 "    #\"Appended Query4\" = Table.Combine({#\"Removed Errors1\", #\"Per:1122-9Box\"}),",
                 "    #\"Appended Query5\" = Table.Combine({#\"Appended Query4\", #\"Per:1127-9Box\"}),",
                 "    #\"Appended Query6\" = Table.Combine({#\"Appended Query5\", #\"Per:2732-9Box\"}),",
-                "    #\"Removed Errors2\" = Table.RemoveRowsWithErrors(#\"Appended Query6\", {\"2022\"})",
+                "    #\"Removed Errors2\" = Table.RemoveRowsWithErrors(#\"Appended Query6\", {\"2022\"}),",
+                "    #\"Added Custom\" = Table.AddColumn(#\"Removed Errors2\", \"Average Rating\", each let",
+                "    NonZeroValues = List.Select({[2018], [2019], [2020], [2021], [2022], [2023], [2024]}, each _ <> 0),",
+                "    Average = if List.Count(NonZeroValues) > 0 then List.Average(NonZeroValues) else null",
                 "in",
-                "    #\"Removed Errors2\""
+                "    Average),",
+                "    #\"Changed Type3\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Average Rating\", type number}}),",
+                "    #\"Added Custom1\" = Table.AddColumn(#\"Changed Type3\", \"Assessment Performance Rating\", each if [Average Rating] >= 1 and [Average Rating] <= 2 then",
+                "        if [Average Rating] > 1.5 then 2 ",
+                "        else if [Average Rating] < 1.5 then 1 ",
+                "        else [Average Rating]",
+                "    else if [Average Rating] >2 and [Average Rating] <3 then",
+                "        if [Average Rating] > 2.5 then 3 ",
+                "        else if [Average Rating] < 2.5 then 2 ",
+                "        else [Average Rating]",
+                "    else if [Average Rating] >= 3 and [Average Rating] <= 4 then",
+                "        if [Average Rating] > 3.5 then 4 ",
+                "        else if [Average Rating] < 3.5 then 3 ",
+                "        else [Average Rating]",
+                "    else if [Average Rating] >4 and [Average Rating] <= 5 then",
+                "        if [Average Rating] > 4.5 then 5 ",
+                "        else if [Average Rating] < 4.5 then 4 ",
+                "        else [Average Rating]",
+                "    else [Average Rating]),",
+                "    #\"Changed Type4\" = Table.TransformColumnTypes(#\"Added Custom1\",{{\"Assessment Performance Rating\", type number}}),",
+                "    #\"Added Custom2\" = Table.AddColumn(#\"Changed Type4\", \"assessment Performance Category\", each if [Assessment Performance Rating] >= 1 and [Assessment Performance Rating] <= 2 then \"Falling Short\" ",
+                "   else if [Assessment Performance Rating] >= 2.5 and [Assessment Performance Rating] <=3.5 then \"On Track\" ",
+                "   else if [Assessment Performance Rating] >= 4 and [Assessment Performance Rating] <= 5 then \"Peak Performer\" ",
+                "   else null),",
+                "    #\"Changed Type5\" = Table.TransformColumnTypes(#\"Added Custom2\",{{\"assessment Performance Category\", type text}})",
+                "in",
+                "    #\"Changed Type5\""
               ],
               "type": "m"
             }
@@ -29382,6 +29458,53 @@
             "lineageTag": "1ecfa5e8-d386-46c1-86e9-dea567dc2daa",
             "sourceColumn": "2024 Value",
             "summarizeBy": "sum"
+          },
+          {
+            "name": "Average Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "bcee94e9-dfc2-4601-82c3-31d6ec2a7339",
+            "sourceColumn": "Average Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Assessment Potential Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "78615ab1-fc5f-4a7d-9dfe-a39d53f57932",
+            "sourceColumn": "Assessment Potential Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Assessment Potential Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "aa50dcce-7279-4738-b308-00ac0ebda305",
+            "sourceColumn": "Assessment Potential Category",
+            "summarizeBy": "none"
           }
         ],
         "description": " 9-Box grid for Potential Analysis",
@@ -29433,9 +29556,30 @@
                 "    #\"Reordered Columns6\" = Table.ReorderColumns(#\"Changed Type7\",{\"Employee ID\", \"2018\", \"2018 Value\", \"2019\", \"2019 Value\", \"2020\", \"2020 Value\", \"2021\", \"2021 Value\", \"2022\", \"2022 Value\", \"2023\", \"2023 Value\", \"2024\"}),",
                 "    #\"Added Custom6\" = Table.AddColumn(#\"Reordered Columns6\", \"2024 Value\", each if [2024] = \"No Rating\" then 0 else if [2024] = \"Low\" then 1 else if [2024] = \"Moderate\" then 2 else if [2024] = \"High\" then 3 else null),",
                 "    #\"Changed Type8\" = Table.TransformColumnTypes(#\"Added Custom6\",{{\"2024 Value\", Int64.Type}}),",
-                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type8\", each true)",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type8\", each true),",
+                "    #\"Added Custom7\" = Table.AddColumn(#\"Filtered Rows\", \"Average Rating\", each let",
+                "    NonZeroValues = List.Select({[2018 Value], [2019 Value], [2020 Value], [2021 Value], [2022 Value], [2023 Value], [2024 Value]}, each _ <> 0),",
+                "    Average = if List.Count(NonZeroValues) > 0 then List.Average(NonZeroValues) else null",
                 "in",
-                "    #\"Filtered Rows\""
+                "    Average),",
+                "    #\"Changed Type9\" = Table.TransformColumnTypes(#\"Added Custom7\",{{\"Average Rating\", type number}}),",
+                "    #\"Added Custom8\" = Table.AddColumn(#\"Changed Type9\", \"Assessment Potential Rating\", each if [Average Rating] >= 1 and [Average Rating] <= 2 then",
+                "        if [Average Rating] > 1.5 then 2 ",
+                "        else if [Average Rating] < 1.5 then 1 ",
+                "        else [Average Rating]",
+                "    else if [Average Rating] >2 and [Average Rating] <=3 then",
+                "        if [Average Rating] > 2.5 then 3 ",
+                "        else if [Average Rating] < 2.5 then 2 ",
+                "        else [Average Rating]",
+                "    else [Average Rating]),",
+                "    #\"Changed Type10\" = Table.TransformColumnTypes(#\"Added Custom8\",{{\"Assessment Potential Rating\", type number}}),",
+                "    #\"Added Custom9\" = Table.AddColumn(#\"Changed Type10\", \"Assessment Potential Category\", each if [Assessment Potential Rating] >= 1 and [Assessment Potential Rating] <= 1.5 then \"Low\" ",
+                "   else if [Assessment Potential Rating] >= 2 and [Assessment Potential Rating] <=2.5 then \"Moderate\" ",
+                "   else if [Assessment Potential Rating] = 3 then \"High\" ",
+                "   else null),",
+                "    #\"Changed Type11\" = Table.TransformColumnTypes(#\"Added Custom9\",{{\"Assessment Potential Category\", type text}})",
+                "in",
+                "    #\"Changed Type11\""
               ],
               "type": "m"
             }
