@@ -22933,7 +22933,7 @@
             "value": "Text"
           }
         ],
-        "expression": "\"D:\\high performance project\\project\\dataset final\" meta [IsParameterQuery=true, Type=\"Any\", IsParameterQueryRequired=true]",
+        "expression": "\"D:\\high performance project\\HR-Analysis\\dataset final\" meta [IsParameterQuery=true, Type=\"Any\", IsParameterQueryRequired=true]",
         "kind": "m",
         "lineageTag": "ff0fe4ac-6dc7-4cf2-8195-dba1ca802663",
         "queryGroup": "folder path"
