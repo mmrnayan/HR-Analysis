@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":3,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":11,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
   "layoutOptimization": 0,
   "publicCustomVisuals": [
     "sankey02300D1BE6F5427989F3DE31CCA9E0F32020"
@@ -45,13 +45,22 @@
       "ordinal": 3,
       "visualContainers": [
         {
-          "config": "{\"name\":\"23ebe1de100053ca204c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":72.14712204442321,\"y\":147.9627418199188,\"z\":0,\"width\":1162.9137807499403,\"height\":278.8058275614999,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"resignation prediction.Employee ID\"},{\"queryRef\":\"fact_employee.Full Name\"},{\"queryRef\":\"resignation prediction.Resignation Probability\"},{\"queryRef\":\"fact_employee.Gender\"},{\"queryRef\":\"fact_employee.Current Employment Status\"},{\"queryRef\":\"fact_employee.tenure_band\"},{\"queryRef\":\"fact_employee.Salary Band\"},{\"queryRef\":\"fact_employee.Department\"},{\"queryRef\":\"fact_employee.Job Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0},{\"Name\":\"r\",\"Entity\":\"resignation_prediction\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Current Employment Status\"},\"Name\":\"fact_employee.Current Employment Status\",\"NativeReferenceName\":\"Current Employment Status\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Full Name\"},\"Name\":\"fact_employee.Full Name\",\"NativeReferenceName\":\"Full Name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"tenure_band\"},\"Name\":\"fact_employee.tenure_band\",\"NativeReferenceName\":\"tenure_band\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Salary Band\"},\"Name\":\"fact_employee.Salary Band\",\"NativeReferenceName\":\"Salary Band\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Department\"},\"Name\":\"fact_employee.Department\",\"NativeReferenceName\":\"Department1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Job Title\"},\"Name\":\"fact_employee.Job Title\",\"NativeReferenceName\":\"Job Title1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Gender\"},\"Name\":\"fact_employee.Gender\",\"NativeReferenceName\":\"Gender\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Resignation Probability\"},\"Name\":\"resignation prediction.Resignation Probability\",\"NativeReferenceName\":\"Resignation Probability1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Employee ID\"},\"Name\":\"resignation prediction.Employee ID\",\"NativeReferenceName\":\"Employee ID1\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Resignation Probability\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"143.4188034188034D\"}}}},\"selector\":{\"metadata\":\"fact_employee.Current Employment Status\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"155.1794886366285D\"}}}},\"selector\":{\"metadata\":\"fact_employee.Full Name\"}}]}}}",
+          "config": "{\"name\":\"23ebe1de100053ca204c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":88.41657810839533,\"y\":221.72157279489906,\"z\":0,\"width\":1163.018065887354,\"height\":278.85228480340066,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"resignation prediction.Employee ID\"},{\"queryRef\":\"fact_employee.Full Name\"},{\"queryRef\":\"resignation prediction.Resignation Probability\"},{\"queryRef\":\"fact_employee.Gender\"},{\"queryRef\":\"fact_employee.Current Employment Status\"},{\"queryRef\":\"fact_employee.tenure_band\"},{\"queryRef\":\"fact_employee.Salary Band\"},{\"queryRef\":\"fact_employee.Department\"},{\"queryRef\":\"fact_employee.Job Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0},{\"Name\":\"r\",\"Entity\":\"resignation_prediction\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Current Employment Status\"},\"Name\":\"fact_employee.Current Employment Status\",\"NativeReferenceName\":\"Current Employment Status\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Full Name\"},\"Name\":\"fact_employee.Full Name\",\"NativeReferenceName\":\"Full Name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"tenure_band\"},\"Name\":\"fact_employee.tenure_band\",\"NativeReferenceName\":\"tenure_band\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Salary Band\"},\"Name\":\"fact_employee.Salary Band\",\"NativeReferenceName\":\"Salary Band\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Department\"},\"Name\":\"fact_employee.Department\",\"NativeReferenceName\":\"Department1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Job Title\"},\"Name\":\"fact_employee.Job Title\",\"NativeReferenceName\":\"Job Title1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Gender\"},\"Name\":\"fact_employee.Gender\",\"NativeReferenceName\":\"Gender\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Resignation Probability\"},\"Name\":\"resignation prediction.Resignation Probability\",\"NativeReferenceName\":\"Resignation Probability1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Employee ID\"},\"Name\":\"resignation prediction.Employee ID\",\"NativeReferenceName\":\"Employee ID1\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Job Title\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"143.4188034188034D\"}}}},\"selector\":{\"metadata\":\"fact_employee.Current Employment Status\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"155.1794886366285D\"}}}},\"selector\":{\"metadata\":\"fact_employee.Full Name\"}}]}}}",
           "filters": "[{\"name\":\"625c6a60cc0d7541c50a\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"fact_employee\"}},\"Property\":\"Current Employment Status\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Current Employment Status\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Active'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]}}]",
-          "height": 278.81,
-          "width": 1162.91,
-          "x": 72.15,
-          "y": 147.96,
+          "height": 278.85,
+          "width": 1163.02,
+          "x": 88.42,
+          "y": 221.72,
           "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"4414848c2c3303c4e704\",\"layouts\":[{\"id\":0,\"position\":{\"x\":88.41657810839533,\"y\":0,\"z\":2000,\"width\":384.95217853347503,\"height\":161.87035069075452,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(f1 score.F1 Resigned)\"},{\"queryRef\":\"Sum(f1 score.F1 Not Resigned)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"f1 score\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"F1 Resigned\"}},\"Function\":0},\"Name\":\"Sum(f1 score.F1 Resigned)\",\"NativeReferenceName\":\"F1 Resigned\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"F1 Not Resigned\"}},\"Function\":0},\"Name\":\"Sum(f1 score.F1 Not Resigned)\",\"NativeReferenceName\":\"F1 Not Resigned\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"F1 Resigned\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(f1 score.F1 Resigned)\":{\"displayName\":\"F1 Resigned\"},\"Sum(f1 score.F1 Not Resigned)\":{\"displayName\":\"F1 Not Resigned\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 161.87,
+          "width": 384.95,
+          "x": 88.42,
+          "y": 0.00,
+          "z": 2000.00
         },
         {
           "config": "{\"name\":\"bdf9ceeaad05c04d4b8a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":71,\"y\":503,\"width\":1163,\"height\":182,\"z\":1000,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"_measure.Very High Risk Employee\"},{\"queryRef\":\"_measure.High Risk Employee\"},{\"queryRef\":\"_measure.Medium Risk Employee\"},{\"queryRef\":\"_measure.Low Risk Employee\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Very High Risk Employee\"},\"Name\":\"_measure.Very High Risk Employee\",\"NativeReferenceName\":\"Very High Risk Employee\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"High Risk Employee\"},\"Name\":\"_measure.High Risk Employee\",\"NativeReferenceName\":\"High Risk Employee\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Moderate Risk Employee\"},\"Name\":\"_measure.Medium Risk Employee\",\"NativeReferenceName\":\"Moderate Risk Employee\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Low Risk Employee\"},\"Name\":\"_measure.Low Risk Employee\",\"NativeReferenceName\":\"Low Risk Employee\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Very High Risk Employee\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
@@ -419,6 +428,36 @@
     },
     {
       "config": "{}",
+      "displayName": "Payroll",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "829bc5ad9aef45d09e65",
+      "ordinal": 11,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"8bf09f829f8516b73455\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.078740157480315,\"y\":0,\"z\":0,\"width\":1249.763779527559,\"height\":149.501312335958,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Basic_Salary_Payroll.Year\",\"active\":true}],\"Y\":[{\"queryRef\":\"Payroll_&_Gap_Analysis.Cal_Salary_Growth_%\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"Basic_Salary_Payroll\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Year\"},\"Name\":\"Basic_Salary_Payroll.Year\",\"NativeReferenceName\":\"Year\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Cal_Salary_Growth_%\"},\"Name\":\"Payroll_&_Gap_Analysis.Cal_Salary_Growth_%\",\"NativeReferenceName\":\"Cal_Salary_Growth_%\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Cal_Salary_Growth_%\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 149.50,
+          "width": 1249.76,
+          "x": 10.08,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"d08110b9a819dffb8002\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.078740157480315,\"y\":183.0971128608924,\"z\":1000,\"width\":1249.763779527559,\"height\":508.9763779527559,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_employee.Employee ID\"},{\"queryRef\":\"Sum(Basic_Salary_Payroll.basic_Salary)\"},{\"queryRef\":\"Payroll_&_Gap_Analysis.Cal_Basic_Salary\"},{\"queryRef\":\"Measures_Payroll_Gap.Cal_Total_Payroll\"},{\"queryRef\":\"Measures_Payroll_Gap.Cal_Total_Payable\"},{\"queryRef\":\"Measures_Payroll_Gap.Cal_House_Rent\"},{\"queryRef\":\"Measures_Payroll_Gap.Cal_Insuarence\"},{\"queryRef\":\"Measures_Payroll_Gap.Cal_Overtime\"},{\"queryRef\":\"Measures_Payroll_Gap.Cal_Tax\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_employee\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0},{\"Name\":\"b\",\"Entity\":\"Basic_Salary_Payroll\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Employee ID\"},\"Name\":\"dim_employee.Employee ID\",\"NativeReferenceName\":\"Employee ID\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Cal_Total_Payroll\"},\"Name\":\"Measures_Payroll_Gap.Cal_Total_Payroll\",\"NativeReferenceName\":\"Cal_Total_Payroll\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Cal_Total_Payable\"},\"Name\":\"Measures_Payroll_Gap.Cal_Total_Payable\",\"NativeReferenceName\":\"Cal_Total_Payable\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Cal_House_Rent\"},\"Name\":\"Measures_Payroll_Gap.Cal_House_Rent\",\"NativeReferenceName\":\"Cal_House_Rent\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Cal_Insuarence\"},\"Name\":\"Measures_Payroll_Gap.Cal_Insuarence\",\"NativeReferenceName\":\"Cal_Insuarence\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Cal_Overtime\"},\"Name\":\"Measures_Payroll_Gap.Cal_Overtime\",\"NativeReferenceName\":\"Cal_Overtime\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Cal_Tax\"},\"Name\":\"Measures_Payroll_Gap.Cal_Tax\",\"NativeReferenceName\":\"Cal_Tax\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Cal_Basic_Salary\"},\"Name\":\"Payroll_&_Gap_Analysis.Cal_Basic_Salary\",\"NativeReferenceName\":\"Cal_Basic_Salary\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"basic_Salary\"}},\"Function\":0},\"Name\":\"Sum(Basic_Salary_Payroll.basic_Salary)\",\"NativeReferenceName\":\"Sum of basic_Salary\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Employee ID\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 508.98,
+          "width": 1249.76,
+          "x": 10.08,
+          "y": 183.10,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
       "displayName": "Diversity & inclusion2",
       "displayOption": 1,
       "filters": "[]",
@@ -565,16 +604,16 @@
           "z": 2000.00
         },
         {
-          "config": "{\"name\":\"9ae0d9ce9a01e0182ba0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1476.7362428842505,\"y\":359.46869070208726,\"z\":10000,\"width\":386.18595825426945,\"height\":286.60341555977226,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_employee.Month Name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_employee\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month Name\"},\"Name\":\"dim_employee.Month Name\",\"NativeReferenceName\":\"Month Name\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"9ae0d9ce9a01e0182ba0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1476.7362428842505,\"y\":359.46869070208726,\"z\":10000,\"width\":386.18595825426945,\"height\":340.0379506641366,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_employee.Month Name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_employee\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month Name\"},\"Name\":\"dim_employee.Month Name\",\"NativeReferenceName\":\"Month Name\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{}}]}}}",
           "filters": "[]",
-          "height": 286.60,
+          "height": 340.04,
           "width": 386.19,
           "x": 1476.74,
           "y": 359.47,
           "z": 10000.00
         },
         {
-          "config": "{\"name\":\"9d009f9a9630e6c6994e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1476.7362428842505,\"y\":750.5123339658444,\"z\":11000,\"width\":386.18595825426945,\"height\":286.60341555977226,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_jobtitle.Job Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_jobtitle\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Job Title\"},\"Name\":\"dim_jobtitle.Job Title\",\"NativeReferenceName\":\"Job Title\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"9d009f9a9630e6c6994e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1476.7362428842505,\"y\":750.5123339658444,\"z\":11000,\"width\":386.18595825426945,\"height\":286.60341555977226,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_jobtitle.Job Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_jobtitle\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Job Title\"},\"Name\":\"dim_jobtitle.Job Title\",\"NativeReferenceName\":\"Job Title\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{}}]}}}",
           "filters": "[]",
           "height": 286.60,
           "width": 386.19,
@@ -592,7 +631,7 @@
           "z": 1000.00
         },
         {
-          "config": "{\"name\":\"afd901c48275b0c06d70\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1476.7362428842505,\"y\":31.57495256166983,\"z\":9000,\"width\":386.18595825426945,\"height\":286.60341555977226,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"fact_performance.Performance Review Year\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_performance\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Performance Review Year\"},\"Name\":\"fact_performance.Performance Review Year\",\"NativeReferenceName\":\"Performance Review Year\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"afd901c48275b0c06d70\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1476.7362428842505,\"y\":31.57495256166983,\"z\":9000,\"width\":386.18595825426945,\"height\":286.60341555977226,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"fact_performance.Performance Review Year\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_performance\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Performance Review Year\"},\"Name\":\"fact_performance.Performance Review Year\",\"NativeReferenceName\":\"Performance Review Year\"}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_performance\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Performance Review Year\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2024L\"}}]]}}}]}}}}]}}}",
           "filters": "[]",
           "height": 286.60,
           "width": 386.19,
@@ -704,6 +743,129 @@
         }
       ],
       "width": 1920.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Payroll_&_Gap",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "9f43b4cc3e401203a073",
+      "ordinal": 9,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"01bc50ff418e057f1f54\",\"layouts\":[{\"id\":0,\"position\":{\"x\":964.1994750656168,\"y\":161.25984251968504,\"z\":6002,\"width\":280.5249343832021,\"height\":127.66404199475065,\"tabOrder\":6002}}],\"singleVisual\":{\"visualType\":\"kpi\",\"projections\":{\"TrendLine\":[{\"queryRef\":\"date.Date\"}],\"Indicator\":[{\"queryRef\":\"Payroll_&_Gap_Analysis.Var_Salary_Variance\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"date.Date\",\"NativeReferenceName\":\"Date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Var_Salary_Variance\"},\"Name\":\"Payroll_&_Gap_Analysis.Var_Salary_Variance\",\"NativeReferenceName\":\"Var_Salary_Variance\"}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 127.66,
+          "width": 280.52,
+          "x": 964.20,
+          "y": 161.26,
+          "z": 6002.00
+        },
+        {
+          "config": "{\"name\":\"0f05b1983a3657e975ad\",\"layouts\":[{\"id\":0,\"position\":{\"x\":668.5564304461942,\"y\":161.25984251968504,\"z\":6001,\"width\":280.5249343832021,\"height\":127.66404199475065,\"tabOrder\":6001}}],\"singleVisual\":{\"visualType\":\"kpi\",\"projections\":{\"TrendLine\":[{\"queryRef\":\"date.Date\"}],\"Indicator\":[{\"queryRef\":\"Payroll_&_Gap_Analysis.Var_StandardDeviation_Payroll\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"date.Date\",\"NativeReferenceName\":\"Date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Var_StandardDeviation_Payroll\"},\"Name\":\"Payroll_&_Gap_Analysis.Var_StandardDeviation_Payroll\",\"NativeReferenceName\":\"Var_StandardDeviation_Payroll\"}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 127.66,
+          "width": 280.52,
+          "x": 668.56,
+          "y": 161.26,
+          "z": 6001.00
+        },
+        {
+          "config": "{\"name\":\"58464c8c4f7fda262a44\",\"layouts\":[{\"id\":0,\"position\":{\"x\":60.47244094488189,\"y\":364.51443569553805,\"z\":5000,\"width\":440.1049868766404,\"height\":280.5249343832021,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Payroll_&_Gap_Analysis.Regression_Line\"}],\"Category\":[{\"queryRef\":\"dim_employee.Gender\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_employee\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Regression_Line\"},\"Name\":\"Payroll_&_Gap_Analysis.Regression_Line\",\"NativeReferenceName\":\"Regression_Line\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Gender\"},\"Name\":\"dim_employee.Gender\",\"NativeReferenceName\":\"Gender\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Regression_Line\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.52,
+          "width": 440.10,
+          "x": 60.47,
+          "y": 364.51,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"79bde34c1597a223c3ea\",\"layouts\":[{\"id\":0,\"position\":{\"x\":783.1397849462365,\"y\":0,\"z\":0,\"width\":476.21505376344084,\"height\":129.3763440860215,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"date.MonthName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"MonthName\"},\"Name\":\"date.MonthName\",\"NativeReferenceName\":\"MonthName\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"MonthName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'April'\"}}]]}}}]}}}}],\"layout\":[{\"properties\":{\"rowCount\":{\"expr\":{\"Literal\":{\"Value\":\"4L\"}}},\"columnCount\":{\"expr\":{\"Literal\":{\"Value\":\"6L\"}}}}}]}}}",
+          "filters": "[{\"name\":\"03f5b158366bb9a3bd70\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Payroll_&_Gap_Analysis\"}},\"Property\":\"Filter_Slicer\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":1,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Filter_Slicer\"}},\"Right\":{\"Literal\":{\"Value\":\"0L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":1}]",
+          "height": 129.38,
+          "width": 476.22,
+          "x": 783.14,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"80e203332dda5f544e89\",\"layouts\":[{\"id\":0,\"position\":{\"x\":484.4731182795699,\"y\":13.763440860215054,\"z\":2000,\"width\":279.39784946236557,\"height\":126.6236559139785,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"kpi\",\"projections\":{\"Indicator\":[{\"queryRef\":\"Measures_Payroll_Gap.Cal_Total_Payroll\"}],\"TrendLine\":[{\"queryRef\":\"date.Date\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Cal_Total_Payroll\"},\"Name\":\"Measures_Payroll_Gap.Cal_Total_Payroll\",\"NativeReferenceName\":\"Cal_Total_Payroll\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"date.Date\",\"NativeReferenceName\":\"Date\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 126.62,
+          "width": 279.40,
+          "x": 484.47,
+          "y": 13.76,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"8664d8f0a286b3592a08\",\"layouts\":[{\"id\":0,\"position\":{\"x\":5.039370078740157,\"y\":13.438320209973753,\"z\":1000,\"width\":478.74015748031496,\"height\":97.42782152230971,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"date.Year\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"},\"Name\":\"date.Year\",\"NativeReferenceName\":\"Year\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'2020'\"}}]]}}}]}}}}],\"layout\":[{\"properties\":{\"rowCount\":{\"expr\":{\"Literal\":{\"Value\":\"3L\"}}},\"columnCount\":{\"expr\":{\"Literal\":{\"Value\":\"5L\"}}}}}]}}}",
+          "filters": "[{\"name\":\"03f5b158366bb9a3bd70\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Payroll_&_Gap_Analysis\"}},\"Property\":\"Filter_Slicer\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":1,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Filter_Slicer\"}},\"Right\":{\"Literal\":{\"Value\":\"0L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":1}]",
+          "height": 97.43,
+          "width": 478.74,
+          "x": 5.04,
+          "y": 13.44,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"9ccd1e2beaed2bffd3ed\",\"layouts\":[{\"id\":0,\"position\":{\"x\":60.47244094488189,\"y\":161.25984251968504,\"z\":3000,\"width\":280.5249343832021,\"height\":127.66404199475065,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"kpi\",\"projections\":{\"TrendLine\":[{\"queryRef\":\"date.Date\"}],\"Indicator\":[{\"queryRef\":\"Payroll_&_Gap_Analysis.Cal_AVG_Payroll\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"date.Date\",\"NativeReferenceName\":\"Date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Cal_AVG_Payroll\"},\"Name\":\"Payroll_&_Gap_Analysis.Cal_AVG_Payroll\",\"NativeReferenceName\":\"Cal_AVG_Payroll\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 127.66,
+          "width": 280.52,
+          "x": 60.47,
+          "y": 161.26,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"b8f53cb1be7e2517f53c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":500.5774278215223,\"y\":364.51443569553805,\"z\":6000,\"width\":550.9711286089239,\"height\":282.20472440944883,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dim_employee.Gender\",\"active\":true},{\"queryRef\":\"dim_department.Department\",\"active\":true}],\"Y\":[{\"queryRef\":\"Payroll_&_Gap_Analysis.Gap_Percent_Variance\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_department\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"dim_employee\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Gender\"},\"Name\":\"dim_employee.Gender\",\"NativeReferenceName\":\"Gender\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Department\"},\"Name\":\"dim_department.Department\",\"NativeReferenceName\":\"Count of Department\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Gap_Percent_Variance\"},\"Name\":\"Payroll_&_Gap_Analysis.Gap_Percent_Variance\",\"NativeReferenceName\":\"Gap_Percent_Variance\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Gender\"}}},{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Department\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 282.20,
+          "width": 550.97,
+          "x": 500.58,
+          "y": 364.51,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"ec4ed7580ca1ff5a4eef\",\"layouts\":[{\"id\":0,\"position\":{\"x\":359.4750656167979,\"y\":161.25984251968504,\"z\":4000,\"width\":280.5249343832021,\"height\":127.66404199475065,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"kpi\",\"projections\":{\"Indicator\":[{\"queryRef\":\"Payroll_&_Gap_Analysis.Cal_Gender_Pay_Gap_%\"}],\"TrendLine\":[{\"queryRef\":\"date.Date\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Cal_Gender_Pay_Gap_%\"},\"Name\":\"Payroll_&_Gap_Analysis.Cal_Gender_Pay_Gap_%\",\"NativeReferenceName\":\"Cal_Gender_Pay_Gap_%\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"date.Date\",\"NativeReferenceName\":\"Date\"}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 127.66,
+          "width": 280.52,
+          "x": 359.48,
+          "y": 161.26,
+          "z": 4000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Payroll_Analysis",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "aaf800429ec492ba0136",
+      "ordinal": 10,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"53af376b4e8343c48eb2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.078740157480315,\"y\":100.78740157480314,\"z\":0,\"width\":431.70603674540683,\"height\":604.7244094488188,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Measures_Payroll_Gap.Graph_Min_Payroll\"},{\"queryRef\":\"Payroll_&_Gap_Analysis.Graph_Q1_Basic\"},{\"queryRef\":\"Payroll_&_Gap_Analysis.Graph_Q3_Basic\"},{\"queryRef\":\"Payroll_&_Gap_Analysis.Graph_Median_Basic\"}],\"Category\":[{\"queryRef\":\"dim_employee.Education Level\",\"active\":true},{\"queryRef\":\"dim_department.Department\"},{\"queryRef\":\"dim_employee.Gender\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_employee\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"dim_department\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Graph_Min_Basic\"},\"Name\":\"Measures_Payroll_Gap.Graph_Min_Payroll\",\"NativeReferenceName\":\"Graph_Min_Basic\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Graph_Q1_Basic\"},\"Name\":\"Payroll_&_Gap_Analysis.Graph_Q1_Basic\",\"NativeReferenceName\":\"Graph_Q1_Basic\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Graph_Q3_Basic\"},\"Name\":\"Payroll_&_Gap_Analysis.Graph_Q3_Basic\",\"NativeReferenceName\":\"Graph_Q3_Basic\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Graph_Median_Basic\"},\"Name\":\"Payroll_&_Gap_Analysis.Graph_Median_Basic\",\"NativeReferenceName\":\"Graph_Median_Basic\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Gender\"},\"Name\":\"dim_employee.Gender\",\"NativeReferenceName\":\"Gender\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Department\"},\"Name\":\"dim_department.Department\",\"NativeReferenceName\":\"Department\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Education Level\"},\"Name\":\"dim_employee.Education Level\",\"NativeReferenceName\":\"Education Level\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Education Level\"}}},{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Department\"}}},{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Gender\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"enableTitleDataLabel\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"totals\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showGradientLegend\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 604.72,
+          "width": 431.71,
+          "x": 10.08,
+          "y": 100.79,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"a25431b7b8649980d1c0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":451.8635170603674,\"y\":100.78740157480314,\"z\":1000,\"width\":626.5616797900262,\"height\":604.7244094488188,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"date.Year\",\"active\":true}],\"Y\":[{\"queryRef\":\"Payroll_&_Gap_Analysis.Cal_Overtime\"}],\"Series\":[{\"queryRef\":\"dim_employee.Education Level\"}],\"Rows\":[{\"queryRef\":\"dim_department.Department\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Payroll_&_Gap_Analysis\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"dim_employee\",\"Type\":0},{\"Name\":\"d2\",\"Entity\":\"dim_department\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"},\"Name\":\"date.Year\",\"NativeReferenceName\":\"Year\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Cal_Overtime\"},\"Name\":\"Payroll_&_Gap_Analysis.Cal_Overtime\",\"NativeReferenceName\":\"Cal_Overtime\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Education Level\"},\"Name\":\"dim_employee.Education Level\",\"NativeReferenceName\":\"Education Level\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d2\"}},\"Property\":\"Department\"},\"Name\":\"dim_department.Department\",\"NativeReferenceName\":\"Department\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Cal_Overtime\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 604.72,
+          "width": 626.56,
+          "x": 451.86,
+          "y": 100.79,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
     },
     {
       "config": "{}",
