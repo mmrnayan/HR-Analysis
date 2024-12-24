@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":3,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":8,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
   "layoutOptimization": 0,
   "publicCustomVisuals": [
     "sankey02300D1BE6F5427989F3DE31CCA9E0F32020"
@@ -565,16 +565,16 @@
           "z": 2000.00
         },
         {
-          "config": "{\"name\":\"9ae0d9ce9a01e0182ba0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1476.7362428842505,\"y\":359.46869070208726,\"z\":10000,\"width\":386.18595825426945,\"height\":286.60341555977226,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_employee.Month Name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_employee\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month Name\"},\"Name\":\"dim_employee.Month Name\",\"NativeReferenceName\":\"Month Name\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"9ae0d9ce9a01e0182ba0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1476.7362428842505,\"y\":359.46869070208726,\"z\":10000,\"width\":386.18595825426945,\"height\":340.0379506641366,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_employee.Month Name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_employee\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month Name\"},\"Name\":\"dim_employee.Month Name\",\"NativeReferenceName\":\"Month Name\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{}}]}}}",
           "filters": "[]",
-          "height": 286.60,
+          "height": 340.04,
           "width": 386.19,
           "x": 1476.74,
           "y": 359.47,
           "z": 10000.00
         },
         {
-          "config": "{\"name\":\"9d009f9a9630e6c6994e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1476.7362428842505,\"y\":750.5123339658444,\"z\":11000,\"width\":386.18595825426945,\"height\":286.60341555977226,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_jobtitle.Job Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_jobtitle\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Job Title\"},\"Name\":\"dim_jobtitle.Job Title\",\"NativeReferenceName\":\"Job Title\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"9d009f9a9630e6c6994e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1476.7362428842505,\"y\":750.5123339658444,\"z\":11000,\"width\":386.18595825426945,\"height\":286.60341555977226,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_jobtitle.Job Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_jobtitle\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Job Title\"},\"Name\":\"dim_jobtitle.Job Title\",\"NativeReferenceName\":\"Job Title\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{}}]}}}",
           "filters": "[]",
           "height": 286.60,
           "width": 386.19,
@@ -592,7 +592,7 @@
           "z": 1000.00
         },
         {
-          "config": "{\"name\":\"afd901c48275b0c06d70\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1476.7362428842505,\"y\":31.57495256166983,\"z\":9000,\"width\":386.18595825426945,\"height\":286.60341555977226,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"fact_performance.Performance Review Year\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_performance\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Performance Review Year\"},\"Name\":\"fact_performance.Performance Review Year\",\"NativeReferenceName\":\"Performance Review Year\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"afd901c48275b0c06d70\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1476.7362428842505,\"y\":31.57495256166983,\"z\":9000,\"width\":386.18595825426945,\"height\":286.60341555977226,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"fact_performance.Performance Review Year\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_performance\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Performance Review Year\"},\"Name\":\"fact_performance.Performance Review Year\",\"NativeReferenceName\":\"Performance Review Year\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{}}]}}}",
           "filters": "[]",
           "height": 286.60,
           "width": 386.19,
