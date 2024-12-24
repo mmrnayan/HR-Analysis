@@ -8,11 +8,11 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.138.1452.0 (24.11)"
+        "value": "2.138.1004.0 (24.11)"
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"resignation prediction\",\"Performance-9Box\",\"Per:2621-9Box\",\"Per:2734-9Box\",\"Per:1643-9Box\",\"Per:1665-9Box\",\"Per:1122-9Box\",\"Per:1127-9Box\",\"Per:2732-9Box\",\"f1 score\",\"Potential-9Box\",\"Po:2621-9Box\",\"Po:2734-9Box\",\"Po:1643-9Box\",\"Po:1665-9Box\",\"Po:1122-9Box\",\"Po:1127-9Box\",\"Po:2732-9Box\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"resignation_prediction\",\"Performance-9Box\",\"Per:2621-9Box\",\"Per:2734-9Box\",\"Per:1643-9Box\",\"Per:1665-9Box\",\"Per:1122-9Box\",\"Per:1127-9Box\",\"Per:2732-9Box\",\"f1 score\",\"Potential-9Box\",\"Po:2621-9Box\",\"Po:2734-9Box\",\"Po:1643-9Box\",\"Po:1665-9Box\",\"Po:1122-9Box\",\"Po:1127-9Box\",\"Po:2732-9Box\",\"9-Box Grid\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -3021,7 +3021,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "dim_employee",
-                    "ConceptualProperty": "Date of Birth"
+                    "ConceptualProperty": "Month Name"
                   }
                 },
                 "SemanticType": "Time",
@@ -23177,7 +23177,7 @@
       },
       {
         "name": "b83f3a18-c589-84a3-9b0d-47489f748b50",
-        "fromColumn": "Date of Birth",
+        "fromColumn": "Month Name",
         "fromTable": "dim_employee",
         "isActive": false,
         "toColumn": "Date",
@@ -23199,11 +23199,46 @@
         "toTable": "dim_employee"
       },
       {
-        "name": "45ff785f-6cd7-ba69-b268-b0e49f94e82e",
+        "name": "96ef2427-e87b-81d2-229c-1a3e19433b65",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "Employee ID",
+        "fromTable": "Potential-9Box",
+        "toColumn": "Employee ID",
+        "toTable": "fact_employee"
+      },
+      {
+        "name": "fe881530-caab-9359-82c4-2275a7357c79",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "Employee ID",
+        "fromTable": "Performance-9Box",
+        "toColumn": "Employee ID",
+        "toTable": "fact_employee"
+      },
+      {
+        "name": "fe277d4b-9656-97d3-c5d0-8bc4846313ab",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "Employee ID",
+        "fromTable": "9-Box Grid",
+        "toColumn": "Employee ID",
+        "toTable": "fact_employee"
+      },
+      {
+        "name": "aa5ed792-3e33-fd84-e7eb-71abac58253c",
+        "fromColumn": "Employee ID",
+        "fromTable": "fact_performance",
+        "isActive": false,
+        "toColumn": "Employee ID",
+        "toTable": "9-Box Grid"
+      },
+      {
+        "name": "df284f29-a08a-15b4-cc7f-c3d88d4ec5fc",
         "fromColumn": "Employee ID",
         "fromTable": "fact_employee",
         "toColumn": "Employee ID",
-        "toTable": "resignation prediction"
+        "toTable": "resignation_prediction"
       }
     ],
     "sourceQueryCulture": "en-US",
@@ -23678,100 +23713,6 @@
             "isDataTypeInferred": true,
             "lineageTag": "01a651f2-fed5-446f-8501-f3ed5edff163",
             "summarizeBy": "none",
-            "type": "calculated"
-          },
-          {
-            "name": "Risk Category",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "expression": [
-              "",
-              "SWITCH(",
-              "    TRUE(),",
-              "    [Resignation Probability] >= 75, \"Very High Risk\",",
-              "    [Resignation Probability] >= 50, \"High Risk\",",
-              "    [Resignation Probability] >= 25, \"Medium Risk\",",
-              "    [Resignation Probability] >= 0, \"Low Risk\",",
-              "    \"Unknown\"",
-              ")"
-            ],
-            "isDataTypeInferred": true,
-            "lineageTag": "4cb97585-9403-4f02-b7b7-6a609cbdd74b",
-            "summarizeBy": "none",
-            "type": "calculated"
-          },
-          {
-            "name": "Actual Value",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "expression": [
-              "",
-              "IF(fact_employee[Current Employment Status] = \"Resigned\", 1, 0)"
-            ],
-            "formatString": "0",
-            "isDataTypeInferred": true,
-            "lineageTag": "f9c932e6-72f9-426c-a9ce-0ab756515a36",
-            "summarizeBy": "sum",
-            "type": "calculated"
-          },
-          {
-            "name": "Predicted Value",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "expression": [
-              "",
-              "IF([Resignation Probability] >= 30, 1, 0)"
-            ],
-            "formatString": "0",
-            "isDataTypeInferred": true,
-            "lineageTag": "465e7243-4cc4-4f5b-ad76-6c742f6ac247",
-            "summarizeBy": "sum",
-            "type": "calculated"
-          },
-          {
-            "name": "Resignation Probability",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "expression": [
-              "",
-              "VAR CurrentEmpID = fact_employee[Employee ID]",
-              "VAR CurrentStatus = fact_employee[Current Employment Status]",
-              "VAR MaxScore = 1",
-              "VAR MinScore = 0",
-              "RETURN",
-              "IF(",
-              "    NOT(ISBLANK([Risk Score])),",
-              "    MIN(MAX(DIVIDE([Risk Score] - MinScore, MaxScore - MinScore) * 100, 0), 100),",
-              "    0",
-              ")"
-            ],
-            "isDataTypeInferred": true,
-            "lineageTag": "2a6f5fc7-a170-4857-932f-4053e3310ba9",
-            "summarizeBy": "sum",
             "type": "calculated"
           },
           {
@@ -25088,22 +25029,17 @@
             "summarizeBy": "none"
           },
           {
-            "name": "Date of Birth",
+            "name": "Month Name",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
               }
             ],
-            "dataType": "dateTime",
-            "formatString": "Long Date",
+            "dataType": "string",
             "isHidden": true,
             "lineageTag": "850f4014-e32c-4a1a-a6b2-b9a73551b230",
-            "sourceColumn": "Date of Birth",
+            "sourceColumn": "Month Name",
             "summarizeBy": "none"
           },
           {
@@ -25176,9 +25112,11 @@
                 "    Source = fact_employee,",
                 "    #\"Removed Other Columns\" = Table.SelectColumns(Source,{\"Employee ID\", \"Full Name\", \"Date of Birth\", \"Gender\", \"Education Level\", \"Region\", \"Country\", \"Latitude\", \"Longitude\", \"Ethnicity\"}),",
                 "    #\"Removed Columns\" = Table.RemoveColumns(#\"Removed Other Columns\",{\"Region\", \"Latitude\", \"Longitude\"}),",
-                "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Columns\", {\"Employee ID\"})",
+                "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Columns\", {\"Employee ID\"}),",
+                "    #\"Extracted Month Name\" = Table.TransformColumns(#\"Removed Duplicates\", {{\"Date of Birth\", each Date.MonthName(_), type text}}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Extracted Month Name\",{{\"Date of Birth\", \"Month Name\"}})",
                 "in",
-                "    #\"Removed Duplicates\""
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -26337,173 +26275,13 @@
             "lineageTag": "c9b73368-e6d2-4895-983d-595301f97f7d"
           },
           {
-            "name": "Categorical Score",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "displayFolder": "Resigned\\Attrition Prediction",
-            "expression": [
-              "",
-              "VAR DepartmentScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Department]))",
-              "VAR JobTitleScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Job Title]))",
-              "VAR LocationScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Country]))",
-              "VAR EthnicityScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Ethnicity]))",
-              "VAR OrgLevelScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Organization Level]))",
-              "VAR EducationScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Education Level]))",
-              "VAR GenderScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Gender]))",
-              "VAR EmpStatusScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Employment Status]))",
-              "VAR EmpTypeScore = CALCULATE(DIVIDE([# of Resignation], [# of Employee], 0), ALLEXCEPT(fact_employee, fact_employee[Employment Type]))",
-              "RETURN",
-              "(DepartmentScore + JobTitleScore + LocationScore + EthnicityScore + OrgLevelScore + EducationScore + GenderScore + EmpStatusScore + EmpTypeScore) / 9 * 0.4"
-            ],
-            "lineageTag": "2aab0826-ed03-4d45-8d97-2da6fc534dc3"
-          },
-          {
-            "name": "Numerical Score",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "displayFolder": "Resigned\\Attrition Prediction",
-            "expression": [
-              "",
-              "VAR PromotionScore = 1 - DIVIDE(",
-              "    SUM(fact_employee[Times Promoted]), ",
-              "    CALCULATE(MAX(fact_employee[Times Promoted]), ALL(fact_employee)), ",
-              "    0",
-              ")",
-              "",
-              "VAR TenureScore = SWITCH(",
-              "    SELECTEDVALUE(fact_employee[tenure_band]),",
-              "    \"<1 Year\", 1,",
-              "    \"1-3 Years\", 0.7,",
-              "    \"3-6 Years\", 0.4,",
-              "    \"6+ Years\", 0.2,",
-              "    0 // Default case",
-              ")",
-              "",
-              "VAR MgmtExpScore = 1 - DIVIDE(",
-              "    AVERAGE(fact_resigned[Management/Team Experience Score]), ",
-              "    5, ",
-              "    0",
-              ")",
-              "",
-              "VAR SatisfactionScore = 1 - DIVIDE(",
-              "    AVERAGE(exit_interview_survey[Work Environment Satisfaction Score]), ",
-              "    5, ",
-              "    0",
-              ")",
-              "",
-              "VAR TeamSizeScore = DIVIDE(",
-              "    AVERAGE(fact_performance[Team Size]), ",
-              "    CALCULATE(MAX(fact_performance[Team Size]), ALL(fact_performance)), ",
-              "    0",
-              ")",
-              "",
-              "VAR WorkingHoursScore = DIVIDE(",
-              "    AVERAGE(fact_performance[Working Hours]), ",
-              "    CALCULATE(MAX(fact_performance[Working Hours]), ALL(fact_performance)), ",
-              "    0",
-              ")",
-              "",
-              "VAR ProjectScore = DIVIDE(",
-              "    SUM(fact_performance[Projects Handled]), ",
-              "    SUM(fact_performance[Project Target]), ",
-              "    0",
-              ")",
-              "",
-              "VAR IncentiveScore = 1 - DIVIDE(",
-              "    SUM(fact_performance[Incentive Amount ($)]), ",
-              "    CALCULATE(MAX(fact_performance[Incentive Amount ($)]), ALL(fact_performance)), ",
-              "    0",
-              ")",
-              "",
-              " VAR BonusScore = 1 - DIVIDE(",
-              "    SUM(fact_performance[Bonus ($)]), ",
-              "    CALCULATE(MAX(fact_performance[Bonus ($)]), ALL(fact_performance)), ",
-              "    0",
-              ")",
-              "",
-              "RETURN",
-              "(PromotionScore + TenureScore + MgmtExpScore + SatisfactionScore + ",
-              " TeamSizeScore + WorkingHoursScore + ProjectScore + IncentiveScore + ",
-              " BonusScore) / 9 * 0.6"
-            ],
-            "lineageTag": "32540739-3149-4d0c-abb0-926324f31006"
-          },
-          {
-            "name": "Risk Score",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "displayFolder": "Resigned\\Attrition Prediction",
-            "expression": "[Categorical Score] + [Numerical Score]",
-            "lineageTag": "f0a4adb5-2455-4f60-9382-94a793fa58e1"
-          },
-          {
-            "name": "Resignation Probability",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "displayFolder": "Resigned\\Attrition Analysis",
-            "expression": [
-              "",
-              "VAR CurrentEmpID = SELECTEDVALUE(fact_employee[Employee ID])",
-              "VAR CurrentStatus = SELECTEDVALUE(fact_employee[Current Employment Status])",
-              "VAR MaxScore = 1",
-              "VAR MinScore = 0",
-              "RETURN",
-              "IF(",
-              "    AND(",
-              "        NOT(ISBLANK([Risk Score])),",
-              "        CurrentStatus = \"Active\"",
-              "    ),",
-              "    MIN(MAX(DIVIDE([Risk Score] - MinScore, MaxScore - MinScore) * 100, 0), 100),",
-              "    IF(",
-              "        CurrentStatus = \"Resigned\",",
-              "        BLANK(),",
-              "        0",
-              "    )",
-              ")",
-              ""
-            ],
-            "lineageTag": "8272abde-5277-43c6-aea9-cbc6e1ba0e1c"
-          },
-          {
-            "name": "Risk Category",
-            "displayFolder": "Resigned\\Attrition Prediction",
-            "expression": [
-              "",
-              "SWITCH(",
-              "    TRUE(),",
-              "    [Resignation Probability] >= 75, \"Very High Risk\",",
-              "    [Resignation Probability] >= 50, \"High Risk\",",
-              "    [Resignation Probability] >= 25, \"Medium Risk\",",
-              "    [Resignation Probability] >= 0, \"Low Risk\",",
-              "    \"Unknown\"",
-              ")"
-            ],
-            "lineageTag": "935a708b-4aac-4d4c-aeb8-28a10b669979"
-          },
-          {
             "name": "Very High Risk Employee",
             "displayFolder": "Resigned\\Attrition Prediction",
             "expression": [
               "",
               "CALCULATE(",
               "    COUNTROWS(fact_employee),",
-              "    fact_employee[Risk Category]=\"Very High Risk\" && fact_employee[Current Employment Status]=\"Active\"",
+              "    resignation_prediction[Risk Category]=\"Very High\"",
               ")"
             ],
             "formatString": "0",
@@ -26516,19 +26294,20 @@
               "",
               "CALCULATE(",
               "    COUNTROWS(fact_employee),",
-              "    fact_employee[Risk Category]=\"High Risk\" && fact_employee[Current Employment Status]=\"Active\"",
+              "    resignation_prediction[Risk Category]=\"High\"",
               ")"
             ],
             "formatString": "0",
             "lineageTag": "69d23417-fc81-4d0d-b70f-3d2326604d4d"
           },
           {
-            "name": "Medium Risk Employee",
+            "name": "Moderate Risk Employee",
+            "displayFolder": "Resigned\\Attrition Prediction",
             "expression": [
               "",
               "CALCULATE(",
               "    COUNTROWS(fact_employee),",
-              "    fact_employee[Risk Category]=\"Medium Risk\"",
+              "    resignation_prediction[Risk Category]=\"Medium\"",
               ")"
             ],
             "formatString": "0",
@@ -26541,167 +26320,11 @@
               "",
               "CALCULATE(",
               "    COUNTROWS(fact_employee),",
-              "    fact_employee[Risk Category]=\"Low Risk\" && fact_employee[Current Employment Status]=\"Active\"",
+              "    resignation_prediction[Risk Category]=\"Low\"",
               ")"
             ],
             "formatString": "0",
             "lineageTag": "17789e82-490d-4f9c-847d-c52e7af0bc47"
-          },
-          {
-            "name": "True Positives",
-            "displayFolder": "Resigned\\Attrition Prediction",
-            "expression": [
-              "",
-              "CALCULATE(",
-              "    COUNTROWS(fact_employee),",
-              "    fact_employee[Current Employment Status] = \"Resigned\",",
-              "    fact_employee[Resignation Probability] >= 30",
-              ")"
-            ],
-            "formatString": "0",
-            "lineageTag": "7998f9a6-a09a-4210-9bf3-3667dc3475f9"
-          },
-          {
-            "name": "False Positives",
-            "displayFolder": "Resigned\\Attrition Prediction",
-            "expression": [
-              "",
-              "CALCULATE(",
-              "    COUNTROWS(fact_employee),",
-              "    FILTER(",
-              "        fact_employee,",
-              "        fact_employee[Current Employment Status] = \"Active\" &&",
-              "        [Resignation Probability] >= 30",
-              "    )",
-              ")"
-            ],
-            "formatString": "0",
-            "lineageTag": "9aa06805-fb88-467c-9d07-f97f22486bb5"
-          },
-          {
-            "name": "False Negetives",
-            "displayFolder": "Resigned\\Attrition Prediction",
-            "expression": [
-              "",
-              "CALCULATE(",
-              "    COUNTROWS(fact_employee),",
-              "    FILTER(",
-              "        fact_employee,",
-              "        fact_employee[Current Employment Status] = \"Resigned\" &&",
-              "        [Resignation Probability] < 30",
-              "    )",
-              ")"
-            ],
-            "formatString": "0",
-            "lineageTag": "311a161b-2249-44ca-8ba1-0a9c4eb6aca6"
-          },
-          {
-            "name": "Precision",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "displayFolder": "Resigned\\Attrition Prediction",
-            "expression": [
-              "",
-              "DIVIDE(",
-              "    [True Positives],",
-              "    [True Positives] + [False Positives],",
-              "    0",
-              ")"
-            ],
-            "lineageTag": "2965059d-521b-4f6e-80d7-9a9ca91fefea"
-          },
-          {
-            "name": "Recall",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "displayFolder": "Resigned\\Attrition Prediction",
-            "expression": [
-              "",
-              "DIVIDE(",
-              "    [True Positives],",
-              "    [True Positives] + [False Negetives],",
-              "    0",
-              ")"
-            ],
-            "lineageTag": "0aab47b2-073a-4086-be32-51d4384abc30"
-          },
-          {
-            "name": "F1 Score",
-            "displayFolder": "Resigned\\Attrition Prediction",
-            "expression": [
-              "",
-              "VAR _Precision = [Precision]",
-              "VAR _Recall = [Recall]",
-              "RETURN",
-              "2 * DIVIDE(_Precision * _Recall, _Precision + _Recall, 0)"
-            ],
-            "formatString": "0.00%;-0.00%;0.00%",
-            "lineageTag": "7dea056a-e904-4462-8bfb-d2360d0e7f1c"
-          },
-          {
-            "name": "F1 Score Not Resigned",
-            "displayFolder": "Resigned\\Attrition Analysis",
-            "expression": [
-              "",
-              "VAR _TruePositives = ",
-              "    CALCULATE(",
-              "        [True Positives],",
-              "        fact_employee[Current Employment Status] = \"Active\"",
-              "    )",
-              "VAR _FalsePositives = ",
-              "    CALCULATE(",
-              "        [False Positives],",
-              "        fact_employee[Current Employment Status] = \"Active\"",
-              "    )",
-              "VAR _FalseNegatives = ",
-              "    CALCULATE(",
-              "        [False Negetives],",
-              "        fact_employee[Current Employment Status] = \"Active\"",
-              "    )",
-              "VAR _Precision = DIVIDE(_TruePositives, _TruePositives + _FalsePositives, 0)",
-              "VAR _Recall = DIVIDE(_TruePositives, _TruePositives + _FalseNegatives, 0)",
-              "RETURN",
-              "2 * DIVIDE(_Precision * _Recall, _Precision + _Recall, 0)"
-            ],
-            "formatString": "0.00%;-0.00%;0.00%",
-            "lineageTag": "283f1abf-2835-457c-ab0e-0af5fe9964de"
-          },
-          {
-            "name": "F1 Score Resigned",
-            "displayFolder": "Resigned\\Attrition Analysis",
-            "expression": [
-              "",
-              "VAR _TruePositives = ",
-              "    CALCULATE(",
-              "        [True Positives],",
-              "        fact_employee[Current Employment Status] = \"Resigned\"",
-              "    )",
-              "VAR _FalsePositives = ",
-              "    CALCULATE(",
-              "        [False Positives],",
-              "        fact_employee[Current Employment Status] = \"Resigned\"",
-              "    )",
-              "VAR _FalseNegatives = ",
-              "    CALCULATE(",
-              "        [False Negetives],",
-              "        fact_employee[Current Employment Status] = \"Resigned\"",
-              "    )",
-              "VAR _Precision = DIVIDE(_TruePositives, _TruePositives + _FalsePositives, 0)",
-              "VAR _Recall = DIVIDE(_TruePositives, _TruePositives + _FalseNegatives, 0)",
-              "RETURN",
-              "2 * DIVIDE(_Precision * _Recall, _Precision + _Recall, 0)",
-              ""
-            ],
-            "formatString": "0.00%;-0.00%;0.00%",
-            "lineageTag": "ffb3e192-ba08-430f-8c08-93bd9d4c5f1a"
           },
           {
             "name": "Average Training Hours",
@@ -26890,6 +26513,86 @@
             ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "1661498d-77cb-4e34-9219-7e51f28bb6d1"
+          },
+          {
+            "name": "High-Falling Short",
+            "description": "Number 7 box",
+            "displayFolder": "Distinct count of each category",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")",
+            "formatString": "0",
+            "lineageTag": "fa793b8d-212c-4ba8-8a7c-0f8ca40f9205"
+          },
+          {
+            "name": "High-On Track",
+            "description": "Number 8 box",
+            "displayFolder": "Distinct count of each category",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")",
+            "formatString": "0",
+            "lineageTag": "5e4a9671-6ca0-4cf2-93c2-e42d122f5daf"
+          },
+          {
+            "name": "High-Peak Performer",
+            "description": "Number 9 box",
+            "displayFolder": "Distinct count of each category",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\")",
+            "formatString": "0",
+            "lineageTag": "5a8361df-9a27-4581-9f0f-2214fe0abc4f"
+          },
+          {
+            "name": "Low-Falling Short",
+            "description": "Number 1 box",
+            "displayFolder": "Distinct count of each category",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")",
+            "formatString": "0",
+            "lineageTag": "d1e8fb4c-efe0-45e7-b6ad-697211580ec2"
+          },
+          {
+            "name": "Low-On Track",
+            "description": "Number 2 box",
+            "displayFolder": "Distinct count of each category",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")",
+            "formatString": "0",
+            "lineageTag": "561128da-a5c8-4b9a-8373-e77c23a492a2"
+          },
+          {
+            "name": "Low-Peak Performer",
+            "description": "Number 3 box",
+            "displayFolder": "Distinct count of each category",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")",
+            "formatString": "0",
+            "lineageTag": "8c64d53f-0e5e-4ce2-8dd5-3df1aaeb2219"
+          },
+          {
+            "name": "Moderate-Falling Short",
+            "description": "Number 4 box",
+            "displayFolder": "Distinct count of each category",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")",
+            "formatString": "0",
+            "lineageTag": "0f15d2d0-ee5a-405f-b0be-003cd288e41f"
+          },
+          {
+            "name": "Moderate-On Track",
+            "description": "Number 5 box",
+            "displayFolder": "Distinct count of each category",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")",
+            "formatString": "0",
+            "lineageTag": "45f40164-d478-4bc9-936a-611782eef382"
+          },
+          {
+            "name": "Moderate-Peak Performer",
+            "description": "Number 6 box",
+            "displayFolder": "Distinct count of each category",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")",
+            "formatString": "0",
+            "lineageTag": "798bef83-3af2-4594-a831-401ca7eb5e6d"
+          },
+          {
+            "name": "Total of Category",
+            "description": "Total of all category (distinct count)",
+            "displayFolder": "Distinct count of each category",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\")",
+            "formatString": "0",
+            "lineageTag": "73f6ce79-22e7-44df-928a-00708aa6a7aa"
           }
         ],
         "partitions": [
@@ -27706,7 +27409,7 @@
         ]
       },
       {
-        "name": "resignation prediction",
+        "name": "resignation_prediction",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -27752,13 +27455,10 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
               }
             ],
             "dataType": "double",
+            "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "72526d5b-4773-4505-9bc2-2c182cc2bdee",
             "sourceColumn": "Resignation Probability",
             "summarizeBy": "none"
@@ -27776,18 +27476,43 @@
             "lineageTag": "0b13feb2-241a-4769-9afe-4fc22d9086e4",
             "sourceColumn": "Resignation Prediction",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Risk Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    resignation_prediction[Resignation Probability] < .20, \"Very Low\",",
+              "    resignation_prediction[Resignation Probability] <= .4, \"Low\",",
+              "    resignation_prediction[Resignation Probability] <= .6, \"Moderate\",",
+              "    resignation_prediction[Resignation Probability] <= .8, \"High\",",
+              "    \"Very High\"",
+              ")"
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "0e6631ab-a04a-47d7-8b93-dbaf5b42db22",
+            "summarizeBy": "none",
+            "type": "calculated"
           }
         ],
         "lineageTag": "24b5c18d-87f2-415d-bf65-36f89420f2c8",
         "partitions": [
           {
-            "name": "resignation prediction",
+            "name": "resignation_prediction",
             "mode": "import",
             "queryGroup": "Data\\other",
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\99999 predicted_resignations.csv\"),[Delimiter=\",\", Columns=45, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\HR-Analysis\\dataset final\\99999 predicted_resignations.csv\"),[Delimiter=\",\", Columns=45, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Promoted Headers\",{\"Employee ID\", \"Full Name\", \"Resignation Probability\", \"Resignation Prediction\"}),",
                 "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Removed Other Columns\",{\"Employee ID\"}),",
@@ -27834,7 +27559,7 @@
             "formatString": "0",
             "lineageTag": "536bbfc6-6838-40b0-82f5-eaf0a9debd8d",
             "sourceColumn": "Employee ID",
-            "summarizeBy": "count"
+            "summarizeBy": "none"
           },
           {
             "name": "2018",
@@ -27933,6 +27658,53 @@
             "lineageTag": "1f13610a-e0d8-496b-8ae5-b568e7b03287",
             "sourceColumn": "2024",
             "summarizeBy": "sum"
+          },
+          {
+            "name": "Average Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "bcd86780-63de-4e10-b75d-cd2e534cbb63",
+            "sourceColumn": "Average Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Assessment Performance Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "b3201d24-a42a-472c-a642-2e5f295f5d24",
+            "sourceColumn": "Assessment Performance Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "assessment Performance Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "393c1b6b-fa57-4edd-afd2-b47bb0aafb76",
+            "sourceColumn": "assessment Performance Category",
+            "summarizeBy": "none"
           }
         ],
         "description": " 9-Box grid for Performance Analysis",
@@ -27964,9 +27736,38 @@
                 "    #\"Appended Query4\" = Table.Combine({#\"Removed Errors1\", #\"Per:1122-9Box\"}),",
                 "    #\"Appended Query5\" = Table.Combine({#\"Appended Query4\", #\"Per:1127-9Box\"}),",
                 "    #\"Appended Query6\" = Table.Combine({#\"Appended Query5\", #\"Per:2732-9Box\"}),",
-                "    #\"Removed Errors2\" = Table.RemoveRowsWithErrors(#\"Appended Query6\", {\"2022\"})",
+                "    #\"Removed Errors2\" = Table.RemoveRowsWithErrors(#\"Appended Query6\", {\"2022\"}),",
+                "    #\"Added Custom\" = Table.AddColumn(#\"Removed Errors2\", \"Average Rating\", each let",
+                "    NonZeroValues = List.Select({[2018], [2019], [2020], [2021], [2022], [2023], [2024]}, each _ <> 0),",
+                "    Average = if List.Count(NonZeroValues) > 0 then List.Average(NonZeroValues) else null",
                 "in",
-                "    #\"Removed Errors2\""
+                "    Average),",
+                "    #\"Changed Type3\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Average Rating\", type number}}),",
+                "    #\"Added Custom1\" = Table.AddColumn(#\"Changed Type3\", \"Assessment Performance Rating\", each if [Average Rating] >= 1 and [Average Rating] <= 2 then",
+                "        if [Average Rating] > 1.5 then 2 ",
+                "        else if [Average Rating] < 1.5 then 1 ",
+                "        else [Average Rating]",
+                "    else if [Average Rating] >2 and [Average Rating] <3 then",
+                "        if [Average Rating] > 2.5 then 3 ",
+                "        else if [Average Rating] < 2.5 then 2 ",
+                "        else [Average Rating]",
+                "    else if [Average Rating] >= 3 and [Average Rating] <= 4 then",
+                "        if [Average Rating] > 3.5 then 4 ",
+                "        else if [Average Rating] < 3.5 then 3 ",
+                "        else [Average Rating]",
+                "    else if [Average Rating] >4 and [Average Rating] <= 5 then",
+                "        if [Average Rating] > 4.5 then 5 ",
+                "        else if [Average Rating] < 4.5 then 4 ",
+                "        else [Average Rating]",
+                "    else [Average Rating]),",
+                "    #\"Changed Type4\" = Table.TransformColumnTypes(#\"Added Custom1\",{{\"Assessment Performance Rating\", type number}}),",
+                "    #\"Added Custom2\" = Table.AddColumn(#\"Changed Type4\", \"assessment Performance Category\", each if [Assessment Performance Rating] >= 1 and [Assessment Performance Rating] <= 2 then \"Falling Short\" ",
+                "   else if [Assessment Performance Rating] >= 2.5 and [Assessment Performance Rating] <=3.5 then \"On Track\" ",
+                "   else if [Assessment Performance Rating] >= 4 and [Assessment Performance Rating] <= 5 then \"Peak Performer\" ",
+                "   else null),",
+                "    #\"Changed Type5\" = Table.TransformColumnTypes(#\"Added Custom2\",{{\"assessment Performance Category\", type text}})",
+                "in",
+                "    #\"Changed Type5\""
               ],
               "type": "m"
             }
@@ -29153,7 +28954,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = #\"resignation prediction\",",
+                "    Source = resignation_prediction,",
                 "    #\"Run Python script\" = Python.Execute(\"from sklearn.metrics import classification_report#(lf)import pandas as pd#(lf)#(lf)# Replace 'dataset' with the name of your input dataset in Power BI#(lf)df = dataset#(lf)#(lf)# Extract actual and predicted labels#(lf)y_test = df['Actual Prediction']#(lf)y_predict = df['Resignation Prediction']#(lf)#(lf)# Generate classification report#(lf)report = classification_report(y_test, y_predict, output_dict=True)#(lf)#(lf)# Extract F1-scores for each class#(lf)f1_scores = {#(lf)    \"\"Class\"\": [\"\"Not Resigned (0)\"\", \"\"Resigned (1)\"\"],#(lf)    \"\"F1-Score\"\": [report[\"\"0\"\"][\"\"f1-score\"\"], report[\"\"1\"\"][\"\"f1-score\"\"]]#(lf)}#(lf)#(lf)# Convert to DataFrame for Power BI#(lf)f1_df = pd.DataFrame(f1_scores)#(lf)\",[dataset=Source]),",
                 "    f1_df = #\"Run Python script\"{[Name=\"f1_df\"]}[Value],",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(f1_df,{{\"F1-Score\", Percentage.Type}}),",
@@ -29192,7 +28993,7 @@
             "formatString": "0",
             "lineageTag": "62f0fdf7-1d08-4b2a-a80d-867c32a29c6f",
             "sourceColumn": "Employee ID",
-            "summarizeBy": "count"
+            "summarizeBy": "none"
           },
           {
             "name": "2018",
@@ -29382,6 +29183,53 @@
             "lineageTag": "1ecfa5e8-d386-46c1-86e9-dea567dc2daa",
             "sourceColumn": "2024 Value",
             "summarizeBy": "sum"
+          },
+          {
+            "name": "Average Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "bcee94e9-dfc2-4601-82c3-31d6ec2a7339",
+            "sourceColumn": "Average Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Assessment Potential Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "78615ab1-fc5f-4a7d-9dfe-a39d53f57932",
+            "sourceColumn": "Assessment Potential Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Assessment Potential Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "aa50dcce-7279-4738-b308-00ac0ebda305",
+            "sourceColumn": "Assessment Potential Category",
+            "summarizeBy": "none"
           }
         ],
         "description": " 9-Box grid for Potential Analysis",
@@ -29433,9 +29281,30 @@
                 "    #\"Reordered Columns6\" = Table.ReorderColumns(#\"Changed Type7\",{\"Employee ID\", \"2018\", \"2018 Value\", \"2019\", \"2019 Value\", \"2020\", \"2020 Value\", \"2021\", \"2021 Value\", \"2022\", \"2022 Value\", \"2023\", \"2023 Value\", \"2024\"}),",
                 "    #\"Added Custom6\" = Table.AddColumn(#\"Reordered Columns6\", \"2024 Value\", each if [2024] = \"No Rating\" then 0 else if [2024] = \"Low\" then 1 else if [2024] = \"Moderate\" then 2 else if [2024] = \"High\" then 3 else null),",
                 "    #\"Changed Type8\" = Table.TransformColumnTypes(#\"Added Custom6\",{{\"2024 Value\", Int64.Type}}),",
-                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type8\", each true)",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type8\", each true),",
+                "    #\"Added Custom7\" = Table.AddColumn(#\"Filtered Rows\", \"Average Rating\", each let",
+                "    NonZeroValues = List.Select({[2018 Value], [2019 Value], [2020 Value], [2021 Value], [2022 Value], [2023 Value], [2024 Value]}, each _ <> 0),",
+                "    Average = if List.Count(NonZeroValues) > 0 then List.Average(NonZeroValues) else null",
                 "in",
-                "    #\"Filtered Rows\""
+                "    Average),",
+                "    #\"Changed Type9\" = Table.TransformColumnTypes(#\"Added Custom7\",{{\"Average Rating\", type number}}),",
+                "    #\"Added Custom8\" = Table.AddColumn(#\"Changed Type9\", \"Assessment Potential Rating\", each if [Average Rating] >= 1 and [Average Rating] <= 2 then",
+                "        if [Average Rating] > 1.5 then 2 ",
+                "        else if [Average Rating] < 1.5 then 1 ",
+                "        else [Average Rating]",
+                "    else if [Average Rating] >2 and [Average Rating] <=3 then",
+                "        if [Average Rating] > 2.5 then 3 ",
+                "        else if [Average Rating] < 2.5 then 2 ",
+                "        else [Average Rating]",
+                "    else [Average Rating]),",
+                "    #\"Changed Type10\" = Table.TransformColumnTypes(#\"Added Custom8\",{{\"Assessment Potential Rating\", type number}}),",
+                "    #\"Added Custom9\" = Table.AddColumn(#\"Changed Type10\", \"Assessment Potential Category\", each if [Assessment Potential Rating] >= 1 and [Assessment Potential Rating] <= 1.5 then \"Low\" ",
+                "   else if [Assessment Potential Rating] >= 2 and [Assessment Potential Rating] <=2.5 then \"Moderate\" ",
+                "   else if [Assessment Potential Rating] = 3 then \"High\" ",
+                "   else null),",
+                "    #\"Changed Type11\" = Table.TransformColumnTypes(#\"Added Custom9\",{{\"Assessment Potential Category\", type text}})",
+                "in",
+                "    #\"Changed Type11\""
               ],
               "type": "m"
             }
@@ -30508,6 +30377,199 @@
                 "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2022\", \"High\"}})",
                 "in",
                 "    #\"Replaced Errors1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "9-Box Grid",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7379cae3-e286-4550-b4e9-a4b462a690be",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Assessment Potential Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "5d84bb23-46e9-40f6-ab32-c990ba211ed7",
+            "sourceColumn": "Assessment Potential Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Assessment Performance Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "faa43908-ed5d-46b5-9c16-bb662d282573",
+            "sourceColumn": "Assessment Performance Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Assessment Potential Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d6f2ba4e-e55a-461b-b227-f23d43348ba8",
+            "sourceColumn": "Assessment Potential Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Assessment Performance Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "af0c968b-961b-4b6f-9389-d808ad2d11eb",
+            "sourceColumn": "Assessment Performance Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "9-Box Grid Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5a0985d5-2162-47eb-a88f-cbf2cd55c132",
+            "sourceColumn": "9-Box Grid Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "9-Box Grid Placement",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a0bdbca1-1a79-4f8b-a634-729a53fd5e51",
+            "sourceColumn": "9-Box Grid Placement",
+            "summarizeBy": "sum"
+          }
+        ],
+        "description": " 9-Box grid for Potential-Performance Analysis",
+        "lineageTag": "67541677-82b1-412b-8a6a-35d246b493bb",
+        "partitions": [
+          {
+            "name": "9-Box Grid",
+            "mode": "import",
+            "queryGroup": "Data\\fact tables",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
+                "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
+                "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
+                "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Per:2621-9Box\"}),",
+                "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Per:2734-9Box\"}),",
+                "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
+                "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Removed Errors\",{{\"2020\", Int64.Type}}),",
+                "    #\"Appended Query2\" = Table.Combine({#\"Changed Type2\", #\"Per:1643-9Box\"}),",
+                "    #\"Appended Query3\" = Table.Combine({#\"Appended Query2\", #\"Per:1665-9Box\"}),",
+                "    #\"Removed Errors1\" = Table.RemoveRowsWithErrors(#\"Appended Query3\", {\"2021\"}),",
+                "    #\"Appended Query4\" = Table.Combine({#\"Removed Errors1\", #\"Per:1122-9Box\"}),",
+                "    #\"Appended Query5\" = Table.Combine({#\"Appended Query4\", #\"Per:1127-9Box\"}),",
+                "    #\"Appended Query6\" = Table.Combine({#\"Appended Query5\", #\"Per:2732-9Box\"}),",
+                "    #\"Removed Errors2\" = Table.RemoveRowsWithErrors(#\"Appended Query6\", {\"2022\"}),",
+                "    #\"Added Custom\" = Table.AddColumn(#\"Removed Errors2\", \"Average Rating\", each let",
+                "    NonZeroValues = List.Select({[2018], [2019], [2020], [2021], [2022], [2023], [2024]}, each _ <> 0),",
+                "    Average = if List.Count(NonZeroValues) > 0 then List.Average(NonZeroValues) else null",
+                "in",
+                "    Average),",
+                "    #\"Changed Type3\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Average Rating\", type number}}),",
+                "    #\"Added Custom1\" = Table.AddColumn(#\"Changed Type3\", \"Assessment Performance Rating\", each if [Average Rating] >= 1 and [Average Rating] <= 2 then",
+                "        if [Average Rating] > 1.5 then 2 ",
+                "        else if [Average Rating] < 1.5 then 1 ",
+                "        else [Average Rating]",
+                "    else if [Average Rating] >2 and [Average Rating] <3 then",
+                "        if [Average Rating] > 2.5 then 3 ",
+                "        else if [Average Rating] < 2.5 then 2 ",
+                "        else [Average Rating]",
+                "    else if [Average Rating] >= 3 and [Average Rating] <= 4 then",
+                "        if [Average Rating] > 3.5 then 4 ",
+                "        else if [Average Rating] < 3.5 then 3 ",
+                "        else [Average Rating]",
+                "    else if [Average Rating] >4 and [Average Rating] <= 5 then",
+                "        if [Average Rating] > 4.5 then 5 ",
+                "        else if [Average Rating] < 4.5 then 4 ",
+                "        else [Average Rating]",
+                "    else [Average Rating]),",
+                "    #\"Changed Type4\" = Table.TransformColumnTypes(#\"Added Custom1\",{{\"Assessment Performance Rating\", type number}}),",
+                "    #\"Added Custom2\" = Table.AddColumn(#\"Changed Type4\", \"assessment Performance Category\", each if [Assessment Performance Rating] >= 1 and [Assessment Performance Rating] <= 2 then \"Falling Short\" ",
+                "   else if [Assessment Performance Rating] >= 2.5 and [Assessment Performance Rating] <=3.5 then \"On Track\" ",
+                "   else if [Assessment Performance Rating] >= 4 and [Assessment Performance Rating] <= 5 then \"Peak Performer\" ",
+                "   else null),",
+                "    #\"Changed Type5\" = Table.TransformColumnTypes(#\"Added Custom2\",{{\"assessment Performance Category\", type text}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type5\",{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\", \"Average Rating\"}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Removed Columns\", {\"Employee ID\"}, #\"Potential-9Box\", {\"Employee ID\"}, \"Potential-9Box\", JoinKind.LeftOuter),",
+                "    #\"Expanded Potential-9Box\" = Table.ExpandTableColumn(#\"Merged Queries\", \"Potential-9Box\", {\"Assessment Potential Rating\", \"Assessment Potential Category\"}, {\"Potential-9Box.Assessment Potential Rating\", \"Potential-9Box.Assessment Potential Category\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded Potential-9Box\",{{\"Potential-9Box.Assessment Potential Rating\", \"Assessment Potential Rating\"}, {\"Potential-9Box.Assessment Potential Category\", \"Assessment Potential Category\"}}),",
+                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Renamed Columns\",{\"Employee ID\", \"Assessment Potential Rating\", \"Assessment Performance Rating\", \"Assessment Potential Category\", \"assessment Performance Category\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Reordered Columns1\",{{\"assessment Performance Category\", \"Assessment Performance Category\"}}),",
+                "    #\"Added Custom3\" = Table.AddColumn(#\"Renamed Columns1\", \"9-Box Grid Category\", each [Assessment Potential Category] & \"-\" & [Assessment Performance Category]),",
+                "    #\"Changed Type6\" = Table.TransformColumnTypes(#\"Added Custom3\",{{\"9-Box Grid Category\", type text}}),",
+                "    #\"Added Conditional Column\" = Table.AddColumn(#\"Changed Type6\", \"9-Box Grid Placement\", each if [#\"9-Box Grid Category\"] = \"Low-Falling Short\" then 1 else if [#\"9-Box Grid Category\"] = \"Low-On Track\" then 2 else if [#\"9-Box Grid Category\"] = \"Low-Peak Performer\" then 3 else if [#\"9-Box Grid Category\"] = \"Moderate-Falling Short\" then 4 else if [#\"9-Box Grid Category\"] = \"Moderate-On Track\" then 5 else if [#\"9-Box Grid Category\"] = \"Moderate-Peak Performer\" then 6 else if [#\"9-Box Grid Category\"] = \"High-Falling Short\" then 7 else if [#\"9-Box Grid Category\"] = \"High-On Track\" then 8 else if [#\"9-Box Grid Category\"] = \"High-Peak Performer\" then 9 else null),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Added Conditional Column\", each true),",
+                "    #\"Changed Type7\" = Table.TransformColumnTypes(#\"Filtered Rows\",{{\"9-Box Grid Placement\", Int64.Type}})",
+                "in",
+                "    #\"Changed Type7\""
               ],
               "type": "m"
             }
