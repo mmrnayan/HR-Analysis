@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 304.39025134575076,
-        "y": 23918.04973323171
+        "x": 4934.6165865445237,
+        "y": 12862.439262576221
       },
       "nodes": [
         {
@@ -384,8 +384,7 @@
             "x": 6658.0800011786705,
             "y": 12866.065215244123
           },
-          "nodeIndex": "resignation_prediction (2)",
-          "nodeLineageTag": "7ad3a1d4-9149-4a01-a0c7-e809a274d395",
+          "nodeIndex": "negetive corr",
           "size": {
             "height": 128,
             "width": 234
@@ -397,8 +396,7 @@
             "x": 6942.0800011786705,
             "y": 12866.065215244123
           },
-          "nodeIndex": "resignation_prediction (4)",
-          "nodeLineageTag": "638bb01c-2fef-4704-8136-47e64999c055",
+          "nodeIndex": "positive corr",
           "size": {
             "height": 128,
             "width": 234
