@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":3,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":4,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
   "layoutOptimization": 0,
   "publicCustomVisuals": [
     "sankey02300D1BE6F5427989F3DE31CCA9E0F32020"
@@ -99,7 +99,7 @@
       "filters": "[]",
       "height": 1080.00,
       "name": "2c8dbb3262a7028659e4",
-      "ordinal": 4,
+      "ordinal": 5,
       "visualContainers": [
         {
           "config": "{\"name\":\"42978ab4bbbe06008842\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":374.18676856938146,\"z\":3000,\"width\":1472.9018390255553,\"height\":344.8387867208025,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"fact_employee.Age Banding\",\"active\":true},{\"queryRef\":\"fact_employee.tenure_band\",\"active\":true}],\"Columns\":[{\"queryRef\":\"fact_employee.Ethnicity\",\"active\":true}],\"Values\":[{\"queryRef\":\"_measure.Ethnicity Count\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Age Banding\"},\"Name\":\"fact_employee.Age Banding\",\"NativeReferenceName\":\"Age Banding\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"tenure_band\"},\"Name\":\"fact_employee.tenure_band\",\"NativeReferenceName\":\"tenure_band\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Ethnicity\"},\"Name\":\"fact_employee.Ethnicity\",\"NativeReferenceName\":\"Ethnicity\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Ethnicity Count\"},\"Name\":\"_measure.Ethnicity Count\",\"NativeReferenceName\":\"Ethnicity Count\"}]},\"autoSelectVisualType\":false,\"expansionStates\":[{\"roles\":[\"Rows\"],\"levels\":[{\"queryRefs\":[\"fact_employee.Age Banding\"],\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"fact_employee\"}},\"Property\":\"Age Banding\"}}],\"isPinned\":true},{\"queryRefs\":[\"fact_employee.tenure_band\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null}}],\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"visualTooltip\":[{\"properties\":{\"themedTitleFontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#A9A9A9'\"}}}}},\"themedValueFontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#000000'\"}}}}}}}],\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"visualHeaderTooltip\":[{\"properties\":{\"themedTitleFontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#A9A9A9'\"}}}}}}}]}}}",
@@ -169,12 +169,42 @@
     },
     {
       "config": "{}",
+      "displayName": "Great Resignation",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "389e7727ad674087167a",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"21f06d82d9506abd6a0a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":27.261663286004058,\"y\":10.385395537525355,\"z\":0,\"width\":1242.3529411764707,\"height\":96.06490872210954,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Columns\":[{\"queryRef\":\"dim_jobtitle.Job Title\",\"active\":true}],\"Values\":[{\"queryRef\":\"_measure.Voluntary Attrition Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_jobtitle\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Job Title\"},\"Name\":\"dim_jobtitle.Job Title\",\"NativeReferenceName\":\"Job Title\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Voluntary Attrition Rate\"},\"Name\":\"_measure.Voluntary Attrition Rate\",\"NativeReferenceName\":\"Voluntary Attrition Rate\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Voluntary Attrition Rate\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 96.06,
+          "width": 1242.35,
+          "x": 27.26,
+          "y": 10.39,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"3be9bab9a866d3da0029\",\"layouts\":[{\"id\":0,\"position\":{\"x\":36.56291236513235,\"y\":206.65993945509587,\"z\":1,\"width\":1243.1390204144998,\"height\":443.524023907475,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_measure.Voluntary Attrition Rate\"}],\"Rows\":[{\"queryRef\":\"dim_jobtitle.Job Title\"}],\"Category\":[{\"queryRef\":\"date.MonthInCalendar\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"dim_jobtitle\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"date\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Voluntary Attrition Rate\"},\"Name\":\"_measure.Voluntary Attrition Rate\",\"NativeReferenceName\":\"Voluntary Attrition Rate\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Job Title\"},\"Name\":\"dim_jobtitle.Job Title\",\"NativeReferenceName\":\"Job Title\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"MonthInCalendar\"},\"Name\":\"date.MonthInCalendar\",\"NativeReferenceName\":\"MonthInCalendar\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"seriesLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 443.52,
+          "width": 1243.14,
+          "x": 36.56,
+          "y": 206.66,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
       "displayName": "Training Analysis",
       "displayOption": 1,
       "filters": "[]",
       "height": 720.00,
       "name": "4b01eaca42159b020d66",
-      "ordinal": 6,
+      "ordinal": 7,
       "visualContainers": [
         {
           "config": "{\"name\":\"0421ced70eb70beb70e9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.352941176470589,\"y\":298.3529411764706,\"z\":2000,\"width\":279.52941176470586,\"height\":98.82352941176471,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"_measure.Average Training Hours\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Average Training Hours\"},\"Name\":\"_measure.Average Training Hours\",\"NativeReferenceName\":\"Average Training Hours\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Average Training Hours\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
@@ -394,7 +424,7 @@
       "filters": "[]",
       "height": 1080.00,
       "name": "769aa004021892055c8b",
-      "ordinal": 7,
+      "ordinal": 8,
       "visualContainers": [
         {
           "config": "{\"name\":\"170a5c8c4c02900dc1eb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":803.9468690702087,\"y\":655.7874762808349,\"z\":3000,\"width\":835.5218216318785,\"height\":425.04743833017073,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Count(fact_performance.Employee ID)\"}],\"Series\":[{\"queryRef\":\"fact_performance.Performance Rating\"}],\"Category\":[{\"queryRef\":\"fact_employee.Age Category\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f1\",\"Entity\":\"fact_performance\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f1\"}},\"Property\":\"Employee ID\"}},\"Function\":5},\"Name\":\"Count(fact_performance.Employee ID)\",\"NativeReferenceName\":\"Count of Employee ID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f1\"}},\"Property\":\"Performance Rating\"},\"Name\":\"fact_performance.Performance Rating\",\"NativeReferenceName\":\"Performance Rating\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Age Category\"},\"Name\":\"fact_employee.Age Category\",\"NativeReferenceName\":\"Age Category\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f1\"}},\"Property\":\"Employee ID\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Count of Employees ID by Age Category & Performance Rating'\"}}}}}]}}}",
@@ -451,7 +481,7 @@
       "filters": "[]",
       "height": 1080.00,
       "name": "8cca40c23b80094cb284",
-      "ordinal": 5,
+      "ordinal": 6,
       "visualContainers": [
         {
           "config": "{\"name\":\"1eae1165c1b27e999bbd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":110.6082098238535,\"z\":1000,\"width\":621.6944207340731,\"height\":132.2213082951812,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"fact_employee.Gender\",\"active\":true}],\"Values\":[{\"queryRef\":\"_measure.# of Active Employees\"},{\"queryRef\":\"Sum(fact_employee.Age)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Gender\"},\"Name\":\"fact_employee.Gender\",\"NativeReferenceName\":\"Gender\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Active Employees\"},\"Name\":\"_measure.# of Active Employees\",\"NativeReferenceName\":\"# of Active Employees\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Age\"}},\"Function\":1},\"Name\":\"Sum(fact_employee.Age)\",\"NativeReferenceName\":\"Average of Age\"}]},\"columnProperties\":{\"Sum(fact_employee.Average Annual Salary)\":{\"displayName\":\" Avg Annual Salary\"},\"Sum(fact_employee.Average Tenure)\":{\"displayName\":\"Avg Tenure\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
@@ -517,7 +547,7 @@
       "filters": "[]",
       "height": 1080.00,
       "name": "9bb39286990670945e6d",
-      "ordinal": 8,
+      "ordinal": 9,
       "visualContainers": [
         {
           "config": "{\"name\":\"02597c91d97700201e30\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1024.9715370018976,\"y\":276.88804554079695,\"z\":12000,\"width\":374.04174573055025,\"height\":422.6185958254269,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"_measure.Total of Category\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Total of Category\"},\"Name\":\"_measure.Total of Category\",\"NativeReferenceName\":\"Total of Category\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Total of Category\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"value\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}},\"selector\":{\"metadata\":\"_measure.Total of Category\"}}]}}}",
@@ -694,12 +724,12 @@
           "z": 6000.00
         },
         {
-          "config": "{\"name\":\"8a9b11964707e1968101\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":29.157636636874162,\"z\":0,\"width\":323.9737404097129,\"height\":160.36700150280788,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"_measure.# of Resignation\"},{\"queryRef\":\"_measure.Avg Resignation Per Month\"},{\"queryRef\":\"_measure.Avg Time to Resign\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Avg Resignation Per Month\"},\"Name\":\"_measure.Avg Resignation Per Month\",\"NativeReferenceName\":\"Avg Resignation Per Month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"},\"Name\":\"_measure.# of Resignation\",\"NativeReferenceName\":\"# of Resignation\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Avg Time to Resign (Years)\"},\"Name\":\"_measure.Avg Time to Resign\",\"NativeReferenceName\":\"Avg Time to Resign (Years)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "config": "{\"name\":\"8a9b11964707e1968101\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":29.20892494929006,\"z\":0,\"width\":521.8661257606491,\"height\":159.67545638945234,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"_measure.# of Resignation\"},{\"queryRef\":\"_measure.Avg Resignation Per Month\"},{\"queryRef\":\"_measure.Avg Time to Resign\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Avg Resignation Per Month\"},\"Name\":\"_measure.Avg Resignation Per Month\",\"NativeReferenceName\":\"Avg Resignation Per Month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"},\"Name\":\"_measure.# of Resignation\",\"NativeReferenceName\":\"# of Resignation\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Avg Time to Resign (Years)\"},\"Name\":\"_measure.Avg Time to Resign\",\"NativeReferenceName\":\"Avg Time to Resign (Years)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"# of Resignation\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
           "filters": "[]",
-          "height": 160.37,
-          "width": 323.97,
+          "height": 159.68,
+          "width": 521.87,
           "x": 0.00,
-          "y": 29.16,
+          "y": 29.21,
           "z": 0.00
         },
         {
@@ -805,11 +835,11 @@
           "z": 3000.00
         },
         {
-          "config": "{\"name\":\"ff61dfaf9c00a8600a1c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.578512396694215,\"y\":0,\"z\":0,\"width\":403.49468713105074,\"height\":237.26092089728454,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"_measure.Overall Attrition Rate\"},{\"queryRef\":\"_measure.Voluntary Attrition Rate\"},{\"queryRef\":\"_measure.Involuntary Attrition Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Overall Attrition Rate\"},\"Name\":\"_measure.Overall Attrition Rate\",\"NativeReferenceName\":\"Overall Attrition Rate\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Voluntary Attrition Rate\"},\"Name\":\"_measure.Voluntary Attrition Rate\",\"NativeReferenceName\":\"Voluntary Attrition Rate\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Involuntary Attrition Rate\"},\"Name\":\"_measure.Involuntary Attrition Rate\",\"NativeReferenceName\":\"Involuntary Attrition Rate\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Overall Attrition Rate\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "config": "{\"name\":\"ff61dfaf9c00a8600a1c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.73630831643002,\"y\":0,\"z\":0,\"width\":453.7119675456389,\"height\":237.5659229208925,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"_measure.Overall Attrition Rate\"},{\"queryRef\":\"_measure.Voluntary Attrition Rate\"},{\"queryRef\":\"_measure.Involuntary Attrition Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measure\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Overall Attrition Rate\"},\"Name\":\"_measure.Overall Attrition Rate\",\"NativeReferenceName\":\"Overall Attrition Rate\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Voluntary Attrition Rate\"},\"Name\":\"_measure.Voluntary Attrition Rate\",\"NativeReferenceName\":\"Voluntary Attrition Rate\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Involuntary Attrition Rate\"},\"Name\":\"_measure.Involuntary Attrition Rate\",\"NativeReferenceName\":\"Involuntary Attrition Rate\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Overall Attrition Rate\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
           "filters": "[]",
-          "height": 237.26,
-          "width": 403.49,
-          "x": 10.58,
+          "height": 237.57,
+          "width": 453.71,
+          "x": 9.74,
           "y": 0.00,
           "z": 0.00
         }
