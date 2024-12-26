@@ -8216,7 +8216,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "fact_employee",
-                    "ConceptualProperty": "Age Banding"
+                    "ConceptualProperty": "Age Band"
                   }
                 },
                 "State": "Generated",
@@ -22431,6 +22431,16 @@
                       "Type": "Noun",
                       "Weight": 0.624
                     }
+                  },
+                  {
+                    "First Year Resignation": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
@@ -22476,6 +22486,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.748
+                    }
+                  },
+                  {
+                    "Involuntary Resignation": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -22624,6 +22644,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.739
+                    }
+                  },
+                  {
+                    "Resignation": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -22808,6 +22838,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.748
+                    }
+                  },
+                  {
+                    "Voluntary Resignation": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -26106,7 +26146,9 @@
                 },
                 "State": "Generated",
                 "Terms": [
-                  {},
+                  {
+                    "": {}
+                  },
                   {
                     "province": {
                       "Source": {
@@ -27314,7 +27356,9 @@
                 },
                 "State": "Generated",
                 "Terms": [
-                  {},
+                  {
+                    "": {}
+                  },
                   {
                     "province": {
                       "Source": {
@@ -39402,7 +39446,7 @@
             "type": "calculated"
           },
           {
-            "name": "Age Banding",
+            "name": "Age Band",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -42044,7 +42088,7 @@
             "expression": [
               "",
               "CALCULATE([Overall Attrition Rate], ",
-              "    GROUPBY(fact_employee, fact_employee[Age Banding]))",
+              "    GROUPBY(fact_employee, fact_employee[Age Band]))",
               ""
             ],
             "lineageTag": "c9b73368-e6d2-4895-983d-595301f97f7d"
@@ -42476,8 +42520,8 @@
             "source": {
               "expression": [
                 "{",
-                "    (\"Age Banding\", NAMEOF('fact_employee'[Age Banding]), 0),",
-                "    (\"Tenure Banding\", NAMEOF('fact_resigned'[Tenure Banding]), 1)",
+                "    (\"Age Band\", NAMEOF('fact_employee'[Age Band]), 0),",
+                "    (\"Tenure Band\", NAMEOF('fact_resigned'[Tenure Banding]), 1)",
                 "}"
               ],
               "type": "calculated"
