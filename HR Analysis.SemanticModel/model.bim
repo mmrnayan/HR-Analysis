@@ -40483,7 +40483,7 @@
             ],
             "dataType": "dateTime",
             "description": "Date the employee resigned",
-            "formatString": "Long Date",
+            "formatString": "Short Date",
             "isHidden": true,
             "lineageTag": "69fed67f-12e4-47a1-ab39-60a473e8ca6f",
             "sourceColumn": "Resigned Date",
@@ -41949,15 +41949,17 @@
             "displayFolder": "Resigned\\Resigned Analysis",
             "expression": [
               "",
-              "VAR PY_Year = YEAR(MAX('Date'[Date])) - 1 -- Get Previous Year dynamically",
+              "VAR CY_Year = YEAR(MAX('Date'[Date])) -- Get the dynamic CY year based on slicer",
+              "VAR PY_Year = CY_Year - 1 -- Calculate the previous year",
               "RETURN ",
               "CALCULATE(",
               "    [# of Resignation],",
-              "    YEAR(fact_resigned[Resigned Date]) = PY_Year,",
-              "    USERELATIONSHIP('Date'[Date], fact_resigned[Resigned Date]), -- Activate inactive relationship",
-              "    REMOVEFILTERS('Date') -- Ensure no conflicting filters from other visuals",
-              ")",
-              ""
+              "    FILTER(",
+              "        ALL('Date'), ",
+              "        YEAR('Date'[Date]) = PY_Year",
+              "    ),",
+              "    USERELATIONSHIP('Date'[Date], fact_resigned[Resigned Date]) -- Activate the inactive relationship",
+              ")"
             ],
             "formatString": "0",
             "lineageTag": "79ed1f5d-a625-4536-b5c7-dd9bd2a8fec7"
@@ -42419,6 +42421,70 @@
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\")",
             "formatString": "0",
             "lineageTag": "73f6ce79-22e7-44df-928a-00708aa6a7aa"
+          },
+          {
+            "name": "Rank by Avg Time to Resign",
+            "displayFolder": "Resigned\\Resigned Analysis",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Country]), -- Replace with your Country column",
+              "    [Avg Time to Resign (Years)],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "70b3e0dd-1248-45f3-980e-e8616106f840"
+          },
+          {
+            "name": "Color Country",
+            "displayFolder": "Resigned\\Resigned Analysis",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Avg Time to Resign] = 1, \"#741d83\",        -- Blue for the highest value",
+              "    [Rank by Avg Time to Resign] = 2, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by Avg Time to Resign] > 2, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")",
+              ""
+            ],
+            "lineageTag": "c8eb671f-a51a-428e-a602-0150faa1a5bd"
+          },
+          {
+            "name": "Rank by AgeBand",
+            "displayFolder": "Resigned\\Resigned Analysis",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Age Band]), -- Replace with your Country column",
+              "    [Avg Time to Resign (Years)],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "e596ce10-b25f-4d01-ac87-0cda54a70816"
+          },
+          {
+            "name": "Color Ageband",
+            "displayFolder": "Resigned\\Resigned Analysis",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by AgeBand] = 1, \"#741d83\",        -- Blue for the highest value",
+              "    [Rank by AgeBand] = 2, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by AgeBand] > 2, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")",
+              ""
+            ],
+            "lineageTag": "21d51deb-1faa-4686-903d-de8c14147eeb"
           }
         ],
         "partitions": [
