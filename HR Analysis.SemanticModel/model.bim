@@ -12,7 +12,11 @@
       },
       {
         "name": "PBI_QueryOrder",
+<<<<<<< HEAD
         "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"resignation_prediction\",\"Per:2621-9Box\",\"Per:2734-9Box\",\"Per:1643-9Box\",\"Per:1665-9Box\",\"Per:1122-9Box\",\"Per:1127-9Box\",\"f1 score\",\"Po:2621-9Box\",\"Po:2734-9Box\",\"Po:1643-9Box\",\"Po:1665-9Box\",\"Po:1122-9Box\",\"Po:1127-9Box\",\"Performance-9Box\",\"Potential-9Box\",\"3Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\"]"
+=======
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"resignation_prediction\",\"Per:2621-9Box\",\"Per:2734-9Box\",\"Per:1643-9Box\",\"Per:1665-9Box\",\"Per:1122-9Box\",\"Per:1127-9Box\",\"f1 score\",\"Po:2621-9Box\",\"Po:2734-9Box\",\"Po:1643-9Box\",\"Po:1665-9Box\",\"Po:1122-9Box\",\"Po:1127-9Box\",\"Performance-9Box\",\"Potential-9Box\",\"3Potential-9Box\",\"9-Box Grid\",\"negetive corr\",\"positive corr\"]"
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
       },
       {
         "name": "PBI_ProTooling",
@@ -8216,7 +8220,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "fact_employee",
-                    "ConceptualProperty": "Age Banding"
+                    "ConceptualProperty": "Age Band"
                   }
                 },
                 "State": "Generated",
@@ -22431,6 +22435,16 @@
                       "Type": "Noun",
                       "Weight": 0.624
                     }
+                  },
+                  {
+                    "First Year Resignation": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
@@ -22476,6 +22490,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.748
+                    }
+                  },
+                  {
+                    "Involuntary Resignation": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -22624,6 +22648,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.739
+                    }
+                  },
+                  {
+                    "Resignation": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -22808,6 +22842,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.748
+                    }
+                  },
+                  {
+                    "Voluntary Resignation": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -26106,7 +26150,13 @@
                 },
                 "State": "Generated",
                 "Terms": [
+<<<<<<< HEAD
                   {},
+=======
+                  {
+                    "": {}
+                  },
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
                   {
                     "province": {
                       "Source": {
@@ -27314,7 +27364,13 @@
                 },
                 "State": "Generated",
                 "Terms": [
+<<<<<<< HEAD
                   {},
+=======
+                  {
+                    "": {}
+                  },
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
                   {
                     "province": {
                       "Source": {
@@ -39416,7 +39472,7 @@
             "type": "calculated"
           },
           {
-            "name": "Age Banding",
+            "name": "Age Band",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -40453,7 +40509,7 @@
             ],
             "dataType": "dateTime",
             "description": "Date the employee resigned",
-            "formatString": "Long Date",
+            "formatString": "Short Date",
             "isHidden": true,
             "lineageTag": "69fed67f-12e4-47a1-ab39-60a473e8ca6f",
             "sourceColumn": "Resigned Date",
@@ -41919,9 +41975,16 @@
             "displayFolder": "Resigned\\Resigned Analysis",
             "expression": [
               "",
+              "VAR CY_Year = YEAR(MAX('Date'[Date])) -- Get the dynamic CY year based on slicer",
+              "VAR PY_Year = CY_Year - 1 -- Calculate the previous year",
+              "RETURN ",
               "CALCULATE(",
               "    [# of Resignation],",
-              "    YEAR(fact_resigned[Resigned Date]) = YEAR(TODAY()) - 1",
+              "    FILTER(",
+              "        ALL('Date'), ",
+              "        YEAR('Date'[Date]) = PY_Year",
+              "    ),",
+              "    USERELATIONSHIP('Date'[Date], fact_resigned[Resigned Date]) -- Activate the inactive relationship",
               ")"
             ],
             "formatString": "0",
@@ -41932,11 +41995,13 @@
             "displayFolder": "Resigned\\Resigned Analysis",
             "expression": [
               "",
+              "VAR CY_Year = YEAR(MAX('Date'[Date])) -- Get the dynamic CY year based on slicer",
+              "RETURN ",
               "CALCULATE(",
               "    [# of Resignation],",
-              "    YEAR(fact_resigned[Resigned Date]) = YEAR(TODAY())",
-              ")",
-              ""
+              "    YEAR(fact_resigned[Resigned Date]) = CY_Year,",
+              "    USERELATIONSHIP('Date'[Date], fact_resigned[Resigned Date]) -- Activate the inactive relationship",
+              ")"
             ],
             "formatString": "0",
             "lineageTag": "b90eb4a3-8b7b-4391-beba-fe8ba891829b"
@@ -42058,7 +42123,7 @@
             "expression": [
               "",
               "CALCULATE([Overall Attrition Rate], ",
-              "    GROUPBY(fact_employee, fact_employee[Age Banding]))",
+              "    GROUPBY(fact_employee, fact_employee[Age Band]))",
               ""
             ],
             "lineageTag": "c9b73368-e6d2-4895-983d-595301f97f7d"
@@ -42382,6 +42447,70 @@
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\")",
             "formatString": "0",
             "lineageTag": "73f6ce79-22e7-44df-928a-00708aa6a7aa"
+          },
+          {
+            "name": "Rank by Avg Time to Resign",
+            "displayFolder": "Resigned\\Resigned Analysis",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Country]), -- Replace with your Country column",
+              "    [Avg Time to Resign (Years)],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "70b3e0dd-1248-45f3-980e-e8616106f840"
+          },
+          {
+            "name": "Color Country",
+            "displayFolder": "Resigned\\Resigned Analysis",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Avg Time to Resign] = 1, \"#741d83\",        -- Blue for the highest value",
+              "    [Rank by Avg Time to Resign] = 2, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by Avg Time to Resign] > 2, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")",
+              ""
+            ],
+            "lineageTag": "c8eb671f-a51a-428e-a602-0150faa1a5bd"
+          },
+          {
+            "name": "Rank by AgeBand",
+            "displayFolder": "Resigned\\Resigned Analysis",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Age Band]), -- Replace with your Country column",
+              "    [Avg Time to Resign (Years)],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "e596ce10-b25f-4d01-ac87-0cda54a70816"
+          },
+          {
+            "name": "Color Ageband",
+            "displayFolder": "Resigned\\Resigned Analysis",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by AgeBand] = 1, \"#741d83\",        -- Blue for the highest value",
+              "    [Rank by AgeBand] = 2, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by AgeBand] > 2, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")",
+              ""
+            ],
+            "lineageTag": "21d51deb-1faa-4686-903d-de8c14147eeb"
           }
         ],
         "partitions": [
@@ -42490,8 +42619,8 @@
             "source": {
               "expression": [
                 "{",
-                "    (\"Age Banding\", NAMEOF('fact_employee'[Age Banding]), 0),",
-                "    (\"Tenure Banding\", NAMEOF('fact_resigned'[Tenure Banding]), 1)",
+                "    (\"Age Band\", NAMEOF('fact_employee'[Age Band]), 0),",
+                "    (\"Tenure Band\", NAMEOF('fact_resigned'[Tenure Banding]), 1)",
                 "}"
               ],
               "type": "calculated"
@@ -44336,7 +44465,11 @@
         ]
       },
       {
+<<<<<<< HEAD
         "name": "resignation_prediction (2)",
+=======
+        "name": "negetive corr",
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -44349,11 +44482,16 @@
         ],
         "columns": [
           {
+<<<<<<< HEAD
             "name": "Column1",
+=======
+            "name": "Value",
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+<<<<<<< HEAD
               }
             ],
             "dataType": "string",
@@ -44363,6 +44501,22 @@
           },
           {
             "name": "Current Employment Status",
+=======
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "9dc54c2e-7370-4a41-98ad-7101a5872fc5",
+            "sourceColumn": "Value",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Factor",
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -44370,25 +44524,43 @@
               }
             ],
             "dataType": "string",
+<<<<<<< HEAD
             "lineageTag": "9dc54c2e-7370-4a41-98ad-7101a5872fc5",
             "sourceColumn": "Current Employment Status",
+=======
+            "lineageTag": "46d16668-ea5b-4f8e-abc5-5991d09e79fd",
+            "sourceColumn": "Factor",
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
             "summarizeBy": "none"
           }
         ],
         "lineageTag": "7ad3a1d4-9149-4a01-a0c7-e809a274d395",
         "partitions": [
           {
+<<<<<<< HEAD
             "name": "resignation_prediction (2)",
+=======
+            "name": "negetive corr",
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
             "mode": "import",
             "queryGroup": "Data\\other",
             "source": {
               "expression": [
                 "let",
                 "    Source = Csv.Document(File.Contents(#\"Folder Path\" &\"\\final_data.csv\"),[Delimiter=\",\", Columns=45, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+<<<<<<< HEAD
                 "    #\"Run Python script\" = Python.Execute(\"import pandas as pd#(lf)#(lf)# Load the dataset#(lf)df = pd.read_csv('D:\\\\high performance project\\\\project\\\\dataset final\\\\final_data.csv')#(lf)#(lf)# Drop unnecessary columns#(lf)df.drop(#(lf)    [#(lf)        'Employee ID', 'Full Name', 'Date of Birth', 'Hire Date',#(lf)        'Latitude', 'Longitude', 'Incentive Amount ($)', 'Bonus ($)',#(lf)        'Base Salary ($)', 'Annual Leave Entitlement (days)', 'Performance Review Year', 'Potential Rating',#(lf)        'Satisfaction Score Band', 'Team Size Band', 'Performance Rating Band',#(lf)        'Projects Handled Band', 'Project Target Band', 'Working Hours',#(lf)        'Overtime'#(lf)    ],#(lf)    axis=1,#(lf)    inplace=True#(lf))#(lf)#(lf)# Encode categorical variables#(lf)categorical_columns = [#(lf)    'Gender', 'Education Level', 'Department', 'Job Title',#(lf)    'Organization Level', 'Region', 'Country', 'Employment Status',#(lf)    'Employment Type', 'Current Employment Status', 'Ethnicity',#(lf)    'Salary Band', 'Incentive Amount ($) Band', 'Bonus ($) Band',#(lf)    'Working Hours Band', 'Overtime Band', 'Age Band','Tenure Band'#(lf)#(lf)]#(lf)#(lf)for col in categorical_columns:#(lf)    df[col] = pd.factorize(df[col])[0]#(lf)#(lf)# Calculate correlation matrix#(lf)correlation_matrix = df.corr()#(lf)#(lf)# Extract correlations with the target variable#(lf)target_correlations = correlation_matrix['Current Employment Status'].sort_values()#(lf)#(lf)# Separate positive and negative correlations#(lf)negative_correlation = target_correlations[target_correlations < 0]#(lf)positive_correlation = target_correlations[target_correlations > 0]#(lf)#(lf)# Save results to CSV for Power BI#(lf)negative_correlation.to_csv('negative_correlation_factors.csv')#(lf)positive_correlation.to_csv('positive_correlation_factors.csv')#(lf)\",[dataset=Source]),",
                 "    Value = #\"Run Python script\"{3}[Value]",
                 "in",
                 "    Value"
+=======
+                "    #\"Run Python script\" = Python.Execute(\"import pandas as pd#(lf)#(lf)# Load the dataset#(lf)df = pd.read_csv('D:\\\\high performance project\\\\project\\\\dataset final\\\\final_data.csv')#(lf)#(lf)# Drop unnecessary columns#(lf)df.drop(#(lf)    [#(lf)        'Employee ID', 'Full Name', 'Date of Birth', 'Hire Date',#(lf)        'Latitude', 'Longitude', 'Incentive Amount ($)', 'Bonus ($)',#(lf)        'Base Salary ($)', 'Annual Leave Entitlement (days)', 'Performance Review Year', 'Potential Rating',#(lf)        'Satisfaction Score Band', 'Team Size Band', 'Performance Rating Band',#(lf)        'Projects Handled Band', 'Project Target Band', 'Working Hours',#(lf)        'Overtime'#(lf)    ],#(lf)    axis=1,#(lf)    inplace=True#(lf))#(lf)#(lf)# Encode categorical variables using one-hot encoding for detailed category-level analysis#(lf)categorical_columns = [#(lf)    'Gender', 'Education Level', 'Department', 'Job Title',#(lf)    'Organization Level', 'Region', 'Country', 'Employment Status',#(lf)    'Employment Type', 'Ethnicity', 'Salary Band',#(lf)    'Incentive Amount ($) Band', 'Bonus ($) Band',#(lf)    'Working Hours Band', 'Overtime Band', 'Age Band','Tenure Band'#(lf)]#(lf)#(lf)# Encode the target column ('Current Employment Status') into numeric values#(lf)df['Current Employment Status'] = pd.factorize(df['Current Employment Status'])[0]#(lf)#(lf)# Perform one-hot encoding on other categorical variables#(lf)df_encoded = pd.get_dummies(df, columns=categorical_columns, drop_first=False)#(lf)#(lf)# Calculate correlation matrix#(lf)correlation_matrix = df_encoded.corr()#(lf)#(lf)# Extract correlations with the target variable#(lf)target_correlations = correlation_matrix['Current Employment Status'].sort_values()#(lf)#(lf)# Separate positive and negative correlations#(lf)negative_correlation = target_correlations[target_correlations < 0]#(lf)positive_correlation = target_correlations[target_correlations > 0]#(lf)#(lf)# Save results to CSV for Power BI#(lf)negative_correlation.to_csv('detailed_negative_correlation_factors.csv')#(lf)positive_correlation.to_csv('detailed_positive_correlation_factors.csv')#(lf)#(lf)# Define main columns to exclude if sub-divisions exist#(lf)main_columns = [#(lf)    \"\"Tenure (Years)\"\", \"\"Age (Years)\"\", \"\"Incentive Amount ($)\"\", \"\"Bonus ($)\"\", #(lf)    \"\"Salary Band\"\", \"\"Department\"\", \"\"Job Title\"\", \"\"Ethnicity\"\", #(lf)    \"\"Overtime Band\"\", \"\"Education Level\"\", \"\"Employment Status\"\", #(lf)    \"\"Organization Level\"\"#(lf)]#(lf)#(lf)# Filter out main columns if their sub-divisions exist#(lf)negative_correlation_data = negative_correlation[~negative_correlation.index.isin(main_columns)]#(lf)positive_correlation_data = positive_correlation[~positive_correlation.index.isin(main_columns)]#(lf)#(lf)# Save filtered correlation data to CSV#(lf)negative_correlation_data.to_csv('negative_correlation_data.csv')#(lf)positive_correlation_data.to_csv('positive_correlation_data.csv')#(lf)#(lf)# Print the results for verification#(lf)print(\"\"Negative Correlation Factors:\\n\"\", negative_correlation_data)#(lf)print(\"\"Positive Correlation Factors:\\n\"\", positive_correlation_data)#(lf)#(lf)print(\"\"Negative Correlation Factors:\\n\"\", negative_correlation)#(lf)print(\"\"Positive Correlation Factors:\\n\"\", positive_correlation)#(lf)\",[dataset=Source]),",
+                "    negative_correlation_data = #\"Run Python script\"{[Name=\"negative_correlation_data\"]}[Value],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(negative_correlation_data,{{\"\", \"Factor\"}, {\"Current Employment Status\", \"Value\"}}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\",{{\"Factor\", type text}, {\"Value\", Currency.Type}})",
+                "in",
+                "    #\"Changed Type\""
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
               ],
               "type": "m"
             }
@@ -44396,7 +44568,11 @@
         ]
       },
       {
+<<<<<<< HEAD
         "name": "resignation_prediction (4)",
+=======
+        "name": "positive corr",
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -44409,11 +44585,16 @@
         ],
         "columns": [
           {
+<<<<<<< HEAD
             "name": "Column1",
+=======
+            "name": "Value",
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+<<<<<<< HEAD
               }
             ],
             "dataType": "string",
@@ -44423,6 +44604,22 @@
           },
           {
             "name": "Current Employment Status",
+=======
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "e83fc46a-83fb-4abe-b385-5683c27c4db4",
+            "sourceColumn": "Value",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Factor",
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -44430,30 +44627,49 @@
               }
             ],
             "dataType": "string",
+<<<<<<< HEAD
             "lineageTag": "e83fc46a-83fb-4abe-b385-5683c27c4db4",
             "sourceColumn": "Current Employment Status",
+=======
+            "lineageTag": "c97db6d1-3690-49e2-bc4f-ab320b2aeeee",
+            "sourceColumn": "Factor",
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
             "summarizeBy": "none"
           }
         ],
         "lineageTag": "638bb01c-2fef-4704-8136-47e64999c055",
         "partitions": [
           {
+<<<<<<< HEAD
             "name": "resignation_prediction (4)",
+=======
+            "name": "positive corr",
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
             "mode": "import",
             "queryGroup": "Data\\other",
             "source": {
               "expression": [
                 "let",
                 "    Source = Csv.Document(File.Contents(#\"Folder Path\" &\"\\final_data.csv\"),[Delimiter=\",\", Columns=45, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+<<<<<<< HEAD
                 "    #\"Run Python script\" = Python.Execute(\"import pandas as pd#(lf)#(lf)# Load the dataset#(lf)df = pd.read_csv('D:\\\\high performance project\\\\project\\\\dataset final\\\\final_data.csv')#(lf)#(lf)# Drop unnecessary columns#(lf)df.drop(#(lf)    [#(lf)        'Employee ID', 'Full Name', 'Date of Birth', 'Hire Date',#(lf)        'Latitude', 'Longitude', 'Incentive Amount ($)', 'Bonus ($)',#(lf)        'Base Salary ($)', 'Annual Leave Entitlement (days)', 'Age Band',#(lf)        'Tenure Band', 'Performance Review Year', 'Potential Rating',#(lf)        'Satisfaction Score Band', 'Team Size Band', 'Performance Rating Band',#(lf)        'Projects Handled Band', 'Project Target Band', 'Working Hours',#(lf)        'Overtime'#(lf)    ],#(lf)    axis=1,#(lf)    inplace=True#(lf))#(lf)#(lf)# Encode categorical variables#(lf)categorical_columns = [#(lf)    'Gender', 'Education Level', 'Department', 'Job Title',#(lf)    'Organization Level', 'Region', 'Country', 'Employment Status',#(lf)    'Employment Type', 'Current Employment Status', 'Ethnicity',#(lf)    'Salary Band', 'Incentive Amount ($) Band', 'Bonus ($) Band',#(lf)    'Working Hours Band', 'Overtime Band'#(lf)]#(lf)#(lf)for col in categorical_columns:#(lf)    df[col] = pd.factorize(df[col])[0]#(lf)#(lf)# Calculate correlation matrix#(lf)correlation_matrix = df.corr()#(lf)#(lf)# Extract correlations with the target variable#(lf)target_correlations = correlation_matrix['Current Employment Status'].sort_values()#(lf)#(lf)# Separate positive and negative correlations#(lf)negative_correlation = target_correlations[target_correlations < 0]#(lf)positive_correlation = target_correlations[target_correlations > 0]#(lf)#(lf)# Save results to CSV for Power BI#(lf)negative_correlation.to_csv('negative_correlation_factors.csv')#(lf)positive_correlation.to_csv('positive_correlation_factors.csv')#(lf)\",[dataset=Source]),",
                 "    positive_correlation_factors = #\"Run Python script\"{[Name=\"positive_correlation_factors\"]}[Value]",
                 "in",
                 "    positive_correlation_factors"
+=======
+                "    #\"Run Python script\" = Python.Execute(\"import pandas as pd#(lf)#(lf)# Load the dataset#(lf)df = pd.read_csv('D:\\\\high performance project\\\\project\\\\dataset final\\\\final_data.csv')#(lf)#(lf)# Drop unnecessary columns#(lf)df.drop(#(lf)    [#(lf)        'Employee ID', 'Full Name', 'Date of Birth', 'Hire Date',#(lf)        'Latitude', 'Longitude', 'Incentive Amount ($)', 'Bonus ($)',#(lf)        'Base Salary ($)', 'Annual Leave Entitlement (days)', 'Performance Review Year', 'Potential Rating',#(lf)        'Satisfaction Score Band', 'Team Size Band', 'Performance Rating Band',#(lf)        'Projects Handled Band', 'Project Target Band', 'Working Hours',#(lf)        'Overtime'#(lf)    ],#(lf)    axis=1,#(lf)    inplace=True#(lf))#(lf)#(lf)# Encode categorical variables using one-hot encoding for detailed category-level analysis#(lf)categorical_columns = [#(lf)    'Gender', 'Education Level', 'Department', 'Job Title',#(lf)    'Organization Level', 'Region', 'Country', 'Employment Status',#(lf)    'Employment Type', 'Ethnicity', 'Salary Band',#(lf)    'Incentive Amount ($) Band', 'Bonus ($) Band',#(lf)    'Working Hours Band', 'Overtime Band', 'Age Band','Tenure Band'#(lf)]#(lf)#(lf)# Encode the target column ('Current Employment Status') into numeric values#(lf)df['Current Employment Status'] = pd.factorize(df['Current Employment Status'])[0]#(lf)#(lf)# Perform one-hot encoding on other categorical variables#(lf)df_encoded = pd.get_dummies(df, columns=categorical_columns, drop_first=False)#(lf)#(lf)# Calculate correlation matrix#(lf)correlation_matrix = df_encoded.corr()#(lf)#(lf)# Extract correlations with the target variable#(lf)target_correlations = correlation_matrix['Current Employment Status'].sort_values()#(lf)#(lf)# Separate positive and negative correlations#(lf)negative_correlation = target_correlations[target_correlations < 0]#(lf)positive_correlation = target_correlations[target_correlations > 0]#(lf)#(lf)# Save results to CSV for Power BI#(lf)negative_correlation.to_csv('detailed_negative_correlation_factors.csv')#(lf)positive_correlation.to_csv('detailed_positive_correlation_factors.csv')#(lf)#(lf)# Define main columns to exclude if sub-divisions exist#(lf)main_columns = [#(lf)    \"\"Tenure (Years)\"\", \"\"Age (Years)\"\", \"\"Incentive Amount ($)\"\", \"\"Bonus ($)\"\", #(lf)    \"\"Salary Band\"\", \"\"Department\"\", \"\"Job Title\"\", \"\"Ethnicity\"\", #(lf)    \"\"Overtime Band\"\", \"\"Education Level\"\", \"\"Employment Status\"\", #(lf)    \"\"Organization Level\"\"#(lf)]#(lf)#(lf)# Filter out main columns if their sub-divisions exist#(lf)negative_correlation_data = negative_correlation[~negative_correlation.index.isin(main_columns)]#(lf)positive_correlation_data = positive_correlation[~positive_correlation.index.isin(main_columns)]#(lf)#(lf)# Save filtered correlation data to CSV#(lf)negative_correlation_data.to_csv('negative_correlation_data.csv')#(lf)positive_correlation_data.to_csv('positive_correlation_data.csv')#(lf)#(lf)# Print the results for verification#(lf)print(\"\"Negative Correlation Factors:\\n\"\", negative_correlation_data)#(lf)print(\"\"Positive Correlation Factors:\\n\"\", positive_correlation_data)#(lf)#(lf)print(\"\"Negative Correlation Factors:\\n\"\", negative_correlation)#(lf)print(\"\"Positive Correlation Factors:\\n\"\", positive_correlation)#(lf)\",[dataset=Source]),",
+                "    positive_correlation_data = #\"Run Python script\"{[Name=\"positive_correlation_data\"]}[Value],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(positive_correlation_data,{{\"\", \"Factor\"}, {\"Current Employment Status\", \"Value\"}}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\",{{\"Value\", Currency.Type}})",
+                "in",
+                "    #\"Changed Type\""
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
               ],
               "type": "m"
             }
           }
         ]
+<<<<<<< HEAD
       },
       {
         "name": "Payroll_&_Gap_Analysis",
@@ -45414,6 +45630,8 @@
             }
           }
         ]
+=======
+>>>>>>> cf386a8812cb5a8c8ab60b744db5f684abc9b853
       }
     ]
   }
