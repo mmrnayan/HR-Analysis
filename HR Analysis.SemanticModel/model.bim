@@ -23710,7 +23710,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "_measure",
-                    "ConceptualProperty": "Total of Category"
+                    "ConceptualProperty": "9-Box Distinct ID"
                   }
                 },
                 "State": "Generated",
@@ -42380,7 +42380,7 @@
           {
             "name": "High-Falling Short",
             "description": "Number 7 box",
-            "displayFolder": "Distinct count of each category",
+            "displayFolder": "Distinct count of 9-Box & Total",
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")",
             "formatString": "0",
             "lineageTag": "fa793b8d-212c-4ba8-8a7c-0f8ca40f9205"
@@ -42388,7 +42388,7 @@
           {
             "name": "High-On Track",
             "description": "Number 8 box",
-            "displayFolder": "Distinct count of each category",
+            "displayFolder": "Distinct count of 9-Box & Total",
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")",
             "formatString": "0",
             "lineageTag": "5e4a9671-6ca0-4cf2-93c2-e42d122f5daf"
@@ -42396,7 +42396,7 @@
           {
             "name": "High-Peak Performer",
             "description": "Number 9 box",
-            "displayFolder": "Distinct count of each category",
+            "displayFolder": "Distinct count of 9-Box & Total",
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\")",
             "formatString": "0",
             "lineageTag": "5a8361df-9a27-4581-9f0f-2214fe0abc4f"
@@ -42404,7 +42404,7 @@
           {
             "name": "Low-Falling Short",
             "description": "Number 1 box",
-            "displayFolder": "Distinct count of each category",
+            "displayFolder": "Distinct count of 9-Box & Total",
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")",
             "formatString": "0",
             "lineageTag": "d1e8fb4c-efe0-45e7-b6ad-697211580ec2"
@@ -42412,7 +42412,7 @@
           {
             "name": "Low-On Track",
             "description": "Number 2 box",
-            "displayFolder": "Distinct count of each category",
+            "displayFolder": "Distinct count of 9-Box & Total",
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")",
             "formatString": "0",
             "lineageTag": "561128da-a5c8-4b9a-8373-e77c23a492a2"
@@ -42420,7 +42420,7 @@
           {
             "name": "Low-Peak Performer",
             "description": "Number 3 box",
-            "displayFolder": "Distinct count of each category",
+            "displayFolder": "Distinct count of 9-Box & Total",
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")",
             "formatString": "0",
             "lineageTag": "8c64d53f-0e5e-4ce2-8dd5-3df1aaeb2219"
@@ -42428,7 +42428,7 @@
           {
             "name": "Moderate-Falling Short",
             "description": "Number 4 box",
-            "displayFolder": "Distinct count of each category",
+            "displayFolder": "Distinct count of 9-Box & Total",
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")",
             "formatString": "0",
             "lineageTag": "0f15d2d0-ee5a-405f-b0be-003cd288e41f"
@@ -42436,7 +42436,7 @@
           {
             "name": "Moderate-On Track",
             "description": "Number 5 box",
-            "displayFolder": "Distinct count of each category",
+            "displayFolder": "Distinct count of 9-Box & Total",
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")",
             "formatString": "0",
             "lineageTag": "45f40164-d478-4bc9-936a-611782eef382"
@@ -42444,15 +42444,15 @@
           {
             "name": "Moderate-Peak Performer",
             "description": "Number 6 box",
-            "displayFolder": "Distinct count of each category",
+            "displayFolder": "Distinct count of 9-Box & Total",
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")",
             "formatString": "0",
             "lineageTag": "798bef83-3af2-4594-a831-401ca7eb5e6d"
           },
           {
-            "name": "Total of Category",
+            "name": "9-Box Distinct ID",
             "description": "Total of all category (distinct count)",
-            "displayFolder": "Distinct count of each category",
+            "displayFolder": "Distinct count of 9-Box & Total",
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\")",
             "formatString": "0",
             "lineageTag": "73f6ce79-22e7-44df-928a-00708aa6a7aa"
@@ -42566,6 +42566,83 @@
             ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "f22fbc84-7933-498c-830b-beda6da451f9"
+          },
+          {
+            "name": "Total Distinct Employee ID",
+            "displayFolder": "Distinct count of 9-Box & Total",
+            "expression": "DISTINCTCOUNT('9-Box Grid'[Employee ID])",
+            "formatString": "0",
+            "lineageTag": "30c54bf0-3849-46d2-8571-8622bcaa04a7"
+          },
+          {
+            "name": "% Low-Falling Short",
+            "displayFolder": "% 9-Box",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")/[9-Box Distinct ID]",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "5f14fcac-d43d-42a9-bf4a-f3b631568447"
+          },
+          {
+            "name": "% Low-On Track",
+            "displayFolder": "% 9-Box",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")/[9-Box Distinct ID]",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "3d77488a-04af-4710-a159-394fbb0f32b6"
+          },
+          {
+            "name": "% Low-Peak Performer",
+            "displayFolder": "% 9-Box",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")/[9-Box Distinct ID]",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "257e6f95-447c-4205-b84c-c19749a764a3"
+          },
+          {
+            "name": "% Moderate-Falling Short",
+            "displayFolder": "% 9-Box",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")/[9-Box Distinct ID]",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "a4374ef0-d2dd-4099-86fd-9d67bfda7be7"
+          },
+          {
+            "name": "% Moderate-On Track",
+            "displayFolder": "% 9-Box",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")/[9-Box Distinct ID]",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "ad2eb833-c771-42ff-93f1-22f92b64e472"
+          },
+          {
+            "name": "% Moderate-Peak Performer",
+            "displayFolder": "% 9-Box",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")/[9-Box Distinct ID]",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "7da70162-fc7e-433c-8798-03f416d2c8da"
+          },
+          {
+            "name": "% High-Falling Short",
+            "displayFolder": "% 9-Box",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")/[9-Box Distinct ID]",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "095c1248-2da6-482c-93b0-03762b08cdf9"
+          },
+          {
+            "name": "% High-On Track",
+            "displayFolder": "% 9-Box",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")/[9-Box Distinct ID]",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "633c7ffb-eb19-4d83-a317-677feb24a4a4"
+          },
+          {
+            "name": "% High-Peak Performer",
+            "displayFolder": "% 9-Box",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\")/[9-Box Distinct ID]",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "cd9adfba-5082-433e-8f02-f413d6de680e"
+          },
+          {
+            "name": "% 9-Box Distinct ID",
+            "displayFolder": "% 9-Box",
+            "expression": "(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\"))/[Total Distinct Employee ID]",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "4aef3a58-3f53-4177-9881-2c7acab06258"
           }
         ],
         "partitions": [
