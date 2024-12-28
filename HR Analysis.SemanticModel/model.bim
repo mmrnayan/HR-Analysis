@@ -8219,19 +8219,7 @@
                     "ConceptualProperty": "Age Band"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "Age Band": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "fact_employee.age_banding": {
                 "Definition": {
@@ -18032,6 +18020,27 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.714
+                    }
+                  }
+                ]
+              },
+              "table_measure.proportion_of_employees_by_organization_level": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Proportion of Employees by Organization Level"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Proportion of Employees": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -42447,6 +42456,116 @@
             "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\")",
             "formatString": "0",
             "lineageTag": "73f6ce79-22e7-44df-928a-00708aa6a7aa"
+          },
+          {
+            "name": "Promotion",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_employee),",
+              "    fact_employee[Times Promoted]>=1",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "3d324027-6d51-441b-8315-7c38402c89e0"
+          },
+          {
+            "name": "Never_Promoted",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_employee),",
+              "    fact_employee[Times Promoted]=0",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "2be8d0d9-8801-4380-a9f7-6b3f1e2432be"
+          },
+          {
+            "name": "Rolling 12-Month Hires",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_employee),",
+              "    DATESINPERIOD(",
+              "        'Date'[Date],",
+              "        MAX('Date'[Date]),",
+              "        -12,",
+              "        MONTH",
+              "    )",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "a426bfa8-99b4-4e5d-a9bf-1981bbc21e59"
+          },
+          {
+            "name": "Headcount 12 Months Ago",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_employee),",
+              "    DATESINPERIOD(",
+              "        'Date'[Date],",
+              "        MAX('Date'[Date]),",
+              "        -12,",
+              "        MONTH",
+              "    )",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "cef52d53-5daf-41b3-a3e4-0d386373b08a"
+          },
+          {
+            "name": "Rolling 12-Month Terminations",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_resigned),",
+              "    DATESINPERIOD(",
+              "        'Date'[Date], -- Use the Date column from your Date table",
+              "        MAX('Date'[Date]),",
+              "        -12,",
+              "        MONTH",
+              "    )",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "a91ab0f3-67af-451d-868e-53de1bdfd5bc"
+          },
+          {
+            "name": "Attrition Rate (Rolling 12 Months)",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    [Rolling 12-Month Terminations],",
+              "    [Headcount 12 Months Ago],",
+              "    0",
+              ")",
+              ""
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "831f34a3-1615-4ecf-9794-8075683ba7f0"
+          },
+          {
+            "name": "Proportion of Employees by Organization Level",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    COUNT(fact_employee[Employee ID]),",
+              "    CALCULATE(",
+              "        COUNT(fact_employee[Employee ID]),",
+              "        ALL(fact_employee[Organization Level])",
+              "    )",
+              ")",
+              ""
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "f22fbc84-7933-498c-830b-beda6da451f9"
           }
         ],
         "partitions": [
