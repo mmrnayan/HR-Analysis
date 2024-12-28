@@ -12,7 +12,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"resignation_prediction\",\"Per:2621-9Box\",\"Per:2734-9Box\",\"Per:1643-9Box\",\"Per:1665-9Box\",\"Per:1122-9Box\",\"Per:1127-9Box\",\"f1 score\",\"Po:2621-9Box\",\"Po:2734-9Box\",\"Po:1643-9Box\",\"Po:1665-9Box\",\"Po:1122-9Box\",\"Po:1127-9Box\",\"Performance-9Box\",\"Potential-9Box\",\"3Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"Measure\",\"Age Category\",\"resignation_prediction\",\"Per:2621-9Box\",\"Per:2734-9Box\",\"Per:1643-9Box\",\"Per:1665-9Box\",\"Per:1122-9Box\",\"Per:1127-9Box\",\"f1 score\",\"Po:2621-9Box\",\"Po:2734-9Box\",\"Po:1643-9Box\",\"Po:1665-9Box\",\"Po:1122-9Box\",\"Po:1127-9Box\",\"Performance-9Box\",\"Potential-9Box\",\"3Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\",\"Leave Analysis\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -4556,6 +4556,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.727
+                    }
+                  },
+                  {
+                    "Category": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -18027,7 +18037,7 @@
               "table_measure.proportion_of_employees_by_organization_level": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Proportion of Employees by Organization Level"
                   }
                 },
@@ -19232,7 +19242,7 @@
               "v_measure_measure": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure"
+                    "ConceptualEntity": "Measure"
                   }
                 },
                 "State": "Generated",
@@ -19327,7 +19337,7 @@
               "v_measure_measure.average_training_hours": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Average Training Hours"
                   }
                 },
@@ -19429,7 +19439,7 @@
               "v_measure_measure.avg_resignation_per_month": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Avg Resignation Per Month"
                   }
                 },
@@ -19545,7 +19555,7 @@
               "v_measure_measure.avg_time_to_resign": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Avg Time to Resign (Years)"
                   }
                 },
@@ -19629,7 +19639,7 @@
               "v_measure_measure.completed_trainings": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Completed Trainings"
                   }
                 },
@@ -19751,7 +19761,7 @@
               "v_measure_measure.ethnicity_count": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Ethnicity Count"
                   }
                 },
@@ -19777,7 +19787,7 @@
               "v_measure_measure.female": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "%Female"
                   }
                 },
@@ -19833,7 +19843,7 @@
               "v_measure_measure.female1": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "#female"
                   }
                 },
@@ -19909,7 +19919,7 @@
               "v_measure_measure.first_year_resignation": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "% First Year Resignation"
                   }
                 },
@@ -20025,7 +20035,7 @@
               "v_measure_measure.high_risk_employee": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "High Risk Employee"
                   }
                 },
@@ -20153,7 +20163,7 @@
               "v_measure_measure.highfalling_short": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "High-Falling Short"
                   }
                 },
@@ -20287,7 +20297,7 @@
               "v_measure_measure.highon_track": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "High-On Track"
                   }
                 },
@@ -20309,7 +20319,7 @@
               "v_measure_measure.highpeak_performer": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "High-Peak Performer"
                   }
                 },
@@ -20443,7 +20453,7 @@
               "v_measure_measure.hires": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Hires"
                   }
                 },
@@ -20499,7 +20509,7 @@
               "v_measure_measure.intercept": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Intercept"
                   }
                 },
@@ -20515,7 +20525,7 @@
               "v_measure_measure.involuntary_attrition_rate": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Involuntary Attrition Rate"
                   }
                 },
@@ -20643,7 +20653,7 @@
               "v_measure_measure.involuntary_resignation": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "% Involuntary Resignation"
                   }
                 },
@@ -20759,7 +20769,7 @@
               "v_measure_measure.label_bar_chart_resignation_reason": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Label Bar Chart- Resignation Reason"
                   }
                 },
@@ -20905,7 +20915,7 @@
               "v_measure_measure.labels_PlaceHolders": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Labels PlaceHolders"
                   }
                 },
@@ -20927,7 +20937,7 @@
               "v_measure_measure.low_risk_employee": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Low Risk Employee"
                   }
                 },
@@ -21055,7 +21065,7 @@
               "v_measure_measure.lowfalling_short": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Low-Falling Short"
                   }
                 },
@@ -21189,7 +21199,7 @@
               "v_measure_measure.lowon_track": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Low-On Track"
                   }
                 },
@@ -21211,7 +21221,7 @@
               "v_measure_measure.lowpeak_performer": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Low-Peak Performer"
                   }
                 },
@@ -21345,7 +21355,7 @@
               "v_measure_measure.male": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "%Male"
                   }
                 },
@@ -21461,7 +21471,7 @@
               "v_measure_measure.male1": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "#male"
                   }
                 },
@@ -21577,7 +21587,7 @@
               "v_measure_measure.moderate_risk_employee": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Moderate Risk Employee"
                   }
                 },
@@ -21705,7 +21715,7 @@
               "v_measure_measure.moderatefalling_short": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Moderate-Falling Short"
                   }
                 },
@@ -21839,7 +21849,7 @@
               "v_measure_measure.moderateon_track": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Moderate-On Track"
                   }
                 },
@@ -21937,7 +21947,7 @@
               "v_measure_measure.moderatepeak_performer": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Moderate-Peak Performer"
                   }
                 },
@@ -22071,7 +22081,7 @@
               "v_measure_measure.net_change_in_headcount": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Net Change in Headcount"
                   }
                 },
@@ -22217,7 +22227,7 @@
               "v_measure_measure.new_hires": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "New Hires"
                   }
                 },
@@ -22273,7 +22283,7 @@
               "v_measure_measure.of_active_employees": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "# of Active Employees"
                   }
                 },
@@ -22319,7 +22329,7 @@
               "v_measure_measure.of_employee": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "# of Employee"
                   }
                 },
@@ -22365,7 +22375,7 @@
               "v_measure_measure.of_female": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "# of Female"
                   }
                 },
@@ -22411,7 +22421,7 @@
               "v_measure_measure.of_first_year_resignation": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "# of First Year Resignation"
                   }
                 },
@@ -22477,7 +22487,7 @@
               "v_measure_measure.of_involuntary_resignation": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "# of Involuntary Resignation"
                   }
                 },
@@ -22533,7 +22543,7 @@
               "v_measure_measure.of_male": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "# of Male"
                   }
                 },
@@ -22589,7 +22599,7 @@
               "v_measure_measure.of_other": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "# of Other"
                   }
                 },
@@ -22635,7 +22645,7 @@
               "v_measure_measure.of_resignation": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "# of Resignation"
                   }
                 },
@@ -22691,7 +22701,7 @@
               "v_measure_measure.of_resignation_CY": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "# of Resignation CY"
                   }
                 },
@@ -22737,7 +22747,7 @@
               "v_measure_measure.of_resignation_PY": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "# of Resignation PY"
                   }
                 },
@@ -22783,7 +22793,7 @@
               "v_measure_measure.of_resignation_by_reason": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "# of Resignation by Reason"
                   }
                 },
@@ -22829,7 +22839,7 @@
               "v_measure_measure.of_voluntary_resignation": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "# of Voluntary Resignation"
                   }
                 },
@@ -22885,7 +22895,7 @@
               "v_measure_measure.overall_attrition_rate": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Overall Attrition Rate"
                   }
                 },
@@ -23013,7 +23023,7 @@
               "v_measure_measure.overtime_headcount": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Overtime Headcount"
                   }
                 },
@@ -23035,7 +23045,7 @@
               "v_measure_measure.predicted_Female_2024": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "predicted %Female_2024"
                   }
                 },
@@ -23071,7 +23081,7 @@
               "v_measure_measure.predicted__Female_2025": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "predicted % Female_2025"
                   }
                 },
@@ -23107,7 +23117,7 @@
               "v_measure_measure.resignation_rate_by_age_band": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Resignation Rate by Age Band"
                   }
                 },
@@ -23223,7 +23233,7 @@
               "v_measure_measure.skill_gap_percentage": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Skill Gap Percentage"
                   }
                 },
@@ -23345,7 +23355,7 @@
               "v_measure_measure.slope": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Slope"
                   }
                 },
@@ -23461,7 +23471,7 @@
               "v_measure_measure.success_rate_of_project_management": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "success Rate of Project Management"
                   }
                 },
@@ -23577,7 +23587,7 @@
               "v_measure_measure.terminations": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Terminations"
                   }
                 },
@@ -23593,7 +23603,7 @@
               "v_measure_measure.total_employees_trained": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Total Employees Trained"
                   }
                 },
@@ -23709,7 +23719,7 @@
               "v_measure_measure.total_of_category": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Total of Category"
                   }
                 },
@@ -23805,7 +23815,7 @@
               "v_measure_measure.total_project_handled": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Total Project Handled"
                   }
                 },
@@ -23921,7 +23931,7 @@
               "v_measure_measure.total_project_targeted": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Total Project Targeted"
                   }
                 },
@@ -24037,7 +24047,7 @@
               "v_measure_measure.total_training_hours": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Total Training Hours"
                   }
                 },
@@ -24159,7 +24169,7 @@
               "v_measure_measure.total_training_sessions_completed": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Total Training Sessions Completed"
                   }
                 },
@@ -24275,7 +24285,7 @@
               "v_measure_measure.training_completion_rate": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Training Completion Rate"
                   }
                 },
@@ -24403,7 +24413,7 @@
               "v_measure_measure.very_high_risk_employee": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Very High Risk Employee"
                   }
                 },
@@ -24531,7 +24541,7 @@
               "v_measure_measure.voluntary_attrition_rate": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "Voluntary Attrition Rate"
                   }
                 },
@@ -24659,7 +24669,7 @@
               "v_measure_measure.voluntary_resignation": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "_measure",
+                    "ConceptualEntity": "Measure",
                     "ConceptualProperty": "% Voluntary Resignation"
                   }
                 },
@@ -36253,7 +36263,7 @@
               },
               "v_measure_measure_has_avg_resignation_per_month": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36286,7 +36296,7 @@
               },
               "v_measure_measure_has_avg_time_to_resign": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36319,7 +36329,7 @@
               },
               "v_measure_measure_has_female": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36352,7 +36362,7 @@
               },
               "v_measure_measure_has_female1": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36385,7 +36395,7 @@
               },
               "v_measure_measure_has_intercept": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36418,7 +36428,7 @@
               },
               "v_measure_measure_has_label_bar_chart_resignation_reason": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36502,7 +36512,7 @@
               },
               "v_measure_measure_has_labels_PlaceHolders": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36535,7 +36545,7 @@
               },
               "v_measure_measure_has_male": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36568,7 +36578,7 @@
               },
               "v_measure_measure_has_male1": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36601,7 +36611,7 @@
               },
               "v_measure_measure_has_of_active_employees": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36634,7 +36644,7 @@
               },
               "v_measure_measure_has_of_female": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36667,7 +36677,7 @@
               },
               "v_measure_measure_has_of_male": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36700,7 +36710,7 @@
               },
               "v_measure_measure_has_of_other": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36733,7 +36743,7 @@
               },
               "v_measure_measure_has_predicted_Female_2024": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36766,7 +36776,7 @@
               },
               "v_measure_measure_has_predicted__Female_2025": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36799,7 +36809,7 @@
               },
               "v_measure_measure_has_slope": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -36832,7 +36842,7 @@
               },
               "v_measure_measure_has_total_training_hours": {
                 "Binding": {
-                  "ConceptualEntity": "_measure"
+                  "ConceptualEntity": "Measure"
                 },
                 "Phrasings": [
                   {
@@ -40046,10 +40056,14 @@
                 "value": "Date"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "dateTime",
             "description": "Date the leave period begins",
             "formatString": "Long Date",
-            "isHidden": true,
             "lineageTag": "b9b4ae5b-4049-444c-b4ff-948c9bf70480",
             "sourceColumn": "Leave Start Date",
             "summarizeBy": "none"
@@ -40066,10 +40080,14 @@
                 "value": "Date"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "dateTime",
             "description": "Date the leave period ends",
             "formatString": "Long Date",
-            "isHidden": true,
             "lineageTag": "53576719-c68d-40a1-b5a4-fe39d0405b61",
             "sourceColumn": "Leave End Date",
             "summarizeBy": "none"
@@ -40157,6 +40175,77 @@
             "lineageTag": "b871671d-51da-47d1-9ad7-fd720794ca8a",
             "sourceColumn": "Absenteeism Cost Impact ($)",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Days on Leave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "DATEDIFF(fact_leave[Leave Start Date],fact_leave[Leave End Date],DAY)+1",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "1d8d15cf-ecd6-4763-a852-7adcf28f2935",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Department",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "RELATED(fact_employee[Department])",
+            "isDataTypeInferred": true,
+            "lineageTag": "daf3876d-add6-42e1-9c12-ad4d1bc6ea96",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Age",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "RELATED(fact_employee[Age])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "1e42f59e-b17a-4907-8078-7c286d73e735",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Age Range",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "    TRUE(),",
+              "    fact_leave[Age] <= 25, \"18-25\",",
+              "    fact_leave[Age] <= 35, \"26-35\",",
+              "    fact_leave[Age] <= 45, \"36-45\",",
+              "    fact_leave[Age] <= 55, \"46-55\",",
+              "    fact_leave[Age] <= 65, \"56-65\", \"66+\"",
+              ")"
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "43c561eb-3389-4f33-af15-902efd752e53",
+            "summarizeBy": "none",
+            "type": "calculated"
           }
         ],
         "lineageTag": "81376d4a-6a2f-4308-9e15-b8d0bb7595f0",
@@ -41715,7 +41804,7 @@
         ]
       },
       {
-        "name": "_measure",
+        "name": "Measure",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -41724,6 +41813,11 @@
           {
             "name": "PBI_NavigationStepName",
             "value": "Navigation"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "Name"
           }
         ],
         "lineageTag": "1919ba0b-d570-4037-82be-76d2c015881f",
@@ -42570,7 +42664,7 @@
         ],
         "partitions": [
           {
-            "name": "_measure",
+            "name": "Measure",
             "mode": "import",
             "source": {
               "expression": [
@@ -45595,6 +45689,64 @@
                 ""
               ],
               "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Leave Analysis",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "Name"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b9ad3e87-957c-495f-b3a1-f0daf58c9324",
+            "sourceColumn": "Column1",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "2c88e5e5-0c66-488f-a205-e25e73ce7a2e",
+        "measures": [
+          {
+            "name": "Average days on leave",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(fact_leave[Days on Leave])",
+            "lineageTag": "7a565962-700b-4310-8b6a-3751acd9096f"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Leave Analysis",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i44FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t])",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
             }
           }
         ]
