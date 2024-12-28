@@ -12,7 +12,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"resignation_prediction\",\"Per:2621-9Box\",\"Per:2734-9Box\",\"Per:1643-9Box\",\"Per:1665-9Box\",\"Per:1122-9Box\",\"Per:1127-9Box\",\"f1 score\",\"Po:2621-9Box\",\"Po:2734-9Box\",\"Po:1643-9Box\",\"Po:1665-9Box\",\"Po:1122-9Box\",\"Po:1127-9Box\",\"Performance-9Box\",\"Potential-9Box\",\"3Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"3Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -18024,6 +18024,195 @@
                   }
                 ]
               },
+              "table_measure.highfalling_short": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% High-Falling Short"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.highon_track": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% High-On Track"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.highpeak_performer": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% High-Peak Performer"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.lowfalling_short": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Low-Falling Short"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.lowon_track": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Low-On Track"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.lowpeak_performer": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Low-Peak Performer"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.moderatefalling_short": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Moderate-Falling Short"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.moderateon_track": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Moderate-On Track"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.moderatepeak_performer": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Moderate-Peak Performer"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "table_measure.proportion_of_employees_by_organization_level": {
                 "Definition": {
                   "Binding": {
@@ -20281,6 +20470,16 @@
                       "Type": "Noun",
                       "Weight": 0.452
                     }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
@@ -20302,6 +20501,16 @@
                     "high on track": {
                       "State": "Generated",
                       "Weight": 0.97
+                    }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -20436,6 +20645,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.508
+                    }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -21183,6 +21402,16 @@
                       "Type": "Noun",
                       "Weight": 0.452
                     }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
@@ -21204,6 +21433,16 @@
                     "low on track": {
                       "State": "Generated",
                       "Weight": 0.97
+                    }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -21338,6 +21577,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.508
+                    }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -21833,6 +22082,16 @@
                       "Type": "Noun",
                       "Weight": 0.452
                     }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
@@ -21930,6 +22189,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.452
+                    }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -22064,6 +22333,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.508
+                    }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -38378,461 +38657,6 @@
         "kind": "m",
         "lineageTag": "e21b802f-ebb0-4e1b-bfe7-a420489eef4a",
         "queryGroup": "Calender"
-      },
-      {
-        "name": "Per:1122-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Per=Performance. Every distinct Employee ID has 1 performance rating per Performance Review Year. But, Employee ID-1122 has a 2 performance rating for 2022. It causes an error in the process of 9-Box  grid so solving this issue, creating this table.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Per:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Per:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Removed Errors\",{{\"2020\", Int64.Type}}),",
-          "    #\"Appended Query2\" = Table.Combine({#\"Changed Type2\", #\"Per:1643-9Box\"}),",
-          "    #\"Appended Query3\" = Table.Combine({#\"Appended Query2\", #\"Per:1665-9Box\"}),",
-          "    #\"Removed Errors1\" = Table.RemoveRowsWithErrors(#\"Appended Query3\", {\"2021\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Removed Errors1\",121),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1678),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2022\", 1}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "4e94711f-6701-473b-8876-5cbad5fc534a",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Per:1127-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Per=Performance. Every distinct Employee ID has 1 performance rating per Performance Review Year. But, Employee ID-1127 has a 2 performance rating for 2022. It causes an error in the process of 9-Box  grid so solving this issue, creating this table.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Per:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Per:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Removed Errors\",{{\"2020\", Int64.Type}}),",
-          "    #\"Appended Query2\" = Table.Combine({#\"Changed Type2\", #\"Per:1643-9Box\"}),",
-          "    #\"Appended Query3\" = Table.Combine({#\"Appended Query2\", #\"Per:1665-9Box\"}),",
-          "    #\"Removed Errors1\" = Table.RemoveRowsWithErrors(#\"Appended Query3\", {\"2021\"}),",
-          "    #\"Appended Query4\" = Table.Combine({#\"Removed Errors1\", #\"Per:1122-9Box\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Appended Query4\",126),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1674),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2022\", 3}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "049968dc-2e9a-430a-bc6e-3123b49389a5",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Per:1643-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Per=Performance. Every distinct Employee ID has 1 performance rating per Performance Review Year. But, Employee ID-1643 has a 2 performance rating for 2021. It causes an error in the process of 9-Box  grid so solving this issue, creating this table.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Per:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Per:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Removed Errors\",{{\"2020\", Int64.Type}}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Changed Type2\",642),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1157),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2021\", 5}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "50e82c40-74ab-4887-ae73-d432d0a7aa61",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Per:1665-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Per=Performance. Every distinct Employee ID has 1 performance rating per Performance Review Year. But, Employee ID-1665 has a 2 performance rating for 2021. It causes an error in the process of 9-Box  grid so solving this issue, creating this table.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Per:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Per:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Removed Errors\",{{\"2020\", Int64.Type}}),",
-          "    #\"Appended Query2\" = Table.Combine({#\"Changed Type2\", #\"Per:1643-9Box\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Appended Query2\",664),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1136),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2021\", 1}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "a5e03d39-2a66-4ab8-83c6-4800e210ea70",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Per:2621-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Per=Performance. Every distinct Employee ID has 1 performance rating per Performance Review Year. But, Employee ID-2621 has a 2 performance rating for 2020. It causes an error in the process of 9-Box  grid so solving this issue, creating this table.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Replaced Errors\",1620),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",179),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2020\", 2}}),",
-          "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Replaced Errors1\",{{\"2020\", Int64.Type}})",
-          "in",
-          "    #\"Changed Type2\""
-        ],
-        "kind": "m",
-        "lineageTag": "be7f76cd-3f3f-49b7-b5fc-95298ec4b6c8",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Per:2734-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Per=Performance. Every distinct Employee ID has 1 performance rating per Performance Review Year. But, Employee ID-2734 has a 2 performance rating for 2020. It causes an error in the process of 9-Box  grid so solving this issue, creating this table.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Per:2621-9Box\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Appended Query\",1733),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",67),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2020\", 5}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "92e9b1ef-4fec-4d6a-928e-66832ff71f49",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Po:1122-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Po=potential. Every distinct Employee ID has 1 potential rating per Performance Review Year. But Employee ID-1122 has a 2 potential rating for 2022. This causes an error in the 9-box grid process, so to solve this issue, this table was created.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Potential Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Pivoted Column\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Reordered Columns\",null,\"No Rating\",Replacer.ReplaceValue,{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2018\", type text}, {\"2019\", type text}, {\"2020\", type text}, {\"2021\", type text}, {\"2022\", type text}, {\"2023\", type text}, {\"2024\", type text}}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type1\", {{\"2019\", \"High\"}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Po:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Po:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Appended Query2\" = Table.Combine({#\"Removed Errors\", #\"Po:1643-9Box\"}),",
-          "    #\"Appended Query3\" = Table.Combine({#\"Appended Query2\", #\"Po:1665-9Box\"}),",
-          "    #\"Removed Errors1\" = Table.RemoveRowsWithErrors(#\"Appended Query3\", {\"2021\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Removed Errors1\",121),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1678),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2022\", \"High\"}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "e51eed75-7408-4af1-93bd-34444d6b77ed",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Po:1127-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Po=potential. Every distinct Employee ID has 1 potential rating per Performance Review Year. But Employee ID-1127 has a 2 potential rating for 2022. This causes an error in the 9-box grid process, so to solve this issue, this table was created.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Potential Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Pivoted Column\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Reordered Columns\",null,\"No Rating\",Replacer.ReplaceValue,{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2018\", type text}, {\"2019\", type text}, {\"2020\", type text}, {\"2021\", type text}, {\"2022\", type text}, {\"2023\", type text}, {\"2024\", type text}}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type1\", {{\"2019\", \"High\"}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Po:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Po:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Appended Query2\" = Table.Combine({#\"Removed Errors\", #\"Po:1643-9Box\"}),",
-          "    #\"Appended Query3\" = Table.Combine({#\"Appended Query2\", #\"Po:1665-9Box\"}),",
-          "    #\"Removed Errors1\" = Table.RemoveRowsWithErrors(#\"Appended Query3\", {\"2021\"}),",
-          "    #\"Appended Query4\" = Table.Combine({#\"Removed Errors1\", #\"Po:1122-9Box\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Appended Query4\",126),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1674),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2022\", \"High\"}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "1f16e5f5-6690-45ee-8eae-7d621809db69",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Po:1643-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Po=potential. Every distinct Employee ID has 1 potential rating per Performance Review Year. But Employee ID-1643 has a 2 potential rating for 2021. This causes an error in the 9-box grid process, so to solve this issue, this table was created.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Potential Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Pivoted Column\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Reordered Columns\",null,\"No Rating\",Replacer.ReplaceValue,{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2018\", type text}, {\"2019\", type text}, {\"2020\", type text}, {\"2021\", type text}, {\"2022\", type text}, {\"2023\", type text}, {\"2024\", type text}}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type1\", {{\"2019\", \"High\"}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Po:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Po:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Removed Errors\",642),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1157),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2021\", \"Moderate\"}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "a0d17c22-e554-445e-820d-dc77c82b892e",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Po:1665-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Po=potential. Every distinct Employee ID has 1 potential rating per Performance Review Year. But Employee ID-1665 has a 2 potential rating for 2021. This causes an error in the 9-box grid process, so to solve this issue, this table was created.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Potential Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Pivoted Column\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Reordered Columns\",null,\"No Rating\",Replacer.ReplaceValue,{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2018\", type text}, {\"2019\", type text}, {\"2020\", type text}, {\"2021\", type text}, {\"2022\", type text}, {\"2023\", type text}, {\"2024\", type text}}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type1\", {{\"2019\", \"High\"}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Po:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Po:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Appended Query2\" = Table.Combine({#\"Removed Errors\", #\"Po:1643-9Box\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Appended Query2\",664),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1136),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2021\", \"High\"}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "2484bbc3-64fc-42d5-9c59-45f2240ec584",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Po:2621-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Po=potential. Every distinct Employee ID has 1 potential rating per Performance Review Year. But Employee ID-2621 has a 2 potential rating for 2020. This causes an error in the 9-box grid process, so to solve this issue, this table was created.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Potential Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Pivoted Column\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Reordered Columns\",null,\"No Rating\",Replacer.ReplaceValue,{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2018\", type text}, {\"2019\", type text}, {\"2020\", type text}, {\"2021\", type text}, {\"2022\", type text}, {\"2023\", type text}, {\"2024\", type text}}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type1\", {{\"2019\", \"High\"}}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Replaced Errors\",1620),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",179),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2020\", \"Low\"}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "e198d308-9831-4d61-a2f9-3e8d84d0da31",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Po:2734-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Po=potential. Every distinct Employee ID has 1 potential rating per Performance Review Year. But Employee ID-2734 has a 2 potential rating for 2020. This causes an error in the 9-box grid process, so to solve this issue, this table was created.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Potential Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Pivoted Column\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Reordered Columns\",null,\"No Rating\",Replacer.ReplaceValue,{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2018\", type text}, {\"2019\", type text}, {\"2020\", type text}, {\"2021\", type text}, {\"2022\", type text}, {\"2023\", type text}, {\"2024\", type text}}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type1\", {{\"2019\", \"High\"}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Po:2621-9Box\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Appended Query\",1733),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",67),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2020\", \"High\"}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "c437657e-593a-4c9d-ad03-f9739ab503be",
-        "queryGroup": "Data\\fact tables"
       }
     ],
     "queryGroups": [
@@ -40383,6 +40207,19 @@
             "lineageTag": "0f008646-be5e-4cac-87eb-31fdc394adc2",
             "sourceColumn": "Bonus ($)",
             "summarizeBy": "sum"
+          },
+          {
+            "name": "Full Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1068a168-cdb6-46c2-86ce-5e52a8422587",
+            "sourceColumn": "Full Name",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "daefe653-4dbd-4cff-818a-b13040e6f3d4",
@@ -40396,9 +40233,13 @@
                 "let",
                 "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}})",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Changed Type\", {\"Employee ID\"}, dim_employee, {\"Employee ID\"}, \"dim_employee\", JoinKind.LeftOuter),",
+                "    #\"Expanded dim_employee\" = Table.ExpandTableColumn(#\"Merged Queries\", \"dim_employee\", {\"Full Name\"}, {\"dim_employee.Full Name\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded dim_employee\",{{\"dim_employee.Full Name\", \"Full Name\"}}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Renamed Columns\",{\"Employee ID\", \"Full Name\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"})",
                 "in",
-                "    #\"Changed Type\""
+                "    #\"Reordered Columns\""
               ],
               "type": "m"
             }
@@ -44527,6 +44368,32 @@
             "lineageTag": "c79ffc7b-55a6-4544-bab0-7d7377fd5fd3",
             "sourceColumn": "9-Box Grid Placement",
             "summarizeBy": "sum"
+          },
+          {
+            "name": "ID-Text",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4d21cffb-e121-4d99-83b5-bc7964d9ae60",
+            "sourceColumn": "ID-Text",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Grid Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5d25e33f-c170-4331-8066-2a12a4f7e9ab",
+            "sourceColumn": "Grid Name",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "2d94ced6-bb2d-49ad-8c9e-6256f5907a6c",
@@ -44587,9 +44454,16 @@
                 "    #\"Added Custom3\" = Table.AddColumn(#\"Reordered Columns3\", \"9-Box Grid Category\", each [Assessment Potential Category] & \"-\" & [Assessment Performance Category]),",
                 "    #\"Changed Type4\" = Table.TransformColumnTypes(#\"Added Custom3\",{{\"9-Box Grid Category\", type text}}),",
                 "    #\"Added Conditional Column\" = Table.AddColumn(#\"Changed Type4\", \"9-Box Grid Placement\", each if [#\"9-Box Grid Category\"] = \"Low-Falling Short\" then 1 else if [#\"9-Box Grid Category\"] = \"Low-On Track\" then 2 else if [#\"9-Box Grid Category\"] = \"Low-Peak Performer\" then 3 else if [#\"9-Box Grid Category\"] = \"Moderate-Falling Short\" then 4 else if [#\"9-Box Grid Category\"] = \"Moderate-On Track\" then 5 else if [#\"9-Box Grid Category\"] = \"Moderate-Peak Performer\" then 6 else if [#\"9-Box Grid Category\"] = \"High-Falling Short\" then 7 else if [#\"9-Box Grid Category\"] = \"High-On Track\" then 8 else if [#\"9-Box Grid Category\"] = \"High-Peak Performer\" then 9 else null),",
-                "    #\"Changed Type5\" = Table.TransformColumnTypes(#\"Added Conditional Column\",{{\"9-Box Grid Placement\", Int64.Type}})",
+                "    #\"Changed Type5\" = Table.TransformColumnTypes(#\"Added Conditional Column\",{{\"9-Box Grid Placement\", Int64.Type}}),",
+                "    #\"Added Conditional Column1\" = Table.AddColumn(#\"Changed Type5\", \"Grid Name\", each if [#\"9-Box Grid Placement\"] = 1 then \"Growth Opportunity\" else if [#\"9-Box Grid Placement\"] = 2 then \"Reliable Contributor\" else if [#\"9-Box Grid Placement\"] = 3 then \"Consistent Performer\" else if [#\"9-Box Grid Placement\"] = 4 then \"Emerging Contributor\" else if [#\"9-Box Grid Placement\"] = 5 then \"Core Performer\" else if [#\"9-Box Grid Placement\"] = 6 then \"Rising Potential\" else if [#\"9-Box Grid Placement\"] = 7 then \"Aspiring Performer\" else if [#\"9-Box Grid Placement\"] = 8 then \"High Achiever\" else if [#\"9-Box Grid Placement\"] = 9 then \"Top Talent\" else null),",
+                "    #\"Changed Type6\" = Table.TransformColumnTypes(#\"Added Conditional Column1\",{{\"Grid Name\", type text}}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type6\", each true),",
+                "    #\"Duplicated Column\" = Table.DuplicateColumn(#\"Filtered Rows\", \"Employee ID\", \"Employee ID - Copy\"),",
+                "    #\"Reordered Columns4\" = Table.ReorderColumns(#\"Duplicated Column\",{\"Employee ID\", \"Employee ID - Copy\", \"Assessment Potential Rating\", \"Assessment Performance Rating\", \"Assessment Potential Category\", \"Assessment Performance Category\", \"9-Box Grid Category\", \"9-Box Grid Placement\", \"Grid Name\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Reordered Columns4\",{{\"Employee ID - Copy\", \"ID-Text\"}}),",
+                "    #\"Changed Type7\" = Table.TransformColumnTypes(#\"Renamed Columns1\",{{\"ID-Text\", type text}})",
                 "in",
-                "    #\"Changed Type5\""
+                "    #\"Changed Type7\""
               ],
               "type": "m"
             }
