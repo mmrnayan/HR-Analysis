@@ -8212,6 +8212,27 @@
                   }
                 ]
               },
+              "fact_employee.age_band": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_employee",
+                    "ConceptualProperty": "Age Band"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Age Band": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "fact_employee.age_banding": {
                 "Definition": {
                   "Binding": {
@@ -22431,6 +22452,16 @@
                       "Type": "Noun",
                       "Weight": 0.624
                     }
+                  },
+                  {
+                    "First Year Resignation": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
@@ -22476,6 +22507,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.748
+                    }
+                  },
+                  {
+                    "Involuntary Resignation": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -22624,6 +22665,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.739
+                    }
+                  },
+                  {
+                    "Resignation": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -22808,6 +22859,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.748
+                    }
+                  },
+                  {
+                    "Voluntary Resignation": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -26106,7 +26167,9 @@
                 },
                 "State": "Generated",
                 "Terms": [
-                  {},
+                  {
+                    "": {}
+                  },
                   {
                     "province": {
                       "Source": {
@@ -27314,7 +27377,9 @@
                 },
                 "State": "Generated",
                 "Terms": [
-                  {},
+                  {
+                    "": {}
+                  },
                   {
                     "province": {
                       "Source": {
