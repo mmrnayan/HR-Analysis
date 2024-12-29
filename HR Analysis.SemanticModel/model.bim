@@ -40157,6 +40157,22 @@
             "lineageTag": "b871671d-51da-47d1-9ad7-fd720794ca8a",
             "sourceColumn": "Absenteeism Cost Impact ($)",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Days on Leave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "DATEDIFF(fact_leave[Leave Start Date],fact_leave[Leave End Date],DAY)+1",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "2c26d6d8-4499-4d22-9223-07bf8397b495",
+            "summarizeBy": "sum",
+            "type": "calculated"
           }
         ],
         "lineageTag": "81376d4a-6a2f-4308-9e15-b8d0bb7595f0",
@@ -45671,6 +45687,66 @@
                 ")",
                 ""
               ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Table",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "bb917989791e4c859048705a2a2e0dc1"
+          },
+          {
+            "name": "436ba87b-9c83-4389-a31b-ebd06a36be98",
+            "value": "{\"Expression\":null}"
+          },
+          {
+            "name": "277cc1b9-af89-4597-8e15-cacc25c0886b",
+            "value": "To use special characters in a calculated table name, enclose the entire name in brackets ( [] ) and add a ] to any closing brackets in the name."
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "723418e2-01a7-4a2b-aeba-efdd32741100",
+            "sourceColumn": "[Column]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "2baba153-66ea-4ce0-9f87-eb3b68eb3f11",
+        "measures": [
+          {
+            "name": "Avg days on leave",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(fact_leave[Days on Leave])",
+            "lineageTag": "c8d24f6b-b3aa-488a-b8e0-ba50986cac74"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Table",
+            "mode": "import",
+            "source": {
+              "expression": "Row(\"Column\", BLANK())",
               "type": "calculated"
             }
           }

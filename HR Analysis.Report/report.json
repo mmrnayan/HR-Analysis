@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":11,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "config": "{\"version\":\"5.60\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Custom03473850574089621.json\",\"version\":\"5.60\",\"type\":1}},\"activeSectionIndex\":15,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
   "layoutOptimization": 0,
   "publicCustomVisuals": [
     "sankey02300D1BE6F5427989F3DE31CCA9E0F32020"
@@ -431,6 +431,27 @@
         }
       ],
       "width": 1920.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Leave Analysis",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "6b0dba1489d8353e7791",
+      "ordinal": 15,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"88e02af977311df636a3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":280,\"z\":0,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"fact_employee.Department\",\"active\":true}],\"Y\":[{\"queryRef\":\"Table.Avg days on leave\"}],\"Series\":[{\"queryRef\":\"fact_employee.Gender\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Table\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_employee\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Department\"},\"Name\":\"fact_employee.Department\",\"NativeReferenceName\":\"Department\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Avg days on leave\"},\"Name\":\"Table.Avg days on leave\",\"NativeReferenceName\":\"Avg days on leave\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Gender\"},\"Name\":\"fact_employee.Gender\",\"NativeReferenceName\":\"Gender\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Avg days on leave\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
     },
     {
       "config": "{}",
