@@ -12,7 +12,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"resignation_prediction\",\"Per:2621-9Box\",\"Per:2734-9Box\",\"Per:1643-9Box\",\"Per:1665-9Box\",\"Per:1122-9Box\",\"Per:1127-9Box\",\"f1 score\",\"Po:2621-9Box\",\"Po:2734-9Box\",\"Po:1643-9Box\",\"Po:1665-9Box\",\"Po:1122-9Box\",\"Po:1127-9Box\",\"Performance-9Box\",\"Potential-9Box\",\"3Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\",\"Employee Details\",\"Review\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -18034,6 +18034,279 @@
                   }
                 ]
               },
+              "table_measure.developing_star": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Developing Star"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.developing_star1": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Developing Star"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.highfalling_short": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% High-Falling Short"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.highon_track": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% High-On Track"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.highpeak_performer": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% High-Peak Performer"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.lowfalling_short": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Low-Falling Short"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.lowon_track": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Low-On Track"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.lowpeak_performer": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Low-Peak Performer"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.moderatefalling_short": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Moderate-Falling Short"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.moderateon_track": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Moderate-On Track"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.moderatepeak_performer": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Moderate-Peak Performer"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.needs_development": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Needs Development"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table_measure.needs_development1": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Needs Development"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Percentage": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "table_measure.proportion_of_employees_by_organization_level": {
                 "Definition": {
                   "Binding": {
@@ -18055,257 +18328,44 @@
                   }
                 ]
               },
-              "v3Potential_9Box3Potential9Box": {
+              "table_measure.star_performer": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "3Potential-9Box"
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Star Performer"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "3Potential-9Box": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "3Potential 9Box": {
-                      "State": "Generated",
-                      "Weight": 0.97
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
               },
-              "v3Potential_9Box3Potential9Box.employee_ID": {
+              "table_measure.star_performer1": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "3Potential-9Box",
-                    "ConceptualProperty": "Employee ID"
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "% Star Performer"
                   }
                 },
                 "State": "Generated",
                 "Terms": [
                   {
-                    "employee ID": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "employee": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  },
-                  {
-                    "employee identification": {
+                    "Percentage": {
                       "Source": {
-                        "Agent": "Thesaurus"
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
                       },
                       "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.75
-                    }
-                  },
-                  {
-                    "employee identity": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.75
-                    }
-                  },
-                  {
-                    "employee identifier": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.75
-                    }
-                  },
-                  {
-                    "employee credential": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.727
-                    }
-                  },
-                  {
-                    "worker": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "servant": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "member": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "underling": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.491
-                    }
-                  },
-                  {
-                    "operative": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.476
-                    }
-                  },
-                  {
-                    "hand": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.476
-                    }
-                  }
-                ]
-              },
-              "v3Potential_9Box3Potential9Box.v20182018": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "3Potential-9Box",
-                    "ConceptualProperty": "2018"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "2018": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v3Potential_9Box3Potential9Box.v20192019": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "3Potential-9Box",
-                    "ConceptualProperty": "2019"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "2019": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v3Potential_9Box3Potential9Box.v20202020": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "3Potential-9Box",
-                    "ConceptualProperty": "2020"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "2020": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v3Potential_9Box3Potential9Box.v20212021": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "3Potential-9Box",
-                    "ConceptualProperty": "2021"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "2021": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v3Potential_9Box3Potential9Box.v20222022": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "3Potential-9Box",
-                    "ConceptualProperty": "2022"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "2022": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v3Potential_9Box3Potential9Box.v20232023": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "3Potential-9Box",
-                    "ConceptualProperty": "2023"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "2023": {
-                      "State": "Generated"
-                    }
-                  }
-                ]
-              },
-              "v3Potential_9Box3Potential9Box.v20242024": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "3Potential-9Box",
-                    "ConceptualProperty": "2024"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "2024": {
-                      "State": "Generated"
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -20291,6 +20351,16 @@
                       "Type": "Noun",
                       "Weight": 0.452
                     }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
@@ -20312,6 +20382,16 @@
                     "high on track": {
                       "State": "Generated",
                       "Weight": 0.97
+                    }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -20446,6 +20526,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.508
+                    }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -21193,6 +21283,16 @@
                       "Type": "Noun",
                       "Weight": 0.452
                     }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
@@ -21214,6 +21314,16 @@
                     "low on track": {
                       "State": "Generated",
                       "Weight": 0.97
+                    }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -21348,6 +21458,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.508
+                    }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -21843,6 +21963,16 @@
                       "Type": "Noun",
                       "Weight": 0.452
                     }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
@@ -21940,6 +22070,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.452
+                    }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -22074,6 +22214,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.508
+                    }
+                  },
+                  {
+                    "Distinct Count": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -35733,270 +35883,6 @@
                 },
                 "State": "Generated"
               },
-              "v3Potential_9Box3Potential9Box_has_employee_ID": {
-                "Binding": {
-                  "ConceptualEntity": "3Potential-9Box"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v3Potential_9Box3Potential9Box.employee_ID"
-                      },
-                      "Subject": {
-                        "Role": "v3Potential_9Box3Potential9Box"
-                      }
-                    },
-                    "ID": "Phrasing3Potential9Boxes_have_employee_ID",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v3Potential_9Box3Potential9Box": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box"
-                    }
-                  },
-                  "v3Potential_9Box3Potential9Box.employee_ID": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box.employee_ID"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v3Potential_9Box3Potential9Box_has_v20182018": {
-                "Binding": {
-                  "ConceptualEntity": "3Potential-9Box"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v3Potential_9Box3Potential9Box.v20182018"
-                      },
-                      "Subject": {
-                        "Role": "v3Potential_9Box3Potential9Box"
-                      }
-                    },
-                    "ID": "Phrasing3Potential9Boxes_have_2018",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v3Potential_9Box3Potential9Box": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box"
-                    }
-                  },
-                  "v3Potential_9Box3Potential9Box.v20182018": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box.v20182018"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v3Potential_9Box3Potential9Box_has_v20192019": {
-                "Binding": {
-                  "ConceptualEntity": "3Potential-9Box"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v3Potential_9Box3Potential9Box.v20192019"
-                      },
-                      "Subject": {
-                        "Role": "v3Potential_9Box3Potential9Box"
-                      }
-                    },
-                    "ID": "Phrasing3Potential9Boxes_have_2019",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v3Potential_9Box3Potential9Box": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box"
-                    }
-                  },
-                  "v3Potential_9Box3Potential9Box.v20192019": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box.v20192019"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v3Potential_9Box3Potential9Box_has_v20202020": {
-                "Binding": {
-                  "ConceptualEntity": "3Potential-9Box"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v3Potential_9Box3Potential9Box.v20202020"
-                      },
-                      "Subject": {
-                        "Role": "v3Potential_9Box3Potential9Box"
-                      }
-                    },
-                    "ID": "Phrasing3Potential9Boxes_have_2020",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v3Potential_9Box3Potential9Box": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box"
-                    }
-                  },
-                  "v3Potential_9Box3Potential9Box.v20202020": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box.v20202020"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v3Potential_9Box3Potential9Box_has_v20212021": {
-                "Binding": {
-                  "ConceptualEntity": "3Potential-9Box"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v3Potential_9Box3Potential9Box.v20212021"
-                      },
-                      "Subject": {
-                        "Role": "v3Potential_9Box3Potential9Box"
-                      }
-                    },
-                    "ID": "Phrasing3Potential9Boxes_have_2021",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v3Potential_9Box3Potential9Box": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box"
-                    }
-                  },
-                  "v3Potential_9Box3Potential9Box.v20212021": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box.v20212021"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v3Potential_9Box3Potential9Box_has_v20222022": {
-                "Binding": {
-                  "ConceptualEntity": "3Potential-9Box"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v3Potential_9Box3Potential9Box.v20222022"
-                      },
-                      "Subject": {
-                        "Role": "v3Potential_9Box3Potential9Box"
-                      }
-                    },
-                    "ID": "Phrasing3Potential9Boxes_have_2022",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v3Potential_9Box3Potential9Box": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box"
-                    }
-                  },
-                  "v3Potential_9Box3Potential9Box.v20222022": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box.v20222022"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v3Potential_9Box3Potential9Box_has_v20232023": {
-                "Binding": {
-                  "ConceptualEntity": "3Potential-9Box"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v3Potential_9Box3Potential9Box.v20232023"
-                      },
-                      "Subject": {
-                        "Role": "v3Potential_9Box3Potential9Box"
-                      }
-                    },
-                    "ID": "Phrasing3Potential9Boxes_have_2023",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v3Potential_9Box3Potential9Box": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box"
-                    }
-                  },
-                  "v3Potential_9Box3Potential9Box.v20232023": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box.v20232023"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "v3Potential_9Box3Potential9Box_has_v20242024": {
-                "Binding": {
-                  "ConceptualEntity": "3Potential-9Box"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "v3Potential_9Box3Potential9Box.v20242024"
-                      },
-                      "Subject": {
-                        "Role": "v3Potential_9Box3Potential9Box"
-                      }
-                    },
-                    "ID": "Phrasing3Potential9Boxes_have_2024",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "v3Potential_9Box3Potential9Box": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box"
-                    }
-                  },
-                  "v3Potential_9Box3Potential9Box.v20242024": {
-                    "Target": {
-                      "Entity": "v3Potential_9Box3Potential9Box.v20242024"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "v9_Box_Grid9Box_grid_has_assessment_performance_category": {
                 "Binding": {
                   "ConceptualEntity": "9-Box Grid"
@@ -38388,461 +38274,6 @@
         "kind": "m",
         "lineageTag": "e21b802f-ebb0-4e1b-bfe7-a420489eef4a",
         "queryGroup": "Calender"
-      },
-      {
-        "name": "Per:1122-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Per=Performance. Every distinct Employee ID has 1 performance rating per Performance Review Year. But, Employee ID-1122 has a 2 performance rating for 2022. It causes an error in the process of 9-Box  grid so solving this issue, creating this table.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Per:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Per:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Removed Errors\",{{\"2020\", Int64.Type}}),",
-          "    #\"Appended Query2\" = Table.Combine({#\"Changed Type2\", #\"Per:1643-9Box\"}),",
-          "    #\"Appended Query3\" = Table.Combine({#\"Appended Query2\", #\"Per:1665-9Box\"}),",
-          "    #\"Removed Errors1\" = Table.RemoveRowsWithErrors(#\"Appended Query3\", {\"2021\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Removed Errors1\",121),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1678),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2022\", 1}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "4e94711f-6701-473b-8876-5cbad5fc534a",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Per:1127-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Per=Performance. Every distinct Employee ID has 1 performance rating per Performance Review Year. But, Employee ID-1127 has a 2 performance rating for 2022. It causes an error in the process of 9-Box  grid so solving this issue, creating this table.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Per:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Per:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Removed Errors\",{{\"2020\", Int64.Type}}),",
-          "    #\"Appended Query2\" = Table.Combine({#\"Changed Type2\", #\"Per:1643-9Box\"}),",
-          "    #\"Appended Query3\" = Table.Combine({#\"Appended Query2\", #\"Per:1665-9Box\"}),",
-          "    #\"Removed Errors1\" = Table.RemoveRowsWithErrors(#\"Appended Query3\", {\"2021\"}),",
-          "    #\"Appended Query4\" = Table.Combine({#\"Removed Errors1\", #\"Per:1122-9Box\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Appended Query4\",126),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1674),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2022\", 3}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "049968dc-2e9a-430a-bc6e-3123b49389a5",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Per:1643-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Per=Performance. Every distinct Employee ID has 1 performance rating per Performance Review Year. But, Employee ID-1643 has a 2 performance rating for 2021. It causes an error in the process of 9-Box  grid so solving this issue, creating this table.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Per:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Per:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Removed Errors\",{{\"2020\", Int64.Type}}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Changed Type2\",642),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1157),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2021\", 5}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "50e82c40-74ab-4887-ae73-d432d0a7aa61",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Per:1665-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Per=Performance. Every distinct Employee ID has 1 performance rating per Performance Review Year. But, Employee ID-1665 has a 2 performance rating for 2021. It causes an error in the process of 9-Box  grid so solving this issue, creating this table.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Per:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Per:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Removed Errors\",{{\"2020\", Int64.Type}}),",
-          "    #\"Appended Query2\" = Table.Combine({#\"Changed Type2\", #\"Per:1643-9Box\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Appended Query2\",664),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1136),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2021\", 1}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "a5e03d39-2a66-4ab8-83c6-4800e210ea70",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Per:2621-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Per=Performance. Every distinct Employee ID has 1 performance rating per Performance Review Year. But, Employee ID-2621 has a 2 performance rating for 2020. It causes an error in the process of 9-Box  grid so solving this issue, creating this table.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Replaced Errors\",1620),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",179),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2020\", 2}}),",
-          "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Replaced Errors1\",{{\"2020\", Int64.Type}})",
-          "in",
-          "    #\"Changed Type2\""
-        ],
-        "kind": "m",
-        "lineageTag": "be7f76cd-3f3f-49b7-b5fc-95298ec4b6c8",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Per:2734-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Per=Performance. Every distinct Employee ID has 1 performance rating per Performance Review Year. But, Employee ID-2734 has a 2 performance rating for 2020. It causes an error in the process of 9-Box  grid so solving this issue, creating this table.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2021\", Int64.Type}, {\"2022\", Int64.Type}, {\"2023\", Int64.Type}, {\"2020\", Int64.Type}, {\"2018\", Int64.Type}, {\"2019\", Int64.Type}, {\"2024\", Int64.Type}}),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Reordered Columns\", {{\"2019\", 5}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Per:2621-9Box\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Appended Query\",1733),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",67),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2020\", 5}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "92e9b1ef-4fec-4d6a-928e-66832ff71f49",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Po:1122-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Po=potential. Every distinct Employee ID has 1 potential rating per Performance Review Year. But Employee ID-1122 has a 2 potential rating for 2022. This causes an error in the 9-box grid process, so to solve this issue, this table was created.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Potential Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Pivoted Column\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Reordered Columns\",null,\"No Rating\",Replacer.ReplaceValue,{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2018\", type text}, {\"2019\", type text}, {\"2020\", type text}, {\"2021\", type text}, {\"2022\", type text}, {\"2023\", type text}, {\"2024\", type text}}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type1\", {{\"2019\", \"High\"}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Po:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Po:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Appended Query2\" = Table.Combine({#\"Removed Errors\", #\"Po:1643-9Box\"}),",
-          "    #\"Appended Query3\" = Table.Combine({#\"Appended Query2\", #\"Po:1665-9Box\"}),",
-          "    #\"Removed Errors1\" = Table.RemoveRowsWithErrors(#\"Appended Query3\", {\"2021\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Removed Errors1\",121),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1678),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2022\", \"High\"}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "e51eed75-7408-4af1-93bd-34444d6b77ed",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Po:1127-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Po=potential. Every distinct Employee ID has 1 potential rating per Performance Review Year. But Employee ID-1127 has a 2 potential rating for 2022. This causes an error in the 9-box grid process, so to solve this issue, this table was created.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Potential Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Pivoted Column\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Reordered Columns\",null,\"No Rating\",Replacer.ReplaceValue,{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2018\", type text}, {\"2019\", type text}, {\"2020\", type text}, {\"2021\", type text}, {\"2022\", type text}, {\"2023\", type text}, {\"2024\", type text}}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type1\", {{\"2019\", \"High\"}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Po:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Po:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Appended Query2\" = Table.Combine({#\"Removed Errors\", #\"Po:1643-9Box\"}),",
-          "    #\"Appended Query3\" = Table.Combine({#\"Appended Query2\", #\"Po:1665-9Box\"}),",
-          "    #\"Removed Errors1\" = Table.RemoveRowsWithErrors(#\"Appended Query3\", {\"2021\"}),",
-          "    #\"Appended Query4\" = Table.Combine({#\"Removed Errors1\", #\"Po:1122-9Box\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Appended Query4\",126),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1674),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2022\", \"High\"}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "1f16e5f5-6690-45ee-8eae-7d621809db69",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Po:1643-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Po=potential. Every distinct Employee ID has 1 potential rating per Performance Review Year. But Employee ID-1643 has a 2 potential rating for 2021. This causes an error in the 9-box grid process, so to solve this issue, this table was created.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Potential Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Pivoted Column\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Reordered Columns\",null,\"No Rating\",Replacer.ReplaceValue,{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2018\", type text}, {\"2019\", type text}, {\"2020\", type text}, {\"2021\", type text}, {\"2022\", type text}, {\"2023\", type text}, {\"2024\", type text}}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type1\", {{\"2019\", \"High\"}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Po:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Po:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Removed Errors\",642),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1157),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2021\", \"Moderate\"}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "a0d17c22-e554-445e-820d-dc77c82b892e",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Po:1665-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Po=potential. Every distinct Employee ID has 1 potential rating per Performance Review Year. But Employee ID-1665 has a 2 potential rating for 2021. This causes an error in the 9-box grid process, so to solve this issue, this table was created.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Potential Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Pivoted Column\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Reordered Columns\",null,\"No Rating\",Replacer.ReplaceValue,{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2018\", type text}, {\"2019\", type text}, {\"2020\", type text}, {\"2021\", type text}, {\"2022\", type text}, {\"2023\", type text}, {\"2024\", type text}}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type1\", {{\"2019\", \"High\"}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Po:2621-9Box\"}),",
-          "    #\"Appended Query1\" = Table.Combine({#\"Appended Query\", #\"Po:2734-9Box\"}),",
-          "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Appended Query1\", {\"2020\"}),",
-          "    #\"Appended Query2\" = Table.Combine({#\"Removed Errors\", #\"Po:1643-9Box\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Appended Query2\",664),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",1136),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2021\", \"High\"}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "2484bbc3-64fc-42d5-9c59-45f2240ec584",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Po:2621-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Po=potential. Every distinct Employee ID has 1 potential rating per Performance Review Year. But Employee ID-2621 has a 2 potential rating for 2020. This causes an error in the 9-box grid process, so to solve this issue, this table was created.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Potential Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Pivoted Column\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Reordered Columns\",null,\"No Rating\",Replacer.ReplaceValue,{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2018\", type text}, {\"2019\", type text}, {\"2020\", type text}, {\"2021\", type text}, {\"2022\", type text}, {\"2023\", type text}, {\"2024\", type text}}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type1\", {{\"2019\", \"High\"}}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Replaced Errors\",1620),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",179),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2020\", \"Low\"}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "e198d308-9831-4d61-a2f9-3e8d84d0da31",
-        "queryGroup": "Data\\fact tables"
-      },
-      {
-        "name": "Po:2734-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "description": "Po=potential. Every distinct Employee ID has 1 potential rating per Performance Review Year. But Employee ID-2734 has a 2 potential rating for 2020. This causes an error in the 9-box grid process, so to solve this issue, this table was created.",
-        "expression": [
-          "let",
-          "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Employee ID\", \"Performance Review Year\", \"Potential Rating\"}),",
-          "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Other Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
-          "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Pivoted Column\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Replaced Value\" = Table.ReplaceValue(#\"Reordered Columns\",null,\"No Rating\",Replacer.ReplaceValue,{\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
-          "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"2018\", type text}, {\"2019\", type text}, {\"2020\", type text}, {\"2021\", type text}, {\"2022\", type text}, {\"2023\", type text}, {\"2024\", type text}}),",
-          "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type1\", {{\"2019\", \"High\"}}),",
-          "    #\"Appended Query\" = Table.Combine({#\"Replaced Errors\", #\"Po:2621-9Box\"}),",
-          "    #\"Removed Top Rows\" = Table.Skip(#\"Appended Query\",1733),",
-          "    #\"Removed Bottom Rows\" = Table.RemoveLastN(#\"Removed Top Rows\",67),",
-          "    #\"Replaced Errors1\" = Table.ReplaceErrorValues(#\"Removed Bottom Rows\", {{\"2020\", \"High\"}})",
-          "in",
-          "    #\"Replaced Errors1\""
-        ],
-        "kind": "m",
-        "lineageTag": "c437657e-593a-4c9d-ad03-f9739ab503be",
-        "queryGroup": "Data\\fact tables"
       }
     ],
     "queryGroups": [
@@ -39114,6 +38545,35 @@
         "fromTable": "Basic_Salary_Payroll",
         "toColumn": "Date",
         "toTable": "date"
+      },
+      {
+        "name": "8ad38e0a-5f77-4aae-a65a-a0c24efcf0f5",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "Employee ID",
+        "fromTable": "Employee Details",
+        "toColumn": "Employee ID",
+        "toTable": "Review"
+      },
+      {
+        "name": "a32139c0-0953-4e82-9e69-b22a7103e6dc",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "Employee ID",
+        "fromTable": "fact_performance",
+        "isActive": false,
+        "toColumn": "Employee ID",
+        "toTable": "dim_employee"
       }
     ],
     "sourceQueryCulture": "en-US",
@@ -40612,9 +40072,15 @@
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
                 "    #\"Merged Queries\" = Table.NestedJoin(#\"Changed Type\", {\"Employee ID\"}, dim_employee, {\"Employee ID\"}, \"dim_employee\", JoinKind.LeftOuter),",
                 "    #\"Expanded dim_employee\" = Table.ExpandTableColumn(#\"Merged Queries\", \"dim_employee\", {\"Full Name\"}, {\"dim_employee.Full Name\"}),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded dim_employee\",{{\"dim_employee.Full Name\", \"Full Name\"}})",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded dim_employee\",{{\"dim_employee.Full Name\", \"Full Name\"}}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Renamed Columns\",{\"Employee ID\", \"Full Name\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
+                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Reordered Columns\", {\"Employee ID\"}, fact_employee, {\"Employee ID\"}, \"fact_employee\", JoinKind.LeftOuter),",
+                "    #\"Expanded fact_employee\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"fact_employee\", {\"Job Title\"}, {\"fact_employee.Job Title\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Expanded fact_employee\",{{\"fact_employee.Job Title\", \"Job Title\"}}),",
+                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Renamed Columns1\",{\"Employee ID\", \"Full Name\", \"Job Title\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Reordered Columns1\",{\"Job Title\"})",
                 "in",
-                "    #\"Renamed Columns\""
+                "    #\"Removed Columns\""
               ],
               "type": "m"
             }
@@ -42786,7 +42252,7 @@
           {
             "name": "Total Distinct Employee ID",
             "displayFolder": "Distinct count of 9-Box & Total",
-            "expression": "DISTINCTCOUNT('9-Box Grid'[Employee ID])",
+            "expression": "CALCULATE(DISTINCTCOUNT('9-Box Grid'[Employee ID]),ALL())",
             "formatString": "0",
             "lineageTag": "30c54bf0-3849-46d2-8571-8622bcaa04a7"
           },
@@ -42859,6 +42325,48 @@
             "expression": "(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\"))/[Total Distinct Employee ID]",
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "4aef3a58-3f53-4177-9881-2c7acab06258"
+          },
+          {
+            "name": "Star Performer",
+            "displayFolder": "Distinct count of 9-Box & Total",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\")",
+            "formatString": "0",
+            "lineageTag": "fe1ca0c1-89c9-4daf-969d-19f95bbc065d"
+          },
+          {
+            "name": "Developing Star",
+            "displayFolder": "Distinct count of 9-Box & Total",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")+ CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")",
+            "formatString": "0",
+            "lineageTag": "bbe2716c-d1a5-4417-8f6c-30c67b2b5eba"
+          },
+          {
+            "name": "Needs Development",
+            "displayFolder": "Distinct count of 9-Box & Total",
+            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")",
+            "formatString": "0",
+            "lineageTag": "7aa3dc02-eaf7-4326-9762-7be8b4e55de8"
+          },
+          {
+            "name": "% Star Performer",
+            "displayFolder": "% 9-Box",
+            "expression": "(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\")/[9-Box Distinct ID])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "40baf046-46f7-4b38-aac1-728a272392d0"
+          },
+          {
+            "name": "% Developing Star",
+            "displayFolder": "% 9-Box",
+            "expression": "(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")/[9-Box Distinct ID])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "f100d91b-bf73-4fb7-9575-9845489ee131"
+          },
+          {
+            "name": "% Needs Development",
+            "displayFolder": "% 9-Box",
+            "expression": "(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")/[9-Box Distinct ID])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "77d6931f-f5c0-4248-ba41-9ca5cd4e0ed4"
           }
         ],
         "partitions": [
@@ -44453,184 +43961,6 @@
         ]
       },
       {
-        "name": "3Potential-9Box",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "Employee ID",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "4b8bdecd-3cc4-45ff-9566-1e6955e94951",
-            "sourceColumn": "Employee ID",
-            "summarizeBy": "count"
-          },
-          {
-            "name": "2021",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "fac6a781-eaaa-44cc-8d4f-b418414580a3",
-            "sourceColumn": "2021",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "2022",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "1be6c3d2-931b-4dd9-a6a0-ca91c6c5dbc7",
-            "sourceColumn": "2022",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "2023",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "06c61669-b50b-4358-afbc-7a4b05d0a65f",
-            "sourceColumn": "2023",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "2020",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "5371d01f-10d3-4d7b-bc50-160eb5fe9b51",
-            "sourceColumn": "2020",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "2018",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "c2df11f2-bd73-44f8-bb83-dc00fd4cd54c",
-            "sourceColumn": "2018",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "2019",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "e909c836-46ed-4d47-a14b-60c5387b37c7",
-            "sourceColumn": "2019",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "2024",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "dc42013c-e2f0-4a32-96d6-8709c394fc55",
-            "sourceColumn": "2024",
-            "summarizeBy": "sum"
-          }
-        ],
-        "lineageTag": "6b29e151-3689-40eb-8e95-b1cf75912f8d",
-        "partitions": [
-          {
-            "name": "3Potential-9Box",
-            "mode": "import",
-            "queryGroup": "Data\\fact tables",
-            "source": {
-              "expression": [
-                "let  ",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Performance Review Year\", \"Employee ID\", \"Performance Rating\", \"Potential Rating\"}),",
-                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Removed Other Columns\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\", \"Potential Rating\"}),",
-                "    #\"Added Index\" = Table.AddIndexColumn(#\"Reordered Columns\", \"Index\", 1, 1, Int64.Type),",
-                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Added Index\",{\"Index\", \"Employee ID\", \"Performance Review Year\", \"Performance Rating\", \"Potential Rating\"}),",
-                "    #\"Removed Specific Rows\" = Table.SelectRows(#\"Reordered Columns1\", each not List.Contains({328, 447, 462, 2411, 2483, 6073, 6500, 6505}, [Index])),",
-                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Removed Specific Rows\",{\"Index\", \"Performance Rating\"}),",
-                "    #\"Added Conditional Column\" = Table.AddColumn(#\"Removed Columns\", \"Potential Value\", each if [Potential Rating] = \"Low\" then 1 else if [Potential Rating] = \"Moderate\" then 2 else if [Potential Rating] = \"High\" then 3 else null),",
-                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Added Conditional Column\",{{\"Potential Value\", Int64.Type}}),",
-                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Changed Type1\",{\"Potential Rating\"}),",
-                "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Columns1\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Columns1\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Value\"),",
-                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"})",
-                "in",
-                "    #\"Replaced Value\""
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
         "name": "9-Box Grid",
         "annotations": [
           {
@@ -46080,6 +45410,611 @@
             "source": {
               "expression": "CALENDAR(MIN(fact_leave[Leave Start Date]),MAX(fact_leave[Leave Start Date]))",
               "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Employee Details",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7ef9a8b3-5017-4e3d-b550-8cbdbaa9873b",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Full Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "892cbe66-f9de-4230-be51-fbf9ca7bbc33",
+            "sourceColumn": "Full Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Date of Birth",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "79bbcd68-84ad-4602-a706-489fe7afcf7d",
+            "sourceColumn": "Date of Birth",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Gender",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c28796bd-ee93-4c71-8e1c-f9be828ded3f",
+            "sourceColumn": "Gender",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Education Level",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0c264bcd-6c39-4632-8b46-d5622bfe47e9",
+            "sourceColumn": "Education Level",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Hire Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "a50ff6c1-3263-44d1-bfaa-23d7eb3a4c89",
+            "sourceColumn": "Hire Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Department",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6b534efb-e13c-4373-9c3f-cb44be955e1e",
+            "sourceColumn": "Department",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Job Title",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ff536cba-88e6-4746-a2b8-cb05be3168d7",
+            "sourceColumn": "Job Title",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Organization Level",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "91e59b4e-31a8-459b-bd21-5cf977c25514",
+            "sourceColumn": "Organization Level",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ddced2fb-14cf-4490-a706-d344e757e6b8",
+            "sourceColumn": "Region",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3cbcca06-7b66-45ec-829a-5ecc0d006d1c",
+            "sourceColumn": "Country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Latitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "9ed27652-74b2-4c50-8a97-e2de8c1ae2f1",
+            "sourceColumn": "Latitude",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Longitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "93ecb9a7-5f6f-448b-91d9-2c7675680c47",
+            "sourceColumn": "Longitude",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Employment Status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "92c99728-3586-47e0-93e7-ae53a2e6e167",
+            "sourceColumn": "Employment Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Employment Type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "585fc170-0975-4a21-97cc-37e3dba3b7bb",
+            "sourceColumn": "Employment Type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Base Salary ($)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "40816e62-5a53-4d5e-9583-6a8d0349b91a",
+            "sourceColumn": "Base Salary ($)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Times Promoted",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b37fd962-bcc3-4e02-bf26-c9fd4ec0e8e8",
+            "sourceColumn": "Times Promoted",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Current Employment Status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f4535e38-e003-48f5-8e98-035423707f58",
+            "sourceColumn": "Current Employment Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Annual Leave Entitlement (days)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c028d216-347f-4273-9e1d-1894dc195acc",
+            "sourceColumn": "Annual Leave Entitlement (days)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Ethnicity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e1bc8f06-826e-40f4-a202-d88d27f0384a",
+            "sourceColumn": "Ethnicity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Birth Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d5abb2d8-04ef-4618-bdf4-370fc3ca8f34",
+            "sourceColumn": "Birth Year",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Age by Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "adcc051e-d638-44d2-83bf-fea715733896",
+            "sourceColumn": "Age by Year",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Age Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "908a2f6d-9abf-4413-95f8-ef00e14c0781",
+            "sourceColumn": "Age Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Performance Review Years",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3cda2a56-4e88-4c49-be91-328f84926632",
+            "sourceColumn": "Performance Review Years",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Assessment Potential Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "3bbb0bef-200b-48bb-b939-293c31eaf4fd",
+            "sourceColumn": "Assessment Potential Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Assessment Performance Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "afb72b51-0cae-4108-a590-d48b2a2273de",
+            "sourceColumn": "Assessment Performance Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Assessment Potential Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4d12e9be-c593-4cd5-a1e1-cb883025b995",
+            "sourceColumn": "Assessment Potential Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Assessment Performance Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "945abfb2-c9d6-4e34-8125-b0725a989e28",
+            "sourceColumn": "Assessment Performance Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "9-Box Grid Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9a7fc42e-dd2b-4be0-99ce-8ea6e5b0afef",
+            "sourceColumn": "9-Box Grid Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "9-Box Grid Placement",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b7ac8c24-0281-4aaf-bbd1-438b3362f638",
+            "sourceColumn": "9-Box Grid Placement",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Grid Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "adc6ebbd-b5a8-450a-a069-1eb2c2a8dcd2",
+            "sourceColumn": "Grid Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Employee ID - Text",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b4ad2af5-a29d-43cd-857f-ef90b106fb77",
+            "sourceColumn": "Employee ID - Text",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "7f64f76b-7c52-457f-a5c0-68cd0de10185",
+        "partitions": [
+          {
+            "name": "Employee Details",
+            "mode": "import",
+            "queryGroup": "Data\\fact tables",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\employee.csv\"),[Delimiter=\",\", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Full Name\", type text}, {\"Date of Birth\", type date}, {\"Gender\", type text}, {\"Education Level\", type text}, {\"Hire Date\", type date}, {\"Department\", type text}, {\"Job Title\", type text}, {\"Organization Level\", type text}, {\"Region\", type text}, {\"Country\", type text}, {\"Latitude\", type number}, {\"Longitude\", type number}, {\"Employment Status\", type text}, {\"Employment Type\", type text}, {\"Base Salary ($)\", type number}, {\"Times Promoted\", Int64.Type}, {\"Years at Company\", Int64.Type}, {\"Current Employment Status\", type text}, {\"Annual Leave Entitlement (days)\", Int64.Type}, {\"Ethnicity\", type text}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Years at Company\"}),",
+                "    #\"Inserted Year\" = Table.AddColumn(#\"Removed Columns\", \"Year\", each Date.Year([Date of Birth]), Int64.Type),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Inserted Year\",{{\"Year\", Int64.Type}}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Changed Type1\",{{\"Year\", \"Birth Year\"}}),",
+                "    #\"Added Custom\" = Table.AddColumn(#\"Renamed Columns\", \"Age\", each Date.Year(DateTime.LocalNow()) - [Birth Year]),",
+                "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Age\", Int64.Type}}),",
+                "    #\"Added Custom1\" = Table.AddColumn(#\"Changed Type2\", \"Age Category\", each if [Age] >= 18 and [Age] <= 25 then \"Young Adult\"",
+                "else if [Age] >= 26 and [Age] <= 35 then \"Early Career Professional\"",
+                "else if [Age] >= 36 and [Age] <= 45 then \"Mid-Career Professional\"",
+                "else if [Age] >= 46 and [Age] <= 55 then \"Experienced Professional\"",
+                "else if [Age] >= 56 and [Age] <= 66 then \"Pre-Retirement\"",
+                "else \"Out of Range\"),",
+                "    #\"Changed Type3\" = Table.TransformColumnTypes(#\"Added Custom1\",{{\"Age Category\", type text}}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type3\", each true),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Filtered Rows\",{{\"Age\", \"Age by year\"}}),",
+                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Renamed Columns1\",{\"Age by year\", \"Age Category\"}),",
+                "    #\"Added Custom2\" = Table.AddColumn(#\"Removed Columns1\", \"Age by Year\", each Date.Year(DateTime.LocalNow()) - [Birth Year]),",
+                "    #\"Changed Type4\" = Table.TransformColumnTypes(#\"Added Custom2\",{{\"Age by Year\", Int64.Type}}),",
+                "    #\"Added Custom3\" = Table.AddColumn(#\"Changed Type4\", \"Age Category\", each if [Age by Year] >= 18 and [Age by Year] <= 25 then \"Young Adult\"",
+                "else if [Age by Year] >= 26 and [Age by Year] <= 35 then \"Early Career Professional\"",
+                "else if [Age by Year] >= 36 and [Age by Year] <= 45 then \"Mid-Career Professional\"",
+                "else if [Age by Year] >= 46 and [Age by Year] <= 55 then \"Senior Professional\"",
+                "else if [Age by Year] >= 56 and [Age by Year] <= 66 then \"Pre-Retirement\"",
+                "else \"Out of Range\"),",
+                "    #\"Changed Type5\" = Table.TransformColumnTypes(#\"Added Custom3\",{{\"Age Category\", type text}}),",
+                "    #\"Filtered Rows1\" = Table.SelectRows(#\"Changed Type5\", each true),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Filtered Rows1\", {\"Employee ID\"}, Review, {\"Employee ID\"}, \"Review\", JoinKind.LeftOuter),",
+                "    #\"Expanded Review\" = Table.ExpandTableColumn(#\"Merged Queries\", \"Review\", {\"Performance Review Years\"}, {\"Review.Performance Review Years\"}),",
+                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Expanded Review\",{{\"Review.Performance Review Years\", \"Performance Review Years\"}}),",
+                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Renamed Columns2\", {\"Employee ID\"}, #\"9-Box Grid\", {\"Employee ID\"}, \"9-Box Grid\", JoinKind.LeftOuter),",
+                "    #\"Expanded 9-Box Grid\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"9-Box Grid\", {\"Assessment Potential Rating\", \"Assessment Performance Rating\", \"Assessment Potential Category\", \"Assessment Performance Category\", \"9-Box Grid Category\", \"9-Box Grid Placement\", \"Grid Name\"}, {\"9-Box Grid.Assessment Potential Rating\", \"9-Box Grid.Assessment Performance Rating\", \"9-Box Grid.Assessment Potential Category\", \"9-Box Grid.Assessment Performance Category\", \"9-Box Grid.9-Box Grid Category\", \"9-Box Grid.9-Box Grid Placement\", \"9-Box Grid.Grid Name\"}),",
+                "    #\"Renamed Columns3\" = Table.RenameColumns(#\"Expanded 9-Box Grid\",{{\"9-Box Grid.Assessment Potential Rating\", \"Assessment Potential Rating\"}, {\"9-Box Grid.Assessment Performance Rating\", \"Assessment Performance Rating\"}, {\"9-Box Grid.Assessment Potential Category\", \"Assessment Potential Category\"}, {\"9-Box Grid.Assessment Performance Category\", \"Assessment Performance Category\"}, {\"9-Box Grid.9-Box Grid Category\", \"9-Box Grid Category\"}, {\"9-Box Grid.9-Box Grid Placement\", \"9-Box Grid Placement\"}, {\"9-Box Grid.Grid Name\", \"Grid Name\"}}),",
+                "    #\"Duplicated Column\" = Table.DuplicateColumn(#\"Renamed Columns3\", \"Employee ID\", \"Employee ID - Copy\"),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Duplicated Column\",{\"Employee ID\", \"Employee ID - Copy\", \"Full Name\", \"Date of Birth\", \"Gender\", \"Education Level\", \"Hire Date\", \"Department\", \"Job Title\", \"Organization Level\", \"Region\", \"Country\", \"Latitude\", \"Longitude\", \"Employment Status\", \"Employment Type\", \"Base Salary ($)\", \"Times Promoted\", \"Current Employment Status\", \"Annual Leave Entitlement (days)\", \"Ethnicity\", \"Birth Year\", \"Age by Year\", \"Age Category\", \"Performance Review Years\", \"Assessment Potential Rating\", \"Assessment Performance Rating\", \"Assessment Potential Category\", \"Assessment Performance Category\", \"9-Box Grid Category\", \"9-Box Grid Placement\", \"Grid Name\"}),",
+                "    #\"Changed Type6\" = Table.TransformColumnTypes(#\"Reordered Columns\",{{\"Employee ID - Copy\", type text}}),",
+                "    #\"Renamed Columns4\" = Table.RenameColumns(#\"Changed Type6\",{{\"Employee ID - Copy\", \"Employee ID - Text\"}})",
+                "in",
+                "    #\"Renamed Columns4\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Review",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7bf82b72-3d23-4b0c-8e8a-307132c874f1",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Performance Review Years",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "adef2075-33ff-401a-81c5-927d1db172c9",
+            "sourceColumn": "Performance Review Years",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "8c2b2965-eeb0-4753-b286-db0c311efcc5",
+        "partitions": [
+          {
+            "name": "Review",
+            "mode": "import",
+            "queryGroup": "Data\\fact tables",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"), [Delimiter = \",\", Columns = 12, Encoding = 1252, QuoteStyle = QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Changed Type\", {\"Employee ID\"}, dim_employee, {\"Employee ID\"}, \"dim_employee\", JoinKind.LeftOuter),",
+                "    #\"Expanded dim_employee\" = Table.ExpandTableColumn(#\"Merged Queries\", \"dim_employee\", {\"Full Name\"}, {\"dim_employee.Full Name\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded dim_employee\", {{\"dim_employee.Full Name\", \"Full Name\"}}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Renamed Columns\", {\"Employee ID\", \"Full Name\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
+                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Reordered Columns\", {\"Employee ID\"}, fact_employee, {\"Employee ID\"}, \"fact_employee\", JoinKind.LeftOuter),",
+                "    #\"Expanded fact_employee\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"fact_employee\", {\"Job Title\"}, {\"fact_employee.Job Title\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Expanded fact_employee\", {{\"fact_employee.Job Title\", \"Job Title\"}}),",
+                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Renamed Columns1\", {\"Employee ID\", \"Full Name\", \"Job Title\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Reordered Columns1\", {\"Job Title\"}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Removed Columns\", {\"Employee ID\", \"Performance Review Year\"}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Removed Other Columns\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Reordered Columns2\" = Table.ReorderColumns(#\"Added Index\", {\"Index\", \"Employee ID\", \"Performance Review Year\"}),",
+                "    #\"Removed Rows\" = Table.SelectRows(#\"Reordered Columns2\", each not List.Contains({328, 447, 462, 2411, 2483, 6073, 6500, 6505}, [Index])),",
+                "    #\"Grouped Rows\" = Table.Group(",
+                "        #\"Removed Rows\",",
+                "        {\"Employee ID\"},",
+                "        {",
+                "            {\"Performance Years\", each Text.Combine(List.Transform(Table.Column(_, \"Performance Review Year\"), Text.From), \",\")}",
+                "        }",
+                "    ),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Grouped Rows\",{{\"Performance Years\", type text}}),",
+                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Changed Type1\",{{\"Performance Years\", \"Performance Review Years\"}})",
+                "in",
+                "    #\"Renamed Columns2\""
+              ],
+              "type": "m"
             }
           }
         ]
