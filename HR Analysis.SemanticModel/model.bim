@@ -12200,74 +12200,21 @@
                       "Type": "Noun",
                       "Weight": 0.727
                     }
+                  },
+                  {
+                    "Category": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ],
                 "Visibility": {
                   "Value": "Hidden"
                 }
-              },
-              "fact_leave.number_of_leave_days_taken": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "fact_leave",
-                    "ConceptualProperty": "Number of Leave Days Taken"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "number of leave days taken": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "number of leave day taken": {
-                      "State": "Generated",
-                      "Type": "Noun",
-                      "Weight": 0.78
-                    }
-                  },
-                  {
-                    "quantity of leave day taken": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.8
-                    }
-                  },
-                  {
-                    "amount of leave day taken": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.776
-                    }
-                  },
-                  {
-                    "count of leave day taken": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.776
-                    }
-                  },
-                  {
-                    "no of leave day taken": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.757
-                    }
-                  }
-                ]
               },
               "fact_performance": {
                 "Definition": {
@@ -15196,6 +15143,69 @@
                 "Visibility": {
                   "Value": "Hidden"
                 }
+              },
+              "leave_analysis.avg_days_on_leave": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Leave Analysis",
+                    "ConceptualProperty": "Avg days on leave"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Avg Leave Days": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "leave_analysis.total_leave_days": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Leave Analysis",
+                    "ConceptualProperty": "Total Leave Days"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Total": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "leave_analysis.total_leave_liability": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Leave Analysis",
+                    "ConceptualProperty": "Total Leave Liability"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Annual Leave Liability": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
               },
               "performance9Box": {
                 "Definition": {
@@ -38894,8 +38904,10 @@
     "relationships": [
       {
         "name": "AutoDetected_d9a350a3-8d47-4bb9-895c-36a300aaca9a",
+        "crossFilteringBehavior": "bothDirections",
         "fromColumn": "Employee ID",
         "fromTable": "fact_leave",
+        "securityFilteringBehavior": "bothDirections",
         "toColumn": "Employee ID",
         "toTable": "fact_employee"
       },
@@ -39997,9 +40009,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
             "description": "Unique identifier for each employee",
-            "isHidden": true,
             "lineageTag": "26127b9c-a0db-4b8d-abb2-a8098389c6f0",
             "sourceColumn": "Employee ID",
             "summarizeBy": "none"
@@ -40027,9 +40043,13 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "string",
             "description": "Type of leave taken by the employee",
-            "isHidden": true,
             "lineageTag": "a9efbaf1-2460-422d-a4c8-e5e16b9521c2",
             "sourceColumn": "Leave Type",
             "summarizeBy": "none"
@@ -40046,10 +40066,14 @@
                 "value": "Date"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
             "dataType": "dateTime",
             "description": "Date the leave period begins",
             "formatString": "Long Date",
-            "isHidden": true,
             "lineageTag": "b9b4ae5b-4049-444c-b4ff-948c9bf70480",
             "sourceColumn": "Leave Start Date",
             "summarizeBy": "none"
@@ -40072,20 +40096,6 @@
             "isHidden": true,
             "lineageTag": "53576719-c68d-40a1-b5a4-fe39d0405b61",
             "sourceColumn": "Leave End Date",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Number of Leave Days Taken",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "description": "Total number of leave days taken in the review year",
-            "lineageTag": "006bb19d-6864-40f6-a5f5-f886fb3fc47b",
-            "sourceColumn": "Number of Leave Days Taken",
             "summarizeBy": "none"
           },
           {
@@ -40124,11 +40134,17 @@
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "int64",
             "description": "Monetary cost associated with the leave taken",
+            "formatString": "0",
             "lineageTag": "951ecfe8-6c5d-4bdb-ab8d-ab6b30c8c29a",
             "sourceColumn": "Cost of Leave ($)",
-            "summarizeBy": "none"
+            "summarizeBy": "sum"
           },
           {
             "name": "Leave Liability Amount ($)",
@@ -40173,6 +40189,174 @@
             "lineageTag": "2c26d6d8-4499-4d22-9223-07bf8397b495",
             "summarizeBy": "sum",
             "type": "calculated"
+          },
+          {
+            "name": "Age",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "RELATED(fact_employee[Age])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "1253c245-2a0c-4232-b48b-ddf63a3ea8e5",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "AgeRange",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    fact_leave[Age] <= 25, \"18-25\",",
+              "    fact_leave[Age] <= 35, \"26-35\",",
+              "    fact_leave[Age] <= 45, \"36-45\",",
+              "    fact_leave[Age] <= 55, \"46-55\",",
+              "    fact_leave[Age] <= 65, \"56-65\",",
+              "    \"66+\"",
+              ")"
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "28ab6008-4414-4d88-9152-9cd6c34d49b2",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Annual Leave Entitlement",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "RELATED(fact_employee[Annual Leave Entitlement (days)])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "c19dca88-c9f2-44c1-93f2-577acbf8496e",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Annual Leave Liability",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "expression": "fact_leave[Leave Balance]*fact_leave[Cost of Leave ($)]",
+            "isDataTypeInferred": true,
+            "lineageTag": "ef0c93dc-fe70-4554-a333-6ef5a6f2c1d3",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "YEAR(fact_leave[Leave Start Date])",
+            "formatString": "0",
+            "lineageTag": "84954c4c-ecde-44be-8ea1-f223edc6c011",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "FORMAT('fact_leave'[Leave Start Date],\"YYYY-MM\")",
+            "isDataTypeInferred": true,
+            "lineageTag": "08420645-446d-457f-9bb5-166e16b48239",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Cost Per Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "DIVIDE(SUM('fact_leave'[Cost of Leave ($)]),SUM('fact_leave'[Days on Leave]),0)",
+            "formatString": "0",
+            "lineageTag": "56233fb0-3326-4272-84a7-8b14b682e21a",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Remaining Leave Days",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "(fact_leave[Annual Leave Entitlement])- ('fact_leave'[Days on Leave])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "913b7cdb-c7bd-4aee-adc3-776631a3042b",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Total Cost Of Remaining Annual Leave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "double",
+            "expression": "'fact_leave'[Remaining Leave Days]*'fact_leave'[Cost Per Day]",
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "fa2a873d-83e8-4566-a2a4-3c3c73e636b8",
+            "summarizeBy": "sum",
+            "type": "calculated"
           }
         ],
         "lineageTag": "81376d4a-6a2f-4308-9e15-b8d0bb7595f0",
@@ -40187,7 +40371,7 @@
                 "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\leave.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Leave Start Date\", type date}, {\"Leave End Date\", type date}}),",
-                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Leave Reason ID\"})",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Leave Reason ID\", \"Number of Leave Days Taken\"})",
                 "in",
                 "    #\"Removed Columns\""
               ],
@@ -45725,19 +45909,11 @@
         ]
       },
       {
-        "name": "Table",
+        "name": "Leave Analysis",
         "annotations": [
           {
             "name": "PBI_Id",
             "value": "bb917989791e4c859048705a2a2e0dc1"
-          },
-          {
-            "name": "436ba87b-9c83-4389-a31b-ebd06a36be98",
-            "value": "{\"Expression\":null}"
-          },
-          {
-            "name": "277cc1b9-af89-4597-8e15-cacc25c0886b",
-            "value": "To use special characters in a calculated table name, enclose the entire name in brackets ( [] ) and add a ] to any closing brackets in the name."
           }
         ],
         "columns": [
@@ -45752,6 +45928,7 @@
             "dataType": "int64",
             "formatString": "0",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "isNameInferred": true,
             "lineageTag": "723418e2-01a7-4a2b-aeba-efdd32741100",
             "sourceColumn": "[Column]",
@@ -45771,14 +45948,137 @@
             ],
             "expression": "AVERAGE(fact_leave[Days on Leave])",
             "lineageTag": "c8d24f6b-b3aa-488a-b8e0-ba50986cac74"
+          },
+          {
+            "name": "Total Leave Days",
+            "expression": "SUM(fact_leave[Days on Leave])",
+            "formatString": "0",
+            "lineageTag": "d8676c66-9704-4b91-af53-b903b718b6a7"
+          },
+          {
+            "name": "Average Total Leave Days",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(fact_leave[Days on Leave])",
+            "lineageTag": "c3987d6a-8a41-4946-8f28-0bf5bb35fc20"
+          },
+          {
+            "name": "Annual Leave Balance",
+            "expression": "[Total Annual leave]-MAX('fact_leave'[Annual Leave Entitlement])",
+            "formatString": "0",
+            "lineageTag": "f1db0d21-93ba-4722-8f8a-09774a6b6228"
+          },
+          {
+            "name": "Total Annual leave",
+            "expression": "CALCULATE(SUM(fact_leave[Days on Leave]),'fact_leave'[Leave Type]=\"Annual\",fact_leave[Leave Status]=\"Approved\")",
+            "formatString": "0",
+            "lineageTag": "bfc7c680-e39d-40cb-ac97-e79161d297c6"
+          },
+          {
+            "name": "Total Leave Liability",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SUM(fact_leave[Annual Leave Liability])",
+            "lineageTag": "38495329-1982-4690-8375-de71df5fc7eb"
+          },
+          {
+            "name": "Average Annual Leave Liability",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Total Leave Liability]/DISTINCTCOUNT(fact_leave[Employee ID])",
+            "lineageTag": "760a9da9-7651-4e45-95fe-633a161cdddb"
+          },
+          {
+            "name": "Total Leave Days Selected Year",
+            "expression": "CALCULATE([Total Leave Days],YEAR('fact_leave'[Leave Start Date])=SELECTEDVALUE('Date Table For Leave Analysis'[Date]))",
+            "formatString": "0",
+            "lineageTag": "7a8479e9-e728-4d99-a60e-254772f8ccca"
+          },
+          {
+            "name": "Total Leave Days Previous Year",
+            "expression": "CALCULATE([Total Leave Days],YEAR('fact_leave'[Leave Start Date])=SELECTEDVALUE('fact_leave'[Leave Start Date])-1)",
+            "formatString": "0",
+            "lineageTag": "1bad21e6-5bde-4cfc-ae3e-d61aae071529"
+          },
+          {
+            "name": "Total Employees",
+            "expression": "DISTINCTCOUNT(fact_leave[Employee ID])",
+            "formatString": "0",
+            "lineageTag": "f9d3ac61-9820-4d91-92c4-6d7089f1b9d1"
+          },
+          {
+            "name": "Average Leave Taken",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(fact_leave[Days on Leave])",
+            "lineageTag": "8584dc83-31e1-407d-8520-53089de2d0c8"
           }
         ],
         "partitions": [
           {
-            "name": "Table",
+            "name": "Leave Analysis",
             "mode": "import",
             "source": {
               "expression": "Row(\"Column\", BLANK())",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Date Table For Leave Analysis",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "089abc766166457cb6b1d6a631b6809f"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8bd33f1f-d213-48b9-b999-859e868e9f4b",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "cbbd3b54-62e4-445c-95d9-2709ae919f3c",
+        "partitions": [
+          {
+            "name": "Date Table For Leave Analysis",
+            "mode": "import",
+            "source": {
+              "expression": "CALENDAR(MIN(fact_leave[Leave Start Date]),MAX(fact_leave[Leave Start Date]))",
               "type": "calculated"
             }
           }
