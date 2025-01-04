@@ -12,7 +12,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"Age Category\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\",\"Review Years\",\"Profile of Employee\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\",\"Profile of Employee\",\"Information of Age, Assessment Potential, Assessment Performance\",\"Project Details\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -21,10 +21,6 @@
       {
         "name": "__TEdtr",
         "value": "1"
-      },
-      {
-        "name": "PBI_RemovedChildren",
-        "value": "[{\"remoteItemId\":{\"foreignKeyRelationship\":{\"fromTableLocalLineageTag\":\"72d71fbb-4c06-464d-a117-c566ec0e991a\",\"fromColumnLocalLineageTag\":\"8913638e-7a7e-4eea-b55d-dfd7a97cbdbe\",\"toTableLocalLineageTag\":\"8c2b2965-eeb0-4753-b286-db0c311efcc5\",\"toColumnLocalLineageTag\":\"7bf82b72-3d23-4b0c-8e8a-307132c874f1\"}},\"objectType\":\"Relationship\"}]"
       }
     ],
     "culture": "en-US",
@@ -34,277 +30,6 @@
         "linguisticMetadata": {
           "content": {
             "Entities": {
-              "age_category": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Age Category"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "age category": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "category": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  },
-                  {
-                    "age classification": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.75
-                    }
-                  },
-                  {
-                    "classification": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.736
-                    }
-                  },
-                  {
-                    "age class": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.727
-                    }
-                  },
-                  {
-                    "age group": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.727
-                    }
-                  },
-                  {
-                    "age type": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.727
-                    }
-                  },
-                  {
-                    "age grouping": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.727
-                    }
-                  },
-                  {
-                    "age kind": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.727
-                    }
-                  },
-                  {
-                    "class": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.714
-                    }
-                  },
-                  {
-                    "grouping": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.714
-                    }
-                  },
-                  {
-                    "kind": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.714
-                    }
-                  }
-                ]
-              },
-              "age_category.age_banding": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Age Category",
-                    "ConceptualProperty": "Age Banding"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "age banding": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "banding": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  }
-                ]
-              },
-              "age_category.age_category": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Age Category",
-                    "ConceptualProperty": "Age Category"
-                  }
-                },
-                "NameType": "Name",
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "age category": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "age category name": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "category": {
-                      "State": "Generated",
-                      "Weight": 0.97
-                    }
-                  },
-                  {
-                    "age classification": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.75
-                    }
-                  },
-                  {
-                    "classification": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.736
-                    }
-                  },
-                  {
-                    "age class": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.727
-                    }
-                  },
-                  {
-                    "age group": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.727
-                    }
-                  },
-                  {
-                    "age type": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.727
-                    }
-                  },
-                  {
-                    "age grouping": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.727
-                    }
-                  },
-                  {
-                    "age kind": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.727
-                    }
-                  },
-                  {
-                    "class": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.714
-                    }
-                  },
-                  {
-                    "grouping": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.714
-                    }
-                  },
-                  {
-                    "kind": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.714
-                    }
-                  }
-                ]
-              },
               "agetenure": {
                 "Definition": {
                   "Binding": {
@@ -17424,6 +17149,48 @@
                   }
                 ]
               },
+              "profile_of_employee.b__employee_id__text": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "B. Employee ID - Text"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Employee ID": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "profile_of_employee.c__full_name": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "C. Full Name"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Full Name": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "resignation_prediction": {
                 "Definition": {
                   "Binding": {
@@ -23731,7 +23498,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "_measure",
-                    "ConceptualProperty": "success Rate of Project Management"
+                    "ConceptualProperty": "Completion Rate (CR)"
                   }
                 },
                 "State": "Generated",
@@ -27987,85 +27754,6 @@
             },
             "Language": "en-US",
             "Relationships": {
-              "age_category_has_age_banding": {
-                "Binding": {
-                  "ConceptualEntity": "Age Category"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "age_category.age_banding"
-                      },
-                      "Subject": {
-                        "Role": "age_category"
-                      }
-                    },
-                    "ID": "age_categories_have_age_banding",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "age_category": {
-                    "Target": {
-                      "Entity": "age_category"
-                    }
-                  },
-                  "age_category.age_banding": {
-                    "Target": {
-                      "Entity": "age_category.age_banding"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "age_category_has_age_category": {
-                "Binding": {
-                  "ConceptualEntity": "Age Category"
-                },
-                "Phrasings": [
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "age_category.age_category"
-                      },
-                      "Subject": {
-                        "Role": "age_category"
-                      }
-                    },
-                    "ID": "age_categories_have_age_categories",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "ID": "age_categories_are_names_IDs_of_age_categories",
-                    "Name": {
-                      "Name": {
-                        "Role": "age_category.age_category"
-                      },
-                      "Subject": {
-                        "Role": "age_category"
-                      }
-                    },
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "age_category": {
-                    "Target": {
-                      "Entity": "age_category"
-                    }
-                  },
-                  "age_category.age_category": {
-                    "Target": {
-                      "Entity": "age_category.age_category"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
               "agetenure_has_agetenure": {
                 "Binding": {
                   "ConceptualEntity": "Age-tenure"
@@ -38670,11 +38358,34 @@
         "toTable": "dim_employee"
       },
       {
-        "name": "505d1e97-a42a-9780-22b8-b6db3ea6c9f5",
+        "name": "6ecd5385-2a1a-02f1-a476-514ee7b84450",
         "crossFilteringBehavior": "bothDirections",
         "fromCardinality": "one",
-        "fromColumn": "Employee ID",
+        "fromColumn": "A. Employee ID",
         "fromTable": "Profile of Employee",
+        "toColumn": "Employee ID",
+        "toTable": "fact_employee"
+      },
+      {
+        "name": "b15df32e-39c5-4fc6-8741-50bb129956fd",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "A. Employee ID",
+        "fromTable": "Profile of Employee",
+        "isActive": false,
+        "toColumn": "Employee ID",
+        "toTable": "dim_employee"
+      },
+      {
+        "name": "0ac1b2b4-403c-ccc6-6b88-01b5b2f3d031",
+        "fromColumn": "Employee ID",
+        "fromTable": "Project Details",
         "toColumn": "Employee ID",
         "toTable": "fact_employee"
       }
@@ -39248,8 +38959,8 @@
                 "else if [Age by Year] >= 26 and [Age by Year] <= 35 then \"Early Career Professional\"",
                 "else if [Age by Year] >= 36 and [Age by Year] <= 45 then \"Mid-Career Professional\"",
                 "else if [Age by Year] >= 46 and [Age by Year] <= 55 then \"Senior Professional\"",
-                "else if [Age by Year] >= 56 and [Age by Year] <= 66 then \"Pre-Retirement\"",
-                "else \"Out of Range\"),",
+                "else if [Age by Year] >= 56 and [Age by Year] <= 66 then \"Experienced Professional\"",
+                "else if [Age by Year] >66 then \"Pre-Retirement\"else \"Out of Range\"),",
                 "    #\"Changed Type5\" = Table.TransformColumnTypes(#\"Added Custom3\",{{\"Age Category\", type text}}),",
                 "    #\"Filtered Rows1\" = Table.SelectRows(#\"Changed Type5\", each true)",
                 "in",
@@ -42219,14 +41930,14 @@
           },
           {
             "name": "Total Project Targeted",
-            "displayFolder": "project Handled, Targeted, and Percentage",
-            "expression": "SUM(fact_performance[Project Target])",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "SUM('Project Details'[Project Target])",
             "formatString": "0",
             "lineageTag": "bd13dbe4-a6bd-4a59-8efa-12634c95f47e"
           },
           {
-            "name": "success Rate of Project Management",
-            "displayFolder": "project Handled, Targeted, and Percentage",
+            "name": "Completion Rate (CR)",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
             "expression": "DIVIDE([Total Project Handled],[Total Project Targeted])",
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "4b6fa918-cce3-4414-8c97-2da458962696"
@@ -42234,7 +41945,7 @@
           {
             "name": "Total Project Handled",
             "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "SUM(fact_performance[Projects Handled])",
+            "expression": "SUM('Project Details'[Projects Handled])",
             "formatString": "0",
             "lineageTag": "7d31e886-499c-43b0-a7e1-7b26369857b3"
           },
@@ -42623,6 +42334,13 @@
             "expression": "(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")/[9-Box Distinct ID])",
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "77d6931f-f5c0-4248-ba41-9ca5cd4e0ed4"
+          },
+          {
+            "name": "Data Bars (CR)",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "DIVIDE([Total Project Handled],[Total Project Targeted])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "22418c73-4214-4e1c-9333-aed7c8426a3b"
           }
         ],
         "partitions": [
@@ -43380,60 +43098,6 @@
             "source": {
               "expression": "INFO.VIEW.RELATIONSHIPS()",
               "type": "calculated"
-            }
-          }
-        ]
-      },
-      {
-        "name": "Age Category",
-        "annotations": [
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "Age Banding",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "a4f53541-b6c6-419c-8d58-b2ba2b763efc",
-            "sourceColumn": "Age Banding",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Age Category",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "2301718f-d51d-4ac0-a721-b8790c672a21",
-            "sourceColumn": "Age Category",
-            "summarizeBy": "none"
-          }
-        ],
-        "lineageTag": "1800d44a-d3d2-451e-953e-38731754cc12",
-        "partitions": [
-          {
-            "name": "Age Category",
-            "mode": "import",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WMrTQNTJV0lGKzC/NS1dwTCnNKVGK1YlWMjLTNQaJuyYW5VQqOCcWpaYWKQQU5aelFhdn5ucl5oBVGZvpmoBU+Wam6OJSY2KmawpSE5yal5mPRd7UTNfMDCgfUJSqG5RaklmUmpuaB3RELAA=\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Age Banding\" = _t, #\"Age Category\" = _t]),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Age Banding\", type text}, {\"Age Category\", type text}})",
-                "in",
-                "    #\"Changed Type\""
-              ],
-              "type": "m"
             }
           }
         ]
@@ -45785,89 +45449,6 @@
         ]
       },
       {
-        "name": "Review Years",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "Employee ID",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "7bf82b72-3d23-4b0c-8e8a-307132c874f1",
-            "sourceColumn": "Employee ID",
-            "summarizeBy": "count"
-          },
-          {
-            "name": "Review Years",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "adef2075-33ff-401a-81c5-927d1db172c9",
-            "sourceColumn": "Review Years",
-            "summarizeBy": "none"
-          }
-        ],
-        "lineageTag": "8c2b2965-eeb0-4753-b286-db0c311efcc5",
-        "partitions": [
-          {
-            "name": "Review Years",
-            "mode": "import",
-            "queryGroup": "Data\\fact tables",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"), [Delimiter = \",\", Columns = 12, Encoding = 1252, QuoteStyle = QuoteStyle.None]),",
-                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-                "    #\"Merged Queries\" = Table.NestedJoin(#\"Changed Type\", {\"Employee ID\"}, dim_employee, {\"Employee ID\"}, \"dim_employee\", JoinKind.LeftOuter),",
-                "    #\"Expanded dim_employee\" = Table.ExpandTableColumn(#\"Merged Queries\", \"dim_employee\", {\"Full Name\"}, {\"dim_employee.Full Name\"}),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded dim_employee\", {{\"dim_employee.Full Name\", \"Full Name\"}}),",
-                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Renamed Columns\", {\"Employee ID\", \"Full Name\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
-                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Reordered Columns\", {\"Employee ID\"}, fact_employee, {\"Employee ID\"}, \"fact_employee\", JoinKind.LeftOuter),",
-                "    #\"Expanded fact_employee\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"fact_employee\", {\"Job Title\"}, {\"fact_employee.Job Title\"}),",
-                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Expanded fact_employee\", {{\"fact_employee.Job Title\", \"Job Title\"}}),",
-                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Renamed Columns1\", {\"Employee ID\", \"Full Name\", \"Job Title\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
-                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Reordered Columns1\", {\"Job Title\"}),",
-                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Removed Columns\", {\"Employee ID\", \"Performance Review Year\"}),",
-                "    #\"Added Index\" = Table.AddIndexColumn(#\"Removed Other Columns\", \"Index\", 1, 1, Int64.Type),",
-                "    #\"Reordered Columns2\" = Table.ReorderColumns(#\"Added Index\", {\"Index\", \"Employee ID\", \"Performance Review Year\"}),",
-                "    #\"Removed Rows\" = Table.SelectRows(#\"Reordered Columns2\", each not List.Contains({328, 447, 462, 2411, 2483, 6073, 6500, 6505}, [Index])),",
-                "    #\"Grouped Rows\" = Table.Group(",
-                "        #\"Removed Rows\",",
-                "        {\"Employee ID\"},",
-                "        {",
-                "            {\"Performance Years\", each Text.Combine(List.Transform(Table.Column(_, \"Performance Review Year\"), Text.From), \",\")}",
-                "        }",
-                "    ),",
-                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Grouped Rows\",{{\"Performance Years\", type text}}),",
-                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Changed Type1\",{{\"Performance Years\", \"Review Years\"}})",
-                "in",
-                "    #\"Renamed Columns2\""
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
         "name": "Profile of Employee",
         "annotations": [
           {
@@ -45881,6 +45462,645 @@
         ],
         "columns": [
           {
+            "name": "A. Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7bf82b72-3d23-4b0c-8e8a-307132c874f1",
+            "sourceColumn": "A. Employee ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "X. Performance  Review Years",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "adef2075-33ff-401a-81c5-927d1db172c9",
+            "sourceColumn": "X. Performance  Review Years",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "B. Employee ID - Text",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3e168c1b-e5b8-4eee-ba6a-0ff6713cee30",
+            "sourceColumn": "B. Employee ID - Text",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "C. Full Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "51540566-ab09-4fc7-9387-de4ff202dce0",
+            "sourceColumn": "C. Full Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "E. Date of Birth",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "b9bd264f-78f5-436b-8bb7-e94587ac2983",
+            "sourceColumn": "E. Date of Birth",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "D. Gender",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7d691b8f-7376-497a-ba02-531e703d1291",
+            "sourceColumn": "D. Gender",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "I. Education Level",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "43346017-28a4-4674-92ea-85bf167f19e6",
+            "sourceColumn": "I. Education Level",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "J. Hire Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "01800a46-f993-4a1b-8157-d7f52668f50b",
+            "sourceColumn": "J. Hire Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "K. Department",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7c6c7a60-f54a-49b5-bb58-52534f5f5692",
+            "sourceColumn": "K. Department",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "L. Job Title",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a4a8805f-7235-461c-8d63-532e673d3049",
+            "sourceColumn": "L. Job Title",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "M. Organization Level",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ad100ec6-e343-46a0-93c8-abc2840ed661",
+            "sourceColumn": "M. Organization Level",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "N. Region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e9770ba0-eccb-4611-8620-b7a6c2fe96c5",
+            "sourceColumn": "N. Region",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "O. Country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f987ee60-1e9f-438e-90f9-79f00c853dad",
+            "sourceColumn": "O. Country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "P. Latitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "7ca40c4c-0f00-4084-9ab1-3950d89c1a40",
+            "sourceColumn": "P. Latitude",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Q. Longitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "f21820ce-2a46-4d81-930f-08441b1dd5de",
+            "sourceColumn": "Q. Longitude",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "S. Employment Status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "241751dc-b7f2-4383-8257-e6b3e958d667",
+            "sourceColumn": "S. Employment Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "R. Employment Type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dcb2b15e-44e0-4754-88d9-7ec5348d5dfc",
+            "sourceColumn": "R. Employment Type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "U. Base Salary ($)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "bc0a364d-d751-474f-bebf-1fe2c7fa9029",
+            "sourceColumn": "U. Base Salary ($)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "V. Times Promoted",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "fb1ffffc-1afb-474e-b265-3dc42a69b754",
+            "sourceColumn": "V. Times Promoted",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "T. Current Employment Status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "80682166-2261-465c-baa4-3e9b5ed29f8e",
+            "sourceColumn": "T. Current Employment Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "W. Annual Leave Entitlement (days)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5ec57379-1d94-4dba-a44a-363ca63f5cf2",
+            "sourceColumn": "W. Annual Leave Entitlement (days)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "H. Ethnicity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7ecd9190-0572-49cd-adab-78984c226d25",
+            "sourceColumn": "H. Ethnicity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "F. Age by Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bba5e0c6-bd77-4d56-b775-3ae805d665f9",
+            "sourceColumn": "F. Age by Year",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "G. Age Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "871ad72c-a2b9-4739-80f1-a5e1e75dffc1",
+            "sourceColumn": "G. Age Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Y. Assessment Potential Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "075e9763-3056-4be3-893c-a30e653825d5",
+            "sourceColumn": "Y. Assessment Potential Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "AA. Assessment Performance Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "a2ea3086-bb45-4bff-8d68-73569399ae10",
+            "sourceColumn": "AA. Assessment Performance Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Z. Assessment Potential Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b6492cf3-f883-401b-aff9-ca134beb6b37",
+            "sourceColumn": "Z. Assessment Potential Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AB. Assessment Performance Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "78b5d806-22d4-4268-b947-41af1e8c4bea",
+            "sourceColumn": "AB. Assessment Performance Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AC. 9-Box Grid Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "511ac6d7-5804-47eb-8f12-4e157a30ec83",
+            "sourceColumn": "AC. 9-Box Grid Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AD. 9-Box Grid Placement",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0171574f-a439-44e3-bac0-337f35cdb62d",
+            "sourceColumn": "AD. 9-Box Grid Placement",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "AE. Grid Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d56fc055-6eb5-45a5-8f03-c9b5c8a35785",
+            "sourceColumn": "AE. Grid Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AF. Resignation Probability",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "9bfb1581-f3ee-4631-8756-4d6863244478",
+            "sourceColumn": "AF. Resignation Probability",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "AG. Resignation Probability - Copy",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "c96325d1-e362-403b-b83e-c525d939a82c",
+            "sourceColumn": "AG. Resignation Probability - Copy",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "AH. Resignation Probability Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dc6400ae-13a9-45a5-b614-91c8e53c9a7e",
+            "sourceColumn": "AH. Resignation Probability Category",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "8c2b2965-eeb0-4753-b286-db0c311efcc5",
+        "partitions": [
+          {
+            "name": "Profile of Employee",
+            "mode": "import",
+            "queryGroup": "Data\\fact tables",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"), [Delimiter = \",\", Columns = 12, Encoding = 1252, QuoteStyle = QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Changed Type\", {\"Employee ID\"}, dim_employee, {\"Employee ID\"}, \"dim_employee\", JoinKind.LeftOuter),",
+                "    #\"Expanded dim_employee\" = Table.ExpandTableColumn(#\"Merged Queries\", \"dim_employee\", {\"Full Name\"}, {\"dim_employee.Full Name\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded dim_employee\", {{\"dim_employee.Full Name\", \"Full Name\"}}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Renamed Columns\", {\"Employee ID\", \"Full Name\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Reordered Columns\", {\"Employee ID\", \"Performance Review Year\"}),",
+                "",
+                "    // Group data by Employee ID",
+                "    #\"Grouped Rows\" = Table.Group(",
+                "        #\"Removed Other Columns\",",
+                "        {\"Employee ID\"},",
+                "        {{\"Performance Years\", each Text.Combine(List.Transform([Performance Review Year], Text.From), \", \"), type text}}",
+                "    ),",
+                "",
+                "    #\"Sorted Rows\" = Table.Sort(#\"Grouped Rows\", {{\"Employee ID\", Order.Ascending}}),",
+                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Sorted Rows\", {\"Employee ID\"}, fact_employee, {\"Employee ID\"}, \"fact_employee\", JoinKind.LeftOuter),",
+                "    #\"Expanded fact_employee\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"fact_employee\", {\"Full Name\", \"Date of Birth\", \"Gender\", \"Education Level\", \"Hire Date\", \"Department\", \"Job Title\", \"Organization Level\", \"Region\", \"Country\", \"Latitude\", \"Longitude\", \"Employment Status\", \"Employment Type\", \"Base Salary ($)\", \"Times Promoted\", \"Current Employment Status\", \"Annual Leave Entitlement (days)\", \"Ethnicity\", \"Age by Year\", \"Age Category\"}, {\"Full Name\", \"Date of Birth\", \"Gender\", \"Education Level\", \"Hire Date\", \"Department\", \"Job Title\", \"Organization Level\", \"Region\", \"Country\", \"Latitude\", \"Longitude\", \"Employment Status\", \"Employment Type\", \"Base Salary ($)\", \"Times Promoted\", \"Current Employment Status\", \"Annual Leave Entitlement (days)\", \"Ethnicity\", \"Age by Year\", \"Age Category\"}),",
+                "    #\"Merged Queries2\" = Table.NestedJoin(#\"Expanded fact_employee\", {\"Employee ID\"}, #\"9-Box Grid\", {\"Employee ID\"}, \"9-Box Grid\", JoinKind.LeftOuter),",
+                "    #\"Expanded 9-Box Grid\" = Table.ExpandTableColumn(#\"Merged Queries2\", \"9-Box Grid\", {\"Assessment Potential Rating\", \"Assessment Performance Rating\", \"Assessment Potential Category\", \"Assessment Performance Category\", \"9-Box Grid Category\", \"9-Box Grid Placement\", \"Grid Name\"}, {\"Assessment Potential Rating\", \"Assessment Performance Rating\", \"Assessment Potential Category\", \"Assessment Performance Category\", \"9-Box Grid Category\", \"9-Box Grid Placement\", \"Grid Name\"}),",
+                "    #\"Merged Queries3\" = Table.NestedJoin(#\"Expanded 9-Box Grid\", {\"Employee ID\"}, resignation_prediction, {\"Employee ID\"}, \"resignation_prediction\", JoinKind.LeftOuter),",
+                "    #\"Expanded resignation_prediction\" = Table.ExpandTableColumn(#\"Merged Queries3\", \"resignation_prediction\", {\"Resignation Probability\"}, {\"Resignation Probability\"}),",
+                "    #\"Duplicated Column\" = Table.DuplicateColumn(#\"Expanded resignation_prediction\", \"Employee ID\", \"Employee ID - Copy\"),",
+                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Duplicated Column\",{\"Employee ID\", \"Employee ID - Copy\", \"Performance Years\", \"Full Name\", \"Date of Birth\", \"Gender\", \"Education Level\", \"Hire Date\", \"Department\", \"Job Title\", \"Organization Level\", \"Region\", \"Country\", \"Latitude\", \"Longitude\", \"Employment Status\", \"Employment Type\", \"Base Salary ($)\", \"Times Promoted\", \"Current Employment Status\", \"Annual Leave Entitlement (days)\", \"Ethnicity\", \"Age by Year\", \"Age Category\", \"Assessment Potential Rating\", \"Assessment Performance Rating\", \"Assessment Potential Category\", \"Assessment Performance Category\", \"9-Box Grid Category\", \"9-Box Grid Placement\", \"Grid Name\", \"Resignation Probability\"}),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Reordered Columns1\",{{\"Employee ID - Copy\", type text}}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Changed Type1\",{{\"Employee ID - Copy\", \"Employee ID - Text\"}}),",
+                "    #\"Duplicated Column1\" = Table.DuplicateColumn(#\"Renamed Columns1\", \"Resignation Probability\", \"Resignation Probability - Copy\"),",
+                "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Duplicated Column1\",{{\"Resignation Probability - Copy\", type number}}),",
+                "    #\"Added Custom\" = Table.AddColumn(#\"Changed Type2\", \"Resignation Probability Category\", each if [#\"Resignation Probability - Copy\"] < 0.2 then \"Very Low\" ",
+                "else if [#\"Resignation Probability - Copy\"] <= 0.4 then \"Low\" ",
+                "else if [#\"Resignation Probability - Copy\"] <= 0.6 then \"Moderate\" ",
+                "else if [#\"Resignation Probability - Copy\"] <= 0.8 then \"High\" ",
+                "else \"Very High\"),",
+                "    #\"Changed Type3\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Resignation Probability Category\", type text}}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type3\", each true),",
+                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Filtered Rows\",{{\"Employee ID\", \"A. Employee ID\"}, {\"Employee ID - Text\", \"B. Employee ID - Text\"}, {\"Gender\", \"D. Gender\"}, {\"Date of Birth\", \"E. Date of Birth\"}, {\"Full Name\", \"C. Full Name\"}, {\"Age by Year\", \"F. Age by Year\"}, {\"Age Category\", \"G. Age Category\"}, {\"Ethnicity\", \"H. Ethnicity\"}, {\"Education Level\", \"I. Education Level\"}, {\"Hire Date\", \"J. Hire Date\"}, {\"Department\", \"K. Department\"}, {\"Job Title\", \"L. Job Title\"}, {\"Organization Level\", \"M. Organization Level\"}, {\"Region\", \"N. Region\"}, {\"Country\", \"O. Country\"}, {\"Latitude\", \"P. Latitude\"}, {\"Longitude\", \"Q. Longitude\"}, {\"Employment Type\", \"R. Employment Type\"}, {\"Employment Status\", \"S. Employment Status\"}, {\"Current Employment Status\", \"T. Current Employment Status\"}, {\"Base Salary ($)\", \"U. Base Salary ($)\"}, {\"Times Promoted\", \"V. Times Promoted\"}, {\"Annual Leave Entitlement (days)\", \"W. Annual Leave Entitlement (days)\"}, {\"Performance Years\", \"X. Performance Years\"}, {\"Assessment Potential Rating\", \"Y. Assessment Potential Rating\"}, {\"Assessment Potential Category\", \"Z. Assessment Potential Category\"}, {\"Assessment Performance Rating\", \"AA. Assessment Performance Rating\"}, {\"Assessment Performance Category\", \"AB. Assessment Performance Category\"}, {\"9-Box Grid Category\", \"AC. 9-Box Grid Category\"}, {\"9-Box Grid Placement\", \"AD. 9-Box Grid Placement\"}, {\"Grid Name\", \"AE. Grid Name\"}, {\"Resignation Probability\", \"AF. Resignation Probability\"}, {\"Resignation Probability - Copy\", \"AG. Resignation Probability - Copy\"}, {\"Resignation Probability Category\", \"AH. Resignation Probability Category\"}}),",
+                "    #\"Added Prefix\" = Table.TransformColumns(#\"Renamed Columns2\", {{\"X. Performance Years\", each \"Years: \" & _, type text}}),",
+                "    #\"Renamed Columns3\" = Table.RenameColumns(#\"Added Prefix\",{{\"X. Performance Years\", \"X. Performance  Review Years\"}})",
+                "in",
+                "    #\"Renamed Columns3\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Information of Age, Assessment Potential, Assessment Performance",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Age Category+Banding",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1296949e-4a42-47a5-835d-0cc726617b3a",
+            "sourceColumn": "Age Category+Banding",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Assessment Potential Category+Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "30181093-7af6-4dec-918c-faa9ab2c0b39",
+            "sourceColumn": "Assessment Potential Category+Rating",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Assessment Performance Category+Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6fa4c4c8-be53-439b-8967-3f0c8f1c6049",
+            "sourceColumn": "Assessment Performance Category+Rating",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e786cf21-b9e5-4e8e-8eff-f576a28fe73e",
+        "partitions": [
+          {
+            "name": "Information of Age, Assessment Potential, Assessment Performance",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"dZBPawIxEMW/ypBThaTo/gnFW6mWHrRdai9l9RDcUYMxkTFL22/fTIRSqoU5zHsz7wczbSveQ++3cN/1Lo7hZnSninogpJiFD5YSRrdZPxrnbFpc7ALFn4mEYiBWshVTQ+4LHgwhEjQUNng62eCNS6uFVmVmzEOHZCKyl5Jn8IuHNzLrPZsMLFPxhKlz26nrzFKrKsef7HbHmvsGzR4apE2gA1JyKwkVM2s48xbobbhgVVrVmfUcYGKi+dXl0z6PSBb9Gru/yVorrf9PNoTqFaMlPKBPT1v2w2GJWl8PrL4B\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Age Category+Banding\" = _t, #\"Assessment Potential Category+Rating\" = _t, #\"Assessment Performance Category+Rating\" = _t])",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Project Details",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Index",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "58b635b6-f7a0-4a4b-a7fc-ef5f03565001",
+            "sourceColumn": "Index",
+            "summarizeBy": "sum"
+          },
+          {
             "name": "Employee ID",
             "annotations": [
               {
@@ -45890,21 +46110,8 @@
             ],
             "dataType": "int64",
             "formatString": "0",
-            "lineageTag": "8913638e-7a7e-4eea-b55d-dfd7a97cbdbe",
+            "lineageTag": "8b0ce4bb-e480-4268-a97c-cba54a11828d",
             "sourceColumn": "Employee ID",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Employee ID - Text",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "ef8ed651-58e8-451a-8205-3e6f81bc2314",
-            "sourceColumn": "Employee ID - Text",
             "summarizeBy": "none"
           },
           {
@@ -45916,440 +46123,66 @@
               }
             ],
             "dataType": "string",
-            "lineageTag": "0339398f-e2c6-42e4-8e4a-f9b243b2f197",
+            "lineageTag": "4232cf12-b577-4f94-9e23-eec71d40af28",
             "sourceColumn": "Full Name",
             "summarizeBy": "none"
           },
           {
-            "name": "Date of Birth",
+            "name": "Projects Handled",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
-            "lineageTag": "b7c1a505-8205-4487-9070-e0a564fa7f77",
-            "sourceColumn": "Date of Birth",
-            "summarizeBy": "none"
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "90b4a8a4-dab9-40e1-9dd8-c18e6ae6e184",
+            "sourceColumn": "Projects Handled",
+            "summarizeBy": "sum"
           },
           {
-            "name": "Gender",
+            "name": "Project Target",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
-            "lineageTag": "1519d6ee-8c40-4545-b1e8-5aac2e4737e7",
-            "sourceColumn": "Gender",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Education Level",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "ef09df05-926d-4cf9-ac6f-0727ab2ba179",
-            "sourceColumn": "Education Level",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Hire Date",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "6e6b87bb-4d4c-4835-b781-0cc0abc02903",
-            "sourceColumn": "Hire Date",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Department",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "556d08b5-4108-494b-9291-3d8309c39cbe",
-            "sourceColumn": "Department",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Job Title",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "33ff3b72-de25-4bf1-afc8-c32936bfc2d5",
-            "sourceColumn": "Job Title",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Organization Level",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "57e6ad0f-b1d1-4a3f-a385-9b75e3add456",
-            "sourceColumn": "Organization Level",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Region",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "b1363797-bd2d-4aa0-837d-673c6468d76f",
-            "sourceColumn": "Region",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Country",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "ebffab55-cbd7-4b73-865c-06676e8d9296",
-            "sourceColumn": "Country",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Latitude",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "5dabebca-ec6b-4198-818b-cc9827f19023",
-            "sourceColumn": "Latitude",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Longitude",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "14715287-864d-42d6-a960-ffa4ddb40452",
-            "sourceColumn": "Longitude",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Employment Status",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "03b83561-4a35-4f2e-aedb-0e161bed9da2",
-            "sourceColumn": "Employment Status",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Employment Type",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "6e56ffea-73b6-46f3-bd36-65f5aac47dbd",
-            "sourceColumn": "Employment Type",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Base Salary ($)",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "4f3fdc1a-158b-4b8b-ba03-6ce7099e875f",
-            "sourceColumn": "Base Salary ($)",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Times Promoted",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "1aea7ea0-3d0a-47e5-97bc-7289f4852b98",
-            "sourceColumn": "Times Promoted",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Current Employment Status",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "536d3108-357d-46e8-bc36-2aee6892eef0",
-            "sourceColumn": "Current Employment Status",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Annual Leave Entitlement (days)",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "32c1fee3-8536-4bf0-8952-1bc526718d13",
-            "sourceColumn": "Annual Leave Entitlement (days)",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Ethnicity",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "deef0fd9-f9e1-4b73-8825-b473cf80b724",
-            "sourceColumn": "Ethnicity",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Birth Year",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "1f59dbe4-ed60-485f-b731-53bd38380450",
-            "sourceColumn": "Birth Year",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Age by Year",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "35b16e0b-0638-4839-8098-18bf3d3da22d",
-            "sourceColumn": "Age by Year",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Age Category",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "12bb341e-3cb2-46b3-8fb7-80fe18dc89fd",
-            "sourceColumn": "Age Category",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Review Years",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "386dfc4b-df01-42bb-8fa2-9a03639d30e6",
-            "sourceColumn": "Review Years",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Assessment Potential Rating",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "3e43b84b-d2be-4ccc-b8af-f0f2e7899aad",
-            "sourceColumn": "Assessment Potential Rating",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Assessment Performance Rating",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "c5542e7b-74b3-4ee2-8b83-9b2c1dde2584",
-            "sourceColumn": "Assessment Performance Rating",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Assessment Potential Category",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "430a9be4-bc68-4422-8672-9ffb6d9598de",
-            "sourceColumn": "Assessment Potential Category",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Assessment Performance Category",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "3f81d1cb-91af-4ef2-84e9-68f5793ff550",
-            "sourceColumn": "Assessment Performance Category",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "9-Box Grid Category",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "cfb18460-0a94-41d5-8784-7e78687951e5",
-            "sourceColumn": "9-Box Grid Category",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "9-Box Grid Placement",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "e6bcf640-1d6c-4f6e-aa05-aeb89877151c",
-            "sourceColumn": "9-Box Grid Placement",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Grid Name",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "a588d529-1e2a-4c22-a0b9-c6bfb7925159",
-            "sourceColumn": "Grid Name",
-            "summarizeBy": "none"
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5d4b7561-b422-4775-bcab-e33b9b22ef7a",
+            "sourceColumn": "Project Target",
+            "summarizeBy": "sum"
           }
         ],
-        "lineageTag": "72d71fbb-4c06-464d-a117-c566ec0e991a",
+        "lineageTag": "916ab7aa-8e65-4e6f-8e76-55449e932156",
         "partitions": [
           {
-            "name": "Profile of Employee",
+            "name": "Project Details",
             "mode": "import",
             "queryGroup": "Data\\fact tables",
             "source": {
               "expression": [
-                "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\employee.csv\"),[Delimiter=\",\", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
-                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Full Name\", type text}, {\"Date of Birth\", type date}, {\"Gender\", type text}, {\"Education Level\", type text}, {\"Hire Date\", type date}, {\"Department\", type text}, {\"Job Title\", type text}, {\"Organization Level\", type text}, {\"Region\", type text}, {\"Country\", type text}, {\"Latitude\", type number}, {\"Longitude\", type number}, {\"Employment Status\", type text}, {\"Employment Type\", type text}, {\"Base Salary ($)\", type number}, {\"Times Promoted\", Int64.Type}, {\"Years at Company\", Int64.Type}, {\"Current Employment Status\", type text}, {\"Annual Leave Entitlement (days)\", Int64.Type}, {\"Ethnicity\", type text}}),",
-                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Years at Company\"}),",
-                "    #\"Inserted Year\" = Table.AddColumn(#\"Removed Columns\", \"Year\", each Date.Year([Date of Birth]), Int64.Type),",
-                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Inserted Year\",{{\"Year\", Int64.Type}}),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Changed Type1\",{{\"Year\", \"Birth Year\"}}),",
-                "    #\"Added Custom\" = Table.AddColumn(#\"Renamed Columns\", \"Age\", each Date.Year(DateTime.LocalNow()) - [Birth Year]),",
-                "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Age\", Int64.Type}}),",
-                "    #\"Added Custom1\" = Table.AddColumn(#\"Changed Type2\", \"Age Category\", each if [Age] >= 18 and [Age] <= 25 then \"Young Adult\"",
-                "else if [Age] >= 26 and [Age] <= 35 then \"Early Career Professional\"",
-                "else if [Age] >= 36 and [Age] <= 45 then \"Mid-Career Professional\"",
-                "else if [Age] >= 46 and [Age] <= 55 then \"Experienced Professional\"",
-                "else if [Age] >= 56 and [Age] <= 66 then \"Pre-Retirement\"",
-                "else \"Out of Range\"),",
-                "    #\"Changed Type3\" = Table.TransformColumnTypes(#\"Added Custom1\",{{\"Age Category\", type text}}),",
-                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type3\", each true),",
-                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Filtered Rows\",{{\"Age\", \"Age by year\"}}),",
-                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Renamed Columns1\",{\"Age by year\", \"Age Category\"}),",
-                "    #\"Added Custom2\" = Table.AddColumn(#\"Removed Columns1\", \"Age by Year\", each Date.Year(DateTime.LocalNow()) - [Birth Year]),",
-                "    #\"Changed Type4\" = Table.TransformColumnTypes(#\"Added Custom2\",{{\"Age by Year\", Int64.Type}}),",
-                "    #\"Added Custom3\" = Table.AddColumn(#\"Changed Type4\", \"Age Category\", each if [Age by Year] >= 18 and [Age by Year] <= 25 then \"Young Adult\"",
-                "else if [Age by Year] >= 26 and [Age by Year] <= 35 then \"Early Career Professional\"",
-                "else if [Age by Year] >= 36 and [Age by Year] <= 45 then \"Mid-Career Professional\"",
-                "else if [Age by Year] >= 46 and [Age by Year] <= 55 then \"Senior Professional\"",
-                "else if [Age by Year] >= 56 and [Age by Year] <= 66 then \"Pre-Retirement\"",
-                "else \"Out of Range\"),",
-                "    #\"Changed Type5\" = Table.TransformColumnTypes(#\"Added Custom3\",{{\"Age Category\", type text}}),",
-                "    #\"Filtered Rows1\" = Table.SelectRows(#\"Changed Type5\", each true),",
-                "    #\"Merged Queries\" = Table.NestedJoin(#\"Filtered Rows1\", {\"Employee ID\"}, #\"Review Years\", {\"Employee ID\"}, \"Review Years\", JoinKind.LeftOuter),",
-                "    #\"Expanded Review Years\" = Table.ExpandTableColumn(#\"Merged Queries\", \"Review Years\", {\"Review Years\"}, {\"Review Years.Review Years\"}),",
-                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Expanded Review Years\", {\"Employee ID\"}, #\"9-Box Grid\", {\"Employee ID\"}, \"9-Box Grid\", JoinKind.LeftOuter),",
-                "    #\"Expanded 9-Box Grid\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"9-Box Grid\", {\"Assessment Potential Rating\", \"Assessment Performance Rating\", \"Assessment Potential Category\", \"Assessment Performance Category\", \"9-Box Grid Category\", \"9-Box Grid Placement\", \"Grid Name\"}, {\"9-Box Grid.Assessment Potential Rating\", \"9-Box Grid.Assessment Performance Rating\", \"9-Box Grid.Assessment Potential Category\", \"9-Box Grid.Assessment Performance Category\", \"9-Box Grid.9-Box Grid Category\", \"9-Box Grid.9-Box Grid Placement\", \"9-Box Grid.Grid Name\"}),",
-                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Expanded 9-Box Grid\",{{\"9-Box Grid.Assessment Potential Rating\", \"Assessment Potential Rating\"}, {\"Review Years.Review Years\", \"Review Years\"}, {\"9-Box Grid.Assessment Performance Rating\", \"Assessment Performance Rating\"}, {\"9-Box Grid.Assessment Potential Category\", \"Assessment Potential Category\"}, {\"9-Box Grid.Assessment Performance Category\", \"Assessment Performance Category\"}, {\"9-Box Grid.9-Box Grid Category\", \"9-Box Grid Category\"}, {\"9-Box Grid.9-Box Grid Placement\", \"9-Box Grid Placement\"}, {\"9-Box Grid.Grid Name\", \"Grid Name\"}}),",
-                "    #\"Changed Type6\" = Table.TransformColumnTypes(#\"Renamed Columns2\",{{\"9-Box Grid Placement\", type text}}),",
-                "    #\"Duplicated Column\" = Table.DuplicateColumn(#\"Changed Type6\", \"Employee ID\", \"Employee ID - Copy\"),",
-                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Duplicated Column\",{\"Employee ID - Copy\", \"Employee ID\", \"Full Name\", \"Date of Birth\", \"Gender\", \"Education Level\", \"Hire Date\", \"Department\", \"Job Title\", \"Organization Level\", \"Region\", \"Country\", \"Latitude\", \"Longitude\", \"Employment Status\", \"Employment Type\", \"Base Salary ($)\", \"Times Promoted\", \"Current Employment Status\", \"Annual Leave Entitlement (days)\", \"Ethnicity\", \"Birth Year\", \"Age by Year\", \"Age Category\", \"Review Years\", \"Assessment Potential Rating\", \"Assessment Performance Rating\", \"Assessment Potential Category\", \"Assessment Performance Category\", \"9-Box Grid Category\", \"9-Box Grid Placement\", \"Grid Name\"}),",
-                "    #\"Renamed Columns3\" = Table.RenameColumns(#\"Reordered Columns\",{{\"Employee ID - Copy\", \"Employee ID - Text\"}}),",
-                "    #\"Changed Type7\" = Table.TransformColumnTypes(#\"Renamed Columns3\",{{\"Employee ID - Text\", type text}}),",
-                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Changed Type7\",{\"Employee ID\", \"Employee ID - Text\", \"Full Name\", \"Date of Birth\", \"Gender\", \"Education Level\", \"Hire Date\", \"Department\", \"Job Title\", \"Organization Level\", \"Region\", \"Country\", \"Latitude\", \"Longitude\", \"Employment Status\", \"Employment Type\", \"Base Salary ($)\", \"Times Promoted\", \"Current Employment Status\", \"Annual Leave Entitlement (days)\", \"Ethnicity\", \"Birth Year\", \"Age by Year\", \"Age Category\", \"Review Years\", \"Assessment Potential Rating\", \"Assessment Performance Rating\", \"Assessment Potential Category\", \"Assessment Performance Category\", \"9-Box Grid Category\", \"9-Box Grid Placement\", \"Grid Name\"}),",
-                "    #\"Changed Type8\" = Table.TransformColumnTypes(#\"Reordered Columns1\",{{\"Age by Year\", type text}, {\"Annual Leave Entitlement (days)\", type text}, {\"Assessment Potential Rating\", type text}, {\"Assessment Performance Rating\", type text}, {\"Date of Birth\", type text}, {\"Hire Date\", type text}, {\"Longitude\", type text}, {\"Latitude\", type text}, {\"Base Salary ($)\", type text}, {\"Times Promoted\", type text}, {\"Birth Year\", type text}})",
+                "let ",
+                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"), [Delimiter = \",\", Columns = 12, Encoding = 1252, QuoteStyle = QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Changed Type\", {\"Employee ID\"}, dim_employee, {\"Employee ID\"}, \"dim_employee\", JoinKind.LeftOuter),",
+                "    #\"Expanded dim_employee\" = Table.ExpandTableColumn(#\"Merged Queries\", \"dim_employee\", {\"Full Name\"}, {\"dim_employee.Full Name\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded dim_employee\", {{\"dim_employee.Full Name\", \"Full Name\"}}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Renamed Columns\", {\"Employee ID\", \"Full Name\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
+                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Reordered Columns\", {\"Employee ID\"}, fact_employee, {\"Employee ID\"}, \"fact_employee\", JoinKind.LeftOuter),",
+                "    #\"Expanded fact_employee\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"fact_employee\", {\"Job Title\"}, {\"fact_employee.Job Title\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Expanded fact_employee\", {{\"fact_employee.Job Title\", \"Job Title\"}}),",
+                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Renamed Columns1\", {\"Employee ID\", \"Full Name\", \"Job Title\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Reordered Columns1\", {\"Job Title\"}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Removed Columns\", {\"Employee ID\", \"Full Name\", \"Projects Handled\", \"Project Target\"}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Removed Other Columns\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Reordered Columns2\" = Table.ReorderColumns(#\"Added Index\", {\"Index\", \"Employee ID\", \"Full Name\", \"Projects Handled\", \"Project Target\"}),",
+                "    #\"Removed Rows\" = Table.SelectRows(#\"Reordered Columns2\", each not List.Contains({328, 447, 462, 2411, 2483, 6073, 6500, 6505}, [Index]))",
                 "in",
-                "    #\"Changed Type8\""
+                "    #\"Removed Rows\""
               ],
               "type": "m"
             }
