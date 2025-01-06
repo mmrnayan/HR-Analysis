@@ -453,19 +453,6 @@
             "width": 234
           },
           "zIndex": 8
-        },
-        {
-          "location": {
-            "x": 786.2827955303768,
-            "y": 690614.97273195325
-          },
-          "nodeIndex": "Project Details",
-          "nodeLineageTag": "916ab7aa-8e65-4e6f-8e76-55449e932156",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 36
         }
       ],
       "name": "All tables",

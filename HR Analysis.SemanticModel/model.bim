@@ -12,7 +12,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\",\"Profile of Employee\",\"Information of Age, Assessment Potential, Assessment Performance\",\"Project Details\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\",\"Profile of Employee\",\"Information of Age, Assessment Potential, Assessment Performance\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -38381,13 +38381,6 @@
         "isActive": false,
         "toColumn": "Employee ID",
         "toTable": "dim_employee"
-      },
-      {
-        "name": "0ac1b2b4-403c-ccc6-6b88-01b5b2f3d031",
-        "fromColumn": "Employee ID",
-        "fromTable": "Project Details",
-        "toColumn": "Employee ID",
-        "toTable": "fact_employee"
       }
     ],
     "sourceQueryCulture": "en-US",
@@ -40023,6 +40016,19 @@
             "lineageTag": "af1e8ead-d6df-4243-bffd-2656d0c92b57",
             "sourceColumn": "Full Name",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Extra Project",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "223fd7f8-03a7-4422-b87f-64601e0f5d2f",
+            "sourceColumn": "Extra Project",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "daefe653-4dbd-4cff-818a-b13040e6f3d4",
@@ -40045,9 +40051,14 @@
                 "    #\"Expanded fact_employee\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"fact_employee\", {\"Job Title\"}, {\"fact_employee.Job Title\"}),",
                 "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Expanded fact_employee\",{{\"fact_employee.Job Title\", \"Job Title\"}}),",
                 "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Renamed Columns1\",{\"Employee ID\", \"Full Name\", \"Job Title\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
-                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Reordered Columns1\",{\"Job Title\"})",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Reordered Columns1\",{\"Job Title\"}),",
+                "    #\"Added Custom\" = Table.AddColumn(#\"Removed Columns\", \"Extra PRoject\", each if[Projects Handled]>[Project Target] then \"Exceeds Target\" else \"On Target\"),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Extra PRoject\", type text}}),",
+                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Changed Type1\",{{\"Extra PRoject\", \"Extra Project\"}}),",
+                "    #\"Reordered Columns2\" = Table.ReorderColumns(#\"Renamed Columns2\",{\"Employee ID\", \"Full Name\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Extra Project\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Reordered Columns2\", each true)",
                 "in",
-                "    #\"Removed Columns\""
+                "    #\"Filtered Rows\""
               ],
               "type": "m"
             }
@@ -41931,7 +41942,7 @@
           {
             "name": "Total Project Targeted",
             "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "SUM('Project Details'[Project Target])",
+            "expression": "SUM(fact_performance[Project Target])",
             "formatString": "0",
             "lineageTag": "bd13dbe4-a6bd-4a59-8efa-12634c95f47e"
           },
@@ -41945,7 +41956,7 @@
           {
             "name": "Total Project Handled",
             "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "SUM('Project Details'[Projects Handled])",
+            "expression": "SUM(fact_performance[Projects Handled])",
             "formatString": "0",
             "lineageTag": "7d31e886-499c-43b0-a7e1-7b26369857b3"
           },
@@ -46067,122 +46078,6 @@
                 "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"dZBPawIxEMW/ypBThaTo/gnFW6mWHrRdai9l9RDcUYMxkTFL22/fTIRSqoU5zHsz7wczbSveQ++3cN/1Lo7hZnSninogpJiFD5YSRrdZPxrnbFpc7ALFn4mEYiBWshVTQ+4LHgwhEjQUNng62eCNS6uFVmVmzEOHZCKyl5Jn8IuHNzLrPZsMLFPxhKlz26nrzFKrKsef7HbHmvsGzR4apE2gA1JyKwkVM2s48xbobbhgVVrVmfUcYGKi+dXl0z6PSBb9Gru/yVorrf9PNoTqFaMlPKBPT1v2w2GJWl8PrL4B\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Age Category+Banding\" = _t, #\"Assessment Potential Category+Rating\" = _t, #\"Assessment Performance Category+Rating\" = _t])",
                 "in",
                 "    Source"
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
-        "name": "Project Details",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "Index",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "58b635b6-f7a0-4a4b-a7fc-ef5f03565001",
-            "sourceColumn": "Index",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "Employee ID",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "8b0ce4bb-e480-4268-a97c-cba54a11828d",
-            "sourceColumn": "Employee ID",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Full Name",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "4232cf12-b577-4f94-9e23-eec71d40af28",
-            "sourceColumn": "Full Name",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Projects Handled",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "90b4a8a4-dab9-40e1-9dd8-c18e6ae6e184",
-            "sourceColumn": "Projects Handled",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "Project Target",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "5d4b7561-b422-4775-bcab-e33b9b22ef7a",
-            "sourceColumn": "Project Target",
-            "summarizeBy": "sum"
-          }
-        ],
-        "lineageTag": "916ab7aa-8e65-4e6f-8e76-55449e932156",
-        "partitions": [
-          {
-            "name": "Project Details",
-            "mode": "import",
-            "queryGroup": "Data\\fact tables",
-            "source": {
-              "expression": [
-                "let ",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"), [Delimiter = \",\", Columns = 12, Encoding = 1252, QuoteStyle = QuoteStyle.None]),",
-                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
-                "    #\"Merged Queries\" = Table.NestedJoin(#\"Changed Type\", {\"Employee ID\"}, dim_employee, {\"Employee ID\"}, \"dim_employee\", JoinKind.LeftOuter),",
-                "    #\"Expanded dim_employee\" = Table.ExpandTableColumn(#\"Merged Queries\", \"dim_employee\", {\"Full Name\"}, {\"dim_employee.Full Name\"}),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded dim_employee\", {{\"dim_employee.Full Name\", \"Full Name\"}}),",
-                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Renamed Columns\", {\"Employee ID\", \"Full Name\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
-                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Reordered Columns\", {\"Employee ID\"}, fact_employee, {\"Employee ID\"}, \"fact_employee\", JoinKind.LeftOuter),",
-                "    #\"Expanded fact_employee\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"fact_employee\", {\"Job Title\"}, {\"fact_employee.Job Title\"}),",
-                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Expanded fact_employee\", {{\"fact_employee.Job Title\", \"Job Title\"}}),",
-                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Renamed Columns1\", {\"Employee ID\", \"Full Name\", \"Job Title\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
-                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Reordered Columns1\", {\"Job Title\"}),",
-                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Removed Columns\", {\"Employee ID\", \"Full Name\", \"Projects Handled\", \"Project Target\"}),",
-                "    #\"Added Index\" = Table.AddIndexColumn(#\"Removed Other Columns\", \"Index\", 1, 1, Int64.Type),",
-                "    #\"Reordered Columns2\" = Table.ReorderColumns(#\"Added Index\", {\"Index\", \"Employee ID\", \"Full Name\", \"Projects Handled\", \"Project Target\"}),",
-                "    #\"Removed Rows\" = Table.SelectRows(#\"Reordered Columns2\", each not List.Contains({328, 447, 462, 2411, 2483, 6073, 6500, 6505}, [Index]))",
-                "in",
-                "    #\"Removed Rows\""
               ],
               "type": "m"
             }
