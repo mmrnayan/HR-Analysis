@@ -23498,7 +23498,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "_measure",
-                    "ConceptualProperty": "Completion Rate (CR)"
+                    "ConceptualProperty": "% Total Completion (TC)"
                   }
                 },
                 "State": "Generated",
@@ -23606,6 +23606,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.52
+                    }
+                  },
+                  {
+                    "% Completion (TC)": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -40026,7 +40036,7 @@
               }
             ],
             "dataType": "string",
-            "lineageTag": "223fd7f8-03a7-4422-b87f-64601e0f5d2f",
+            "lineageTag": "d388df0a-9e9c-4c58-83bd-23a9ae1ca571",
             "sourceColumn": "Extra Project",
             "summarizeBy": "none"
           }
@@ -41942,12 +41952,12 @@
           {
             "name": "Total Project Targeted",
             "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "SUM(fact_performance[Project Target])",
+            "expression": "[Project Targeted (Exceeds Target)]+[Project Targeted (On Target)]",
             "formatString": "0",
             "lineageTag": "bd13dbe4-a6bd-4a59-8efa-12634c95f47e"
           },
           {
-            "name": "Completion Rate (CR)",
+            "name": "% Total Completion (TC)",
             "displayFolder": "Project Handled, Targeted, and Percentage",
             "expression": "DIVIDE([Total Project Handled],[Total Project Targeted])",
             "formatString": "0.00%;-0.00%;0.00%",
@@ -41956,7 +41966,7 @@
           {
             "name": "Total Project Handled",
             "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "SUM(fact_performance[Projects Handled])",
+            "expression": "[Project Handled (Exceeds Target)]+[Project Handled (On Target)]",
             "formatString": "0",
             "lineageTag": "7d31e886-499c-43b0-a7e1-7b26369857b3"
           },
@@ -42347,11 +42357,59 @@
             "lineageTag": "77d6931f-f5c0-4248-ba41-9ca5cd4e0ed4"
           },
           {
-            "name": "Data Bars (CR)",
+            "name": "Data Bars (TC)",
             "displayFolder": "Project Handled, Targeted, and Percentage",
             "expression": "DIVIDE([Total Project Handled],[Total Project Targeted])",
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "22418c73-4214-4e1c-9333-aed7c8426a3b"
+          },
+          {
+            "name": "Distinct Employee ID",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "DISTINCTCOUNT(fact_performance[Employee ID])",
+            "formatString": "0",
+            "lineageTag": "5eafe119-dff2-4f13-9b84-6e0c4e13098e"
+          },
+          {
+            "name": "Project Handled (Exceeds Target)",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "CALCULATE(SUM(fact_performance[Projects Handled]), fact_performance[Extra Project] = \"Exceeds Target\")",
+            "formatString": "0",
+            "lineageTag": "47074ec7-7e77-4e5f-8038-3bf9db411be4"
+          },
+          {
+            "name": "Project Handled (On Target)",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "CALCULATE(SUM(fact_performance[Projects Handled]), fact_performance[Extra Project] = \"On Target\")",
+            "formatString": "0",
+            "lineageTag": "0e8485ed-2a68-4387-938d-bca6b8bd8e15"
+          },
+          {
+            "name": "Project Targeted (Exceeds Target)",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "CALCULATE(SUM(fact_performance[Project Target]), fact_performance[Extra Project] = \"Exceeds Target\")",
+            "formatString": "0",
+            "lineageTag": "e984e290-0c73-45b6-abf7-d636f04261a7"
+          },
+          {
+            "name": "Project Targeted (On Target)",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "CALCULATE(SUM(fact_performance[Project Target]), fact_performance[Extra Project] = \"On Target\")",
+            "formatString": "0",
+            "lineageTag": "0405428c-ceb7-40a7-af00-f65153a7b9ed"
+          },
+          {
+            "name": "Total Employee ID",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "COUNT(fact_performance[Employee ID])",
+            "formatString": "0",
+            "lineageTag": "97167b63-b252-47f1-bdfc-d547693fbca2"
+          },
+          {
+            "name": "Extra Project",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "IF([Total Project Handled]>[Total Project Targeted],\"Exceeds Target\", \"On Target\")",
+            "lineageTag": "4d59e16b-efe3-4f24-b572-401dd6461c3e"
           }
         ],
         "partitions": [
