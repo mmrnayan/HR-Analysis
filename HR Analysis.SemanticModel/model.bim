@@ -8,7 +8,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.139.1576.0 (24.12)+cf7e324bca3ba1dbdfd6f0ddf9a53321538e996d"
+        "value": "2.138.1452.0 (24.11)"
       },
       {
         "name": "PBI_QueryOrder",
@@ -7945,20 +7945,11 @@
                   }
                 ]
               },
-              "fact_employee.age_band": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "fact_employee",
-                    "ConceptualProperty": "Age Band"
-                  }
-                },
-                "State": "Generated"
-              },
               "fact_employee.age_banding": {
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "fact_employee",
-                    "ConceptualProperty": "Age Banding"
+                    "ConceptualProperty": "Age Band"
                   }
                 },
                 "State": "Generated",
@@ -38432,7 +38423,7 @@
             "type": "calculated"
           },
           {
-            "name": "Age Banding",
+            "name": "Age Band",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -41443,7 +41434,7 @@
             "expression": [
               "",
               "CALCULATE([Overall Attrition Rate], ",
-              "    GROUPBY(fact_employee, fact_employee[Age Banding]))",
+              "    GROUPBY(fact_employee, fact_employee[Age Band]))",
               ""
             ],
             "lineageTag": "c9b73368-e6d2-4895-983d-595301f97f7d"
@@ -42044,6 +42035,259 @@
             "expression": "IF(ISFILTERED('Full All'[Performance Review Year]),DISTINCTCOUNT('Full All'[Employee ID]),CALCULATE(DISTINCTCOUNT('Full All'[Employee ID]),'Full All'[Performance Review Year] = \"All\"))",
             "formatString": "0",
             "lineageTag": "82e68d0d-eae7-4be8-86f2-339c298daf3a"
+          },
+          {
+            "name": "Overall Max/Min linechart Resignation",
+            "displayFolder": "Resigned\\resigned profile",
+            "expression": [
+              "",
+              "VAR Resignation=  [# of Resignation]",
+              "Var MaxResignation= ",
+              "MAXX(",
+              "    ALLSELECTED('date'[Year]),",
+              "    [# of Resignation]",
+              ")",
+              "Var MinResignation= ",
+              "MINX(",
+              "    ALLSELECTED('date'[Year]),",
+              "    [# of Resignation]",
+              ")",
+              "",
+              "VAR Result=",
+              "SWITCH(",
+              "    TRUE(),",
+              "    Resignation=MaxResignation, \"RED\",",
+              "    Resignation=MinResignation, \"Green\",",
+              "    \"#751d84\"",
+              ")",
+              "",
+              "RETURN",
+              "Result"
+            ],
+            "lineageTag": "97f6562e-cc82-47f5-a5b9-e4e738fda4f8"
+          },
+          {
+            "name": "Overall Max/Min linechart Vol Resignation",
+            "displayFolder": "Resigned\\resigned profile",
+            "expression": [
+              "",
+              "VAR Resignation=  [# of Voluntary Resignation]",
+              "Var MaxResignation= ",
+              "MAXX(",
+              "    ALLSELECTED('date'[Year]),",
+              "    [# of Voluntary Resignation]",
+              ")",
+              "Var MinResignation= ",
+              "MINX(",
+              "    ALLSELECTED('date'[Year]),",
+              "    [# of Voluntary Resignation]",
+              ")",
+              "",
+              "VAR Result=",
+              "SWITCH(",
+              "    TRUE(),",
+              "    Resignation=MaxResignation, \"RED\",",
+              "    Resignation=MinResignation, \"Green\",",
+              "    \"#751d84\"",
+              ")",
+              "",
+              "RETURN",
+              "Result"
+            ],
+            "lineageTag": "75f768df-79a4-4bf9-9299-fcb7cd3898d6"
+          },
+          {
+            "name": "Overall Max/Min linechart invol Resignation",
+            "displayFolder": "Resigned\\resigned profile",
+            "expression": [
+              "",
+              "VAR Resignation=  [# of Involuntary Resignation]",
+              "Var MaxResignation= ",
+              "MAXX(",
+              "    ALLSELECTED('date'[Year]),",
+              "    [# of Involuntary Resignation]",
+              ")",
+              "Var MinResignation= ",
+              "MINX(",
+              "    ALLSELECTED('date'[Year]),",
+              "    [# of Involuntary Resignation]",
+              ")",
+              "",
+              "VAR Result=",
+              "SWITCH(",
+              "    TRUE(),",
+              "    Resignation=MaxResignation, \"RED\",",
+              "    Resignation=MinResignation, \"Green\",",
+              "    \"#751d84\"",
+              ")",
+              "",
+              "RETURN",
+              "Result"
+            ],
+            "lineageTag": "f0e2056e-5f12-4e79-8d3c-22c99320c779"
+          },
+          {
+            "name": "Overall Max/Min linechart 1st year Resignation",
+            "displayFolder": "Resigned\\resigned profile",
+            "expression": [
+              "",
+              "VAR Resignation=  [# of First Year Resignation]",
+              "Var MaxResignation= ",
+              "MAXX(",
+              "    ALLSELECTED('date'[Year]),",
+              "     [# of First Year Resignation]",
+              ")",
+              "Var MinResignation= ",
+              "MINX(",
+              "    ALLSELECTED('date'[Year]),",
+              "     [# of First Year Resignation]",
+              ")",
+              "",
+              "VAR Result=",
+              "SWITCH(",
+              "    TRUE(),",
+              "    Resignation=MaxResignation, \"RED\",",
+              "    Resignation=MinResignation, \"Green\",",
+              "    \"#751d84\"",
+              ")",
+              "",
+              "RETURN",
+              "Result"
+            ],
+            "lineageTag": "f5809f31-b1d8-49f4-90ae-62367907d4ac"
+          },
+          {
+            "name": "Dynamic Bar Color",
+            "displayFolder": "Resigned\\resigned profile",
+            "expression": [
+              "",
+              "VAR SelectedField = SELECTEDVALUE('Dept-Org Lvl'[Dept-Org Lvl])  // Capture the selected field parameter",
+              "VAR MaxResignation =",
+              "    SWITCH(",
+              "        SelectedField,",
+              "        \"Department\",",
+              "            MAXX(",
+              "                SUMMARIZE(",
+              "                    'dim_department',",
+              "                    'dim_department'[Department]",
+              "                    ",
+              "                ),",
+              "                [# of Resignation]",
+              "            ),",
+              "        \"Organization Level\",",
+              "            MAXX(",
+              "                SUMMARIZE(",
+              "                    'dim_jobtitle',",
+              "                    'dim_jobtitle'[Organization Level]",
+              "                ),",
+              "                [# of Resignation]",
+              "            ),",
+              "        BLANK()",
+              "    )",
+              "VAR Color =",
+              "    IF(",
+              "        [# of Resignation] = MaxResignation,",
+              "        \"#751d84\",  // Highlight color for max resignation",
+              "        \"#808080\"   // Default color for other bars",
+              "    )",
+              "RETURN",
+              "    Color",
+              ""
+            ],
+            "lineageTag": "cace0750-716b-4913-bdce-bb9ff8845a77"
+          },
+          {
+            "name": "Max Resignation",
+            "displayFolder": "Resigned\\resigned profile",
+            "expression": [
+              "",
+              "Var MaxResignation=",
+              "MAXX(",
+              "    ALL('date'), ",
+              "    [# of Resignation]",
+              ")",
+              "VAR Color=",
+              "IF(",
+              "    [# of Resignation]= MaxResignation, ",
+              "    \"#751d84\",",
+              "    \"#808080\"",
+              ")",
+              "",
+              "RETURN",
+              "Color"
+            ],
+            "lineageTag": "b80b047f-cfb2-4e8a-8d9a-8026fc46157a"
+          },
+          {
+            "name": "SelectedDimension",
+            "displayFolder": "Resigned\\resigned profile",
+            "expression": [
+              "",
+              "SELECTEDVALUE('Dept-Org Lvl'[Dept-Org Lvl])"
+            ],
+            "lineageTag": "392218c5-cbbe-49e5-a5c4-560a5d92d690"
+          },
+          {
+            "name": "Color Country",
+            "displayFolder": "Resigned\\Resigned Analysis",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Avg Time to Resign] = 1, \"#741d83\",        -- Blue for the highest value",
+              "    [Rank by Avg Time to Resign] = 2, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by Avg Time to Resign] > 2, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")"
+            ],
+            "lineageTag": "0a850cb9-8d39-433e-bf03-4fe3e5812535"
+          },
+          {
+            "name": "Rank by Avg Time to Resign",
+            "displayFolder": "Resigned\\Resigned Analysis",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Country]), -- Replace with your Country column",
+              "    [Avg Time to Resign (Years)],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "b8afd693-5fc1-426c-9b31-ec28eff5276d"
+          },
+          {
+            "name": "Rank by AgeBand",
+            "displayFolder": "Resigned\\Resigned Analysis",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Age Band]), -- Replace with your Country column",
+              "    [Avg Time to Resign (Years)],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "b8efeae3-ff5b-49e5-9a4c-2dafe9d3d27d"
+          },
+          {
+            "name": "Color Ageband",
+            "displayFolder": "Resigned\\Resigned Analysis",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by AgeBand] = 1, \"#741d83\",        -- Blue for the highest value",
+              "    [Rank by AgeBand] = 2, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by AgeBand] > 2, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")"
+            ],
+            "lineageTag": "b25663df-1c57-4204-ae4a-7662d39625aa"
           }
         ],
         "partitions": [
@@ -42152,7 +42396,7 @@
             "source": {
               "expression": [
                 "{",
-                "    (\"Age Banding\", NAMEOF('fact_employee'[Age Banding]), 0),",
+                "    (\"Age Banding\", NAMEOF('fact_employee'[Age Band]), 0),",
                 "    (\"Tenure Banding\", NAMEOF('fact_resigned'[Tenure Banding]), 1)",
                 "}"
               ],
