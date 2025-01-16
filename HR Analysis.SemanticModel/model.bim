@@ -8,11 +8,11 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.138.1452.0 (24.11)"
+        "value": "2.139.1576.0 (24.12)+cf7e324bca3ba1dbdfd6f0ddf9a53321538e996d"
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\",\"Profile of Employee\",\"Information of Age, Assessment Potential, Assessment Performance\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\",\"Profile of Employee\",\"Information of Age, Assessment Potential, Assessment Performance\",\"Only All\",\"Full All\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -21,6 +21,10 @@
       {
         "name": "__TEdtr",
         "value": "1"
+      },
+      {
+        "name": "PBI_RemovedChildren",
+        "value": "[{\"remoteItemId\":{\"foreignKeyRelationship\":{\"fromTableLocalLineageTag\":\"32cefa14-f476-42c8-858e-a58b3f95b380\",\"fromColumnLocalLineageTag\":\"19ec7a4c-f6f0-4d34-b037-9e3a2ac8be9a\",\"toTableLocalLineageTag\":\"17b58dde-a5cd-4358-a7cf-80afe5bb402e\",\"toColumnLocalLineageTag\":\"3e3b28e2-166d-4b18-8862-9d88add70bc0\"}},\"objectType\":\"Relationship\"}]"
       }
     ],
     "culture": "en-US",
@@ -23494,132 +23498,6 @@
                   }
                 ]
               },
-              "v_measure_measure.success_rate_of_project_management": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "_measure",
-                    "ConceptualProperty": "% Total Completion (TC)"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "success rate of project management": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "success rate of assignment management": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.624
-                    }
-                  },
-                  {
-                    "success rate of development management": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.624
-                    }
-                  },
-                  {
-                    "success rate of blueprint management": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.605
-                    }
-                  },
-                  {
-                    "success rate of design management": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.605
-                    }
-                  },
-                  {
-                    "success rate of estimate management": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.605
-                    }
-                  },
-                  {
-                    "success rate of forecast management": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.605
-                    }
-                  },
-                  {
-                    "success rate of initiative management": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.605
-                    }
-                  },
-                  {
-                    "success rate of plan management": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.605
-                    }
-                  },
-                  {
-                    "success rate of task management": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.605
-                    }
-                  },
-                  {
-                    "success degree of project management": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.52
-                    }
-                  },
-                  {
-                    "% Completion (TC)": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
               "v_measure_measure.terminations": {
                 "Definition": {
                   "Binding": {
@@ -23838,238 +23716,6 @@
                   },
                   {
                     "total of kind": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  }
-                ]
-              },
-              "v_measure_measure.total_project_handled": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "_measure",
-                    "ConceptualProperty": "Total Project Handled"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "total project handled": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "total assignment handled": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.762
-                    }
-                  },
-                  {
-                    "total development handled": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.762
-                    }
-                  },
-                  {
-                    "total blueprint handled": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "total design handled": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "total estimate handled": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "total forecast handled": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "total initiative handled": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "total plan handled": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "total task handled": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "aggregate project handled": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.591
-                    }
-                  }
-                ]
-              },
-              "v_measure_measure.total_project_targeted": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "_measure",
-                    "ConceptualProperty": "Total Project Targeted"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "total project targeted": {
-                      "State": "Generated"
-                    }
-                  },
-                  {
-                    "total assignment targeted": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.762
-                    }
-                  },
-                  {
-                    "total development targeted": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.762
-                    }
-                  },
-                  {
-                    "total blueprint targeted": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "total design targeted": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "total estimate targeted": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "total forecast targeted": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "total initiative targeted": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "total plan targeted": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "total task targeted": {
-                      "Source": {
-                        "Agent": "Thesaurus"
-                      },
-                      "State": "Suggested",
-                      "Type": "Noun",
-                      "Weight": 0.739
-                    }
-                  },
-                  {
-                    "aggregate project targeted": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
@@ -38391,6 +38037,13 @@
         "isActive": false,
         "toColumn": "Employee ID",
         "toTable": "dim_employee"
+      },
+      {
+        "name": "e480951b-ab51-2b60-fe8b-938e4a2f7de6",
+        "fromColumn": "Employee ID",
+        "fromTable": "Full All",
+        "toColumn": "Employee ID",
+        "toTable": "fact_employee"
       }
     ],
     "sourceQueryCulture": "en-US",
@@ -40026,19 +39679,6 @@
             "lineageTag": "af1e8ead-d6df-4243-bffd-2656d0c92b57",
             "sourceColumn": "Full Name",
             "summarizeBy": "none"
-          },
-          {
-            "name": "Extra Project",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "d388df0a-9e9c-4c58-83bd-23a9ae1ca571",
-            "sourceColumn": "Extra Project",
-            "summarizeBy": "none"
           }
         ],
         "lineageTag": "daefe653-4dbd-4cff-818a-b13040e6f3d4",
@@ -40066,9 +39706,10 @@
                 "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Extra PRoject\", type text}}),",
                 "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Changed Type1\",{{\"Extra PRoject\", \"Extra Project\"}}),",
                 "    #\"Reordered Columns2\" = Table.ReorderColumns(#\"Renamed Columns2\",{\"Employee ID\", \"Full Name\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Extra Project\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
-                "    #\"Filtered Rows\" = Table.SelectRows(#\"Reordered Columns2\", each true)",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Reordered Columns2\", each true),",
+                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Filtered Rows\",{\"Extra Project\"})",
                 "in",
-                "    #\"Filtered Rows\""
+                "    #\"Removed Columns1\""
               ],
               "type": "m"
             }
@@ -41950,27 +41591,6 @@
             "lineageTag": "f88d1c55-702d-49fb-a306-684d7b447c0a"
           },
           {
-            "name": "Total Project Targeted",
-            "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "[Project Targeted (Exceeds Target)]+[Project Targeted (On Target)]",
-            "formatString": "0",
-            "lineageTag": "bd13dbe4-a6bd-4a59-8efa-12634c95f47e"
-          },
-          {
-            "name": "% Total Completion (TC)",
-            "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "DIVIDE([Total Project Handled],[Total Project Targeted])",
-            "formatString": "0.00%;-0.00%;0.00%",
-            "lineageTag": "4b6fa918-cce3-4414-8c97-2da458962696"
-          },
-          {
-            "name": "Total Project Handled",
-            "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "[Project Handled (Exceeds Target)]+[Project Handled (On Target)]",
-            "formatString": "0",
-            "lineageTag": "7d31e886-499c-43b0-a7e1-7b26369857b3"
-          },
-          {
             "name": "Slope",
             "annotations": [
               {
@@ -42357,59 +41977,73 @@
             "lineageTag": "77d6931f-f5c0-4248-ba41-9ca5cd4e0ed4"
           },
           {
-            "name": "Data Bars (TC)",
+            "name": "Distinct ID (Year)",
             "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "DIVIDE([Total Project Handled],[Total Project Targeted])",
-            "formatString": "0.00%;-0.00%;0.00%",
-            "lineageTag": "22418c73-4214-4e1c-9333-aed7c8426a3b"
-          },
-          {
-            "name": "Distinct Employee ID",
-            "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "DISTINCTCOUNT(fact_performance[Employee ID])",
+            "expression": "DISTINCTCOUNT('Full All'[Employee ID])",
             "formatString": "0",
             "lineageTag": "5eafe119-dff2-4f13-9b84-6e0c4e13098e"
           },
           {
-            "name": "Project Handled (Exceeds Target)",
+            "name": "Total Project Handled",
             "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "CALCULATE(SUM(fact_performance[Projects Handled]), fact_performance[Extra Project] = \"Exceeds Target\")",
+            "expression": "IF(ISFILTERED('Full All'[Performance Review Year]),SUM('Full All'[Projects Handled]),CALCULATE(SUM('Full All'[Projects Handled]),'Full All'[Performance Review Year] = \"All\"))",
             "formatString": "0",
-            "lineageTag": "47074ec7-7e77-4e5f-8038-3bf9db411be4"
+            "lineageTag": "c67d4340-b67b-4de8-b928-6daf5531283b"
           },
           {
-            "name": "Project Handled (On Target)",
+            "name": "Total Project Targeted",
             "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "CALCULATE(SUM(fact_performance[Projects Handled]), fact_performance[Extra Project] = \"On Target\")",
+            "expression": "IF(ISFILTERED('Full All'[Performance Review Year]),SUM('Full All'[Project Target]),CALCULATE(SUM('Full All'[Project Target]),'Full All'[Performance Review Year] = \"All\"))",
             "formatString": "0",
-            "lineageTag": "0e8485ed-2a68-4387-938d-bca6b8bd8e15"
+            "lineageTag": "f33eecc9-b17b-4191-9913-40f8c875c64a"
           },
           {
-            "name": "Project Targeted (Exceeds Target)",
+            "name": "% Total Completion (TC)",
             "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "CALCULATE(SUM(fact_performance[Project Target]), fact_performance[Extra Project] = \"Exceeds Target\")",
-            "formatString": "0",
-            "lineageTag": "e984e290-0c73-45b6-abf7-d636f04261a7"
+            "expression": "DIVIDE([Total Project Handled],[Total Project Targeted])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "a830e95c-bb2e-47ca-95ad-59d9b46b2f47"
           },
           {
-            "name": "Project Targeted (On Target)",
+            "name": "Handled",
             "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "CALCULATE(SUM(fact_performance[Project Target]), fact_performance[Extra Project] = \"On Target\")",
+            "expression": "IF(ISFILTERED('Full All'[Performance Review Year]), SUM('Full All'[Projects Handled]), SUM('Full All'[Projects Handled]) / 2)",
             "formatString": "0",
-            "lineageTag": "0405428c-ceb7-40a7-af00-f65153a7b9ed"
+            "lineageTag": "b6e07127-bda6-4388-ae14-81db1ff9cebd"
           },
           {
-            "name": "Total Employee ID",
+            "name": "Targeted",
             "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "COUNT(fact_performance[Employee ID])",
+            "expression": "IF(ISFILTERED('Full All'[Performance Review Year]), SUM('Full All'[Project Target]), SUM('Full All'[Project Target]) / 2)",
             "formatString": "0",
-            "lineageTag": "97167b63-b252-47f1-bdfc-d547693fbca2"
+            "lineageTag": "7dbc87f2-319d-48a1-9639-dc266be6a855"
           },
           {
             "name": "Extra Project",
             "displayFolder": "Project Handled, Targeted, and Percentage",
-            "expression": "IF([Total Project Handled]>[Total Project Targeted],\"Exceeds Target\", \"On Target\")",
-            "lineageTag": "4d59e16b-efe3-4f24-b572-401dd6461c3e"
+            "expression": "IF([Handled]>[Targeted],\"Exceeds Target\", \"On Target\")",
+            "lineageTag": "e44d5db8-501e-44d6-bd85-50d782a4ac68"
+          },
+          {
+            "name": "Progress Percentage (PP)",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "DIVIDE([Handled],[Targeted])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "b8ae9c96-a13d-42e7-b7de-16088489c2dd"
+          },
+          {
+            "name": "Data Bars (PP)",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "DIVIDE([Handled],[Targeted])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "68b45057-30ce-4c65-aa30-699622f23d78"
+          },
+          {
+            "name": "DisplayData (Distinct ID)",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "IF(ISFILTERED('Full All'[Performance Review Year]),DISTINCTCOUNT('Full All'[Employee ID]),CALCULATE(DISTINCTCOUNT('Full All'[Employee ID]),'Full All'[Performance Review Year] = \"All\"))",
+            "formatString": "0",
+            "lineageTag": "82e68d0d-eae7-4be8-86f2-339c298daf3a"
           }
         ],
         "partitions": [
@@ -46136,6 +45770,308 @@
                 "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"dZBPawIxEMW/ypBThaTo/gnFW6mWHrRdai9l9RDcUYMxkTFL22/fTIRSqoU5zHsz7wczbSveQ++3cN/1Lo7hZnSninogpJiFD5YSRrdZPxrnbFpc7ALFn4mEYiBWshVTQ+4LHgwhEjQUNng62eCNS6uFVmVmzEOHZCKyl5Jn8IuHNzLrPZsMLFPxhKlz26nrzFKrKsef7HbHmvsGzR4apE2gA1JyKwkVM2s48xbobbhgVVrVmfUcYGKi+dXl0z6PSBb9Gru/yVorrf9PNoTqFaMlPKBPT1v2w2GJWl8PrL4B\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Age Category+Banding\" = _t, #\"Assessment Potential Category+Rating\" = _t, #\"Assessment Performance Category+Rating\" = _t])",
                 "in",
                 "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Only All",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "19ec7a4c-f6f0-4d34-b037-9e3a2ac8be9a",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Full Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7c61ebf7-eb33-4fab-ada0-8defeb13a1e3",
+            "sourceColumn": "Full Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Performance Review Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "411ae368-a6c9-4481-871f-58ab7c5e9b14",
+            "sourceColumn": "Performance Review Year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Performance Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "686ab9d9-52ca-4db6-ae26-53f2a3d799dd",
+            "sourceColumn": "Performance Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Projects Handled",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "962dba00-323b-4099-8e95-a132f12b9813",
+            "sourceColumn": "Projects Handled",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Project Target",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a1fb1f34-85c5-42a6-b19c-bc300d3533e4",
+            "sourceColumn": "Project Target",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "32cefa14-f476-42c8-858e-a58b3f95b380",
+        "partitions": [
+          {
+            "name": "Only All",
+            "mode": "import",
+            "queryGroup": "Data\\fact tables",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"), [Delimiter = \",\", Columns = 12, Encoding = 1252, QuoteStyle = QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {",
+                "        {\"Employee ID\", Int64.Type},",
+                "        {\"Performance Review Year\", Int64.Type},",
+                "        {\"Performance Rating\", Int64.Type},",
+                "        {\"Projects Handled\", Int64.Type},",
+                "        {\"Project Target\", Int64.Type},",
+                "        {\"Working Hours\", Int64.Type},",
+                "        {\"Overtime\", Int64.Type},",
+                "        {\"Team Size\", Int64.Type},",
+                "        {\"Potential Rating\", type text},",
+                "        {\"Satisfaction Score\", Int64.Type},",
+                "        {\"Incentive Amount ($)\", type number},",
+                "        {\"Bonus ($)\", type number}",
+                "    }),",
+                "",
+                "    // Group by Employee ID and calculate sum of Projects Handled and Project Target",
+                "    #\"Grouped Rows\" = Table.Group(#\"Changed Type\", {\"Employee ID\"}, {",
+                "        {\"Total Projects Handled\", each List.Sum([Projects Handled]), type number},",
+                "        {\"Total Project Target\", each List.Sum([Project Target]), type number}",
+                "    }),",
+                "",
+                "    // Merge employee details for additional columns",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Grouped Rows\", {\"Employee ID\"}, dim_employee, {\"Employee ID\"}, \"dim_employee\", JoinKind.LeftOuter),",
+                "    #\"Expanded dim_employee\" = Table.ExpandTableColumn(#\"Merged Queries\", \"dim_employee\", {\"Full Name\"}, {\"Full Name\"}),",
+                "",
+                "    // Reorder and clean up columns",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Expanded dim_employee\", {\"Employee ID\", \"Full Name\", \"Total Projects Handled\", \"Total Project Target\"}),",
+                "",
+                "    // Remove Full Name if not needed",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Reordered Columns\", {\"Full Name\"}),",
+                "",
+                "    // Rename columns for clarity",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Columns\", {{\"Total Projects Handled\", \"Projects Handled\"}, {\"Total Project Target\", \"Project Target\"}}),",
+                "",
+                "    // Add a new column \"All Column\" with the value \"All\" for every row",
+                "    #\"Added All Column\" = Table.AddColumn(#\"Renamed Columns\", \"All Column\", each \"All\", type text),",
+                "",
+                "    // Change type for the final columns",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Added All Column\", {{\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Changed Type1\",{{\"All Column\", \"Performance Review Year\"}}),",
+                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Renamed Columns1\",{\"Employee ID\", \"Performance Review Year\", \"Projects Handled\", \"Project Target\"}),",
+                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Reordered Columns1\", {\"Employee ID\"}, #\"9-Box Grid\", {\"Employee ID\"}, \"9-Box Grid\", JoinKind.LeftOuter),",
+                "    #\"Expanded 9-Box Grid\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"9-Box Grid\", {\"Assessment Performance Rating\"}, {\"Assessment Performance Rating\"}),",
+                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Expanded 9-Box Grid\",{{\"Assessment Performance Rating\", \"Performance Rating\"}}),",
+                "    #\"Reordered Columns2\" = Table.ReorderColumns(#\"Renamed Columns2\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\"}),",
+                "    #\"Merged Queries2\" = Table.NestedJoin(#\"Reordered Columns2\", {\"Employee ID\"}, dim_employee, {\"Employee ID\"}, \"dim_employee\", JoinKind.LeftOuter),",
+                "    #\"Expanded dim_employee1\" = Table.ExpandTableColumn(#\"Merged Queries2\", \"dim_employee\", {\"Full Name\"}, {\"Full Name\"}),",
+                "    #\"Reordered Columns3\" = Table.ReorderColumns(#\"Expanded dim_employee1\",{\"Employee ID\", \"Full Name\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\"}),",
+                "    #\"Sorted Rows\" = Table.Sort(#\"Reordered Columns3\",{{\"Employee ID\", Order.Ascending}})",
+                "in",
+                "    #\"Sorted Rows\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Full All",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ffd5205d-5079-4458-82d3-daed8419cfe8",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Full Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0b6567a7-533a-4497-81bd-c622a94e9f91",
+            "sourceColumn": "Full Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Performance Review Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1b095467-373a-49c8-9693-df24f29c1ac7",
+            "sourceColumn": "Performance Review Year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Performance Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "63ccd59e-fa9a-4a9d-8aec-ce48d2d5a1ca",
+            "sourceColumn": "Performance Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Projects Handled",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b610f891-8990-41f1-973f-3316f0e7f536",
+            "sourceColumn": "Projects Handled",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Project Target",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e9eb42e0-3ab6-4563-b949-85a6ee62ced9",
+            "sourceColumn": "Project Target",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "f9ede4c6-a806-466a-af19-40b0058e4176",
+        "partitions": [
+          {
+            "name": "Full All",
+            "mode": "import",
+            "queryGroup": "Data\\fact tables",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Changed Type\", {\"Employee ID\"}, dim_employee, {\"Employee ID\"}, \"dim_employee\", JoinKind.LeftOuter),",
+                "    #\"Expanded dim_employee\" = Table.ExpandTableColumn(#\"Merged Queries\", \"dim_employee\", {\"Full Name\"}, {\"dim_employee.Full Name\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded dim_employee\",{{\"dim_employee.Full Name\", \"Full Name\"}}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Renamed Columns\",{\"Employee ID\", \"Full Name\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
+                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Reordered Columns\", {\"Employee ID\"}, fact_employee, {\"Employee ID\"}, \"fact_employee\", JoinKind.LeftOuter),",
+                "    #\"Expanded fact_employee\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"fact_employee\", {\"Job Title\"}, {\"fact_employee.Job Title\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Expanded fact_employee\",{{\"fact_employee.Job Title\", \"Job Title\"}}),",
+                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Renamed Columns1\",{\"Employee ID\", \"Full Name\", \"Job Title\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Reordered Columns1\",{\"Job Title\"}),",
+                "    #\"Added Custom\" = Table.AddColumn(#\"Removed Columns\", \"Extra PRoject\", each if[Projects Handled]>[Project Target] then \"Exceeds Target\" else \"On Target\"),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Extra PRoject\", type text}}),",
+                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Changed Type1\",{{\"Extra PRoject\", \"Extra Project\"}}),",
+                "    #\"Reordered Columns2\" = Table.ReorderColumns(#\"Renamed Columns2\",{\"Employee ID\", \"Full Name\", \"Performance Review Year\", \"Performance Rating\", \"Projects Handled\", \"Project Target\", \"Extra Project\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Reordered Columns2\", each true),",
+                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Filtered Rows\",{\"Extra Project\", \"Working Hours\", \"Overtime\", \"Team Size\", \"Potential Rating\", \"Satisfaction Score\", \"Incentive Amount ($)\", \"Bonus ($)\"}),",
+                "    #\"Appended Query\" = Table.Combine({#\"Removed Columns1\", #\"Only All\"})",
+                "in",
+                "    #\"Appended Query\""
               ],
               "type": "m"
             }
