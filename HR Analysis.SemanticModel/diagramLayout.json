@@ -357,32 +357,6 @@
         },
         {
           "location": {
-            "x": 6658.0800011786705,
-            "y": 870665.33371504326
-          },
-          "nodeIndex": "resignation_prediction (2)",
-          "nodeLineageTag": "7ad3a1d4-9149-4a01-a0c7-e809a274d395",
-          "size": {
-            "height": 128,
-            "width": 234
-          },
-          "zIndex": 1
-        },
-        {
-          "location": {
-            "x": 6942.0800011786705,
-            "y": 870665.33371504326
-          },
-          "nodeIndex": "resignation_prediction (4)",
-          "nodeLineageTag": "638bb01c-2fef-4704-8136-47e64999c055",
-          "size": {
-            "height": 128,
-            "width": 234
-          },
-          "zIndex": 2
-        },
-        {
-          "location": {
             "x": 7143.8667549869388,
             "y": 860446.79002166423
           },

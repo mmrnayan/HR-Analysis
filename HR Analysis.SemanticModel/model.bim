@@ -12,7 +12,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"resignation_prediction (2)\",\"resignation_prediction (4)\",\"Profile of Employee\",\"Information of Age, Assessment Potential, Assessment Performance\",\"Only All\",\"Full All\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"Profile of Employee\",\"Information of Age, Assessment Potential, Assessment Performance\",\"Only All\",\"Full All\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -38570,6 +38570,19 @@
             "lineageTag": "5621182a-065b-498f-89b7-9f87a8b2a2e6",
             "summarizeBy": "sum",
             "type": "calculated"
+          },
+          {
+            "name": "Actual prediction",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e2bcc800-4af8-43f3-ab85-c544a8d910e8",
+            "sourceColumn": "Actual prediction",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "e6a88bb3-3e63-4601-bbfd-7f75534a6f34",
@@ -38609,9 +38622,10 @@
                 "else if [Age by Year] >= 56 and [Age by Year] <= 66 then \"Experienced Professional\"",
                 "else if [Age by Year] >66 then \"Pre-Retirement\"else \"Out of Range\"),",
                 "    #\"Changed Type5\" = Table.TransformColumnTypes(#\"Added Custom3\",{{\"Age Category\", type text}}),",
-                "    #\"Filtered Rows1\" = Table.SelectRows(#\"Changed Type5\", each true)",
+                "    #\"Filtered Rows1\" = Table.SelectRows(#\"Changed Type5\", each true),",
+                "    #\"Added Conditional Column\" = Table.AddColumn(#\"Filtered Rows1\", \"Actual prediction\", each if [Current Employment Status] = \"Active\" then 0 else 0)",
                 "in",
-                "    #\"Filtered Rows1\""
+                "    #\"Added Conditional Column\""
               ],
               "type": "m"
             }
@@ -43166,9 +43180,11 @@
                 "    #\"Replaced Value1\" = Table.ReplaceValue(#\"Replaced Value\",\"Resigned\",\"1\",Replacer.ReplaceText,{\"Actual Prediction\"}),",
                 "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value1\",{{\"Actual Prediction\", Int64.Type}}),",
                 "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type1\",{\"Full Name\"}),",
-                "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Columns\", {\"Employee ID\"})",
+                "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Columns\", {\"Employee ID\"}),",
+                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Removed Duplicates\", {\"Actual Prediction\"}, fact_employee, {\"Actual prediction\"}, \"fact_employee\", JoinKind.LeftAnti),",
+                "    #\"Removed Columns2\" = Table.RemoveColumns(#\"Merged Queries1\",{\"fact_employee\"})",
                 "in",
-                "    #\"Removed Duplicates\""
+                "    #\"Removed Columns2\""
               ],
               "type": "m"
             }
@@ -44019,126 +44035,6 @@
                 "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Changed Type6\",{{\"Custom\", \"Grid Name\"}})",
                 "in",
                 "    #\"Renamed Columns1\""
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
-        "name": "resignation_prediction (2)",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "Column1",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "411e0346-3dec-4da6-87e6-984ccb764e7f",
-            "sourceColumn": "Column1",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Current Employment Status",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "9dc54c2e-7370-4a41-98ad-7101a5872fc5",
-            "sourceColumn": "Current Employment Status",
-            "summarizeBy": "none"
-          }
-        ],
-        "lineageTag": "7ad3a1d4-9149-4a01-a0c7-e809a274d395",
-        "partitions": [
-          {
-            "name": "resignation_prediction (2)",
-            "mode": "import",
-            "queryGroup": "Data\\other",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" &\"\\final_data.csv\"),[Delimiter=\",\", Columns=45, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
-                "    #\"Run Python script\" = Python.Execute(\"import pandas as pd#(lf)#(lf)# Load the dataset#(lf)df = pd.read_csv('D:\\\\high performance project\\\\project\\\\dataset final\\\\final_data.csv')#(lf)#(lf)# Drop unnecessary columns#(lf)df.drop(#(lf)    [#(lf)        'Employee ID', 'Full Name', 'Date of Birth', 'Hire Date',#(lf)        'Latitude', 'Longitude', 'Incentive Amount ($)', 'Bonus ($)',#(lf)        'Base Salary ($)', 'Annual Leave Entitlement (days)', 'Performance Review Year', 'Potential Rating',#(lf)        'Satisfaction Score Band', 'Team Size Band', 'Performance Rating Band',#(lf)        'Projects Handled Band', 'Project Target Band', 'Working Hours',#(lf)        'Overtime'#(lf)    ],#(lf)    axis=1,#(lf)    inplace=True#(lf))#(lf)#(lf)# Encode categorical variables#(lf)categorical_columns = [#(lf)    'Gender', 'Education Level', 'Department', 'Job Title',#(lf)    'Organization Level', 'Region', 'Country', 'Employment Status',#(lf)    'Employment Type', 'Current Employment Status', 'Ethnicity',#(lf)    'Salary Band', 'Incentive Amount ($) Band', 'Bonus ($) Band',#(lf)    'Working Hours Band', 'Overtime Band', 'Age Band','Tenure Band'#(lf)#(lf)]#(lf)#(lf)for col in categorical_columns:#(lf)    df[col] = pd.factorize(df[col])[0]#(lf)#(lf)# Calculate correlation matrix#(lf)correlation_matrix = df.corr()#(lf)#(lf)# Extract correlations with the target variable#(lf)target_correlations = correlation_matrix['Current Employment Status'].sort_values()#(lf)#(lf)# Separate positive and negative correlations#(lf)negative_correlation = target_correlations[target_correlations < 0]#(lf)positive_correlation = target_correlations[target_correlations > 0]#(lf)#(lf)# Save results to CSV for Power BI#(lf)negative_correlation.to_csv('negative_correlation_factors.csv')#(lf)positive_correlation.to_csv('positive_correlation_factors.csv')#(lf)\",[dataset=Source]),",
-                "    Value = #\"Run Python script\"{3}[Value]",
-                "in",
-                "    Value"
-              ],
-              "type": "m"
-            }
-          }
-        ]
-      },
-      {
-        "name": "resignation_prediction (4)",
-        "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
-            "name": "PBI_ResultType",
-            "value": "Table"
-          }
-        ],
-        "columns": [
-          {
-            "name": "Column1",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "9035a847-1c28-4604-b46a-bc56bd64880a",
-            "sourceColumn": "Column1",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "Current Employment Status",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "e83fc46a-83fb-4abe-b385-5683c27c4db4",
-            "sourceColumn": "Current Employment Status",
-            "summarizeBy": "none"
-          }
-        ],
-        "lineageTag": "638bb01c-2fef-4704-8136-47e64999c055",
-        "partitions": [
-          {
-            "name": "resignation_prediction (4)",
-            "mode": "import",
-            "queryGroup": "Data\\other",
-            "source": {
-              "expression": [
-                "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" &\"\\final_data.csv\"),[Delimiter=\",\", Columns=45, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
-                "    #\"Run Python script\" = Python.Execute(\"import pandas as pd#(lf)#(lf)# Load the dataset#(lf)df = pd.read_csv('D:\\\\high performance project\\\\project\\\\dataset final\\\\final_data.csv')#(lf)#(lf)# Drop unnecessary columns#(lf)df.drop(#(lf)    [#(lf)        'Employee ID', 'Full Name', 'Date of Birth', 'Hire Date',#(lf)        'Latitude', 'Longitude', 'Incentive Amount ($)', 'Bonus ($)',#(lf)        'Base Salary ($)', 'Annual Leave Entitlement (days)', 'Age Band',#(lf)        'Tenure Band', 'Performance Review Year', 'Potential Rating',#(lf)        'Satisfaction Score Band', 'Team Size Band', 'Performance Rating Band',#(lf)        'Projects Handled Band', 'Project Target Band', 'Working Hours',#(lf)        'Overtime'#(lf)    ],#(lf)    axis=1,#(lf)    inplace=True#(lf))#(lf)#(lf)# Encode categorical variables#(lf)categorical_columns = [#(lf)    'Gender', 'Education Level', 'Department', 'Job Title',#(lf)    'Organization Level', 'Region', 'Country', 'Employment Status',#(lf)    'Employment Type', 'Current Employment Status', 'Ethnicity',#(lf)    'Salary Band', 'Incentive Amount ($) Band', 'Bonus ($) Band',#(lf)    'Working Hours Band', 'Overtime Band'#(lf)]#(lf)#(lf)for col in categorical_columns:#(lf)    df[col] = pd.factorize(df[col])[0]#(lf)#(lf)# Calculate correlation matrix#(lf)correlation_matrix = df.corr()#(lf)#(lf)# Extract correlations with the target variable#(lf)target_correlations = correlation_matrix['Current Employment Status'].sort_values()#(lf)#(lf)# Separate positive and negative correlations#(lf)negative_correlation = target_correlations[target_correlations < 0]#(lf)positive_correlation = target_correlations[target_correlations > 0]#(lf)#(lf)# Save results to CSV for Power BI#(lf)negative_correlation.to_csv('negative_correlation_factors.csv')#(lf)positive_correlation.to_csv('positive_correlation_factors.csv')#(lf)\",[dataset=Source]),",
-                "    positive_correlation_factors = #\"Run Python script\"{[Name=\"positive_correlation_factors\"]}[Value]",
-                "in",
-                "    positive_correlation_factors"
               ],
               "type": "m"
             }
