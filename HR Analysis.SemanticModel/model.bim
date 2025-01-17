@@ -17144,6 +17144,15 @@
                   }
                 ]
               },
+              "profile_of_employee.ah__resignation_probability_category": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "AH. Resignation Probability Category"
+                  }
+                },
+                "State": "Generated"
+              },
               "profile_of_employee.b__employee_id__text": {
                 "Definition": {
                   "Binding": {
@@ -17185,6 +17194,60 @@
                     }
                   }
                 ]
+              },
+              "profile_of_employee.i__education_level": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "I. Education Level"
+                  }
+                },
+                "State": "Generated"
+              },
+              "profile_of_employee.k__department": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "K. Department"
+                  }
+                },
+                "State": "Generated"
+              },
+              "profile_of_employee.l__job_title": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "L. Job Title"
+                  }
+                },
+                "State": "Generated"
+              },
+              "profile_of_employee.m__organization_level": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "M. Organization Level"
+                  }
+                },
+                "State": "Generated"
+              },
+              "profile_of_employee.r__employment_type": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "R. Employment Type"
+                  }
+                },
+                "State": "Generated"
+              },
+              "profile_of_employee.s__employment_status": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "S. Employment Status"
+                  }
+                },
+                "State": "Generated"
               },
               "resignation_prediction": {
                 "Definition": {
@@ -20899,7 +20962,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "_measure",
-                    "ConceptualProperty": "Low Risk Employee"
+                    "ConceptualProperty": "Very Low Risk Employee"
                   }
                 },
                 "State": "Generated",
@@ -38006,8 +38069,6 @@
       },
       {
         "name": "6ecd5385-2a1a-02f1-a476-514ee7b84450",
-        "crossFilteringBehavior": "bothDirections",
-        "fromCardinality": "one",
         "fromColumn": "A. Employee ID",
         "fromTable": "Profile of Employee",
         "toColumn": "Employee ID",
@@ -41309,9 +41370,11 @@
             "displayFolder": "Resigned\\Resigned Analysis",
             "expression": [
               "",
+              "VAR SelectedYear = SELECTEDVALUE('date'[Year])",
+              "RETURN",
               "CALCULATE(",
               "    [# of Resignation],",
-              "    YEAR(fact_resigned[Resigned Date]) = YEAR(TODAY()) - 1",
+              "    YEAR(fact_resigned[Resigned Date]) = SelectedYear - 1",
               ")"
             ],
             "formatString": "0",
@@ -41324,9 +41387,8 @@
               "",
               "CALCULATE(",
               "    [# of Resignation],",
-              "    YEAR(fact_resigned[Resigned Date]) = YEAR(TODAY())",
-              ")",
-              ""
+              "    YEAR(fact_resigned[Resigned Date]) = SELECTEDVALUE('date'[Date])",
+              ")"
             ],
             "formatString": "0",
             "lineageTag": "b90eb4a3-8b7b-4391-beba-fe8ba891829b"
@@ -41459,8 +41521,8 @@
             "expression": [
               "",
               "CALCULATE(",
-              "    COUNTROWS(fact_employee),",
-              "    resignation_prediction[Risk Category]=\"Very High\"",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AH. Resignation Probability Category]=\"Very High\" && 'Profile of Employee'[T. Current Employment Status]= \"Active\"",
               ")"
             ],
             "formatString": "0",
@@ -41472,8 +41534,8 @@
             "expression": [
               "",
               "CALCULATE(",
-              "    COUNTROWS(fact_employee),",
-              "    resignation_prediction[Risk Category]=\"High\"",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AH. Resignation Probability Category]=\"High\" && 'Profile of Employee'[T. Current Employment Status]= \"Active\"",
               ")"
             ],
             "formatString": "0",
@@ -41485,21 +41547,21 @@
             "expression": [
               "",
               "CALCULATE(",
-              "    COUNTROWS(fact_employee),",
-              "    resignation_prediction[Risk Category]=\"Moderate\"",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AH. Resignation Probability Category]=\"Moderate\" && 'Profile of Employee'[T. Current Employment Status]= \"Active\"",
               ")"
             ],
             "formatString": "0",
             "lineageTag": "29ea97dd-0d88-420d-818a-a762b1b197ef"
           },
           {
-            "name": "Low Risk Employee",
+            "name": "Very Low Risk Employee",
             "displayFolder": "Resigned\\Attrition Prediction",
             "expression": [
               "",
               "CALCULATE(",
-              "    COUNTROWS(fact_employee),",
-              "    resignation_prediction[Risk Category]=\"Low\"",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AH. Resignation Probability Category]=\"Very Low\" && 'Profile of Employee'[T. Current Employment Status]= \"Active\"",
               ")"
             ],
             "formatString": "0",
@@ -42302,6 +42364,61 @@
               ")"
             ],
             "lineageTag": "b25663df-1c57-4204-ae4a-7662d39625aa"
+          },
+          {
+            "name": "Low Risk Employee",
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AH. Resignation Probability Category]=\"Low\" && 'Profile of Employee'[T. Current Employment Status]= \"Active\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "c22dbaf4-68cb-4c62-83ce-03b096143b8a"
+          },
+          {
+            "name": "Will not Resign Risk Employee",
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AH. Resignation Probability Category]=\"Will not Resign\" && 'Profile of Employee'[T. Current Employment Status]= \"Active\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "32aa643c-3fcd-477b-adb4-5271f4443949"
+          },
+          {
+            "name": "Avg Probability",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": "AVERAGE('Profile of Employee'[AF. Resignation Probability])",
+            "lineageTag": "e80d8f7b-93ba-4667-8a82-e393be59c639"
+          },
+          {
+            "name": "Dynamic Color",
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    MAX(resignation_prediction[Resignation Probability]) < 0.05, \"#44CE1B\",  -- Light Green",
+              "    MAX(resignation_prediction[Resignation Probability]) <= 0.20, \"#BBDB44\", -- Green-Yellow",
+              "    MAX(resignation_prediction[Resignation Probability]) <= 0.40, \"#F7E379\", -- Yellow",
+              "    MAX(resignation_prediction[Resignation Probability]) <= 0.60, \"#F2A134\", -- Orange",
+              "    MAX(resignation_prediction[Resignation Probability]) <= 0.80, \"#FF681E\", -- Red-Orange",
+              "    \"#E51F1F\" -- Bright Red for > 0.80",
+              ")"
+            ],
+            "lineageTag": "1af27032-103e-4a00-a4ab-8fb41193141f"
           }
         ],
         "partitions": [
@@ -43145,7 +43262,8 @@
               "",
               "SWITCH(",
               "    TRUE(),",
-              "    resignation_prediction[Resignation Probability] < .20, \"Very Low\",",
+              "    resignation_prediction[Resignation Probability] < .05, \"Will not resign\",",
+              "    resignation_prediction[Resignation Probability] <= .20, \"Very Low\",",
               "    resignation_prediction[Resignation Probability] <= .4, \"Low\",",
               "    resignation_prediction[Resignation Probability] <= .6, \"Moderate\",",
               "    resignation_prediction[Resignation Probability] <= .8, \"High\",",
@@ -43181,10 +43299,9 @@
                 "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Replaced Value1\",{{\"Actual Prediction\", Int64.Type}}),",
                 "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type1\",{\"Full Name\"}),",
                 "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Columns\", {\"Employee ID\"}),",
-                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Removed Duplicates\", {\"Actual Prediction\"}, fact_employee, {\"Actual prediction\"}, \"fact_employee\", JoinKind.LeftAnti),",
-                "    #\"Removed Columns2\" = Table.RemoveColumns(#\"Merged Queries1\",{\"fact_employee\"})",
+                "    #\"Removed Duplicates1\" = Table.Distinct(#\"Removed Duplicates\", {\"Employee ID\"})",
                 "in",
-                "    #\"Removed Columns2\""
+                "    #\"Removed Duplicates1\""
               ],
               "type": "m"
             }
@@ -45748,13 +45865,10 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
               }
             ],
             "dataType": "double",
+            "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "9bfb1581-f3ee-4631-8756-4d6863244478",
             "sourceColumn": "AF. Resignation Probability",
             "summarizeBy": "sum"
@@ -45828,11 +45942,7 @@
                 "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Changed Type1\",{{\"Employee ID - Copy\", \"Employee ID - Text\"}}),",
                 "    #\"Duplicated Column1\" = Table.DuplicateColumn(#\"Renamed Columns1\", \"Resignation Probability\", \"Resignation Probability - Copy\"),",
                 "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Duplicated Column1\",{{\"Resignation Probability - Copy\", type number}}),",
-                "    #\"Added Custom\" = Table.AddColumn(#\"Changed Type2\", \"Resignation Probability Category\", each if [#\"Resignation Probability - Copy\"] < 0.2 then \"Very Low\" ",
-                "else if [#\"Resignation Probability - Copy\"] <= 0.4 then \"Low\" ",
-                "else if [#\"Resignation Probability - Copy\"] <= 0.6 then \"Moderate\" ",
-                "else if [#\"Resignation Probability - Copy\"] <= 0.8 then \"High\" ",
-                "else \"Very High\"),",
+                "    #\"Added Custom\" = Table.AddColumn(#\"Changed Type2\", \"Resignation Probability Category\", each if [Resignation Probability] < 0.05 then \"Will not Resign\" else if [Resignation Probability] <= 0.2 then \"Very Low\" else if [Resignation Probability] <= 0.4 then \"Low\" else if [Resignation Probability] <= 0.6 then \"Moderate\" else if [Resignation Probability] <= 0.8 then \"High\" else \"Very High\"),",
                 "    #\"Changed Type3\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Resignation Probability Category\", type text}}),",
                 "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type3\", each true),",
                 "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Filtered Rows\",{{\"Employee ID\", \"A. Employee ID\"}, {\"Employee ID - Text\", \"B. Employee ID - Text\"}, {\"Gender\", \"D. Gender\"}, {\"Date of Birth\", \"E. Date of Birth\"}, {\"Full Name\", \"C. Full Name\"}, {\"Age by Year\", \"F. Age by Year\"}, {\"Age Category\", \"G. Age Category\"}, {\"Ethnicity\", \"H. Ethnicity\"}, {\"Education Level\", \"I. Education Level\"}, {\"Hire Date\", \"J. Hire Date\"}, {\"Department\", \"K. Department\"}, {\"Job Title\", \"L. Job Title\"}, {\"Organization Level\", \"M. Organization Level\"}, {\"Region\", \"N. Region\"}, {\"Country\", \"O. Country\"}, {\"Latitude\", \"P. Latitude\"}, {\"Longitude\", \"Q. Longitude\"}, {\"Employment Type\", \"R. Employment Type\"}, {\"Employment Status\", \"S. Employment Status\"}, {\"Current Employment Status\", \"T. Current Employment Status\"}, {\"Base Salary ($)\", \"U. Base Salary ($)\"}, {\"Times Promoted\", \"V. Times Promoted\"}, {\"Annual Leave Entitlement (days)\", \"W. Annual Leave Entitlement (days)\"}, {\"Performance Years\", \"X. Performance Years\"}, {\"Assessment Potential Rating\", \"Y. Assessment Potential Rating\"}, {\"Assessment Potential Category\", \"Z. Assessment Potential Category\"}, {\"Assessment Performance Rating\", \"AA. Assessment Performance Rating\"}, {\"Assessment Performance Category\", \"AB. Assessment Performance Category\"}, {\"9-Box Grid Category\", \"AC. 9-Box Grid Category\"}, {\"9-Box Grid Placement\", \"AD. 9-Box Grid Placement\"}, {\"Grid Name\", \"AE. Grid Name\"}, {\"Resignation Probability\", \"AF. Resignation Probability\"}, {\"Resignation Probability - Copy\", \"AG. Resignation Probability - Copy\"}, {\"Resignation Probability Category\", \"AH. Resignation Probability Category\"}}),",
