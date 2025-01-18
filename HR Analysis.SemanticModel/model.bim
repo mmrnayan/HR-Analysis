@@ -18304,6 +18304,27 @@
                   }
                 ]
               },
+              "table_measure.will_not_resign_risk_employee": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Will not Resign Risk Employee"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Will not Resign Employee": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "v9_Box_Grid9Box_grid": {
                 "Definition": {
                   "Binding": {
@@ -41370,11 +41391,9 @@
             "displayFolder": "Resigned\\Resigned Analysis",
             "expression": [
               "",
-              "VAR SelectedYear = SELECTEDVALUE('date'[Year])",
-              "RETURN",
               "CALCULATE(",
               "    [# of Resignation],",
-              "    YEAR(fact_resigned[Resigned Date]) = SelectedYear - 1",
+              "    DATEADD('date'[Date], -1, YEAR)",
               ")"
             ],
             "formatString": "0",
@@ -42419,6 +42438,116 @@
               ")"
             ],
             "lineageTag": "1af27032-103e-4a00-a4ab-8fb41193141f"
+          },
+          {
+            "name": "Overall Max/Min linechart Invoulantry Attrition",
+            "displayFolder": "Resigned\\Attrition Prediction",
+            "expression": [
+              "",
+              "VAR Resignation=  [Involuntary Attrition Rate]",
+              "Var MaxResignation= ",
+              "MAXX(",
+              "    ALLSELECTED('date'[Year]),",
+              "     [Involuntary Attrition Rate]",
+              ")",
+              "Var MinResignation= ",
+              "MINX(",
+              "    ALLSELECTED('date'[Year]),",
+              "     [Involuntary Attrition Rate]",
+              ")",
+              "",
+              "VAR Result=",
+              "SWITCH(",
+              "    TRUE(),",
+              "    Resignation=MaxResignation, \"RED\",",
+              "    Resignation=MinResignation, \"Green\",",
+              "    \"#751d84\"",
+              ")",
+              "",
+              "RETURN",
+              "Result"
+            ],
+            "lineageTag": "070f825d-1716-4de5-9a57-7893ac6bfb01"
+          },
+          {
+            "name": "Overall Max/Min linechart voulantry Attrition",
+            "displayFolder": "Resigned\\Attrition Analysis",
+            "expression": [
+              "",
+              "VAR Resignation=  [Voluntary Attrition Rate]",
+              "Var MaxResignation= ",
+              "MAXX(",
+              "    ALLSELECTED('date'[Year]),",
+              "     [Voluntary Attrition Rate]",
+              ")",
+              "Var MinResignation= ",
+              "MINX(",
+              "    ALLSELECTED('date'[Year]),",
+              "     [Voluntary Attrition Rate]",
+              ")",
+              "",
+              "VAR Result=",
+              "SWITCH(",
+              "    TRUE(),",
+              "    Resignation=MaxResignation, \"RED\",",
+              "    Resignation=MinResignation, \"Green\",",
+              "    \"#751d84\"",
+              ")",
+              "",
+              "RETURN",
+              "Result"
+            ],
+            "lineageTag": "9850aa4c-752c-4553-a65e-5fda2e786eeb"
+          },
+          {
+            "name": "Overall Max/Min linechart Overll Attrition",
+            "displayFolder": "Resigned\\Attrition Analysis",
+            "expression": [
+              "",
+              "VAR Resignation=  [Overall Attrition Rate]",
+              "Var MaxResignation= ",
+              "MAXX(",
+              "    ALLSELECTED('date'[Year]),",
+              "     [Overall Attrition Rate]",
+              ")",
+              "Var MinResignation= ",
+              "MINX(",
+              "    ALLSELECTED('date'[Year]),",
+              "     [Overall Attrition Rate]",
+              ")",
+              "",
+              "VAR Result=",
+              "SWITCH(",
+              "    TRUE(),",
+              "    Resignation=MaxResignation, \"RED\",",
+              "    Resignation=MinResignation, \"Green\",",
+              "    \"#751d84\"",
+              ")",
+              "",
+              "RETURN",
+              "Result"
+            ],
+            "lineageTag": "a08c8504-424a-4e72-b34f-a064266a493c"
+          },
+          {
+            "name": "Overall Max/Min bar resignation",
+            "displayFolder": "Resigned\\resigned profile",
+            "expression": [
+              "",
+              "VAR Resignation = [# of Resignation]",
+              "VAR Maxresignation= MAX([# of Resignation])",
+              "VAR Result =",
+              "    SWITCH(",
+              "        TRUE(),",
+              "        Resignation = Maxresignation, \"RED\",",
+              "        \"#751d84\"",
+              "    )",
+              "",
+              "RETURN",
+              "Result",
+              ""
+            ],
+            "lineageTag": "4b2793fa-3721-49d4-a695-312283dde964"
           }
         ],
         "partitions": [
