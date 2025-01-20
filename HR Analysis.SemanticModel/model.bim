@@ -8,11 +8,11 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.138.1452.0 (24.11)"
+        "value": "2.139.1678.0 (24.12)+2a034ab280bddf891eb7bb9ebfe6996f9c3a3196"
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"Profile of Employee\",\"Information of Age, Assessment Potential, Assessment Performance\",\"Only All\",\"Full All\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"Profile of Employee\",\"Information of Age, Assessment Potential, Assessment Performance\",\"Only All\",\"Full All\",\"Handled+Targeted+Working Hours+Overtime\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -24,7 +24,7 @@
       },
       {
         "name": "PBI_RemovedChildren",
-        "value": "[{\"remoteItemId\":{\"foreignKeyRelationship\":{\"fromTableLocalLineageTag\":\"32cefa14-f476-42c8-858e-a58b3f95b380\",\"fromColumnLocalLineageTag\":\"19ec7a4c-f6f0-4d34-b037-9e3a2ac8be9a\",\"toTableLocalLineageTag\":\"17b58dde-a5cd-4358-a7cf-80afe5bb402e\",\"toColumnLocalLineageTag\":\"3e3b28e2-166d-4b18-8862-9d88add70bc0\"}},\"objectType\":\"Relationship\"}]"
+        "value": "[{\"remoteItemId\":{\"foreignKeyRelationship\":{\"fromTableLocalLineageTag\":\"32cefa14-f476-42c8-858e-a58b3f95b380\",\"fromColumnLocalLineageTag\":\"19ec7a4c-f6f0-4d34-b037-9e3a2ac8be9a\",\"toTableLocalLineageTag\":\"24b5c18d-87f2-415d-bf65-36f89420f2c8\",\"toColumnLocalLineageTag\":\"094d7d87-5728-40f9-9b65-51e995618d68\"}},\"objectType\":\"Relationship\"},{\"remoteItemId\":{\"foreignKeyRelationship\":{\"fromTableLocalLineageTag\":\"8c2b2965-eeb0-4753-b286-db0c311efcc5\",\"fromColumnLocalLineageTag\":\"7bf82b72-3d23-4b0c-8e8a-307132c874f1\",\"toTableLocalLineageTag\":\"17b58dde-a5cd-4358-a7cf-80afe5bb402e\",\"toColumnLocalLineageTag\":\"3e3b28e2-166d-4b18-8862-9d88add70bc0\"}},\"objectType\":\"Relationship\"}]"
       }
     ],
     "culture": "en-US",
@@ -17218,15 +17218,6 @@
                   "Binding": {
                     "ConceptualEntity": "Profile of Employee",
                     "ConceptualProperty": "L. Job Title"
-                  }
-                },
-                "State": "Generated"
-              },
-              "profile_of_employee.m__organization_level": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Profile of Employee",
-                    "ConceptualProperty": "M. Organization Level"
                   }
                 },
                 "State": "Generated"
@@ -38089,34 +38080,25 @@
         "toTable": "dim_employee"
       },
       {
-        "name": "6ecd5385-2a1a-02f1-a476-514ee7b84450",
-        "fromColumn": "A. Employee ID",
-        "fromTable": "Profile of Employee",
+        "name": "e480951b-ab51-2b60-fe8b-938e4a2f7de6",
+        "fromColumn": "Employee ID",
+        "fromTable": "Full All",
         "toColumn": "Employee ID",
         "toTable": "fact_employee"
       },
       {
-        "name": "b15df32e-39c5-4fc6-8741-50bb129956fd",
+        "name": "2b4657c3-6354-4d78-9d67-e5755efb2642",
         "annotations": [
           {
             "name": "PBI_IsFromSource",
             "value": "FS"
           }
         ],
-        "crossFilteringBehavior": "bothDirections",
-        "fromCardinality": "one",
-        "fromColumn": "A. Employee ID",
-        "fromTable": "Profile of Employee",
+        "fromColumn": "Employee ID",
+        "fromTable": "fact_performance",
         "isActive": false,
         "toColumn": "Employee ID",
-        "toTable": "dim_employee"
-      },
-      {
-        "name": "e480951b-ab51-2b60-fe8b-938e4a2f7de6",
-        "fromColumn": "Employee ID",
-        "fromTable": "Full All",
-        "toColumn": "Employee ID",
-        "toTable": "fact_employee"
+        "toTable": "resignation_prediction"
       }
     ],
     "sourceQueryCulture": "en-US",
@@ -45562,7 +45544,7 @@
             "formatString": "0",
             "lineageTag": "7bf82b72-3d23-4b0c-8e8a-307132c874f1",
             "sourceColumn": "A. Employee ID",
-            "summarizeBy": "none"
+            "summarizeBy": "count"
           },
           {
             "name": "X. Performance  Review Years",
@@ -45692,19 +45674,6 @@
             "summarizeBy": "none"
           },
           {
-            "name": "M. Organization Level",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "ad100ec6-e343-46a0-93c8-abc2840ed661",
-            "sourceColumn": "M. Organization Level",
-            "summarizeBy": "none"
-          },
-          {
             "name": "N. Region",
             "annotations": [
               {
@@ -45729,40 +45698,6 @@
             "lineageTag": "f987ee60-1e9f-438e-90f9-79f00c853dad",
             "sourceColumn": "O. Country",
             "summarizeBy": "none"
-          },
-          {
-            "name": "P. Latitude",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "7ca40c4c-0f00-4084-9ab1-3950d89c1a40",
-            "sourceColumn": "P. Latitude",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "Q. Longitude",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "f21820ce-2a46-4d81-930f-08441b1dd5de",
-            "sourceColumn": "Q. Longitude",
-            "summarizeBy": "sum"
           },
           {
             "name": "S. Employment Status",
@@ -45846,33 +45781,6 @@
             "formatString": "0",
             "lineageTag": "5ec57379-1d94-4dba-a44a-363ca63f5cf2",
             "sourceColumn": "W. Annual Leave Entitlement (days)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "H. Ethnicity",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "7ecd9190-0572-49cd-adab-78984c226d25",
-            "sourceColumn": "H. Ethnicity",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "F. Age by Year",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "bba5e0c6-bd77-4d56-b775-3ae805d665f9",
-            "sourceColumn": "F. Age by Year",
             "summarizeBy": "sum"
           },
           {
@@ -46031,6 +45939,136 @@
             "lineageTag": "dc6400ae-13a9-45a5-b614-91c8e53c9a7e",
             "sourceColumn": "AH. Resignation Probability Category",
             "summarizeBy": "none"
+          },
+          {
+            "name": "M. Organization Level",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "eb8c226e-239b-48bc-9753-bebdc5936804",
+            "sourceColumn": "M. Organization Level",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "P. Latitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "3a000131-a85d-439c-8464-7f67229811a1",
+            "sourceColumn": "P. Latitude",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Q. Longitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "9eb8f5ee-83e6-4329-82c8-0d9947ae6df5",
+            "sourceColumn": "Q. Longitude",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "H. Ethnicity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ddf6c451-9663-438f-81a6-b113a8b4394f",
+            "sourceColumn": "H. Ethnicity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "F. Age by Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1eda6728-402c-45f4-ad88-01547a862515",
+            "sourceColumn": "F. Age by Year",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "AI. Total Projects Handled",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2f5ab426-d091-4713-b616-fe4b75c54371",
+            "sourceColumn": "AI. Total Projects Handled",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "AJ. Total Project Target",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3aa2a10c-23a6-4cce-aa60-78ecb42d13f1",
+            "sourceColumn": "AJ. Total Project Target",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "AK. Total Working Hours",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2cb7e84f-7b70-433f-b778-0ee3cd61ff04",
+            "sourceColumn": "AK. Total Working Hours",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "AL. Total Overtime",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a018045d-e746-4360-8bc7-b0bceb330eed",
+            "sourceColumn": "AL. Total Overtime",
+            "summarizeBy": "sum"
           }
         ],
         "lineageTag": "8c2b2965-eeb0-4753-b286-db0c311efcc5",
@@ -46076,9 +46114,43 @@
                 "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type3\", each true),",
                 "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Filtered Rows\",{{\"Employee ID\", \"A. Employee ID\"}, {\"Employee ID - Text\", \"B. Employee ID - Text\"}, {\"Gender\", \"D. Gender\"}, {\"Date of Birth\", \"E. Date of Birth\"}, {\"Full Name\", \"C. Full Name\"}, {\"Age by Year\", \"F. Age by Year\"}, {\"Age Category\", \"G. Age Category\"}, {\"Ethnicity\", \"H. Ethnicity\"}, {\"Education Level\", \"I. Education Level\"}, {\"Hire Date\", \"J. Hire Date\"}, {\"Department\", \"K. Department\"}, {\"Job Title\", \"L. Job Title\"}, {\"Organization Level\", \"M. Organization Level\"}, {\"Region\", \"N. Region\"}, {\"Country\", \"O. Country\"}, {\"Latitude\", \"P. Latitude\"}, {\"Longitude\", \"Q. Longitude\"}, {\"Employment Type\", \"R. Employment Type\"}, {\"Employment Status\", \"S. Employment Status\"}, {\"Current Employment Status\", \"T. Current Employment Status\"}, {\"Base Salary ($)\", \"U. Base Salary ($)\"}, {\"Times Promoted\", \"V. Times Promoted\"}, {\"Annual Leave Entitlement (days)\", \"W. Annual Leave Entitlement (days)\"}, {\"Performance Years\", \"X. Performance Years\"}, {\"Assessment Potential Rating\", \"Y. Assessment Potential Rating\"}, {\"Assessment Potential Category\", \"Z. Assessment Potential Category\"}, {\"Assessment Performance Rating\", \"AA. Assessment Performance Rating\"}, {\"Assessment Performance Category\", \"AB. Assessment Performance Category\"}, {\"9-Box Grid Category\", \"AC. 9-Box Grid Category\"}, {\"9-Box Grid Placement\", \"AD. 9-Box Grid Placement\"}, {\"Grid Name\", \"AE. Grid Name\"}, {\"Resignation Probability\", \"AF. Resignation Probability\"}, {\"Resignation Probability - Copy\", \"AG. Resignation Probability - Copy\"}, {\"Resignation Probability Category\", \"AH. Resignation Probability Category\"}}),",
                 "    #\"Added Prefix\" = Table.TransformColumns(#\"Renamed Columns2\", {{\"X. Performance Years\", each \"Years: \" & _, type text}}),",
-                "    #\"Renamed Columns3\" = Table.RenameColumns(#\"Added Prefix\",{{\"X. Performance Years\", \"X. Performance  Review Years\"}})",
+                "    #\"Renamed Columns3\" = Table.RenameColumns(#\"Added Prefix\",{{\"X. Performance Years\", \"X. Performance  Review Years\"}}),",
+                "    #\"Merged Queries4\" = Table.NestedJoin(#\"Renamed Columns3\", {\"A. Employee ID\"}, #\"Handled+Targeted+Working Hours+Overtime\", {\"Employee ID\"}, \"Handle+Target+Working Hours+Overtime\", JoinKind.LeftOuter),",
+                "    #\"Expanded Handle+Target+Working Hours+Overtime\" = Table.ExpandTableColumn(#\"Merged Queries4\", \"Handle+Target+Working Hours+Overtime\", {\"Total Projects Handled\", \"Total Project Target\", \"Total Working Hours\", \"Total Overtime\"}, {\"Total Projects Handled\", \"Total Project Target\", \"Total Working Hours\", \"Total Overtime\"}),",
+                "    #\"Changed Type4\" = Table.TransformColumnTypes(#\"Expanded Handle+Target+Working Hours+Overtime\",{{\"Total Projects Handled\", Int64.Type}, {\"Total Project Target\", Int64.Type}, {\"Total Working Hours\", Int64.Type}, {\"Total Overtime\", Int64.Type}}),",
+                "    // Create a blank row with null values for all columns",
+                "    BlankRow = Record.FromList(",
+                "        List.Transform(Table.Schema(#\"Changed Type4\")[Kind], each try null otherwise null), ",
+                "        Table.ColumnNames(#\"Changed Type4\")",
+                "    ),",
+                "",
+                "    // Add the blank row at the top of the table",
+                "    #\"Inserted Blank Row\" = Table.InsertRows(#\"Changed Type4\", 0, {BlankRow}),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Inserted Blank Row\",null,0,Replacer.ReplaceValue,{\"A. Employee ID\"}),",
+                "    #\"Replaced Value1\" = Table.ReplaceValue(#\"Replaced Value\",null,\"0\",Replacer.ReplaceValue,{\"B. Employee ID - Text\"}),",
+                "    #\"Replaced Value2\" = Table.ReplaceValue(#\"Replaced Value1\",null,\"Years: 0000\",Replacer.ReplaceValue,{\"X. Performance  Review Years\"}),",
+                "    #\"Replaced Value3\" = Table.ReplaceValue(#\"Replaced Value2\",null,\"---\",Replacer.ReplaceValue,{\"C. Full Name\"}),",
+                "    #\"Replaced Value4\" = Table.ReplaceValue(#\"Replaced Value3\",null,#date(9999, 12, 31),Replacer.ReplaceValue,{\"E. Date of Birth\"}),",
+                "    #\"Replaced Value5\" = Table.ReplaceValue(#\"Replaced Value4\",null,\"---\",Replacer.ReplaceValue,{\"D. Gender\"}),",
+                "    #\"Replaced Value6\" = Table.ReplaceValue(#\"Replaced Value5\",null,\"---\",Replacer.ReplaceValue,{\"D. Gender\", \"I. Education Level\", \"J. Hire Date\", \"K. Department\", \"L. Job Title\", \"M. Organization Level\", \"N. Region\", \"O. Country\"}),",
+                "    #\"Replaced Value7\" = Table.ReplaceValue(#\"Replaced Value6\",null,0,Replacer.ReplaceValue,{\"P. Latitude\", \"Q. Longitude\"}),",
+                "    #\"Replaced Value8\" = Table.ReplaceValue(#\"Replaced Value7\",null,\"---\",Replacer.ReplaceValue,{\"S. Employment Status\", \"R. Employment Type\"}),",
+                "    #\"Replaced Value9\" = Table.ReplaceValue(#\"Replaced Value8\",null,0,Replacer.ReplaceValue,{\"U. Base Salary ($)\"}),",
+                "    #\"Replaced Value10\" = Table.ReplaceValue(#\"Replaced Value9\",null,0,Replacer.ReplaceValue,{\"V. Times Promoted\"}),",
+                "    #\"Changed Type5\" = Table.TransformColumnTypes(#\"Replaced Value10\",{{\"V. Times Promoted\", Int64.Type}}),",
+                "    #\"Replaced Value11\" = Table.ReplaceValue(#\"Changed Type5\",null,\"---\",Replacer.ReplaceValue,{\"T. Current Employment Status\"}),",
+                "    #\"Replaced Value12\" = Table.ReplaceValue(#\"Replaced Value11\",null,0,Replacer.ReplaceValue,{\"W. Annual Leave Entitlement (days)\"}),",
+                "    #\"Changed Type6\" = Table.TransformColumnTypes(#\"Replaced Value12\",{{\"W. Annual Leave Entitlement (days)\", Int64.Type}, {\"A. Employee ID\", Int64.Type}, {\"J. Hire Date\", type date}}),",
+                "    #\"Replaced Errors\" = Table.ReplaceErrorValues(#\"Changed Type6\", {{\"J. Hire Date\", #date(9999, 12, 31)}}),",
+                "    #\"Replaced Value13\" = Table.ReplaceValue(#\"Replaced Errors\",null,\"---\",Replacer.ReplaceValue,{\"H. Ethnicity\"}),",
+                "    #\"Replaced Value14\" = Table.ReplaceValue(#\"Replaced Value13\",null,0,Replacer.ReplaceValue,{\"F. Age by Year\"}),",
+                "    #\"Changed Type7\" = Table.TransformColumnTypes(#\"Replaced Value14\",{{\"F. Age by Year\", Int64.Type}}),",
+                "    #\"Replaced Value15\" = Table.ReplaceValue(#\"Changed Type7\",null,\"---\",Replacer.ReplaceValue,{\"G. Age Category\", \"Z. Assessment Potential Category\", \"AB. Assessment Performance Category\", \"AC. 9-Box Grid Category\", \"AE. Grid Name\", \"AH. Resignation Probability Category\"}),",
+                "    #\"Replaced Value16\" = Table.ReplaceValue(#\"Replaced Value15\",null,0,Replacer.ReplaceValue,{\"Y. Assessment Potential Rating\", \"AA. Assessment Performance Rating\", \"AD. 9-Box Grid Placement\", \"AF. Resignation Probability\", \"AG. Resignation Probability - Copy\", \"Total Projects Handled\", \"Total Project Target\", \"Total Working Hours\", \"Total Overtime\"}),",
+                "    #\"Changed Type8\" = Table.TransformColumnTypes(#\"Replaced Value16\",{{\"AD. 9-Box Grid Placement\", Int64.Type}, {\"AF. Resignation Probability\", Percentage.Type}, {\"Total Projects Handled\", Int64.Type}, {\"Total Project Target\", Int64.Type}, {\"Total Working Hours\", Int64.Type}, {\"Total Overtime\", Int64.Type}}),",
+                "    #\"Renamed Columns4\" = Table.RenameColumns(#\"Changed Type8\",{{\"Total Projects Handled\", \"AI. Total Projects Handled\"}, {\"Total Project Target\", \"AJ. Total Project Target\"}, {\"Total Working Hours\", \"AK. Total Working Hours\"}, {\"Total Overtime\", \"AL. Total Overtime\"}})",
                 "in",
-                "    #\"Renamed Columns3\""
+                "    #\"Renamed Columns4\""
               ],
               "type": "m"
             }
@@ -46451,6 +46523,137 @@
                 "    #\"Appended Query\" = Table.Combine({#\"Removed Columns1\", #\"Only All\"})",
                 "in",
                 "    #\"Appended Query\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Handled+Targeted+Working Hours+Overtime",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a6bfb50a-6e8c-4171-b120-99b46c0f6965",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Total Projects Handled",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "b94ac16b-f567-4bfb-95c2-ebf536cab00a",
+            "sourceColumn": "Total Projects Handled",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Total Project Target",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "02820d08-0eb6-471f-a067-f35abd328fa1",
+            "sourceColumn": "Total Project Target",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Total Working Hours",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "fd09fbc0-3521-4013-bfc9-f94a91277904",
+            "sourceColumn": "Total Working Hours",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Total Overtime",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "ad8e5789-0799-41f0-9016-d55f2dbe12f1",
+            "sourceColumn": "Total Overtime",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "1ac1a9f0-bfde-4800-accc-dc84f8f92149",
+        "partitions": [
+          {
+            "name": "Handled+Targeted+Working Hours+Overtime",
+            "mode": "import",
+            "queryGroup": "Data\\fact tables",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"), [Delimiter = \",\", Columns = 12, Encoding = 1252, QuoteStyle = QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
+                "    ",
+                "    // Remove unnecessary columns to focus only on relevant data",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\", {\"Employee ID\", \"Projects Handled\", \"Project Target\", \"Working Hours\", \"Overtime\"}),",
+                "",
+                "    // Group by Employee ID and calculate the sums for each column",
+                "    #\"Grouped Rows\" = Table.Group(",
+                "        #\"Removed Other Columns\",",
+                "        {\"Employee ID\"},",
+                "        {",
+                "            {\"Total Projects Handled\", each List.Sum([Projects Handled]), type number},",
+                "            {\"Total Project Target\", each List.Sum([Project Target]), type number},",
+                "            {\"Total Working Hours\", each List.Sum([Working Hours]), type number},",
+                "            {\"Total Overtime\", each List.Sum([Overtime]), type number}",
+                "        }",
+                "    )",
+                "in",
+                "    #\"Grouped Rows\""
               ],
               "type": "m"
             }
