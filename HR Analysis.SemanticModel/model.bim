@@ -18011,7 +18011,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Percentage": {
+                    "7.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -18032,7 +18032,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Percentage": {
+                    "8.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -18053,7 +18053,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Percentage": {
+                    "9.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -18074,7 +18074,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Percentage": {
+                    "1.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -18095,7 +18095,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Percentage": {
+                    "2.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -18116,7 +18116,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Percentage": {
+                    "3.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -18137,7 +18137,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Percentage": {
+                    "4.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -18158,7 +18158,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Percentage": {
+                    "5.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -18179,7 +18179,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Percentage": {
+                    "6.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -20299,7 +20299,7 @@
                     }
                   },
                   {
-                    "Distinct Count": {
+                    "7.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -20331,7 +20331,7 @@
                     }
                   },
                   {
-                    "Distinct Count": {
+                    "8.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -20475,7 +20475,7 @@
                     }
                   },
                   {
-                    "Distinct Count": {
+                    "9.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -21231,7 +21231,7 @@
                     }
                   },
                   {
-                    "Distinct Count": {
+                    "1.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -21263,7 +21263,7 @@
                     }
                   },
                   {
-                    "Distinct Count": {
+                    "2.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -21407,7 +21407,7 @@
                     }
                   },
                   {
-                    "Distinct Count": {
+                    "3.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -21911,7 +21911,7 @@
                     }
                   },
                   {
-                    "Distinct Count": {
+                    "4.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -22019,7 +22019,7 @@
                     }
                   },
                   {
-                    "Distinct Count": {
+                    "5.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -22163,7 +22163,7 @@
                     }
                   },
                   {
-                    "Distinct Count": {
+                    "6.": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
