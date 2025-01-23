@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 264.4444529215495,
-        "y": 1319173.3333333335
+        "x": 2245.8535637702889,
+        "y": 1914131.0968123584
       },
       "nodes": [
         {
           "location": {
             "x": 2249.3004256491868,
-            "y": 1319161.0092340144
+            "y": 1914661.55388994
           },
           "nodeIndex": "date",
           "nodeLineageTag": "afc9da10-b4d1-40a7-b953-63256aeaaca5",
@@ -19,12 +19,12 @@
             "height": 564.99978203272349,
             "width": 234
           },
-          "zIndex": 32
+          "zIndex": 31
         },
         {
           "location": {
             "x": 521.71941313856814,
-            "y": 1319177.8597780303
+            "y": 1914678.4044339559
           },
           "nodeIndex": "dim_department",
           "nodeLineageTag": "c3f47ab2-8172-4af8-be4f-bb5e2174ab1d",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 1075.9683186093434,
-            "y": 1318904.2984132816
+            "y": 1914404.8430692074
           },
           "nodeIndex": "dim_employee",
           "nodeLineageTag": "17b58dde-a5cd-4358-a7cf-80afe5bb402e",
@@ -45,12 +45,12 @@
             "height": 265.81511139715792,
             "width": 234
           },
-          "zIndex": 20
+          "zIndex": 35
         },
         {
           "location": {
             "x": 1551.622887069756,
-            "y": 1319211.7051102326
+            "y": 1914712.2497661584
           },
           "nodeIndex": "dim_jobtitle",
           "nodeLineageTag": "80c626fc-bd47-43e1-8ded-26e9380e64fa",
@@ -58,15 +58,28 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 21
+          "zIndex": 20
         },
         {
           "location": {
             "x": 2330.8522016711831,
-            "y": 1320027.3135508327
+            "y": 1915527.8582067583
           },
           "nodeIndex": "dim_leaveReason",
           "nodeLineageTag": "e21939e8-df7f-442b-8be1-d2d4240124ce",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 2041.9453126243466,
+            "y": 1915551.6736334884
+          },
+          "nodeIndex": "dim_leaveType",
+          "nodeLineageTag": "7bd7c101-5aa8-4a2a-973a-1ca83d7c99f0",
           "size": {
             "height": 104,
             "width": 234
@@ -75,21 +88,8 @@
         },
         {
           "location": {
-            "x": 2041.9453126243466,
-            "y": 1320051.1289775625
-          },
-          "nodeIndex": "dim_leaveType",
-          "nodeLineageTag": "7bd7c101-5aa8-4a2a-973a-1ca83d7c99f0",
-          "size": {
-            "height": 104,
-            "width": 234
-          },
-          "zIndex": 23
-        },
-        {
-          "location": {
             "x": 1062.5254023091536,
-            "y": 1318632.1963822087
+            "y": 1914132.7410381343
           },
           "nodeIndex": "dim_location",
           "nodeLineageTag": "da0152a7-7864-45be-a65e-896f2fb909e5",
@@ -97,12 +97,12 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 34
+          "zIndex": 33
         },
         {
           "location": {
             "x": 99.4112123165715,
-            "y": 1319839.6409735687
+            "y": 1915340.1856294945
           },
           "nodeIndex": "dim_resignationReason",
           "nodeLineageTag": "4e2d9ba2-9896-4b4d-9c44-d2c1150f3ef0",
@@ -110,12 +110,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 24
+          "zIndex": 23
         },
         {
           "location": {
             "x": 1708.0238052025127,
-            "y": 1320494.2238852088
+            "y": 1915994.7685411344
           },
           "nodeIndex": "dim_trainingSession",
           "nodeLineageTag": "f50332de-e497-4b96-b6a1-28823abf69d9",
@@ -123,12 +123,12 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 25
+          "zIndex": 24
         },
         {
           "location": {
             "x": 159.52431675013463,
-            "y": 1320067.7468276292
+            "y": 1915568.291483555
           },
           "nodeIndex": "employee_feedback_survey",
           "nodeLineageTag": "26403e01-807b-4741-af4f-62d5dbbe6240",
@@ -136,12 +136,12 @@
             "height": 375.71422343792096,
             "width": 234
           },
-          "zIndex": 30
+          "zIndex": 29
         },
         {
           "location": {
             "x": 82.2132461917318,
-            "y": 1319541.3803174831
+            "y": 1915041.9249734087
           },
           "nodeIndex": "exit_interview_survey",
           "nodeLineageTag": "962dcf3d-53c0-4da3-90aa-c40ad780fe00",
@@ -149,12 +149,12 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 26
+          "zIndex": 25
         },
         {
           "location": {
             "x": 1110.4233260480671,
-            "y": 1319354.9944120932
+            "y": 1914855.539068019
           },
           "nodeIndex": "fact_employee",
           "nodeLineageTag": "e6a88bb3-3e63-4601-bbfd-7f75534a6f34",
@@ -162,12 +162,12 @@
             "height": 649.62156116922347,
             "width": 234
           },
-          "zIndex": 31
+          "zIndex": 30
         },
         {
           "location": {
             "x": 1743.8682391853511,
-            "y": 1319825.8293172412
+            "y": 1915326.373973167
           },
           "nodeIndex": "fact_leave",
           "nodeLineageTag": "81376d4a-6a2f-4308-9e15-b8d0bb7595f0",
@@ -175,12 +175,12 @@
             "height": 395.75622375972375,
             "width": 234
           },
-          "zIndex": 27
+          "zIndex": 26
         },
         {
           "location": {
             "x": 489.97675763049017,
-            "y": 1320069.0865739523
+            "y": 1915569.6312298779
           },
           "nodeIndex": "fact_performance",
           "nodeLineageTag": "daefe653-4dbd-4cff-818a-b13040e6f3d4",
@@ -188,12 +188,12 @@
             "height": 411.34444623223681,
             "width": 234
           },
-          "zIndex": 28
+          "zIndex": 27
         },
         {
           "location": {
             "x": 615.83222192177743,
-            "y": 1319661.4890318953
+            "y": 1915162.0336878211
           },
           "nodeIndex": "fact_resigned",
           "nodeLineageTag": "e4107b65-c226-4c19-8d5e-3dec769a38c0",
@@ -201,12 +201,12 @@
             "height": 248,
             "width": 234
           },
-          "zIndex": 33
+          "zIndex": 32
         },
         {
           "location": {
             "x": 1452.8001691578443,
-            "y": 1320217.0902009639
+            "y": 1915717.6348568895
           },
           "nodeIndex": "fact_training",
           "nodeLineageTag": "65e70b9a-9f86-4935-b8a0-a5792cdf5d60",
@@ -214,12 +214,12 @@
             "height": 207.17644494502633,
             "width": 234
           },
-          "zIndex": 29
+          "zIndex": 28
         },
         {
           "location": {
             "x": 2532.6389554794514,
-            "y": 1319460.3784820007
+            "y": 1914960.9231379265
           },
           "nodeIndex": "datadictionary",
           "size": {
@@ -231,7 +231,7 @@
         {
           "location": {
             "x": 2734.4257092877197,
-            "y": 1319462.9626561466
+            "y": 1914963.5073120724
           },
           "nodeIndex": "_measure",
           "nodeLineageTag": "1919ba0b-d570-4037-82be-76d2c015881f",
@@ -244,7 +244,7 @@
         {
           "location": {
             "x": 2936.2124630959879,
-            "y": 1319268.6533091941
+            "y": 1914769.19796512
           },
           "nodeIndex": "Age-tenure",
           "size": {
@@ -256,7 +256,7 @@
         {
           "location": {
             "x": 3137.9992169042562,
-            "y": 1319115.374896937
+            "y": 1914615.9195528626
           },
           "nodeIndex": "Dept-Org Lvl",
           "nodeLineageTag": "802f68c5-b81e-4bc2-8be3-4e1575985901",
@@ -269,7 +269,7 @@
         {
           "location": {
             "x": 3339.7859707125244,
-            "y": 1318516.5808509723
+            "y": 1914017.1255068979
           },
           "nodeIndex": "ViewMeasue",
           "size": {
@@ -281,7 +281,7 @@
         {
           "location": {
             "x": 3524.4995537890854,
-            "y": 1317652.1959264418
+            "y": 1913152.7405823674
           },
           "nodeIndex": "View_Relation",
           "nodeLineageTag": "f06e00e9-fcfc-479c-9a3a-d705847e5e3c",
@@ -294,7 +294,7 @@
         {
           "location": {
             "x": 6052.7197397538657,
-            "y": 1314255.0691682284
+            "y": 1909755.6138241543
           },
           "nodeIndex": "f1 score",
           "nodeLineageTag": "93175efc-d45e-4c02-9f61-18dc8dcdd152",
@@ -307,7 +307,7 @@
         {
           "location": {
             "x": 1350.9976213694213,
-            "y": 1318676.2199891529
+            "y": 1914176.7646450787
           },
           "nodeIndex": "resignation_prediction",
           "size": {
@@ -319,7 +319,7 @@
         {
           "location": {
             "x": 727.80391061736691,
-            "y": 1318826.8422909244
+            "y": 1914327.38694685
           },
           "nodeIndex": "Performance-9Box",
           "nodeLineageTag": "24982119-ce64-467b-8d87-4c562ae29bb4",
@@ -332,7 +332,7 @@
         {
           "location": {
             "x": 108.64745011086461,
-            "y": 1319259.7483311151
+            "y": 1914760.2929870407
           },
           "nodeIndex": "9-Box Grid",
           "nodeLineageTag": "2d94ced6-bb2d-49ad-8c9e-6256f5907a6c",
@@ -340,12 +340,12 @@
             "height": 248,
             "width": 234
           },
-          "zIndex": 35
+          "zIndex": 34
         },
         {
           "location": {
             "x": 1655.1329321085427,
-            "y": 1318674.6204671091
+            "y": 1914175.1651230347
           },
           "nodeIndex": "Potential-9Box",
           "nodeLineageTag": "7dddd356-48d6-4348-a5c9-60b754522b8c",
@@ -358,21 +358,9 @@
         {
           "location": {
             "x": 7143.8667549869388,
-            "y": 1292090.5719328555
+            "y": 1887591.1165887811
           },
           "nodeIndex": "Payroll_&_Gap_Analysis",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 3
-        },
-        {
-          "location": {
-            "x": 7345.653508795207,
-            "y": 1268629.1626439004
-          },
-          "nodeIndex": "Basic_Salary_Payroll",
           "size": {
             "height": 200,
             "width": 234
@@ -381,10 +369,10 @@
         },
         {
           "location": {
-            "x": 7547.4402626034753,
-            "y": 1243342.2166350889
+            "x": 7345.653508795207,
+            "y": 1864129.7072998262
           },
-          "nodeIndex": "Leave Analysis",
+          "nodeIndex": "Basic_Salary_Payroll",
           "size": {
             "height": 200,
             "width": 234
@@ -393,10 +381,10 @@
         },
         {
           "location": {
-            "x": 7749.2270164117435,
-            "y": 1204619.8168570683
+            "x": 7547.4402626034753,
+            "y": 1838842.7612910145
           },
-          "nodeIndex": "Date Table For Leave Analysis",
+          "nodeIndex": "Leave Analysis",
           "size": {
             "height": 200,
             "width": 234
@@ -405,8 +393,20 @@
         },
         {
           "location": {
+            "x": 7749.2270164117435,
+            "y": 1800120.3615129939
+          },
+          "nodeIndex": "Date Table For Leave Analysis",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
             "x": 876.97926300146173,
-            "y": 1320070.0763547854
+            "y": 1915570.621010711
           },
           "nodeIndex": "Profile of Employee",
           "nodeLineageTag": "8c2b2965-eeb0-4753-b286-db0c311efcc5",
@@ -414,12 +414,12 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 36
         },
         {
           "location": {
             "x": 7951.0137702200118,
-            "y": 1026160.9546595253
+            "y": 1621661.4993154509
           },
           "nodeIndex": "Information of Age, Assessment Potential, Assessment Performance",
           "size": {
@@ -431,7 +431,7 @@
         {
           "location": {
             "x": 1098.4848484848485,
-            "y": 1320407.9372142216
+            "y": 1915908.4818701474
           },
           "nodeIndex": "Full All",
           "nodeLineageTag": "f9ede4c6-a806-466a-af19-40b0058e4176",
@@ -439,12 +439,12 @@
             "height": 224,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
             "x": 8436.80052402828,
-            "y": 776958.80744014448
+            "y": 1372459.35209607
           },
           "nodeIndex": "Only All",
           "nodeLineageTag": "32cefa14-f476-42c8-858e-a58b3f95b380",
@@ -452,23 +452,49 @@
             "height": 224,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
             "x": 8638.5872778365483,
-            "y": 530741.977369247
+            "y": 1126242.5220251726
           },
           "nodeIndex": "Handled+Targeted+Working Hours+Overtime",
           "size": {
             "height": 200,
             "width": 234
           },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 8840.3740316448166,
+            "y": 990388.66791390663
+          },
+          "nodeIndex": "Gender-Ethincity",
+          "nodeLineageTag": "54e11295-1a8f-47f3-a6bd-76055e8b1737",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 9042.1607854530848,
+            "y": 792944.60628491617
+          },
+          "nodeIndex": "Head-hire-resig-attrition",
+          "nodeLineageTag": "eabbbf36-612c-449c-95ec-c3ae22c609ad",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
           "zIndex": 0
         }
       ],
       "name": "All tables",
-      "zoomValue": 30,
+      "zoomValue": 53.146830000000023,
       "pinKeyFieldsToTop": true,
       "showExtraHeaderInfo": true,
       "hideKeyFieldsWhenCollapsed": false,

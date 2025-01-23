@@ -10380,7 +10380,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "fact_employee",
-                    "ConceptualProperty": "Year"
+                    "ConceptualProperty": "Tenure"
                   }
                 },
                 "SemanticType": "Time",
@@ -17144,6 +17144,27 @@
                   }
                 ]
               },
+              "profile_of_employee.a__employee_id": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "A. Employee ID"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Employee ID": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "profile_of_employee.ah__resignation_probability_category": {
                 "Definition": {
                   "Binding": {
@@ -17955,6 +17976,27 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.714
+                    }
+                  }
+                ]
+              },
+              "table_measure.cumulative_employee_count": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_measure",
+                    "ConceptualProperty": "Cumulative Employee Count"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "# of Employee": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -38539,9 +38581,9 @@
             "dataType": "string",
             "expression": [
               "SWITCH(TRUE(),",
-              "fact_employee[years_at_company]<=1,\"<1 Year\",",
-              "fact_employee[years_at_company]>=1 &&fact_employee[years_at_company]<=3,\"1-3 Years\",",
-              "fact_employee[years_at_company]>=4 && fact_employee[years_at_company]<=7,\"4-6 Years\",\"6+ Years\")"
+              "fact_employee[Tenure]<=1,\"<1 Year\",",
+              "fact_employee[Tenure]>=1 &&fact_employee[Tenure]<=3,\"1-3 Years\",",
+              "fact_employee[Tenure]>=4 && fact_employee[Tenure]<=7,\"4-6 Years\",\"6+ Years\")"
             ],
             "isDataTypeInferred": true,
             "lineageTag": "8391f283-e97a-4c7a-853f-2f0fd91bf7b2",
@@ -38617,16 +38659,16 @@
             "summarizeBy": "none"
           },
           {
-            "name": "Year",
+            "name": "Tenure",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
               }
             ],
-            "dataType": "int64",
+            "dataType": "double",
             "expression": [
-              "YEAR(fact_employee[Hire Date])",
+              "(TODAY()-fact_employee[Hire Date])/365",
               ""
             ],
             "formatString": "0",
@@ -40772,8 +40814,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              }
+            ],
             "dataType": "string",
             "lineageTag": "8af9b0ef-d252-4d3b-b8e5-1f69b457a51c",
+            "sortByColumn": "MonthOfYear",
             "sourceColumn": "MonthName",
             "summarizeBy": "none"
           },
@@ -41133,10 +41181,9 @@
             "displayFolder": "Diversity",
             "expression": [
               "",
-              "COUNTROWS(",
-              "    FILTER(fact_employee, ",
-              "           fact_employee[Gender]=\"Female\")",
-              ")"
+              "CALCULATE(",
+              "    [Cumulative Employee Count],",
+              "    fact_employee[Gender]=\"Female\")"
             ],
             "formatString": "0",
             "lineageTag": "506a76a0-5f3f-4291-87ec-4b28b5f688dd"
@@ -41145,11 +41192,9 @@
             "name": "# of Male",
             "displayFolder": "Diversity",
             "expression": [
-              "",
-              "COUNTROWS(",
-              "    FILTER(fact_employee, ",
-              "           fact_employee[Gender]=\"Male\")",
-              ")"
+              "CALCULATE(",
+              "    [Cumulative Employee Count],",
+              "    fact_employee[Gender]=\"Male\")"
             ],
             "formatString": "0",
             "lineageTag": "926be376-df37-48f0-8df5-15d7db0c829a"
@@ -41158,11 +41203,9 @@
             "name": "# of Other",
             "displayFolder": "Diversity",
             "expression": [
-              "",
-              "COUNTROWS(",
-              "    FILTER(fact_employee, ",
-              "           fact_employee[Gender]=\"Other\")",
-              ")"
+              "CALCULATE(",
+              "    [Cumulative Employee Count],",
+              "    fact_employee[Gender]=\"Other\")"
             ],
             "formatString": "0",
             "lineageTag": "dacf613e-76b6-4526-9827-c849c6617c4f"
@@ -41172,7 +41215,7 @@
             "displayFolder": "Diversity",
             "expression": [
               "",
-              "DIVIDE([# of Female], [# of Employee],0)"
+              "DIVIDE([# of Female], [Cumulative Employee Count],0)"
             ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "209be2b2-f63e-4b3a-b492-ba463925effa"
@@ -41182,7 +41225,7 @@
             "displayFolder": "Diversity",
             "expression": [
               "",
-              "DIVIDE([# of Male], [# of Employee],0)"
+              "DIVIDE([# of Male], [Cumulative Employee Count],0)"
             ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "bbb8b413-088e-4fab-8edb-4c80170b00e9"
@@ -41669,17 +41712,17 @@
             "displayFolder": "Diversity",
             "expression": [
               "",
-              "VAR AvgX = AVERAGEX(ALL(fact_employee[Year]), fact_employee[Year])",
-              "VAR AvgY = AVERAGEX(ALL(fact_employee[Year]), [#female])",
+              "VAR AvgX = AVERAGEX(ALL(fact_employee[Tenure]), fact_employee[Tenure])",
+              "VAR AvgY = AVERAGEX(ALL(fact_employee[Tenure]), [#female])",
               "VAR Numerator = ",
               "    SUMX(",
-              "        ALL(fact_employee[Year]),",
-              "        (fact_employee[Year] - AvgX) * ([%Female] - AvgY)",
+              "        ALL(fact_employee[Tenure]),",
+              "        (fact_employee[Tenure] - AvgX) * ([%Female] - AvgY)",
               "    )",
               "VAR Denominator = ",
               "    SUMX(",
-              "        ALL(fact_employee[Year]),",
-              "        (fact_employee[Year] - AvgX) ^ 2",
+              "        ALL(fact_employee[Tenure]),",
+              "        (fact_employee[Tenure] - AvgX) ^ 2",
               "    )",
               "RETURN",
               "DIVIDE(Numerator, Denominator, 0)",
@@ -41698,8 +41741,8 @@
             "displayFolder": "Diversity",
             "expression": [
               "",
-              "VAR AvgX = AVERAGEX(ALL(fact_employee[Year]), fact_employee[Year])",
-              "VAR AvgY = AVERAGEX(ALL(fact_employee[Year]), [%Female])",
+              "VAR AvgX = AVERAGEX(ALL(fact_employee[Tenure]), fact_employee[Tenure])",
+              "VAR AvgY = AVERAGEX(ALL(fact_employee[Tenure]), [%Female])",
               "VAR SlopeValue = [Slope]",
               "RETURN",
               "AvgY - (SlopeValue * AvgX)",
@@ -41853,8 +41896,7 @@
               "        -12,",
               "        MONTH",
               "    )",
-              ")",
-              ""
+              ")"
             ],
             "formatString": "0",
             "lineageTag": "a426bfa8-99b4-4e5d-a9bf-1981bbc21e59"
@@ -42512,24 +42554,265 @@
             "lineageTag": "a08c8504-424a-4e72-b34f-a064266a493c"
           },
           {
-            "name": "Overall Max/Min bar resignation",
-            "displayFolder": "Resigned\\resigned profile",
+            "name": "Avg Tenure Female",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
             "expression": [
               "",
-              "VAR Resignation = [# of Resignation]",
-              "VAR Maxresignation= MAX([# of Resignation])",
-              "VAR Result =",
-              "    SWITCH(",
-              "        TRUE(),",
-              "        Resignation = Maxresignation, \"RED\",",
-              "        \"#751d84\"",
-              "    )",
-              "",
-              "RETURN",
-              "Result",
-              ""
+              "CALCULATE(",
+              "    AVERAGE(fact_employee[Tenure]),",
+              "    dim_employee[Gender]=\"Female\"",
+              ")"
             ],
-            "lineageTag": "4b2793fa-3721-49d4-a695-312283dde964"
+            "lineageTag": "5c30778f-da46-4afd-be5f-7a911b75a4d3"
+          },
+          {
+            "name": "Avg Tenure Male",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    AVERAGE(fact_employee[Tenure]),",
+              "    dim_employee[Gender]=\"Male\"",
+              ")"
+            ],
+            "lineageTag": "dfee2ba0-78f7-4be6-be87-001ca2cc9bb6"
+          },
+          {
+            "name": "Avg Year Female",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    AVERAGE(fact_employee[Age]),",
+              "    dim_employee[Gender]= \"Female\"",
+              ")"
+            ],
+            "lineageTag": "4521953b-00a1-414a-abad-e33b2457b5b3"
+          },
+          {
+            "name": "Avg Year Male",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    AVERAGE(fact_employee[Age]),",
+              "    dim_employee[Gender]= \"Male\"",
+              ")"
+            ],
+            "lineageTag": "717236cb-4bd7-478b-ab91-09f5ee628786"
+          },
+          {
+            "name": "Avg Salary Female",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    AVERAGE(fact_employee[Base Salary ($)]),",
+              "    dim_employee[Gender]= \"Female\"",
+              ")"
+            ],
+            "lineageTag": "1180c948-eadb-4e68-a039-1750868a0ac8"
+          },
+          {
+            "name": "Avg Salary Male",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    AVERAGE(fact_employee[Base Salary ($)]),",
+              "    dim_employee[Gender]= \"Male\"",
+              ")"
+            ],
+            "lineageTag": "8ccd2fa8-9a0b-40c8-863e-d13b474af72c"
+          },
+          {
+            "name": "Avg Salary Other",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    AVERAGE(fact_employee[Base Salary ($)]),",
+              "    dim_employee[Gender]= \"Other\"",
+              ")"
+            ],
+            "lineageTag": "a8a7e4b5-db31-4969-ad47-5b77a3b109eb"
+          },
+          {
+            "name": "Avg Year Other",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    AVERAGE(fact_employee[Age]),",
+              "    dim_employee[Gender]= \"Other\"",
+              ")"
+            ],
+            "lineageTag": "6043e82b-53f0-4ca8-8e80-514d770f0bf6"
+          },
+          {
+            "name": "Avg Tenure Other",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    AVERAGE(fact_employee[Tenure]),",
+              "    dim_employee[Gender]=\"Other\"",
+              ")"
+            ],
+            "lineageTag": "4d82d98a-4e08-468a-ad07-60b86c1c052f"
+          },
+          {
+            "name": "Hires R12m",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "VAR NumofMonths= 12",
+              "VAR LastSelectedDate= MAX('date'[Date])",
+              "VAR Period= DATESINPERIOD( 'date'[Date], LastSelectedDate, -NumofMonths, MONTH)",
+              "VAR Result= ",
+              "CALCULATE(",
+              "    AVERAGEX(",
+              "        VALUES('date'[MonthnYear]),",
+              "        [Hires]",
+              "    ),",
+              "    Period",
+              ")",
+              "RETURN",
+              "    Result"
+            ],
+            "lineageTag": "97285b05-718a-4492-8e9f-44f3bde5bbb3"
+          },
+          {
+            "name": "Attrition rate R12m",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "VAR NumofMonths= 12",
+              "VAR LastSelectedDate= MAX('date'[Date])",
+              "VAR Period= DATESINPERIOD( 'date'[Date], LastSelectedDate, -NumofMonths, MONTH)",
+              "VAR Result= ",
+              "CALCULATE(",
+              "    AVERAGEX(",
+              "        VALUES('date'[MonthnYear]),",
+              "        [Overall Attrition Rate]",
+              "    ),",
+              "    Period",
+              ")",
+              "RETURN",
+              "    Result"
+            ],
+            "lineageTag": "30c3f85a-7b36-48c7-8180-96ad6db88b4c"
+          },
+          {
+            "name": "Avg Age",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": "AVERAGE(fact_employee[Age])",
+            "lineageTag": "6cec20f4-dd7a-4d83-b110-2c82c529325c"
+          },
+          {
+            "name": "Avg Tenure",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Diversity",
+            "expression": "AVERAGE(fact_employee[Tenure])",
+            "lineageTag": "48be54c3-9c76-4c5e-911f-2305fb416aa1"
+          },
+          {
+            "name": "Cumulative Employee Count",
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(fact_employee),",
+              "    FILTER(",
+              "        ALL('date'),",
+              "        'date'[Date] <= MAX('date'[Date])",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "179c6664-a5e2-40ab-aec2-3a39a2cd62f0"
+          },
+          {
+            "name": "% of Others",
+            "displayFolder": "Diversity",
+            "expression": "DIVIDE([# of Other], [Cumulative Employee Count],0)",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "b589300f-4c38-4c12-b617-c03f740dde60"
           }
         ],
         "partitions": [
@@ -46656,6 +46939,202 @@
                 "    #\"Grouped Rows\""
               ],
               "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Gender-Ethincity",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "34b6315bf5514c2bb41453d1225ab936"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Gender-Ethincity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "0959c58f-4e57-4395-aed6-b0e0d1254784",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Gender-Ethincity Fields"
+                }
+              ]
+            },
+            "sortByColumn": "Gender-Ethincity Order",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Gender-Ethincity Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "a3e12263-7a6e-484e-ac46-b754571d3d8a",
+            "sortByColumn": "Gender-Ethincity Order",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Gender-Ethincity Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "67c67f30-96bd-47a9-be8c-056f811398a2",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "54e11295-1a8f-47f3-a6bd-76055e8b1737",
+        "partitions": [
+          {
+            "name": "Gender-Ethincity",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"Gender\", NAMEOF('dim_employee'[Gender]), 0),",
+                "    (\"Ethnicity\", NAMEOF('dim_employee'[Ethnicity]), 1)",
+                "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Head-hire-resig-attrition",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "4494075724f144cead6595cc4e30b246"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Head-hire-resig-attrition",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "9abc9099-bf5b-4576-ac8d-e49377472b9a",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Head-hire-resig-attrition Fields"
+                }
+              ]
+            },
+            "sortByColumn": "Head-hire-resig-attrition Order",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Head-hire-resig-attrition Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "09a9644c-3365-487a-9225-929b7a3ed306",
+            "sortByColumn": "Head-hire-resig-attrition Order",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Head-hire-resig-attrition Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "1783cda4-9c71-4a40-bedd-4e3f9185507e",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "eabbbf36-612c-449c-95ec-c3ae22c609ad",
+        "partitions": [
+          {
+            "name": "Head-hire-resig-attrition",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"# of Employee\", NAMEOF('_measure'[Cumulative Employee Count]), 0),",
+                "    (\"# of Resignation\", NAMEOF('_measure'[# of Resignation]), 1),",
+                "    (\"Hires\", NAMEOF('_measure'[Hires]), 2),",
+                "    (\"Overall Attrition Rate\", NAMEOF('_measure'[Overall Attrition Rate]), 3)",
+                "}"
+              ],
+              "type": "calculated"
             }
           }
         ]
