@@ -8,7 +8,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.138.1452.0 (24.11)"
+        "value": "2.139.1678.0 (24.12)+2a034ab280bddf891eb7bb9ebfe6996f9c3a3196"
       },
       {
         "name": "PBI_QueryOrder",
@@ -16,7 +16,7 @@
       },
       {
         "name": "PBI_ProTooling",
-        "value": "[\"DevMode\",\"DaxQueryView_Desktop\"]"
+        "value": "[\"DevMode\",\"DaxQueryView_Desktop\",\"TMDLView_Desktop\"]"
       },
       {
         "name": "__TEdtr",

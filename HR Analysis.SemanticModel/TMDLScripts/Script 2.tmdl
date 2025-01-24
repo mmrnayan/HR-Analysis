@@ -1,0 +1,12 @@
+createOrReplace
+
+	ref table dim_location
+
+		column Country
+			dataType: string
+			lineageTag: ddeeceeb-1c87-4a36-9856-d92c61eedf90
+			summarizeBy: none
+			sourceColumn: Country
+
+			annotation SummarizationSetBy = Automatic
+
