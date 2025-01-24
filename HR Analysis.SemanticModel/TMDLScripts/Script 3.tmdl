@@ -1,0 +1,15 @@
+createOrReplace
+
+	ref table _measure
+
+		measure '# of Active Employees' = ```
+				
+				COUNTROWS(
+				    FILTER(fact_employee, 
+				           fact_employee[Current Employment Status]="Active")
+				)
+				```
+			formatString: 0
+			displayFolder: Diversity
+			lineageTag: e8373169-50ef-4d74-9667-691d447c048f
+
