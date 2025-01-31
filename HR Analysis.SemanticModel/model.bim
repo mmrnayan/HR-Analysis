@@ -17990,7 +17990,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "# of Employee": {
+                    "Employee": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -18281,19 +18281,7 @@
                     "ConceptualProperty": "Proportion of Employees by Organization Level"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "Proportion of Employees": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "table_measure.star_performer": {
                 "Definition": {
@@ -19802,6 +19790,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.466
+                    }
+                  },
+                  {
+                    "Certification Acheived": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -24069,6 +24067,16 @@
                       "Type": "Noun",
                       "Weight": 0.489
                     }
+                  },
+                  {
+                    "Training Sessions Completed": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
                   }
                 ]
               },
@@ -24196,6 +24204,16 @@
                       "State": "Suggested",
                       "Type": "Noun",
                       "Weight": 0.5
+                    }
+                  },
+                  {
+                    "Certification Rate": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
                     }
                   }
                 ]
@@ -40133,12 +40151,27 @@
                 "value": "Automatic"
               }
             ],
-            "dataType": "boolean",
+            "dataType": "string",
             "description": "Indicates if certification was achieved post-training",
-            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
             "lineageTag": "8b95a351-f835-40b2-ae7c-7897b64a3b46",
             "sourceColumn": "Certification Achieved",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Training Hours",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "RELATED(dim_trainingSession[Duration Hours])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "ff507fa7-0d16-4f0d-bcfa-ae55133811cf",
+            "summarizeBy": "sum",
+            "type": "calculated"
           }
         ],
         "lineageTag": "65e70b9a-9f86-4935-b8a0-a5792cdf5d60",
@@ -40153,9 +40186,13 @@
                 "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\training_development.csv\"),[Delimiter=\",\", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Training Session ID\", Int64.Type}, {\"Training Completion Date\", type date}, {\"Certification Achieved\", type logical}}),",
-                "    #\"Sorted Rows\" = Table.Sort(#\"Changed Type\",{{\"Training Completion Date\", Order.Ascending}})",
+                "    #\"Sorted Rows\" = Table.Sort(#\"Changed Type\",{{\"Training Completion Date\", Order.Ascending}}),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Sorted Rows\",{{\"Certification Achieved\", type text}}),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Changed Type1\",\"true\",\"Pass\",Replacer.ReplaceText,{\"Certification Achieved\"}),",
+                "    #\"Replaced Value1\" = Table.ReplaceValue(#\"Replaced Value\",\"Pass\",\"Passed\",Replacer.ReplaceText,{\"Certification Achieved\"}),",
+                "    #\"Replaced Value2\" = Table.ReplaceValue(#\"Replaced Value1\",\"false\",\"Failed\",Replacer.ReplaceText,{\"Certification Achieved\"})",
                 "in",
-                "    #\"Sorted Rows\""
+                "    #\"Replaced Value2\""
               ],
               "type": "m"
             }
@@ -41469,12 +41506,14 @@
           },
           {
             "name": "Ethnicity Count",
+            "displayFolder": "Diversity",
             "expression": "COUNTROWS(fact_employee)",
             "formatString": "0",
             "lineageTag": "bcf08fb4-80d4-4f49-9411-cca7f800042e"
           },
           {
             "name": "Hires",
+            "displayFolder": "Diversity",
             "expression": [
               "",
               "CALCULATE(",
@@ -41489,6 +41528,7 @@
           },
           {
             "name": "Terminations",
+            "displayFolder": "Diversity",
             "expression": [
               "",
               "CALCULATE(",
@@ -41603,7 +41643,7 @@
             "displayFolder": "Training",
             "expression": [
               "",
-              "AVERAGE(dim_trainingSession[Duration Hours])"
+              "AVERAGE(fact_training[Training Hours])"
             ],
             "lineageTag": "17feb73f-1034-46f1-8a87-684717b631c9"
           },
@@ -41614,7 +41654,7 @@
               "",
               "CALCULATE(",
               "COUNTROWS(fact_training),",
-              "fact_training[Certification Achieved] = TRUE()",
+              "fact_training[Certification Achieved] = \"Passed\"",
               ")"
             ],
             "formatString": "0",
@@ -41630,13 +41670,7 @@
           {
             "name": "Total Training Hours",
             "displayFolder": "Training",
-            "expression": [
-              "",
-              "SUMX(",
-              "fact_training, ",
-              "RELATED(dim_trainingSession[Duration Hours])",
-              ")"
-            ],
+            "expression": "SUM(fact_training[Training Hours])",
             "formatString": "0",
             "lineageTag": "94aab7a7-a4fa-4046-a133-fd8231e2b429"
           },
@@ -41647,7 +41681,7 @@
               "",
               "CALCULATE(",
               "COUNT(fact_training[Training Session ID]),",
-              "fact_training[Certification Achieved] = TRUE()",
+              "fact_training[Certification Achieved] = \"Passed\"",
               ")"
             ],
             "formatString": "0",
@@ -41674,7 +41708,7 @@
               "",
               "DIVIDE(",
               "    DISTINCTCOUNT(fact_training[Employee ID]) - ",
-              "    CALCULATE(DISTINCTCOUNT(fact_training[Employee ID]), fact_training[Certification Achieved] = TRUE()),",
+              "    CALCULATE(DISTINCTCOUNT(fact_training[Employee ID]), fact_training[Certification Achieved] = \"Passed\"),",
               "    DISTINCTCOUNT(fact_training[Employee ID]),",
               "    0",
               ")"
@@ -41867,6 +41901,7 @@
           },
           {
             "name": "Rolling 12-Month Hires",
+            "displayFolder": "Diversity",
             "expression": [
               "",
               "CALCULATE(",
@@ -41884,6 +41919,7 @@
           },
           {
             "name": "Headcount 12 Months Ago",
+            "displayFolder": "Diversity",
             "expression": [
               "",
               "CALCULATE(",
@@ -41902,6 +41938,7 @@
           },
           {
             "name": "Rolling 12-Month Terminations",
+            "displayFolder": "Diversity",
             "expression": [
               "",
               "CALCULATE(",
@@ -41920,6 +41957,7 @@
           },
           {
             "name": "Attrition Rate (Rolling 12 Months)",
+            "displayFolder": "Diversity",
             "expression": [
               "",
               "DIVIDE(",
@@ -42542,6 +42580,7 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
+            "displayFolder": "Diversity",
             "expression": [
               "",
               "CALCULATE(",
@@ -42559,6 +42598,7 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
+            "displayFolder": "Diversity",
             "expression": [
               "",
               "CALCULATE(",
@@ -42797,6 +42837,7 @@
           },
           {
             "name": "Color Department",
+            "displayFolder": "Diversity",
             "expression": [
               "",
               "SWITCH(",
@@ -42810,6 +42851,7 @@
           },
           {
             "name": "Rank by Department",
+            "displayFolder": "Diversity",
             "expression": [
               "",
               "RANKX(",
@@ -42825,12 +42867,14 @@
           },
           {
             "name": "% Female",
+            "displayFolder": "Diversity",
             "expression": "DIVIDE([# Female], [# of Active Employees])",
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "15bf1381-3d4c-40d0-a64e-7b58449f9841"
           },
           {
             "name": "# Female",
+            "displayFolder": "Diversity",
             "expression": [
               "",
               "CALCULATE(",
@@ -42839,6 +42883,22 @@
             ],
             "formatString": "0",
             "lineageTag": "cdf840f3-6c03-4aa4-983e-411bc6a02927"
+          },
+          {
+            "name": "Cumulative Employees Trained",
+            "displayFolder": "Training",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNT(fact_training[Employee ID]), -- Count of employees trained",
+              "    FILTER(",
+              "        ALL('date'), -- Removes all filters on the date table",
+              "        'date'[Date] <= MAX('date'[Date]) -- Includes only dates up to the current row's date",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "3c63781d-1f2a-4603-9790-f9309a018dae"
           }
         ],
         "partitions": [
@@ -46800,6 +46860,31 @@
             "lineageTag": "e9eb42e0-3ab6-4563-b949-85a6ee62ced9",
             "sourceColumn": "Project Target",
             "summarizeBy": "sum"
+          },
+          {
+            "name": "Performance Band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    'Full All'[Performance Rating] < 2, \"Unsatisfactory\",",
+              "    'Full All'[Performance Rating]  < 3, \"Needs Improvement\",",
+              "    'Full All'[Performance Rating]  < 4, \"Meets Expectations\",",
+              "    'Full All'[Performance Rating]  < 4.5, \"Exceeds Expectations\",",
+              "    \"Outstanding\"",
+              ")"
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "366acf47-342e-4367-a764-97692991b4b3",
+            "summarizeBy": "none",
+            "type": "calculated"
           }
         ],
         "lineageTag": "f9ede4c6-a806-466a-af19-40b0058e4176",
