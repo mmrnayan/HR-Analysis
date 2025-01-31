@@ -8,7 +8,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.138.1452.0 (24.11)"
+        "value": "2.139.2054.0 (24.12)+334ca1c95b576cc53924655643b0d36f21caac55"
       },
       {
         "name": "PBI_QueryOrder",
@@ -38699,39 +38699,20 @@
             "queryGroup": "Data\\fact tables",
             "source": {
               "expression": [
-                "let",
-                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\employee.csv\"),[Delimiter=\",\", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
-                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Full Name\", type text}, {\"Date of Birth\", type date}, {\"Gender\", type text}, {\"Education Level\", type text}, {\"Hire Date\", type date}, {\"Department\", type text}, {\"Job Title\", type text}, {\"Organization Level\", type text}, {\"Region\", type text}, {\"Country\", type text}, {\"Latitude\", type number}, {\"Longitude\", type number}, {\"Employment Status\", type text}, {\"Employment Type\", type text}, {\"Base Salary ($)\", type number}, {\"Times Promoted\", Int64.Type}, {\"Years at Company\", Int64.Type}, {\"Current Employment Status\", type text}, {\"Annual Leave Entitlement (days)\", Int64.Type}, {\"Ethnicity\", type text}}),",
-                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Years at Company\"}),",
-                "    #\"Inserted Year\" = Table.AddColumn(#\"Removed Columns\", \"Year\", each Date.Year([Date of Birth]), Int64.Type),",
-                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Inserted Year\",{{\"Year\", Int64.Type}}),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Changed Type1\",{{\"Year\", \"Birth Year\"}}),",
-                "    #\"Added Custom\" = Table.AddColumn(#\"Renamed Columns\", \"Age\", each Date.Year(DateTime.LocalNow()) - [Birth Year]),",
-                "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Age\", Int64.Type}}),",
-                "    #\"Added Custom1\" = Table.AddColumn(#\"Changed Type2\", \"Age Category\", each if [Age] >= 18 and [Age] <= 25 then \"Young Adult\"",
-                "else if [Age] >= 26 and [Age] <= 35 then \"Early Career Professional\"",
-                "else if [Age] >= 36 and [Age] <= 45 then \"Mid-Career Professional\"",
-                "else if [Age] >= 46 and [Age] <= 55 then \"Experienced Professional\"",
-                "else if [Age] >= 56 and [Age] <= 66 then \"Pre-Retirement\"",
-                "else \"Out of Range\"),",
-                "    #\"Changed Type3\" = Table.TransformColumnTypes(#\"Added Custom1\",{{\"Age Category\", type text}}),",
-                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type3\", each true),",
-                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Filtered Rows\",{{\"Age\", \"Age by year\"}}),",
-                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Renamed Columns1\",{\"Age by year\", \"Age Category\"}),",
-                "    #\"Added Custom2\" = Table.AddColumn(#\"Removed Columns1\", \"Age by Year\", each Date.Year(DateTime.LocalNow()) - [Birth Year]),",
-                "    #\"Changed Type4\" = Table.TransformColumnTypes(#\"Added Custom2\",{{\"Age by Year\", Int64.Type}}),",
-                "    #\"Added Custom3\" = Table.AddColumn(#\"Changed Type4\", \"Age Category\", each if [Age by Year] >= 18 and [Age by Year] <= 25 then \"Young Adult\"",
-                "else if [Age by Year] >= 26 and [Age by Year] <= 35 then \"Early Career Professional\"",
-                "else if [Age by Year] >= 36 and [Age by Year] <= 45 then \"Mid-Career Professional\"",
-                "else if [Age by Year] >= 46 and [Age by Year] <= 55 then \"Senior Professional\"",
-                "else if [Age by Year] >= 56 and [Age by Year] <= 66 then \"Experienced Professional\"",
-                "else if [Age by Year] >66 then \"Pre-Retirement\"else \"Out of Range\"),",
-                "    #\"Changed Type5\" = Table.TransformColumnTypes(#\"Added Custom3\",{{\"Age Category\", type text}}),",
-                "    #\"Filtered Rows1\" = Table.SelectRows(#\"Changed Type5\", each true),",
-                "    #\"Added Conditional Column\" = Table.AddColumn(#\"Filtered Rows1\", \"Actual prediction\", each if [Current Employment Status] = \"Active\" then 0 else 0)",
-                "in",
-                "    #\"Added Conditional Column\""
+                "let Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\employee.csv\"),[Delimiter=\",\", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.None]), #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Full Name\", type text}, {\"Date of Birth\", type date}, {\"Gender\", type text}, {\"Education Level\", type text}, {\"Hire Date\", type date}, {\"Department\", type text}, {\"Job Title\", type text}, {\"Organization Level\", type text}, {\"Region\", type text}, {\"Country\", type text}, {\"Latitude\", type number}, {\"Longitude\", type number}, {\"Employment Status\", type text}, {\"Employment Type\", type text}, {\"Base Salary ($)\", type number}, {\"Times Promoted\", Int64.Type}, {\"Years at Company\", Int64.Type}, {\"Current Employment Status\", type text}, {\"Annual Leave Entitlement (days)\", Int64.Type}, {\"Ethnicity\", type text}}), #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Years at Company\"}), #\"Inserted Year\" = Table.AddColumn(#\"Removed Columns\", \"Year\", each Date.Year([Date of Birth]), Int64.Type), #\"Changed Type1\" = Table.TransformColumnTypes(#\"Inserted Year\",{{\"Year\", Int64.Type}}), #\"Renamed Columns\" = Table.RenameColumns(#\"Changed Type1\",{{\"Year\", \"Birth Year\"}}), #\"Added Custom\" = Table.AddColumn(#\"Renamed Columns\", \"Age\", each Date.Year(DateTime.LocalNow()) - [Birth Year]), #\"Changed Type2\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Age\", Int64.Type}}), #\"Added Custom1\" = Table.AddColumn(#\"Changed Type2\", \"Age Category\", each if [Age] >= 18 and [Age] <= 25 then \"Young Adult\" else if [Age] >= 26 and [Age] <= 35 then \"Early Career Professional\" else if [Age] >= 36 and [Age] <= 45 then \"Mid-Career Professional\" else if [Age] >= 46 and [Age] <= 55 then \"Experienced Professional\" else if [Age] >= 56 and [Age] <= 66 then \"Pre-Retirement\" else \"Out of Range\"), #\"Changed Type3\" = Table.TransformColumnTypes(#\"Added Custom1\",{{\"Age Category\", type text}}), #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type3\", each true), #\"Renamed Columns1\" = Table.RenameColumns(#\"Filtered Rows\",{{\"Age\", \"Age by year\"}}), #\"Removed Columns1\" = Table.RemoveColumns(#\"Renamed Columns1\",{\"Age by year\", \"Age Category\"}), #\"Added Custom2\" = Table.AddColumn(#\"Removed Columns1\", \"Age by Year\", each Date.Year(DateTime.LocalNow()) - [Birth Year]), #\"Changed Type4\" = Table.TransformColumnTypes(#\"Added Custom2\",{{\"Age by Year\", Int64.Type}}), #\"Added Custom3\" = Table.AddColumn(#\"Changed Type4\", \"Age Category\", each if [Age by Year] >= 18 and [Age by Year] <= 25 then \"Young Adult\" else if [Age by Year] >= 26 and [Age by Year] <= 35 then \"Early Career Professional\" else if [Age by Year] >= 36 and [Age by Year] <= 45 then \"Mid-Career Professional\" else if [Age by Year] >= 46 and [Age by Year] <= 55 then \"Senior Professional\" else if [Age by Year] >= 56 and [Age by Year] <= 66 then \"Experienced Professional\" else if [Age by Year] >66 then \"Pre-Retirement\"else \"Out of Range\"), #\"Changed Type5\" = Table.TransformColumnTypes(#\"Added Custom3\",{{\"Age Category\", type text}}), #\"Filtered Rows1\" = Table.SelectRows(#\"Changed Type5\", each true), #\"Added Conditional Column\" = Table.AddColumn(#\"Filtered Rows1\", \"Actual prediction\", each if [Current Employment Status] = \"Active\" then 0 else 0), #\"Replaced Value\" = Table.ReplaceValue(#\"Added Conditional Column\",\"BD-Tribal\",\"Asian\",Replacer.ReplaceText,{\"Ethnicity\"}), #\"Replaced Value1\" = Table.ReplaceValue(#\"Replaced Value\",\"Germany-Other\",\"Mix\",Replacer.ReplaceText,{\"Ethnicity\"}), #\"Replaced Value2\" = Table.ReplaceValue(#\"Replaced Value1\",\"White British\",\"White\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value3\" = Table.ReplaceValue(#\"Replaced Value2\",\"Bengali\",\"Asian\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value4\" = Table.ReplaceValue(#\"Replaced Value3\",\"German\",\"White\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value5\" = Table.ReplaceValue(#\"Replaced Value4\",\"UK-Other\",\"Mixed\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value6\" = Table.ReplaceValue(#\"Replaced Value5\",\"Mix\",\"Mixed\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value7\" = Table.ReplaceValue(#\"Replaced Value6\",\"Dravidian\",\"Asian\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value8\" = Table.ReplaceValue(#\"Replaced Value7\",\"Asian British\",\"Asian\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value9\" = Table.ReplaceValue(#\"Replaced Value8\",\"Mixeded\",\"Mixed\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value10\" = Table.ReplaceValue(#\"Replaced Value9\",\"India-Tribal\",\"Asian\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value11\" = Table.ReplaceValue(#\"Replaced Value10\",\"Indo-Aryan\",\"Asian\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value12\" = Table.ReplaceValue(#\"Replaced Value11\",\"USA-Other\",\"Mixed\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value13\" = Table.ReplaceValue(#\"Replaced Value12\",\"Turkish\",\"White\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value14\" = Table.ReplaceValue(#\"Replaced Value13\",\"Black British\",\"Black\",Replacer.ReplaceText,{\"Ethnicity\"}),",
+                "    #\"Replaced Value15\" = Table.ReplaceValue(#\"Replaced Value14\",\"Hispanic\",\"Mixed\",Replacer.ReplaceText,{\"Ethnicity\"}) in #\"Replaced Value15\""
               ],
               "type": "m"
             }
@@ -42354,7 +42335,7 @@
               "SWITCH(",
               "    TRUE(),",
               "    [Rank by Avg Time to Resign] = 1, \"#741d83\",        -- Blue for the highest value",
-              "    [Rank by Avg Time to Resign] = 2, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by Avg Time to Resign] = 2, \"#A02B93\",        -- Blue for the second-highest value",
               "    [Rank by Avg Time to Resign] > 2, \"#D3D3D3\",        -- Gray for all other values",
               "    \"#FFFF99\"                              -- Default white (optional)",
               ")"
@@ -42401,7 +42382,7 @@
               "SWITCH(",
               "    TRUE(),",
               "    [Rank by AgeBand] = 1, \"#741d83\",        -- Blue for the highest value",
-              "    [Rank by AgeBand] = 2, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by AgeBand] = 2, \"#A02B93\",        -- Blue for the second-highest value",
               "    [Rank by AgeBand] > 2, \"#D3D3D3\",        -- Gray for all other values",
               "    \"#FFFF99\"                              -- Default white (optional)",
               ")"
@@ -42813,6 +42794,51 @@
             "expression": "DIVIDE([# of Other], [Cumulative Employee Count],0)",
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "b589300f-4c38-4c12-b617-c03f740dde60"
+          },
+          {
+            "name": "Color Department",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Department] = 1, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by Department] > 1, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")"
+            ],
+            "lineageTag": "5e4e833f-d12f-45e4-abc6-6f00899d1660"
+          },
+          {
+            "name": "Rank by Department",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(dim_department[Department]),",
+              "    [% Female],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "ff0cbc4f-520b-432f-b2b7-e1318debd897"
+          },
+          {
+            "name": "% Female",
+            "expression": "DIVIDE([# Female], [# of Active Employees])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "15bf1381-3d4c-40d0-a64e-7b58449f9841"
+          },
+          {
+            "name": "# Female",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    [# of Active Employees],",
+              "    fact_employee[Gender]=\"Female\")"
+            ],
+            "formatString": "0",
+            "lineageTag": "cdf840f3-6c03-4aa4-983e-411bc6a02927"
           }
         ],
         "partitions": [
@@ -47128,10 +47154,10 @@
             "source": {
               "expression": [
                 "{",
-                "    (\"# of Employee\", NAMEOF('_measure'[Cumulative Employee Count]), 0),",
-                "    (\"# of Resignation\", NAMEOF('_measure'[# of Resignation]), 1),",
-                "    (\"Hires\", NAMEOF('_measure'[Hires]), 2),",
-                "    (\"Overall Attrition Rate\", NAMEOF('_measure'[Overall Attrition Rate]), 3)",
+                "    (\"Employee\", NAMEOF('_measure'[Cumulative Employee Count]), 0),",
+                "    (\"Hires\", NAMEOF('_measure'[Hires]), 1),",
+                "    (\"Resignation\", NAMEOF('_measure'[# of Resignation]), 2),",
+                "    (\"Attrition Rate\", NAMEOF('_measure'[Overall Attrition Rate]), 3)",
                 "}"
               ],
               "type": "calculated"
