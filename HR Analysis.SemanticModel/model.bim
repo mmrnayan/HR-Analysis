@@ -45187,6 +45187,72 @@
             ],
             "expression": "DIVIDE([Gap_Salary_Variance], [Gap_Predicted_Salary], 0)",
             "lineageTag": "73c592f4-1529-4710-ab63-8d3ac5383792"
+          },
+          {
+            "name": "X - 1a",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "'Payroll_&_Gap_Analysis'[Cal_AVG_Payroll] - [Var_StandardDeviation_Payroll]",
+            "lineageTag": "25ce68c4-e327-44c5-a561-98b3dd5ff35a"
+          },
+          {
+            "name": "X - 2a",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "'Payroll_&_Gap_Analysis'[Cal_AVG_Payroll] - 2 * [Var_StandardDeviation_Payroll]",
+            "lineageTag": "0c809a7b-6913-4325-9e21-e56c851c407b"
+          },
+          {
+            "name": "X - 3a",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "'Payroll_&_Gap_Analysis'[Cal_AVG_Payroll] - 3 * [Var_StandardDeviation_Payroll]",
+            "lineageTag": "56e4f1b5-40fa-4071-93ab-5ed0f249b456"
+          },
+          {
+            "name": "X + 1a",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "'Payroll_&_Gap_Analysis'[Cal_AVG_Payroll] + [Var_StandardDeviation_Payroll]",
+            "lineageTag": "e69e2f2b-128e-4a91-a7cd-38cbe7424213"
+          },
+          {
+            "name": "X + 2a",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "'Payroll_&_Gap_Analysis'[Cal_AVG_Payroll] + 2 * [Var_StandardDeviation_Payroll]",
+            "lineageTag": "59eab4ec-2946-4ce3-ae26-224a11ddb53e"
+          },
+          {
+            "name": "X + 3a",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "'Payroll_&_Gap_Analysis'[Cal_AVG_Payroll] + 3 * [Var_StandardDeviation_Payroll]",
+            "lineageTag": "a0be21b9-5402-47e4-9092-f0f1e17e2823"
           }
         ],
         "partitions": [
@@ -47244,6 +47310,66 @@
                 "    (\"Resignation\", NAMEOF('_measure'[# of Resignation]), 2),",
                 "    (\"Attrition Rate\", NAMEOF('_measure'[Overall Attrition Rate]), 3)",
                 "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Normal_Distribution",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "3b72c99aa6024045bc5e1ef001abf5f5"
+          }
+        ],
+        "columns": [
+          {
+            "name": "X",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "6d689568-a0da-47db-a9a3-a3b044ef8155",
+            "sourceColumn": "[X]",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "93b7455f-b12c-4e2e-95eb-36af9327b47e",
+        "measures": [
+          {
+            "name": "Normal_Distribution_PDF",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "    EXP( ",
+              "        -1 * POWER( ( VALUES(Normal_Distribution[X]) - [Cal_AVG_Payroll] ) / [Var_StandardDeviation_Payroll], 2 ) / 2 ",
+              "    ) / ",
+              "    ( SQRT( 2 * PI() ) * [Var_StandardDeviation_Payroll] )"
+            ],
+            "lineageTag": "bb712a18-b31a-433a-9c68-02567c488a99"
+          },
+          {
+            "name": "Z",
+            "expression": "Normal_Distribution[X]-[Cal_AVG_Payroll]/[Var_StandardDeviation_Payroll]",
+            "lineageTag": "c9c3e162-6135-4805-b5fc-1e3b09aeeee2"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Normal_Distribution",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "",
+                "    VAR Minvalue = FLOOR([X - 3a],1)",
+                "    VAR MaxValue = CEILING([X + 3a],1)",
+                "    RETURN SELECTCOLUMNS(CALENDAR(Minvalue,MaxValue),\"X\",INT([Date]))"
               ],
               "type": "calculated"
             }
