@@ -42899,6 +42899,22 @@
             ],
             "formatString": "0",
             "lineageTag": "3c63781d-1f2a-4603-9790-f9309a018dae"
+          },
+          {
+            "name": "Rank by Avg Tenure to org level",
+            "displayFolder": "Diversity",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Organization Level]), -- Replace with your Country column",
+              "    [Avg Tenure],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "477d472e-f9a2-4e83-80ad-99178188ee82"
           }
         ],
         "partitions": [
@@ -45787,24 +45803,14 @@
           },
           {
             "name": "Absenteeism Rate",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
             "expression": "DIVIDE(SUM('fact_leave'[Days on Leave]),(1800*260),0)",
+            "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "fd645021-5c2b-4a02-9609-a0065f3f74ce"
           },
           {
             "name": "Availability Rate",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "expression": "100-[Absenteeism Rate]",
+            "expression": "1-[Absenteeism Rate]",
+            "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "09781289-0726-4a10-8581-1cb81177a675"
           },
           {
@@ -45873,16 +45879,6 @@
             "lineageTag": "5627e86f-f734-4b4d-b670-12dc9a32ac66"
           },
           {
-            "name": "Measure",
-            "annotations": [
-              {
-                "name": "43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c",
-                "value": "True"
-              }
-            ],
-            "lineageTag": "af039c24-9900-449a-8407-c35875841e0d"
-          },
-          {
             "name": "Risk Of Burnout",
             "expression": "IF(SUM('fact_leave'[Days on Leave])<5,1,0)",
             "formatString": "0",
@@ -45898,6 +45894,223 @@
             ],
             "expression": "AVERAGE(fact_leave[Performance Rating])",
             "lineageTag": "7cf5c62d-78c7-4232-bb6f-237526f4e38f"
+          },
+          {
+            "name": "Rank by age-leave",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Age Band]),",
+              "    [Avg days on leave],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "e614a322-b8e0-4b33-b626-d29582a01768"
+          },
+          {
+            "name": "Color age-leave",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by age-leave] = 1, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by age-leave] > 1, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")"
+            ],
+            "lineageTag": "d2fcf1e1-b8b7-4c90-957d-81871018bfb2"
+          },
+          {
+            "name": "Rank by dept-lve-cost",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Department]),",
+              "    [Avģ Annual Remaining Cost],,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "6e0edb10-84d8-409c-9704-36cd807fabde"
+          },
+          {
+            "name": "Color dept-lve-cost",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by dept-lve-cost] = 1, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by dept-lve-cost] > 1, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")"
+            ],
+            "lineageTag": "c54e8da0-4a23-45c3-9fbe-6fce489da510"
+          },
+          {
+            "name": "Avģ Annual Remaining Cost",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(fact_leave[Total Cost Of Remaining Annual Leave])",
+            "lineageTag": "307557f5-5391-4c5d-bb06-b334121b19ca"
+          },
+          {
+            "name": "Overall Max/Min linechart Leave days",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR Resignation=  [Average Total Leave Days]",
+              "Var MaxResignation= ",
+              "MAXX(",
+              "    ALLSELECTED('date'[MonthName]),",
+              "    [Average Total Leave Days]",
+              ")",
+              "Var MinResignation= ",
+              "MINX(",
+              "    ALLSELECTED('date'[MonthName]),",
+              "    [Average Total Leave Days]",
+              ")",
+              "",
+              "VAR Result=",
+              "SWITCH(",
+              "    TRUE(),",
+              "    Resignation=MaxResignation, \"RED\",",
+              "    Resignation=MinResignation, \"Green\",",
+              "    \"#751d84\"",
+              ")",
+              "",
+              "RETURN",
+              "Resignation",
+              "--Result"
+            ],
+            "lineageTag": "843b9530-1e9e-43e2-927e-b43f9bfacbc9"
+          },
+          {
+            "name": "Rank by Absenteeism-Department",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Department]),",
+              "    [Absenteeism Rate],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "ea4b7ebd-6033-4a39-9182-ee2856444066"
+          },
+          {
+            "name": "Color Absenteeism-Department",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Absenteeism-Department] = 1, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by Absenteeism-Department] > 1, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")"
+            ],
+            "lineageTag": "870d6345-c256-4523-b411-ca2e8e9cebcd"
+          },
+          {
+            "name": "Rank by dept-lvetype-cost",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Department]),",
+              "    [Leave Type Cost],,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "4a60b9a7-002d-4a04-a2c2-cb3d034ab773"
+          },
+          {
+            "name": "Color dept-lvetype-cost",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by dept-lvetype-cost] = 1, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by dept-lvetype-cost] > 1, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")"
+            ],
+            "lineageTag": "dcb04c08-9c82-4fd6-98f7-f0da87410f1b"
+          },
+          {
+            "name": "Rank by year/total lve days",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALL('date'[Year]), -- Use ALL instead of ALLSELECTED",
+              "    [Total Leave Days],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "b4f45589-6d4e-455b-b33b-f9a72e90bf02"
+          },
+          {
+            "name": "Color year/lve days",
+            "expression": [
+              "",
+              "Var MaxLve= MAXX(ALL('date'[Year]), [Rank by year/total lve days])",
+              "RETURN",
+              "MaxLve",
+              "--SWITCH(",
+              "--    TRUE(),",
+              "--    [Rank by dept-lvetype-cost] = 1, \"#741d83\",        -- Blue for the second-highest value",
+              "----    [Rank by dept-lvetype-cost] > 1, \"#D3D3D3\",        -- Gray for all other values",
+              " --   \"#FFFF99\"                              -- Default white (optional)",
+              "--)"
+            ],
+            "formatString": "0",
+            "lineageTag": "dfc2770e-7085-4145-bee5-bf9833e1ecb1"
+          },
+          {
+            "name": "Color Absenteeism-Ageband",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Absenteeism-Ageband] = 1, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by Absenteeism-Ageband] > 1, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")"
+            ],
+            "lineageTag": "b4fe5ee8-d5aa-4d7f-8436-879e7cc64bc3"
+          },
+          {
+            "name": "Rank by Absenteeism-Ageband",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Age Band]),",
+              "    [Absenteeism Rate],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "f1085921-a582-45a6-8899-070e754b45cf"
           }
         ],
         "partitions": [
