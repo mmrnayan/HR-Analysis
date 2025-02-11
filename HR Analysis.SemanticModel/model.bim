@@ -45798,7 +45798,7 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
-            "expression": "AVERAGE(fact_leave[Days on Leave])",
+            "expression": "AVERAGE(fact_leave[Days on Leave]) ",
             "lineageTag": "8584dc83-31e1-407d-8520-53089de2d0c8"
           },
           {
@@ -46111,6 +46111,100 @@
             ],
             "formatString": "0",
             "lineageTag": "f1085921-a582-45a6-8899-070e754b45cf"
+          },
+          {
+            "name": "Rank by Absenteeism-org",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_employee[Organization Level]),",
+              "    [Absenteeism Rate],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "8e627125-efd9-4964-92fa-da74d741f386"
+          },
+          {
+            "name": "Color Absenteeism-org",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Absenteeism-org] = 1, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by Absenteeism-org] > 1, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")"
+            ],
+            "lineageTag": "bbf24f46-22ec-443a-a92b-d5f27e9c9cbb"
+          },
+          {
+            "name": "Color aval-Ageband",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by aval-Ageband] = 1, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by aval-Ageband] > 1, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")"
+            ],
+            "lineageTag": "9398726a-4179-4cb1-9331-565c0c545d94"
+          },
+          {
+            "name": "Rank by aval-Ageband",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_resigned[Tenure Banding]),",
+              "    [Availability Rate],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "ae52e9e3-55e5-4e2f-9b3d-fb6c9b41d5e2"
+          },
+          {
+            "name": "Rank by tenure-leave",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED(fact_resigned[Tenure Banding]),",
+              "    [Avg days on leave],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "f8293124-d1bc-4af6-9428-d7c169e5ca57"
+          },
+          {
+            "name": "Color Dynamic",
+            "expression": [
+              "",
+              "VAR SelectedMetric = SELECTEDVALUE('Age-tenure'[Age-tenure]) -- Gets the selected parameter",
+              "VAR RankValue = ",
+              "    SWITCH(",
+              "        SelectedMetric,",
+              "        \"Age Banding\", [Rank by age-leave],  -- Use Rank by age-leave when Age Banding is selected",
+              "        \"Tenure Banding\", [Rank by tenure-leave] -- Use Rank by tenure-leave when Tenure Banding is selected",
+              "    )",
+              "",
+              "RETURN",
+              "SWITCH(",
+              "    TRUE(),",
+              "    RankValue = 1, \"#741d83\",  -- Purple for the highest value",
+              "    RankValue > 1, \"#D3D3D3\",  -- Gray for all others",
+              "    \"#FFFF99\"  -- Default white (optional)",
+              ")",
+              ""
+            ],
+            "lineageTag": "da98693d-5cb9-4c47-9e2e-97d123d20f58"
           }
         ],
         "partitions": [
