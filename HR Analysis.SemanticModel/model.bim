@@ -10798,19 +10798,7 @@
                     "ConceptualProperty": "AgeRange"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "Age Range": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "fact_leave.cost_of_leave": {
                 "Definition": {
@@ -15022,19 +15010,7 @@
                     "ConceptualProperty": "Total Leave Liability"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "Annual Leave Liability": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "performance9Box": {
                 "Definition": {
@@ -38159,6 +38135,13 @@
         "isActive": false,
         "toColumn": "Employee ID",
         "toTable": "resignation_prediction"
+      },
+      {
+        "name": "698a9b43-11c5-9766-75b8-9745e687c675",
+        "fromColumn": "A. Employee ID",
+        "fromTable": "Profile of Employee",
+        "toColumn": "Employee ID",
+        "toTable": "fact_employee"
       }
     ],
     "sourceQueryCulture": "en-US",
@@ -42915,6 +42898,333 @@
             ],
             "formatString": "0",
             "lineageTag": "477d472e-f9a2-4e83-80ad-99178188ee82"
+          },
+          {
+            "name": "Selected Name",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID = SELECTEDVALUE('Full All'[Employee ID]) ",
+              "",
+              "RETURN ",
+              "IF(",
+              "    NOT(ISBLANK(SelectedEmployeeID)), ",
+              "    LOOKUPVALUE('Profile of Employee'[C. Full Name], 'Profile of Employee'[A. Employee ID], SelectedEmployeeID),",
+              "    LOOKUPVALUE('Profile of Employee'[C. Full Name], 'Profile of Employee'[A. Employee ID], MAX('Profile of Employee'[A. Employee ID]))",
+              ")"
+            ],
+            "lineageTag": "fce79da7-bb81-485c-8485-e5ef473377a7"
+          },
+          {
+            "name": "1. Country: ",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID = SELECTEDVALUE('Full All'[Employee ID]) ",
+              "",
+              "RETURN ",
+              "IF(",
+              "    NOT(ISBLANK(SelectedEmployeeID)), ",
+              "    LOOKUPVALUE('Profile of Employee'[O. Country], 'Profile of Employee'[A. Employee ID], SelectedEmployeeID),",
+              "    LOOKUPVALUE('Profile of Employee'[O. Country], 'Profile of Employee'[A. Employee ID], MAX('Profile of Employee'[A. Employee ID]))",
+              ")"
+            ],
+            "lineageTag": "ed30f7cb-8770-456f-8b5f-c27269269b11"
+          },
+          {
+            "name": "2. Education Level:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID = SELECTEDVALUE('Full All'[Employee ID]) ",
+              "",
+              "RETURN ",
+              "IF(",
+              "    NOT(ISBLANK(SelectedEmployeeID)), ",
+              "    LOOKUPVALUE('Profile of Employee'[I. Education Level], 'Profile of Employee'[A. Employee ID], SelectedEmployeeID),",
+              "    LOOKUPVALUE('Profile of Employee'[I. Education Level], 'Profile of Employee'[A. Employee ID], MAX('Profile of Employee'[A. Employee ID]))",
+              ")"
+            ],
+            "lineageTag": "81e29953-e1d3-409b-8c1c-8c91f0207375"
+          },
+          {
+            "name": "3. Job Title:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID = SELECTEDVALUE('Full All'[Employee ID]) ",
+              "",
+              "RETURN ",
+              "IF(",
+              "    NOT(ISBLANK(SelectedEmployeeID)), ",
+              "    LOOKUPVALUE('Profile of Employee'[L. Job Title], 'Profile of Employee'[A. Employee ID], SelectedEmployeeID),",
+              "    LOOKUPVALUE('Profile of Employee'[L. Job Title], 'Profile of Employee'[A. Employee ID], MAX('Profile of Employee'[A. Employee ID]))",
+              ")"
+            ],
+            "lineageTag": "901fc2e1-6b94-4eb8-bd87-027e80630a31"
+          },
+          {
+            "name": "4. Department:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID = SELECTEDVALUE('Full All'[Employee ID]) ",
+              "",
+              "RETURN ",
+              "IF(",
+              "    NOT(ISBLANK(SelectedEmployeeID)), ",
+              "    LOOKUPVALUE('Profile of Employee'[K. Department], 'Profile of Employee'[A. Employee ID], SelectedEmployeeID),",
+              "    LOOKUPVALUE('Profile of Employee'[K. Department], 'Profile of Employee'[A. Employee ID], MAX('Profile of Employee'[A. Employee ID]))",
+              ")"
+            ],
+            "lineageTag": "6a41ba48-5fdc-41d9-aafb-355788243780"
+          },
+          {
+            "name": "5. Org Level:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[M. Organization Level],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[M. Organization Level],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "bbcca873-c3b3-49cc-adf4-8a41ba207b5d"
+          },
+          {
+            "name": "6. Total Working Hours:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[AK. Total Working Hours],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[AK. Total Working Hours],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "3ed4d3ef-0f9e-477a-be30-b74640b5739c"
+          },
+          {
+            "name": "7. Total Overtime:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[AL. Total Overtime],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[AL. Total Overtime],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "208695b8-4d19-42cc-8be2-c0b5e659a348"
+          },
+          {
+            "name": "8. Annual Leave Entitlement (days):",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[W. Annual Leave Entitlement (days)],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[W. Annual Leave Entitlement (days)],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "af63a679-efc9-4381-b8a7-6f24c22b175a"
+          },
+          {
+            "name": "9. No of times Promoted:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[V. Times Promoted],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[V. Times Promoted],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "8547bdf6-1201-49fe-b429-487d83f73890"
+          },
+          {
+            "name": "10. Base Salary:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[U. Base Salary ($)],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[U. Base Salary ($)],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "0cf86611-f678-4f9c-8e78-3ed9cb77eeae"
+          },
+          {
+            "name": "11. Current Employment Status:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[T. Current Employment Status],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[T. Current Employment Status],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "cc1bc934-6cdb-4b84-8192-4c7d138a5352"
+          },
+          {
+            "name": "12. Avg Assessment Performance Category:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[AB. Assessment Performance Category],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[AB. Assessment Performance Category],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "4e96c020-85e9-4b41-8cfa-93775abb8ab4"
+          },
+          {
+            "name": "13. 9-Box Grid Category:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[AC. 9-Box Grid Category],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[AC. 9-Box Grid Category],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "2c122085-d308-47e6-8295-b35c19f11e96"
+          },
+          {
+            "name": "14. Grid Name:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[AE. Grid Name],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[AE. Grid Name],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "a201ab8c-1381-43b2-9eec-78ef9bba8ea8"
+          },
+          {
+            "name": "16. Resignation Probability:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[AL. Total Overtime],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[AL. Total Overtime],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "69d4cd44-a31c-4add-ba0f-d8a343a30aba"
+          },
+          {
+            "name": "15. Potential Category:",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[Z. Assessment Potential Category],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[Z. Assessment Potential Category],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "8f56ac80-85bb-4e59-b580-f988f9f9d167"
           }
         ],
         "partitions": [
@@ -46286,7 +46596,7 @@
             "formatString": "0",
             "lineageTag": "7bf82b72-3d23-4b0c-8e8a-307132c874f1",
             "sourceColumn": "A. Employee ID",
-            "summarizeBy": "count"
+            "summarizeBy": "none"
           },
           {
             "name": "X. Performance  Review Years",
