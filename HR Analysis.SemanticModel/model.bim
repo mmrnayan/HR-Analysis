@@ -12,7 +12,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"Profile of Employee\",\"Information of Age, Assessment Potential, Assessment Performance\",\"Only All\",\"Full All\",\"Handled+Targeted+Working Hours+Overtime\"]"
+        "value": "[\"Folder Path\",\"fact_employee\",\"employee_feedback_survey\",\"exit_interview_survey\",\"fact_leave\",\"fact_performance\",\"dim_resignationReason\",\"fact_resigned\",\"fact_training\",\"dim_trainingSession\",\"dim_employee\",\"dim_location\",\"dim_department\",\"dim_jobtitle\",\"dim_leaveReason\",\"dim_leaveType\",\"Date Parameter\",\"date\",\"_measure\",\"resignation_prediction\",\"f1 score\",\"Performance-9Box\",\"Potential-9Box\",\"9-Box Grid\",\"Profile of Employee\",\"Information of Age, Assessment Potential, Assessment Performance\",\"Only All\",\"Full All\",\"Handled+Targeted+Working Hours+Overtime\",\"employee_with_faces\",\"Performance-9Box (2)\",\"Potential-9Box (2)\",\"9 Grid\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -40384,6 +40384,20 @@
             "lineageTag": "ecaf7422-9acc-4a63-bc5c-64bb47b23864",
             "sourceColumn": "Ethnicity",
             "summarizeBy": "none"
+          },
+          {
+            "name": "Image URL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataCategory": "ImageUrl",
+            "dataType": "string",
+            "lineageTag": "962a5225-b0d9-4c36-ae1a-72b215f67ea7",
+            "sourceColumn": "Image URL",
+            "summarizeBy": "none"
           }
         ],
         "lineageTag": "17b58dde-a5cd-4358-a7cf-80afe5bb402e",
@@ -40400,9 +40414,11 @@
                 "    #\"Removed Columns\" = Table.RemoveColumns(#\"Removed Other Columns\",{\"Region\", \"Latitude\", \"Longitude\"}),",
                 "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Columns\", {\"Employee ID\"}),",
                 "    #\"Extracted Month Name\" = Table.TransformColumns(#\"Removed Duplicates\", {{\"Date of Birth\", each Date.MonthName(_), type text}}),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Extracted Month Name\",{{\"Date of Birth\", \"Month Name\"}})",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Extracted Month Name\",{{\"Date of Birth\", \"Month Name\"}}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Renamed Columns\", {\"Employee ID\"}, employee_with_faces, {\"Employee ID\"}, \"employee_with_faces\", JoinKind.LeftOuter),",
+                "    #\"Expanded employee_with_faces\" = Table.ExpandTableColumn(#\"Merged Queries\", \"employee_with_faces\", {\"Image URL\"}, {\"Image URL\"})",
                 "in",
-                "    #\"Renamed Columns\""
+                "    #\"Expanded employee_with_faces\""
               ],
               "type": "m"
             }
@@ -41978,71 +41994,155 @@
           },
           {
             "name": "% Low-Falling Short",
-            "displayFolder": "% 9-Box",
-            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")/[9-Box Distinct ID]",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "CALCULATE (",
+              "    DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "    '9-Box Grid'[9-Box Grid Category] = \"Low-Falling Short\"",
+              ") / [9-Box Distinct ID]"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "5f14fcac-d43d-42a9-bf4a-f3b631568447"
           },
           {
             "name": "% Low-On Track",
-            "displayFolder": "% 9-Box",
-            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")/[9-Box Distinct ID]",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "CALCULATE (",
+              "    DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "    '9-Box Grid'[9-Box Grid Category] = \"Low-On Track\"",
+              ") / [9-Box Distinct ID]"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "3d77488a-04af-4710-a159-394fbb0f32b6"
           },
           {
             "name": "% Low-Peak Performer",
-            "displayFolder": "% 9-Box",
-            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")/[9-Box Distinct ID]",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "CALCULATE (",
+              "    DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "    '9-Box Grid'[9-Box Grid Category] = \"Low-Peak Performer\"",
+              ") / [9-Box Distinct ID]"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "257e6f95-447c-4205-b84c-c19749a764a3"
           },
           {
             "name": "% Moderate-Falling Short",
-            "displayFolder": "% 9-Box",
-            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")/[9-Box Distinct ID]",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "CALCULATE (",
+              "    DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "    '9-Box Grid'[9-Box Grid Category] = \"Moderate-Falling Short\"",
+              ") / [9-Box Distinct ID]"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "a4374ef0-d2dd-4099-86fd-9d67bfda7be7"
           },
           {
             "name": "% Moderate-On Track",
-            "displayFolder": "% 9-Box",
-            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")/[9-Box Distinct ID]",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "CALCULATE (",
+              "    DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "    '9-Box Grid'[9-Box Grid Category] = \"Moderate-On Track\"",
+              ") / [9-Box Distinct ID]"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "ad2eb833-c771-42ff-93f1-22f92b64e472"
           },
           {
             "name": "% Moderate-Peak Performer",
-            "displayFolder": "% 9-Box",
-            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")/[9-Box Distinct ID]",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "CALCULATE (",
+              "    DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "    '9-Box Grid'[9-Box Grid Category] = \"Moderate-Peak Performer\"",
+              ") / [9-Box Distinct ID]"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "7da70162-fc7e-433c-8798-03f416d2c8da"
           },
           {
             "name": "% High-Falling Short",
-            "displayFolder": "% 9-Box",
-            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")/[9-Box Distinct ID]",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "CALCULATE (",
+              "    DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "    '9-Box Grid'[9-Box Grid Category] = \"High-Falling Short\"",
+              ") / [9-Box Distinct ID]"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "095c1248-2da6-482c-93b0-03762b08cdf9"
           },
           {
             "name": "% High-On Track",
-            "displayFolder": "% 9-Box",
-            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")/[9-Box Distinct ID]",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "CALCULATE (",
+              "    DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "    '9-Box Grid'[9-Box Grid Category] = \"High-On Track\"",
+              ") / [9-Box Distinct ID]"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "633c7ffb-eb19-4d83-a317-677feb24a4a4"
           },
           {
             "name": "% High-Peak Performer",
-            "displayFolder": "% 9-Box",
-            "expression": "CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\")/[9-Box Distinct ID]",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "CALCULATE (",
+              "    DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "    '9-Box Grid'[9-Box Grid Category] = \"High-Peak Performer\"",
+              ") / [9-Box Distinct ID]"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "cd9adfba-5082-433e-8f02-f413d6de680e"
           },
           {
             "name": "% 9-Box Distinct ID",
-            "displayFolder": "% 9-Box",
-            "expression": "(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")+CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\"))/[Total Distinct Employee ID]",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "(",
+              "    CALCULATE (",
+              "        DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "        '9-Box Grid'[9-Box Grid Category] = \"Low-Falling Short\"",
+              "    )",
+              "        + CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"Low-On Track\"",
+              "        )",
+              "        + CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"Low-Peak Performer\"",
+              "        )",
+              "        + CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"Moderate-Falling Short\"",
+              "        )",
+              "        + CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"Moderate-On Track\"",
+              "        )",
+              "        + CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"Moderate-Peak Performer\"",
+              "        )",
+              "        + CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"High-Falling Short\"",
+              "        )",
+              "        + CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"High-On Track\"",
+              "        )",
+              "        + CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"High-Peak Performer\"",
+              "        )",
+              ") / [Total Distinct Employee ID]"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "4aef3a58-3f53-4177-9881-2c7acab06258"
           },
@@ -42069,22 +42169,79 @@
           },
           {
             "name": "% Star Performer",
-            "displayFolder": "% 9-Box",
-            "expression": "(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Peak Performer\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-On Track\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Peak Performer\")/[9-Box Distinct ID])",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "(",
+              "    CALCULATE (",
+              "        DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "        '9-Box Grid'[9-Box Grid Category] = \"Moderate-Peak Performer\"",
+              "    ) / [9-Box Distinct ID]",
+              ")",
+              "    + (",
+              "        CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"High-On Track\"",
+              "        ) / [9-Box Distinct ID]",
+              "    )",
+              "    + (",
+              "        CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"High-Peak Performer\"",
+              "        ) / [9-Box Distinct ID]",
+              "    )"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "40baf046-46f7-4b38-aac1-728a272392d0"
           },
           {
             "name": "% Developing Star",
-            "displayFolder": "% 9-Box",
-            "expression": "(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Peak Performer\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-On Track\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"High-Falling Short\")/[9-Box Distinct ID])",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "(",
+              "    CALCULATE (",
+              "        DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "        '9-Box Grid'[9-Box Grid Category] = \"Low-Peak Performer\"",
+              "    ) / [9-Box Distinct ID]",
+              ")",
+              "    + (",
+              "        CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"Moderate-On Track\"",
+              "        ) / [9-Box Distinct ID]",
+              "    )",
+              "    + (",
+              "        CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"High-Falling Short\"",
+              "        ) / [9-Box Distinct ID]",
+              "    )"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "f100d91b-bf73-4fb7-9575-9845489ee131"
           },
           {
             "name": "% Needs Development",
-            "displayFolder": "% 9-Box",
-            "expression": "(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-Falling Short\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Low-On Track\")/[9-Box Distinct ID])+(CALCULATE(DISTINCTCOUNT(fact_performance[Employee ID]),'9-Box Grid'[9-Box Grid Category]=\"Moderate-Falling Short\")/[9-Box Distinct ID])",
+            "displayFolder": "9 Grid\\% 9-Box",
+            "expression": [
+              "(",
+              "    CALCULATE (",
+              "        DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "        '9-Box Grid'[9-Box Grid Category] = \"Low-Falling Short\"",
+              "    ) / [9-Box Distinct ID]",
+              ")",
+              "    + (",
+              "        CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"Low-On Track\"",
+              "        ) / [9-Box Distinct ID]",
+              "    )",
+              "    + (",
+              "        CALCULATE (",
+              "            DISTINCTCOUNT ( fact_performance[Employee ID] ),",
+              "            '9-Box Grid'[9-Box Grid Category] = \"Moderate-Falling Short\"",
+              "        ) / [9-Box Distinct ID]",
+              "    )"
+            ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "77d6931f-f5c0-4248-ba41-9ca5cd4e0ed4"
           },
@@ -42903,14 +43060,20 @@
             "name": "Selected Name",
             "displayFolder": "Project Analysis Card",
             "expression": [
-              "VAR SelectedEmployeeID = SELECTEDVALUE('Full All'[Employee ID]) ",
-              "",
-              "RETURN ",
-              "IF(",
-              "    NOT(ISBLANK(SelectedEmployeeID)), ",
-              "    LOOKUPVALUE('Profile of Employee'[C. Full Name], 'Profile of Employee'[A. Employee ID], SelectedEmployeeID),",
-              "    LOOKUPVALUE('Profile of Employee'[C. Full Name], 'Profile of Employee'[A. Employee ID], MAX('Profile of Employee'[A. Employee ID]))",
-              ")"
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[C. Full Name],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[C. Full Name],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
             ],
             "lineageTag": "fce79da7-bb81-485c-8485-e5ef473377a7"
           },
@@ -42918,14 +43081,20 @@
             "name": "1. Country: ",
             "displayFolder": "Project Analysis Card",
             "expression": [
-              "VAR SelectedEmployeeID = SELECTEDVALUE('Full All'[Employee ID]) ",
-              "",
-              "RETURN ",
-              "IF(",
-              "    NOT(ISBLANK(SelectedEmployeeID)), ",
-              "    LOOKUPVALUE('Profile of Employee'[O. Country], 'Profile of Employee'[A. Employee ID], SelectedEmployeeID),",
-              "    LOOKUPVALUE('Profile of Employee'[O. Country], 'Profile of Employee'[A. Employee ID], MAX('Profile of Employee'[A. Employee ID]))",
-              ")"
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[O. Country],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[O. Country],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
             ],
             "lineageTag": "ed30f7cb-8770-456f-8b5f-c27269269b11"
           },
@@ -42933,14 +43102,20 @@
             "name": "2. Education Level:",
             "displayFolder": "Project Analysis Card",
             "expression": [
-              "VAR SelectedEmployeeID = SELECTEDVALUE('Full All'[Employee ID]) ",
-              "",
-              "RETURN ",
-              "IF(",
-              "    NOT(ISBLANK(SelectedEmployeeID)), ",
-              "    LOOKUPVALUE('Profile of Employee'[I. Education Level], 'Profile of Employee'[A. Employee ID], SelectedEmployeeID),",
-              "    LOOKUPVALUE('Profile of Employee'[I. Education Level], 'Profile of Employee'[A. Employee ID], MAX('Profile of Employee'[A. Employee ID]))",
-              ")"
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[I. Education Level],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[I. Education Level],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
             ],
             "lineageTag": "81e29953-e1d3-409b-8c1c-8c91f0207375"
           },
@@ -42948,14 +43123,20 @@
             "name": "3. Job Title:",
             "displayFolder": "Project Analysis Card",
             "expression": [
-              "VAR SelectedEmployeeID = SELECTEDVALUE('Full All'[Employee ID]) ",
-              "",
-              "RETURN ",
-              "IF(",
-              "    NOT(ISBLANK(SelectedEmployeeID)), ",
-              "    LOOKUPVALUE('Profile of Employee'[L. Job Title], 'Profile of Employee'[A. Employee ID], SelectedEmployeeID),",
-              "    LOOKUPVALUE('Profile of Employee'[L. Job Title], 'Profile of Employee'[A. Employee ID], MAX('Profile of Employee'[A. Employee ID]))",
-              ")"
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[L. Job Title],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[L. Job Title],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
             ],
             "lineageTag": "901fc2e1-6b94-4eb8-bd87-027e80630a31"
           },
@@ -42963,14 +43144,20 @@
             "name": "4. Department:",
             "displayFolder": "Project Analysis Card",
             "expression": [
-              "VAR SelectedEmployeeID = SELECTEDVALUE('Full All'[Employee ID]) ",
-              "",
-              "RETURN ",
-              "IF(",
-              "    NOT(ISBLANK(SelectedEmployeeID)), ",
-              "    LOOKUPVALUE('Profile of Employee'[K. Department], 'Profile of Employee'[A. Employee ID], SelectedEmployeeID),",
-              "    LOOKUPVALUE('Profile of Employee'[K. Department], 'Profile of Employee'[A. Employee ID], MAX('Profile of Employee'[A. Employee ID]))",
-              ")"
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[K. Department],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[K. Department],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
             ],
             "lineageTag": "6a41ba48-5fdc-41d9-aafb-355788243780"
           },
@@ -43225,6 +43412,253 @@
               "    )"
             ],
             "lineageTag": "8f56ac80-85bb-4e59-b580-f988f9f9d167"
+          },
+          {
+            "name": "Selected Image",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            dim_employee[Image URL],",
+              "            dim_employee[Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            dim_employee[Image URL],",
+              "            dim_employee[Employee ID], MAX ( dim_employee[Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "lineageTag": "7eaa1741-14b6-4c8f-adc0-4d702b4914d4"
+          },
+          {
+            "name": "Emp ID",
+            "displayFolder": "Project Analysis Card",
+            "expression": [
+              "VAR SelectedEmployeeID =",
+              "    SELECTEDVALUE ( 'Full All'[Employee ID] )",
+              "RETURN",
+              "    IF (",
+              "        NOT ( ISBLANK ( SelectedEmployeeID ) ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[A. Employee ID],",
+              "            'Profile of Employee'[A. Employee ID], SelectedEmployeeID",
+              "        ),",
+              "        LOOKUPVALUE (",
+              "            'Profile of Employee'[A. Employee ID],",
+              "            'Profile of Employee'[A. Employee ID], MAX ( 'Profile of Employee'[A. Employee ID] )",
+              "        )",
+              "    )"
+            ],
+            "formatString": "0",
+            "lineageTag": "cd534e92-02ad-4d6e-a00a-85783d903475"
+          },
+          {
+            "name": "Rank by project%",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED('Full All'),",
+              "    [% Total Completion (TC)]",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "1b6bf6eb-2c62-4646-a4e4-db5d21be14d1"
+          },
+          {
+            "name": "Emp IDr",
+            "displayFolder": "Project Handled, Targeted, and Percentage",
+            "expression": "ALL('Full All'[Employee ID])",
+            "formatString": "0",
+            "lineageTag": "87b988e5-f73d-46cc-b726-5a590b1626f5"
+          },
+          {
+            "name": "# Aspiring",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": [
+              "CALCULATE(",
+              "    DISTINCTCOUNT('9 Grid'[Employee ID]),",
+              "    '9 Grid'[Grid] = \"Aspiring Performer\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "4e9f77bc-2646-4841-a372-ca736b477a26"
+          },
+          {
+            "name": "# Emerging Contributer",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": [
+              "CALCULATE(",
+              "    DISTINCTCOUNT('9 Grid'[Employee ID]),",
+              "    '9 Grid'[Grid] = \"Emerging Contributor\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "92cd7783-ba1a-4d2c-a4a5-6673fd381e6f"
+          },
+          {
+            "name": "# Core Performer",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": [
+              "CALCULATE(",
+              "    DISTINCTCOUNT('9 Grid'[Employee ID]),",
+              "    '9 Grid'[Grid] = \"Core Performer\"",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "b3d456e2-7ad0-4ab3-b292-f4c6ba001115"
+          },
+          {
+            "name": "# Rising Potential",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": [
+              "CALCULATE(",
+              "    DISTINCTCOUNT('9 Grid'[Employee ID]),",
+              "    '9 Grid'[Grid] = \"Rising Potential\"",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "91637772-192a-41b6-af9b-a38df9e515b2"
+          },
+          {
+            "name": "# Top Talent",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": [
+              "CALCULATE(",
+              "    DISTINCTCOUNT('9 Grid'[Employee ID]),",
+              "    '9 Grid'[Grid] = \"Top Talent\"",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "19a33601-4f67-4bb0-9b27-0438fb15b378"
+          },
+          {
+            "name": "# Reliable Contributor",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": [
+              "CALCULATE(",
+              "    DISTINCTCOUNT('9 Grid'[Employee ID]),",
+              "    '9 Grid'[Grid] = \"Reliable Contributor\"",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "2b19c09f-4714-4c15-b751-5bf11f86d079"
+          },
+          {
+            "name": "# Growth Opportunity",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": [
+              "CALCULATE(",
+              "    DISTINCTCOUNT('9 Grid'[Employee ID]),",
+              "    '9 Grid'[Grid] = \"Growth Opportunity\"",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "09123464-087b-4cbc-a35f-9909bf822a74"
+          },
+          {
+            "name": "# Consistent Performer",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": [
+              "CALCULATE(",
+              "    DISTINCTCOUNT('9 Grid'[Employee ID]),",
+              "    '9 Grid'[Grid] = \"Consistent Performer\"",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "30619679-e843-47e8-ab13-a675d085ab10"
+          },
+          {
+            "name": "# High Achiever",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": [
+              "CALCULATE(",
+              "    DISTINCTCOUNT('9 Grid'[Employee ID]),",
+              "    '9 Grid'[Grid] = \"High Achiever\"",
+              ")",
+              ""
+            ],
+            "formatString": "0",
+            "lineageTag": "c6947bc7-c9c4-48af-9b7c-d3f8d3b20824"
+          },
+          {
+            "name": "Count 9 grid",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": "DISTINCTCOUNT('9 Grid'[Employee ID])",
+            "formatString": "0",
+            "lineageTag": "78fa8d1a-6629-460b-b8bc-bbf1816a8bb0"
+          },
+          {
+            "name": "% Aspiring",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": "DIVIDE([# Aspiring], [Count 9 grid],0)",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "4e55f623-6fbf-4593-a680-531fc4d0f214"
+          },
+          {
+            "name": "% Consistent Performer",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": "DIVIDE([# Consistent Performer], [Count 9 grid],0)",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "e4c1da15-2459-4e44-a0c9-ec379e6ebccd"
+          },
+          {
+            "name": "% Core Performer",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": "DIVIDE([# Core Performer], [Count 9 grid],0)",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "dfcc3d01-b328-46d3-9a55-9da8a70bc504"
+          },
+          {
+            "name": "% Emerging Contributer",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": "DIVIDE([# Emerging Contributer], [Count 9 grid],0)",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "cf40627b-ffd1-4d77-9995-adc3ccf4c225"
+          },
+          {
+            "name": "% Growth Opportunity",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": "DIVIDE([# Growth Opportunity], [Count 9 grid],0)",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "3ab7d797-9eef-4b8b-bc77-08c598347d21"
+          },
+          {
+            "name": "% High Achiever",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": "DIVIDE([# High Achiever], [Count 9 grid],0)",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "bbc6759c-899a-42ff-bf64-c7b2fafa25a8"
+          },
+          {
+            "name": "% Reliable Contributor",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": "DIVIDE([# Reliable Contributor], [Count 9 grid],0)",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "963efaac-15ad-4a20-ac75-f2790fafe976"
+          },
+          {
+            "name": "% Rising Potential",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": "DIVIDE([# Rising Potential], [Count 9 grid],0)",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "bf3bb31f-ad72-4117-88ac-90a087f5f75e"
+          },
+          {
+            "name": "% Top Talent",
+            "displayFolder": "9 Grid\\Count grid",
+            "expression": "DIVIDE([# Top Talent], [Count 9 grid],0)",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "27f0e22f-1849-4ba9-9df9-527e72b143b4"
           }
         ],
         "partitions": [
@@ -47568,6 +48002,25 @@
             "lineageTag": "366acf47-342e-4367-a764-97692991b4b3",
             "summarizeBy": "none",
             "type": "calculated"
+          },
+          {
+            "name": "Emp ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "string",
+            "expression": "'Full All'[Employee ID]",
+            "lineageTag": "94c2186b-5163-465b-87ed-5c94a5952666",
+            "summarizeBy": "none",
+            "type": "calculated"
           }
         ],
         "lineageTag": "f9ede4c6-a806-466a-af19-40b0058e4176",
@@ -47989,6 +48442,402 @@
                 "    RETURN SELECTCOLUMNS(CALENDAR(Minvalue,MaxValue),\"X\",INT([Date]))"
               ],
               "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "employee_with_faces",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "8597f81a-402a-4c19-ad3b-e93509103313",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Image URL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e20dc3fc-9d04-4294-8d35-4ab221514291",
+            "sourceColumn": "Image URL",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "2a6ff979-4b93-4adb-8560-b1a55f905762",
+        "partitions": [
+          {
+            "name": "employee_with_faces",
+            "mode": "import",
+            "queryGroup": "Data\\dim tables",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"D:\\high performance project\\project\\dataset final\\employee_with_faces.csv\"),[Delimiter=\",\", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", type number}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Performance-9Box (2)",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d035a751-9a36-4905-aece-5456c7e48303",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Attribute",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fb8660b7-ddb8-4124-9de5-a8d6aa710e21",
+            "sourceColumn": "Attribute",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Performance Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "7f027577-7bfc-4c03-9a3d-e1cb5129df1d",
+            "sourceColumn": "Performance Rating",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Performance Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "614d7011-a9d3-4dcd-b79f-d22db6893f37",
+            "sourceColumn": "Performance Category",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "2f7df7df-ea2c-4a2d-8333-48eaa2996353",
+        "partitions": [
+          {
+            "name": "Performance-9Box (2)",
+            "mode": "import",
+            "queryGroup": "Data\\fact tables",
+            "source": {
+              "expression": [
+                "let  ",
+                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Performance Review Year\", \"Employee ID\", \"Performance Rating\", \"Potential Rating\"}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Removed Other Columns\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\", \"Potential Rating\"}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Reordered Columns\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Added Index\",{\"Index\", \"Employee ID\", \"Performance Review Year\", \"Performance Rating\", \"Potential Rating\"}),",
+                "    #\"Removed Specific Rows\" = Table.SelectRows(#\"Reordered Columns1\", each not List.Contains({328, 447, 462, 2411, 2483, 6073, 6500, 6505}, [Index])),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Removed Specific Rows\",{\"Potential Rating\", \"Index\"}),",
+                "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Performance Rating\"),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,0,Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
+                "    #\"Reordered Columns2\" = Table.ReorderColumns(#\"Replaced Value\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
+                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Reordered Columns2\",{\"2024\"}),",
+                "    #\"Unpivoted Only Selected Columns\" = Table.Unpivot(#\"Removed Columns1\", {\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\"}, \"Attribute\", \"Value\"),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Unpivoted Only Selected Columns\",{{\"Value\", \"Performance Rating\"}}),",
+                "    #\"Added Conditional Column\" = Table.AddColumn(#\"Renamed Columns\", \"Performance Category\", each if [Performance Rating] <= 2 then \"Falling Short\" else if [Performance Rating] <= 4 then \"On-Track\" else \"Peak Performer\")",
+                "in",
+                "    #\"Added Conditional Column\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Potential-9Box (2)",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e1285b79-e357-462b-afab-44986eb2169f",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Attribute",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f1e7171b-17d0-47fd-8dac-51560b4de666",
+            "sourceColumn": "Attribute",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Potential Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "085e7c5d-3ff6-4c33-a60e-dd8a89014af2",
+            "sourceColumn": "Potential Category",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "aa1846c2-832c-43e3-98ca-7e0ab97f95ea",
+        "partitions": [
+          {
+            "name": "Potential-9Box (2)",
+            "mode": "import",
+            "queryGroup": "Data\\fact tables",
+            "source": {
+              "expression": [
+                "let  ",
+                "    Source = Csv.Document(File.Contents(#\"Folder Path\" & \"\\performance.csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Employee ID\", Int64.Type}, {\"Performance Review Year\", Int64.Type}, {\"Performance Rating\", Int64.Type}, {\"Projects Handled\", Int64.Type}, {\"Project Target\", Int64.Type}, {\"Working Hours\", Int64.Type}, {\"Overtime\", Int64.Type}, {\"Team Size\", Int64.Type}, {\"Potential Rating\", type text}, {\"Satisfaction Score\", Int64.Type}, {\"Incentive Amount ($)\", type number}, {\"Bonus ($)\", type number}}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Performance Review Year\", \"Employee ID\", \"Performance Rating\", \"Potential Rating\"}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Removed Other Columns\",{\"Employee ID\", \"Performance Review Year\", \"Performance Rating\", \"Potential Rating\"}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Reordered Columns\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Reordered Columns1\" = Table.ReorderColumns(#\"Added Index\",{\"Index\", \"Employee ID\", \"Performance Review Year\", \"Performance Rating\", \"Potential Rating\"}),",
+                "    #\"Removed Specific Rows\" = Table.SelectRows(#\"Reordered Columns1\", each not List.Contains({328, 447, 462, 2411, 2483, 6073, 6500, 6505}, [Index])),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Removed Specific Rows\",{\"Index\", \"Performance Rating\"}),",
+                "    #\"Pivoted Column\" = Table.Pivot(Table.TransformColumnTypes(#\"Removed Columns\", {{\"Performance Review Year\", type text}}, \"en-US\"), List.Distinct(Table.TransformColumnTypes(#\"Removed Columns\", {{\"Performance Review Year\", type text}}, \"en-US\")[#\"Performance Review Year\"]), \"Performance Review Year\", \"Potential Rating\"),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Pivoted Column\",null,\"No Rating\",Replacer.ReplaceValue,{\"2021\", \"2022\", \"2023\", \"2020\", \"2018\", \"2019\", \"2024\"}),",
+                "    #\"Reordered Columns2\" = Table.ReorderColumns(#\"Replaced Value\",{\"Employee ID\", \"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
+                "    #\"Added Custom\" = Table.AddColumn(#\"Reordered Columns2\", \"2018 Value\", each if [2018] = \"Employee Does'nt Exist\" then 0 else if [2018] = \"Low\" then 1 else if [2018] = \"Moderate\" then 2 else if [2018] = \"High\" then 3 else null),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"2018 Value\", Int64.Type}}),",
+                "    #\"Reordered Columns3\" = Table.ReorderColumns(#\"Changed Type1\",{\"Employee ID\", \"2018\", \"2018 Value\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
+                "    #\"Added Custom1\" = Table.AddColumn(#\"Reordered Columns3\", \"2019 Value\", each if [2019] = \"Employee Does'nt Exist\" then 0 else if [2019] = \"Low\" then 1 else if [2019] = \"Moderate\" then 2 else if [2019] = \"High\" then 3 else null),",
+                "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Added Custom1\",{{\"2019 Value\", Int64.Type}}),",
+                "    #\"Reordered Columns4\" = Table.ReorderColumns(#\"Changed Type2\",{\"Employee ID\", \"2018\", \"2018 Value\", \"2019\", \"2019 Value\", \"2020\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
+                "    #\"Added Custom2\" = Table.AddColumn(#\"Reordered Columns4\", \"2020 Value\", each if [2020] = \"Employee Does'nt Exist\" then 0 else if [2020] = \"Low\" then 1 else if [2020] = \"Moderate\" then 2 else if [2020] = \"High\" then 3 else null),",
+                "    #\"Changed Type3\" = Table.TransformColumnTypes(#\"Added Custom2\",{{\"2020 Value\", Int64.Type}}),",
+                "    #\"Reordered Columns5\" = Table.ReorderColumns(#\"Changed Type3\",{\"Employee ID\", \"2018\", \"2018 Value\", \"2019\", \"2019 Value\", \"2020\", \"2020 Value\", \"2021\", \"2022\", \"2023\", \"2024\"}),",
+                "    #\"Added Custom3\" = Table.AddColumn(#\"Reordered Columns5\", \"2021 Value\", each if [2021] = \"Employee Does'nt Exist\" then 0 else if [2021] = \"Low\" then 1 else if [2021] = \"Moderate\" then 2 else if [2021] = \"High\" then 3 else null),",
+                "    #\"Changed Type4\" = Table.TransformColumnTypes(#\"Added Custom3\",{{\"2021 Value\", Int64.Type}}),",
+                "    #\"Reordered Columns6\" = Table.ReorderColumns(#\"Changed Type4\",{\"Employee ID\", \"2018\", \"2018 Value\", \"2019\", \"2019 Value\", \"2020\", \"2020 Value\", \"2021\", \"2021 Value\", \"2022\", \"2023\", \"2024\"}),",
+                "    #\"Added Custom4\" = Table.AddColumn(#\"Reordered Columns6\", \"2022 Value\", each if [2022] = \"Employee Does'nt Exist\" then 0 else if [2022] = \"Low\" then 1 else if [2022] = \"Moderate\" then 2 else if [2022] = \"High\" then 3 else null),",
+                "    #\"Changed Type5\" = Table.TransformColumnTypes(#\"Added Custom4\",{{\"2022 Value\", Int64.Type}}),",
+                "    #\"Reordered Columns7\" = Table.ReorderColumns(#\"Changed Type5\",{\"Employee ID\", \"2018\", \"2018 Value\", \"2019\", \"2019 Value\", \"2020\", \"2020 Value\", \"2021\", \"2021 Value\", \"2022\", \"2022 Value\", \"2023\", \"2024\"}),",
+                "    #\"Added Custom5\" = Table.AddColumn(#\"Reordered Columns7\", \"2023 Value\", each if [2023] = \"Employee Does'nt Exist\" then 0 else if [2023] = \"Low\" then 1 else if [2023] = \"Moderate\" then 2 else if [2023] = \"High\" then 3 else null),",
+                "    #\"Changed Type6\" = Table.TransformColumnTypes(#\"Added Custom5\",{{\"2023 Value\", Int64.Type}}),",
+                "    #\"Reordered Columns8\" = Table.ReorderColumns(#\"Changed Type6\",{\"Employee ID\", \"2018\", \"2018 Value\", \"2019\", \"2019 Value\", \"2020\", \"2020 Value\", \"2021\", \"2021 Value\", \"2022\", \"2022 Value\", \"2023\", \"2023 Value\", \"2024\"}),",
+                "    #\"Added Custom6\" = Table.AddColumn(#\"Reordered Columns8\", \"2024 Value\", each if [2024] = \"Employee Does'nt Exist\" then 0 else if [2024] = \"Low\" then 1 else if [2024] = \"Moderate\" then 2 else if [2024] = \"High\" then 3 else null),",
+                "    #\"Changed Type7\" = Table.TransformColumnTypes(#\"Added Custom6\",{{\"2024 Value\", Int64.Type}}),",
+                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Changed Type7\",{\"2018 Value\", \"2019 Value\", \"2020 Value\", \"2021 Value\", \"2022 Value\", \"2023 Value\", \"2024 Value\"}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Removed Columns1\", each ([2022] <> \"No Rating\") and ([2023] <> \"No Rating\")),",
+                "    #\"Removed Columns2\" = Table.RemoveColumns(#\"Filtered Rows\",{\"2024\"}),",
+                "    #\"Unpivoted Only Selected Columns\" = Table.Unpivot(#\"Removed Columns2\", {\"2018\", \"2019\", \"2020\", \"2021\", \"2022\", \"2023\"}, \"Attribute\", \"Value\"),",
+                "    #\"Filtered Rows1\" = Table.SelectRows(#\"Unpivoted Only Selected Columns\", each ([Value] <> \"No Rating\")),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Filtered Rows1\",{{\"Value\", \"Potential Category\"}})",
+                "in",
+                "    #\"Renamed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "9 Grid",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "96f4bc78-75d6-4a00-b7ba-34710004eb91",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Attribute",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cf937479-1bab-4830-94d7-7d896cfcb6a2",
+            "sourceColumn": "Attribute",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Grid",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "08ef0479-3d8c-427e-910d-b2bf0e7a2762",
+            "sourceColumn": "Grid",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Potential Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bcec4a8e-db0b-4657-96f0-c7c43c7354cd",
+            "sourceColumn": "Potential Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Performance Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "51acc6b9-3005-42e5-b231-dc35dec2544e",
+            "sourceColumn": "Performance Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Potential-Performance",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a2cdfe89-fb2a-4b77-bb15-9d680613e4f0",
+            "sourceColumn": "Potential-Performance",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "d5586fa8-34dc-4609-971e-80e4ddeb22a5",
+        "partitions": [
+          {
+            "name": "9 Grid",
+            "mode": "import",
+            "queryGroup": "Data\\fact tables",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.NestedJoin(#\"Potential-9Box (2)\", {\"Employee ID\", \"Attribute\"}, #\"Performance-9Box (2)\", {\"Employee ID\", \"Attribute\"}, \"Performance-9Box (2)\", JoinKind.LeftOuter),",
+                "    #\"Expanded Performance-9Box (2)\" = Table.ExpandTableColumn(Source, \"Performance-9Box (2)\", {\"Performance Category\"}, {\"Performance-9Box (2).Performance Category\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded Performance-9Box (2)\",{{\"Performance-9Box (2).Performance Category\", \"Performance Category\"}}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\",{{\"Performance Category\", type text}}),",
+                "    #\"Inserted Merged Column\" = Table.AddColumn(#\"Changed Type\", \"Potential-Performance1\", each Text.Combine({[Potential Category], [Performance Category]}, \"-\"), type text),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Inserted Merged Column\",{{\"Potential-Performance1\", \"Potential-Performance\"}}),",
+                "    #\"Added Conditional Column\" = Table.AddColumn(#\"Renamed Columns1\", \"Grid\", each if [#\"Potential-Performance\"] = \"Moderate-Falling Short\" then \"Emerging Contributor\" else if [#\"Potential-Performance\"] = \"Low-Falling Short\" then \"Growth Opportunity\" else if [#\"Potential-Performance\"] = \"High-Peak Performer\" then \"Top Talent\" else if [#\"Potential-Performance\"] = \"High-Falling Short\" then \"Aspiring Performer\" else if [#\"Potential-Performance\"] = \"Moderate-On-Track\" then \"Core Performer\" else if [#\"Potential-Performance\"] = \"Low-On-Track\" then \"Reliable Contributor\" else if [#\"Potential-Performance\"] = \"High-On-Track\" then \"High Achiever\" else if [#\"Potential-Performance\"] = \"Moderate-Peak Performer\" then \"Rising Potential\" else if [#\"Potential-Performance\"] = \"Low-Peak Performer\" then \"Consistent Performer\" else \"None\"),",
+                "    #\"Removed Duplicates\" = Table.Distinct(#\"Added Conditional Column\"),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Removed Duplicates\",{{\"Grid\", type text}})",
+                "in",
+                "    #\"Changed Type1\""
+              ],
+              "type": "m"
             }
           }
         ]
