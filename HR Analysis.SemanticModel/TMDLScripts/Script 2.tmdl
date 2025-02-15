@@ -1,0 +1,253 @@
+createOrReplace
+
+	table Basic_Salary_Payroll
+		lineageTag: 9b57b04b-ce3d-4c7a-93bc-17c52cfc8a77
+
+		column Date
+			formatString: dd/mm/yyyy
+			lineageTag: 6c6b4877-f1e0-422e-acf6-a81699f95edd
+			summarizeBy: none
+			isNameInferred
+			sourceColumn: [Date]
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+		column Year
+			formatString: 0
+			lineageTag: d1430814-9ce3-43a7-8225-9494ea7f6b06
+			summarizeBy: sum
+			isNameInferred
+			sourceColumn: [Year]
+
+			annotation SummarizationSetBy = Automatic
+
+		column Month
+			formatString: 0
+			lineageTag: 58d0eb06-792b-489b-86fc-cd9bb36a710d
+			summarizeBy: sum
+			isNameInferred
+			sourceColumn: [Month]
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Month Name'
+			lineageTag: 5c639763-aab4-40c0-ac60-95ac616ff339
+			summarizeBy: none
+			isNameInferred
+			sourceColumn: [Month Name]
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Employee ID'
+			formatString: 0
+			lineageTag: d7f24a39-b63b-4b24-84f1-ea2960734764
+			summarizeBy: none
+			isNameInferred
+			sourceColumn: fact_employee[Employee ID]
+			columnOrigin: fact_employee.'Employee ID'
+
+			annotation SummarizationSetBy = Automatic
+
+		column Start_Date = ```
+				LOOKUPVALUE(fact_employee[Hire Date],fact_employee[Employee ID],Basic_Salary_Payroll[Employee ID]) 
+				```
+			formatString: dd/mm/yyyy
+			lineageTag: 27fd7314-4d95-4bb0-b79c-b44e5b827a79
+			summarizeBy: none
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+		column Resigned_Date =
+				
+				LOOKUPVALUE(fact_resigned[Resigned Date],fact_employee[Employee ID],Basic_Salary_Payroll[Employee ID])
+			formatString: General Date
+			lineageTag: 7a70febc-f647-4374-b2f4-856260cc832c
+			summarizeBy: none
+
+			annotation SummarizationSetBy = Automatic
+
+		column Last_Date = ```
+				
+				IF(
+				    ISBLANK(Basic_Salary_Payroll[Resigned_Date]), 
+				    TODAY(), 
+				    Basic_Salary_Payroll[Resigned_Date]
+				)
+				```
+			formatString: General Date
+			lineageTag: 47f3275e-e131-459a-a534-11c513888b56
+			summarizeBy: none
+
+			annotation SummarizationSetBy = Automatic
+
+		column Basic_without_Increament = ```
+				
+				    if ( 
+				        Basic_Salary_Payroll[Date]>=Basic_Salary_Payroll[Start_Date] && Basic_Salary_Payroll[Date]<=Basic_Salary_Payroll[Last_Date],
+				            LOOKUPVALUE(fact_employee[Base Salary ($)],fact_employee[Employee ID],Basic_Salary_Payroll[Employee ID]),
+				    0
+				    )
+				```
+			lineageTag: 1e8f994d-49a7-42af-935f-c1f2a6e6c477
+			summarizeBy: sum
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column Promotion_Factor = LOOKUPVALUE(fact_employee[Times Promoted],fact_employee[Employee ID],Basic_Salary_Payroll[Employee ID])
+			formatString: 0
+			lineageTag: b9ade480-c7b7-4999-ae35-ec840e915509
+			summarizeBy: sum
+
+			annotation SummarizationSetBy = Automatic
+
+		column Promotion_First = ```
+				
+				VAR Current_Date = TODAY()
+				RETURN 
+				IF(
+				    ISBLANK(Basic_Salary_Payroll[Resigned_Date]),
+				    SWITCH(
+				        TRUE(),
+				        Basic_Salary_Payroll[Promotion_Factor] = 1, EDATE(Current_Date, -12),
+				        Basic_Salary_Payroll[Promotion_Factor] = 2, EDATE(Current_Date, -24),
+				        Basic_Salary_Payroll[Promotion_Factor] = 3, EDATE(Current_Date, -36),
+				        Basic_Salary_Payroll[Promotion_Factor] = 4, EDATE(Current_Date, -48),
+				        BLANK()
+				    ),
+				    SWITCH(
+				        TRUE(),
+				        Basic_Salary_Payroll[Promotion_Factor] = 1, EDATE(Basic_Salary_Payroll[Last_Date], -12),
+				        Basic_Salary_Payroll[Promotion_Factor] = 2, EDATE(Basic_Salary_Payroll[Last_Date], -24),
+				        Basic_Salary_Payroll[Promotion_Factor] = 3, EDATE(Basic_Salary_Payroll[Last_Date], -36),
+				        Basic_Salary_Payroll[Promotion_Factor] = 4, EDATE(Basic_Salary_Payroll[Last_Date], -48),
+				        BLANK()
+				    )
+				)
+				
+				```
+			formatString: General Date
+			lineageTag: b7192a88-79b5-487a-bb21-0a726a7065fc
+			summarizeBy: none
+
+			annotation SummarizationSetBy = Automatic
+
+		column Promoted_Date_Cal = ```
+				
+				IF(
+				    Basic_Salary_Payroll[Date]-Basic_Salary_Payroll[Promotion_First]=1 && Basic_Salary_Payroll[Promotion_Factor]=1,1,
+				        IF(
+				        Basic_Salary_Payroll[Date]-Basic_Salary_Payroll[Promotion_First]=1 && Basic_Salary_Payroll[Promotion_Factor]=2,1,
+				        IF(
+				        Basic_Salary_Payroll[Date]-Basic_Salary_Payroll[Promotion_First]=2 && Basic_Salary_Payroll[Promotion_Factor]=2,2,
+				            IF(
+				            Basic_Salary_Payroll[Date]-Basic_Salary_Payroll[Promotion_First]=1 && Basic_Salary_Payroll[Promotion_Factor]=3,1,
+				            IF(
+				            Basic_Salary_Payroll[Date]-Basic_Salary_Payroll[Promotion_First]=2 && Basic_Salary_Payroll[Promotion_Factor]=3,2,
+				            IF(
+				            Basic_Salary_Payroll[Date]-Basic_Salary_Payroll[Promotion_First]=3 && Basic_Salary_Payroll[Promotion_Factor]=3,3,
+				            IF(
+				            Basic_Salary_Payroll[Date]-Basic_Salary_Payroll[Promotion_First]=1 && Basic_Salary_Payroll[Promotion_Factor]=4,1,
+				            IF(
+				            Basic_Salary_Payroll[Date]-Basic_Salary_Payroll[Promotion_First]=2 && Basic_Salary_Payroll[Promotion_Factor]=4,2,
+				            IF(
+				            Basic_Salary_Payroll[Date]-Basic_Salary_Payroll[Promotion_First]=3 && Basic_Salary_Payroll[Promotion_Factor]=4,3,
+				            IF(
+				            Basic_Salary_Payroll[Date]-Basic_Salary_Payroll[Promotion_First]>=4 && Basic_Salary_Payroll[Promotion_Factor]=4,4,
+				            0
+				            
+				            ))))))))))
+				```
+			formatString: 0
+			lineageTag: 62677a33-5f4f-4789-b54e-ca915d4762e6
+			summarizeBy: sum
+
+			annotation SummarizationSetBy = Automatic
+
+		column Basic_With_Increament = Basic_Salary_Payroll[Basic_without_Increament]*((1+0.1)^Basic_Salary_Payroll[Promoted_Date_Cal])
+			lineageTag: 75622e3f-5abe-4a10-b6c7-7a153befcd7d
+			summarizeBy: sum
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column DayOfMonth = ```
+				DAY(Basic_Salary_Payroll[Date]) 
+				```
+			formatString: 0
+			lineageTag: fc6aa8dc-f59a-43b9-87c2-e7858a26d2e8
+			summarizeBy: sum
+
+			annotation SummarizationSetBy = Automatic
+
+		column DaysInMonth = ```
+				
+				DAY(
+				    EOMONTH(
+				        Basic_Salary_Payroll[Date], 
+				        0
+				    )
+				)
+				```
+			formatString: 0
+			lineageTag: f84f9bcf-175a-4c64-928f-05fb3567c27d
+			summarizeBy: sum
+
+			annotation SummarizationSetBy = Automatic
+
+		column basic_Salary = Basic_Salary_Payroll[Basic_With_Increament]*Basic_Salary_Payroll[DayOfMonth]/Basic_Salary_Payroll[DaysInMonth]
+			formatString: 0
+			lineageTag: f2c293af-52ec-4b1d-a1f7-f637b1bd3466
+			summarizeBy: sum
+
+			annotation SummarizationSetBy = Automatic
+
+		column Work_Experiance = DATEDIFF(Basic_Salary_Payroll[Date],Basic_Salary_Payroll[Last_Date],YEAR)
+			formatString: 0
+			lineageTag: 54b15be4-e4a1-40d3-a053-9dc5aebcbbe2
+			summarizeBy: sum
+
+			annotation SummarizationSetBy = Automatic
+
+		column Normal_Distribution = ```
+				
+				VAR MinValue = FLOOR([Cal_AVG_Payroll] - 3 * [Var_StandardDeviation_Payroll], 1)
+				VAR MaxValue = CEILING([Cal_AVG_Payroll] + 3 * [Var_StandardDeviation_Payroll], 1)
+				RETURN 
+				    ADDCOLUMNS(
+				        CALENDAR(MinValue, MaxValue), 
+				        "Salary", [Date], 
+				        "Z Value", DIVIDE([Date] - [Cal_AVG_Payroll], [Var_StandardDeviation_Payroll]),
+				        "PDF", EXP(-0.5 * POWER(DIVIDE([Date] - [Cal_AVG_Payroll], [Var_StandardDeviation_Payroll]), 2)) / SQRT(2 * PI())
+				    )
+				
+				```
+			lineageTag: eb849cd4-d472-450b-906c-e69adccbdf2f
+			summarizeBy: none
+
+			annotation SummarizationSetBy = Automatic
+
+		partition Basic_Salary_Payroll = calculated
+			mode: import
+			source = ```
+					
+					ADDCOLUMNS(
+					    CROSSJOIN(
+					        CALENDAR(DATE(2018, 1, 1), DATE(2026, 12, 31)),
+					        DISTINCT(fact_employee[Employee ID]) -- Replace 'Employees'[Employee ID] with your actual table and column name
+					    ),
+					    "Year", YEAR([Date]),
+					    "Month", MONTH([Date]),
+					    "Month Name", FORMAT([Date], "MMM")
+					)
+					
+					```
+
+		annotation PBI_Id = 849195fa96b3499d8e19c43fc2f4cfbe
+

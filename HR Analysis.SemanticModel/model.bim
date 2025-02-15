@@ -16,7 +16,7 @@
       },
       {
         "name": "PBI_ProTooling",
-        "value": "[\"DevMode\",\"DaxQueryView_Desktop\"]"
+        "value": "[\"DevMode\",\"DaxQueryView_Desktop\",\"TMDLView_Desktop\"]"
       },
       {
         "name": "__TEdtr",
@@ -45440,8 +45440,8 @@
               }
             ],
             "expression": [
-              "AVERAGEX('Payroll_&_Gap_Analysis',",
-              "    'Payroll_&_Gap_Analysis'[Cal_Total_Payroll])"
+              "AVERAGEX(Basic_Salary_Payroll,",
+              "    Basic_Salary_Payroll[basic_Salary])"
             ],
             "lineageTag": "40e2123c-7f6b-4d3a-96df-cea1abcc2d86"
           },
@@ -45723,27 +45723,6 @@
             "lineageTag": "d04c4a2d-e5ee-4a8a-94e6-3e2ab224b2e2"
           },
           {
-            "name": "Slope_Salary_Year",
-            "expression": [
-              "",
-              "    VAR Line = ",
-              "        LINESTX(",
-              "            SUMMARIZE(",
-              "                'date',",
-              "                'date'[Year],                         -- Group by Year",
-              "                \"x_value\", 'date'[Year],              -- X-axis values (Year)",
-              "                \"y_value\", 'Payroll_&_Gap_Analysis'[Cal_Total_Payroll]  -- Y-axis values (Salary measure)",
-              "            ),",
-              "            [x_value],                                -- Independent variable (Year)",
-              "            [y_value]                                 -- Dependent variable (Total Payroll)",
-              "        )",
-              "RETURN",
-              "    INDEX(Line, 2)  -- The slope (coefficient) is the second value returned by LINESTX",
-              ""
-            ],
-            "lineageTag": "6fa839e4-95c7-4af1-8fb3-70144a59c4ed"
-          },
-          {
             "name": "Var_Salary_Variance",
             "annotations": [
               {
@@ -45776,26 +45755,6 @@
               ""
             ],
             "lineageTag": "0cdf6626-624e-465e-b9d0-deff21f9f200"
-          },
-          {
-            "name": "Measure 8",
-            "annotations": [
-              {
-                "name": "43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c",
-                "value": "True"
-              }
-            ],
-            "lineageTag": "25d85e50-58de-443d-b86c-b948248aa354"
-          },
-          {
-            "name": "Measure 9",
-            "annotations": [
-              {
-                "name": "43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c",
-                "value": "True"
-              }
-            ],
-            "lineageTag": "6faf632e-d345-4056-844a-6febf004ab53"
           },
           {
             "name": "Graph_Min_Basic",
@@ -46013,6 +45972,69 @@
             ],
             "expression": "'Payroll_&_Gap_Analysis'[Cal_AVG_Payroll] + 3 * [Var_StandardDeviation_Payroll]",
             "lineageTag": "a0be21b9-5402-47e4-9092-f0f1e17e2823"
+          },
+          {
+            "name": "Var_StandardDeviation_Payroll_six",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "    STDEV.P(Basic_Salary_Payroll[basic_Salary])"
+            ],
+            "lineageTag": "cb29e891-83f5-4443-bef4-57b71ac80cb5"
+          },
+          {
+            "name": "ZScore",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "    DIVIDE(",
+              "        [Cal_Basic_Salary] - [Cal_AVG_Payroll], ",
+              "        [Var_StandardDeviation_Payroll_six]",
+              "    )"
+            ],
+            "lineageTag": "c06a975f-47a1-47bb-b2b8-3d56d62678bf"
+          },
+          {
+            "name": "Normal_Distribution_PDF_Six",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "    EXP( ",
+              "        -0.5 * POWER([ZScore], 2) ",
+              "    ) / ",
+              "    SQRT( 2 * PI() )"
+            ],
+            "lineageTag": "e27edfa5-e0a6-425c-baf4-358280b80a52"
+          },
+          {
+            "name": "SigmaLevel",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    ABS([ZScore]) <= 1, \"1 Sigma\",",
+              "    ABS([ZScore]) <= 2, \"2 Sigma\",",
+              "    ABS([ZScore]) <= 3, \"3 Sigma\",",
+              "    \"Beyond 3 Sigma\"",
+              ")",
+              ""
+            ],
+            "lineageTag": "e70c1e79-234e-4ccf-8948-dd1aa7edfea0"
           }
         ],
         "partitions": [
@@ -46397,6 +46419,31 @@
             "isDataTypeInferred": true,
             "lineageTag": "54b15be4-e4a1-40d3-a053-9dc5aebcbbe2",
             "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Normal_Distribution",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR MinValue = FLOOR([Cal_AVG_Payroll] - 3 * [Var_StandardDeviation_Payroll], 1)",
+              "VAR MaxValue = CEILING([Cal_AVG_Payroll] + 3 * [Var_StandardDeviation_Payroll], 1)",
+              "RETURN ",
+              "    ADDCOLUMNS(",
+              "        CALENDAR(MinValue, MaxValue), ",
+              "        \"Salary\", [Date], ",
+              "        \"Z Value\", DIVIDE([Date] - [Cal_AVG_Payroll], [Var_StandardDeviation_Payroll]),",
+              "        \"PDF\", EXP(-0.5 * POWER(DIVIDE([Date] - [Cal_AVG_Payroll], [Var_StandardDeviation_Payroll]), 2)) / SQRT(2 * PI())",
+              "    )",
+              ""
+            ],
+            "lineageTag": "eb849cd4-d472-450b-906c-e69adccbdf2f",
+            "summarizeBy": "none",
             "type": "calculated"
           }
         ],
@@ -48838,6 +48885,350 @@
                 "    #\"Changed Type1\""
               ],
               "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Normal_Distribution_Six",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "1a65d983a5614d5cb8f0c76b5662b0d0"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "e725bad7-20a3-47f9-919b-781e11c2ce4d",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Salary",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8c020480-1aca-4a86-bd52-94e4b47c3652",
+            "sourceColumn": "[Salary]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Z Value",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "7fa14d2d-4e25-4428-9e8a-5be36bc59785",
+            "sourceColumn": "[Z Value]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "PDF",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "2e128556-2b8f-4140-8648-fae6bf2a156b",
+            "sourceColumn": "[PDF]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "760d0ee9-e225-4755-879b-541c8c2a082b",
+        "measures": [
+          {
+            "name": "Percent_1Sigma",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    COUNTROWS(FILTER('dim_employee', [SigmaLevel] = \"1 Sigma\")),",
+              "    COUNTROWS('dim_employee')",
+              ")"
+            ],
+            "lineageTag": "959f0b4f-f536-493f-ba76-654c941f4be5"
+          },
+          {
+            "name": "Percent_2Sigma",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    COUNTROWS(FILTER('dim_employee', [SigmaLevel] = \"2 Sigma\")),",
+              "    COUNTROWS('dim_employee')",
+              ")"
+            ],
+            "lineageTag": "38c290cd-3285-42d8-aaba-766a061aea81"
+          },
+          {
+            "name": "Percent_3Sigma",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    COUNTROWS(FILTER('dim_employee', [SigmaLevel] = \"3 Sigma\")),",
+              "    COUNTROWS('dim_employee')",
+              ")"
+            ],
+            "lineageTag": "01ad1c18-dfed-4d97-a79d-a7635f0b327d"
+          },
+          {
+            "name": "Percent_Beyond3Sigma",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    COUNTROWS(FILTER('dim_employee', [SigmaLevel] = \"Beyond 3 Sigma\")),",
+              "    COUNTROWS('dim_employee')",
+              ")"
+            ],
+            "lineageTag": "2d4587b8-d02e-438d-8ac7-7662ab592243"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Normal_Distribution_Six",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "",
+                "VAR MinValue = FLOOR([Cal_AVG_Payroll] - 3 * [Var_StandardDeviation_Payroll], 1)",
+                "VAR MaxValue = CEILING([Cal_AVG_Payroll] + 3 * [Var_StandardDeviation_Payroll], 1)",
+                "RETURN ",
+                "    ADDCOLUMNS(",
+                "        CALENDAR(MinValue, MaxValue),",
+                "        \"Salary\", [Date],  -- Rename Date to Salary",
+                "        \"Z Value\", ",
+                "            VAR CurrentSalary = [Date]  -- Store Date as CurrentSalary",
+                "            RETURN DIVIDE(CurrentSalary - [Cal_AVG_Payroll], [Var_StandardDeviation_Payroll]),",
+                "        \"PDF\", ",
+                "            VAR CurrentZ = DIVIDE([Date] - [Cal_AVG_Payroll], [Var_StandardDeviation_Payroll])",
+                "            RETURN EXP(-0.5 * POWER(CurrentZ, 2)) / SQRT(2 * PI())",
+                "    )",
+                ""
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SixSigmaSummary",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "0eb5e6dcb9584191af3a93a6ecfc7362"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Mean Salary",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8e9ab4f0-5753-48e4-8f24-b6fb8acd4ea2",
+            "sourceColumn": "[Mean Salary]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Standard Deviation",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "887c7690-0aa3-4b6b-a179-e7c85b10f13c",
+            "sourceColumn": "[Standard Deviation]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "1 Sigma",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "33c1c1f3-3b74-43df-8085-862c85db68e5",
+            "sourceColumn": "[1 Sigma]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "2 Sigma",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "5e3e5861-2c8d-44cc-933e-8160a9eec618",
+            "sourceColumn": "[2 Sigma]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "3 Sigma",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "b546a4fa-1dd0-401d-85a8-70ff3ef3269e",
+            "sourceColumn": "[3 Sigma]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Beyond 3 Sigma",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "596a731a-06d3-4c37-9692-a9e81fde7138",
+            "sourceColumn": "[Beyond 3 Sigma]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "3a2bb05a-c9f8-4c42-adb1-303f57d0825b",
+        "measures": [
+          {
+            "name": "SixSigmaSummaryText",
+            "expression": [
+              "",
+              "\"**Salary Distribution Analysis**\" & UNICHAR(10) & ",
+              "\"Mean Salary: \" & FORMAT([Cal_AVG_Payroll], \"Currency\") & UNICHAR(10) & ",
+              "\"Standard Deviation: \" & FORMAT([Var_StandardDeviation_Payroll], \"Currency\") & UNICHAR(10) & ",
+              "\"Percentage within 1 Sigma: \" & FORMAT([Percent_1Sigma] * 100, \"0.00\") & \"%\" & UNICHAR(10) & ",
+              "\"Percentage within 2 Sigma: \" & FORMAT([Percent_2Sigma] * 100, \"0.00\") & \"%\" & UNICHAR(10) & ",
+              "\"Percentage within 3 Sigma: \" & FORMAT([Percent_3Sigma] * 100, \"0.00\") & \"%\" & UNICHAR(10) & ",
+              "\"Percentage Beyond 3 Sigma: \" & FORMAT([Percent_Beyond3Sigma] * 100, \"0.00\") & \"%\" & UNICHAR(10) & ",
+              "",
+              "UNICHAR(10) & \"**Observations:**\" & UNICHAR(10) & ",
+              "\" - \" & IF([Percent_1Sigma] < 0.68, \"The percentage of salaries within 1 Sigma is lower than expected for a normal distribution. This could indicate a narrower salary range than typical, potentially leading to limited competitive compensation.\", \"The percentage of salaries within 1 Sigma is within the expected range for a normal distribution.\") & ",
+              "",
+              "UNICHAR(10) & \" - \" & IF([Percent_2Sigma] < 0.95, \"The percentage of salaries within 2 Sigma is lower than expected for a normal distribution. This might suggest potential outliers or unexpected salary variations.\", \"The percentage of salaries within 2 Sigma is within the expected range for a normal distribution.\") & ",
+              "",
+              "UNICHAR(10) & \" - \" & IF([Percent_3Sigma] < 0.997, \"The percentage of salaries within 3 Sigma is lower than expected for a normal distribution. This could indicate significant outliers or a non-normal distribution.\", \"The percentage of salaries within 3 Sigma is within the expected range for a normal distribution.\")",
+              ""
+            ],
+            "lineageTag": "dcb66e6c-92dd-422f-903f-9ccd061d961d"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "SixSigmaSummary",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "",
+                "SUMMARIZE(",
+                "    'dim_employee',",
+                "    \"Mean Salary\", [Cal_AVG_Payroll],",
+                "    \"Standard Deviation\", [Var_StandardDeviation_Payroll],",
+                "    \"1 Sigma\", FORMAT([Percent_1Sigma] * 100, \"0.00\") & \"%\",",
+                "    \"2 Sigma\", FORMAT([Percent_2Sigma] * 100, \"0.00\") & \"%\",",
+                "    \"3 Sigma\", FORMAT([Percent_3Sigma] * 100, \"0.00\") & \"%\",",
+                "    \"Beyond 3 Sigma\", FORMAT([Percent_Beyond3Sigma] * 100, \"0.00\") & \"%\"",
+                ")",
+                ""
+              ],
+              "type": "calculated"
             }
           }
         ]

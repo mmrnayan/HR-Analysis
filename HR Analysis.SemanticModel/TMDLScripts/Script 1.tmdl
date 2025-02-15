@@ -1,0 +1,94 @@
+createOrReplace
+
+	table SixSigmaSummary
+		lineageTag: 3a2bb05a-c9f8-4c42-adb1-303f57d0825b
+
+		measure SixSigmaSummaryText = ```
+				
+				"**Salary Distribution Analysis**" & UNICHAR(10) & 
+				"Mean Salary: " & FORMAT([Cal_AVG_Payroll], "Currency") & UNICHAR(10) & 
+				"Standard Deviation: " & FORMAT([Var_StandardDeviation_Payroll], "Currency") & UNICHAR(10) & 
+				"Percentage within 1 Sigma: " & FORMAT([Percent_1Sigma] * 100, "0.00") & "%" & UNICHAR(10) & 
+				"Percentage within 2 Sigma: " & FORMAT([Percent_2Sigma] * 100, "0.00") & "%" & UNICHAR(10) & 
+				"Percentage within 3 Sigma: " & FORMAT([Percent_3Sigma] * 100, "0.00") & "%" & UNICHAR(10) & 
+				"Percentage Beyond 3 Sigma: " & FORMAT([Percent_Beyond3Sigma] * 100, "0.00") & "%" & UNICHAR(10) & 
+				
+				UNICHAR(10) & "**Observations:**" & UNICHAR(10) & 
+				" - " & IF([Percent_1Sigma] < 0.68, "The percentage of salaries within 1 Sigma is lower than expected for a normal distribution. This could indicate a narrower salary range than typical, potentially leading to limited competitive compensation.", "The percentage of salaries within 1 Sigma is within the expected range for a normal distribution.") & 
+				
+				UNICHAR(10) & " - " & IF([Percent_2Sigma] < 0.95, "The percentage of salaries within 2 Sigma is lower than expected for a normal distribution. This might suggest potential outliers or unexpected salary variations.", "The percentage of salaries within 2 Sigma is within the expected range for a normal distribution.") & 
+				
+				UNICHAR(10) & " - " & IF([Percent_3Sigma] < 0.997, "The percentage of salaries within 3 Sigma is lower than expected for a normal distribution. This could indicate significant outliers or a non-normal distribution.", "The percentage of salaries within 3 Sigma is within the expected range for a normal distribution.")
+				
+				```
+			lineageTag: dcb66e6c-92dd-422f-903f-9ccd061d961d
+
+		column 'Mean Salary'
+			lineageTag: 8e9ab4f0-5753-48e4-8f24-b6fb8acd4ea2
+			summarizeBy: sum
+			isNameInferred
+			sourceColumn: [Mean Salary]
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column 'Standard Deviation'
+			lineageTag: 887c7690-0aa3-4b6b-a179-e7c85b10f13c
+			summarizeBy: sum
+			isNameInferred
+			sourceColumn: [Standard Deviation]
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column '1 Sigma'
+			lineageTag: 33c1c1f3-3b74-43df-8085-862c85db68e5
+			summarizeBy: none
+			isNameInferred
+			sourceColumn: [1 Sigma]
+
+			annotation SummarizationSetBy = Automatic
+
+		column '2 Sigma'
+			lineageTag: 5e3e5861-2c8d-44cc-933e-8160a9eec618
+			summarizeBy: none
+			isNameInferred
+			sourceColumn: [2 Sigma]
+
+			annotation SummarizationSetBy = Automatic
+
+		column '3 Sigma'
+			lineageTag: b546a4fa-1dd0-401d-85a8-70ff3ef3269e
+			summarizeBy: none
+			isNameInferred
+			sourceColumn: [3 Sigma]
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Beyond 3 Sigma'
+			lineageTag: 596a731a-06d3-4c37-9692-a9e81fde7138
+			summarizeBy: none
+			isNameInferred
+			sourceColumn: [Beyond 3 Sigma]
+
+			annotation SummarizationSetBy = Automatic
+
+		partition SixSigmaSummary = calculated
+			mode: import
+			source = ```
+					
+					SUMMARIZE(
+					    'dim_employee',
+					    "Mean Salary", [Cal_AVG_Payroll],
+					    "Standard Deviation", [Var_StandardDeviation_Payroll],
+					    "1 Sigma", FORMAT([Percent_1Sigma] * 100, "0.00") & "%",
+					    "2 Sigma", FORMAT([Percent_2Sigma] * 100, "0.00") & "%",
+					    "3 Sigma", FORMAT([Percent_3Sigma] * 100, "0.00") & "%",
+					    "Beyond 3 Sigma", FORMAT([Percent_Beyond3Sigma] * 100, "0.00") & "%"
+					)
+					
+					```
+
+		annotation PBI_Id = 0eb5e6dcb9584191af3a93a6ecfc7362

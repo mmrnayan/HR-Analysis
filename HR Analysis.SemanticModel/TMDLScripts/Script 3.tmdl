@@ -1,0 +1,105 @@
+createOrReplace
+
+	table Normal_Distribution_Six
+		lineageTag: 760d0ee9-e225-4755-879b-541c8c2a082b
+
+		measure Percent_1Sigma =
+				
+				DIVIDE(
+				    COUNTROWS(FILTER('dim_employee', [SigmaLevel] = "1 Sigma")),
+				    COUNTROWS('dim_employee')
+				)
+			lineageTag: 959f0b4f-f536-493f-ba76-654c941f4be5
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure Percent_2Sigma =
+				
+				DIVIDE(
+				    COUNTROWS(FILTER('dim_employee', [SigmaLevel] = "2 Sigma")),
+				    COUNTROWS('dim_employee')
+				)
+			lineageTag: 38c290cd-3285-42d8-aaba-766a061aea81
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure Percent_3Sigma =
+				
+				DIVIDE(
+				    COUNTROWS(FILTER('dim_employee', [SigmaLevel] = "3 Sigma")),
+				    COUNTROWS('dim_employee')
+				)
+			lineageTag: 01ad1c18-dfed-4d97-a79d-a7635f0b327d
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure Percent_Beyond3Sigma =
+				
+				DIVIDE(
+				    COUNTROWS(FILTER('dim_employee', [SigmaLevel] = "Beyond 3 Sigma")),
+				    COUNTROWS('dim_employee')
+				)
+			lineageTag: 2d4587b8-d02e-438d-8ac7-7662ab592243
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column Date
+			formatString: General Date
+			lineageTag: e725bad7-20a3-47f9-919b-781e11c2ce4d
+			summarizeBy: none
+			isNameInferred
+			sourceColumn: [Date]
+
+			annotation SummarizationSetBy = Automatic
+
+		column Salary
+			formatString: General Date
+			lineageTag: 8c020480-1aca-4a86-bd52-94e4b47c3652
+			summarizeBy: none
+			isNameInferred
+			sourceColumn: [Salary]
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Z Value'
+			lineageTag: 7fa14d2d-4e25-4428-9e8a-5be36bc59785
+			summarizeBy: sum
+			isNameInferred
+			sourceColumn: [Z Value]
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column PDF
+			lineageTag: 2e128556-2b8f-4140-8648-fae6bf2a156b
+			summarizeBy: sum
+			isNameInferred
+			sourceColumn: [PDF]
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		partition Normal_Distribution_Six = calculated
+			mode: import
+			source = ```
+					
+					VAR MinValue = FLOOR([Cal_AVG_Payroll] - 3 * [Var_StandardDeviation_Payroll], 1)
+					VAR MaxValue = CEILING([Cal_AVG_Payroll] + 3 * [Var_StandardDeviation_Payroll], 1)
+					RETURN 
+					    ADDCOLUMNS(
+					        CALENDAR(MinValue, MaxValue),
+					        "Salary", [Date],  -- Rename Date to Salary
+					        "Z Value", 
+					            VAR CurrentSalary = [Date]  -- Store Date as CurrentSalary
+					            RETURN DIVIDE(CurrentSalary - [Cal_AVG_Payroll], [Var_StandardDeviation_Payroll]),
+					        "PDF", 
+					            VAR CurrentZ = DIVIDE([Date] - [Cal_AVG_Payroll], [Var_StandardDeviation_Payroll])
+					            RETURN EXP(-0.5 * POWER(CurrentZ, 2)) / SQRT(2 * PI())
+					    )
+					
+					```
+
+		annotation PBI_Id = 1a65d983a5614d5cb8f0c76b5662b0d0
+
