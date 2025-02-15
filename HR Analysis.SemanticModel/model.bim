@@ -15012,6 +15012,194 @@
                 },
                 "State": "Generated"
               },
+              "payroll__gap_analysis.graph_avg_basic": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Graph_Avg_Basic"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Avg": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.graph_iqr": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Graph IQR"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "IQR": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.graph_iqr_5075": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Graph IQR 50-75"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "IQR 50-75": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.graph_max_basic": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Graph_Max_Basic"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Max": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.graph_median_basic": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Graph_Median_Basic"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Graph_Median_Basic": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "Median": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.graph_min_basic": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Graph_Min_Basic"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Min": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.graph_q1_basic": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Graph_Q1_Basic"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Graph_Q1_Basic": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "‎": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.graph_q3_basic": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Graph_Q3_Basic"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Graph_Q3_Basic": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "performance9Box": {
                 "Definition": {
                   "Binding": {
@@ -17157,19 +17345,7 @@
                     "ConceptualProperty": "B. Employee ID - Text"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "Employee ID": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "profile_of_employee.c__full_name": {
                 "Definition": {
@@ -17178,19 +17354,7 @@
                     "ConceptualProperty": "C. Full Name"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "Full Name": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "profile_of_employee.i__education_level": {
                 "Definition": {
@@ -46035,6 +46199,72 @@
               ""
             ],
             "lineageTag": "e70c1e79-234e-4ccf-8948-dd1aa7edfea0"
+          },
+          {
+            "name": "Graph_Max_Basic",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "MAX(fact_employee[Base Salary ($)])",
+            "lineageTag": "2a826c0f-19c1-437c-b81b-8a8e1b99a46a"
+          },
+          {
+            "name": "Graph_Avg_Basic",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(fact_employee[Base Salary ($)])",
+            "lineageTag": "f3b1ebd8-53f1-446e-b676-5493a5d49a11"
+          },
+          {
+            "name": "Graph IQR",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Graph_Q3_Basic]-[Graph_Q1_Basic]",
+            "lineageTag": "f64eb869-6bbb-4af3-9433-2189a6f7b396"
+          },
+          {
+            "name": "Graph Y axis max",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Graph_Max_Basic]*1.3",
+            "lineageTag": "7beab5bf-812e-409e-a8c2-5f6d214a656d"
+          },
+          {
+            "name": "IQR 25-50",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Graph_Median_Basic]-[Graph_Q1_Basic]",
+            "lineageTag": "23784607-536d-4cd8-8f8d-6efacb21f6ef"
+          },
+          {
+            "name": "Graph IQR 50-75",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Graph_Q3_Basic]- [Graph_Median_Basic]",
+            "lineageTag": "55b5d4e1-e96b-47c9-9748-fecf7b1aeedd"
           }
         ],
         "partitions": [
@@ -49227,6 +49457,204 @@
                 "    \"Beyond 3 Sigma\", FORMAT([Percent_Beyond3Sigma] * 100, \"0.00\") & \"%\"",
                 ")",
                 ""
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Basic-Q1-Q3-Median",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "c7b255eebbcf4f54a5a3eb1a365059cd"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Basic-Q1-Q3-Median",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "2495e524-d0ab-4ac6-a972-360ac0453c45",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Basic-Q1-Q3-Median Fields"
+                }
+              ]
+            },
+            "sortByColumn": "Basic-Q1-Q3-Median Order",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Basic-Q1-Q3-Median Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "7bc0aa61-ad7d-467e-80c2-0358cf83af03",
+            "sortByColumn": "Basic-Q1-Q3-Median Order",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Basic-Q1-Q3-Median Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "1d647f33-c202-40ea-b8e0-d20b14fbb180",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "e38e3ae6-1e99-4b29-b01e-531b04dd151c",
+        "partitions": [
+          {
+            "name": "Basic-Q1-Q3-Median",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"Min\", NAMEOF('Payroll_&_Gap_Analysis'[Graph_Min_Basic]), 0),",
+                "    (\"Median\", NAMEOF('Payroll_&_Gap_Analysis'[Graph_Median_Basic]), 1),",
+                "    (\"Q1\", NAMEOF('Payroll_&_Gap_Analysis'[Graph_Q1_Basic]), 2),",
+                "    (\"Q3\", NAMEOF('Payroll_&_Gap_Analysis'[Graph_Q3_Basic]), 3)",
+                "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Gen-Edu-Org-Dept",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "01b644fd1be048a28cc0d9231219d991"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Gen-Edu-Org-Dept",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "7135feca-baf2-4694-ad98-ada7f84a4871",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Gen-Edu-Org-Dept Fields"
+                }
+              ]
+            },
+            "sortByColumn": "Gen-Edu-Org-Dept Order",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Gen-Edu-Org-Dept Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "857942ab-412d-458f-87ca-d184332e95e3",
+            "sortByColumn": "Gen-Edu-Org-Dept Order",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Gen-Edu-Org-Dept Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "61746d6c-5393-42af-8c4d-3488ed92c2c4",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "9fa9bf91-38c3-474e-b0ee-fa2965336119",
+        "partitions": [
+          {
+            "name": "Gen-Edu-Org-Dept",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"Gender\", NAMEOF('dim_employee'[Gender]), 0),",
+                "    (\"Education Level\", NAMEOF('dim_employee'[Education Level]), 1),",
+                "    (\"Organization Level\", NAMEOF('dim_jobtitle'[Organization Level]), 2),",
+                "    (\"Department\", NAMEOF('dim_department'[Department]), 3)",
+                "}"
               ],
               "type": "calculated"
             }
