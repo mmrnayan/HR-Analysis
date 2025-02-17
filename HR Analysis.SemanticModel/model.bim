@@ -15012,6 +15012,174 @@
                 },
                 "State": "Generated"
               },
+              "payroll__gap_analysis.cal_basic_salary": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Cal_Basic_Salary"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Basic Salary": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.cal_house_rent": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Cal_House_Rent"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "House Rent": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.cal_insuarence": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Cal_Insuarence"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Insuarence": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.cal_overtime": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Cal_Overtime"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Overtime": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.cal_provident_fund": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Cal_Provident_Fund"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Provident Fund": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.cal_tax": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Cal_Tax"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Tax": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.cal_total_payable": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Cal_Total_Payable"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Total Payable": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "payroll__gap_analysis.cal_total_payroll": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Payroll_&_Gap_Analysis",
+                    "ConceptualProperty": "Cal_Total_Payroll"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Total Payroll": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "payroll__gap_analysis.graph_avg_basic": {
                 "Definition": {
                   "Binding": {
@@ -15040,19 +15208,7 @@
                     "ConceptualProperty": "Graph IQR"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "IQR": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "payroll__gap_analysis.graph_iqr_5075": {
                 "Definition": {
@@ -15106,16 +15262,6 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Graph_Median_Basic": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  },
-                  {
                     "Median": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
@@ -15158,16 +15304,6 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Graph_Q1_Basic": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  },
-                  {
                     "‎": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
@@ -15186,19 +15322,7 @@
                     "ConceptualProperty": "Graph_Q3_Basic"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "Graph_Q3_Basic": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "performance9Box": {
                 "Definition": {
@@ -17336,7 +17460,19 @@
                     "ConceptualProperty": "AH. Resignation Probability Category"
                   }
                 },
-                "State": "Generated"
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Resignation Probability": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
               },
               "profile_of_employee.b__employee_id__text": {
                 "Definition": {
@@ -17356,6 +17492,27 @@
                 },
                 "State": "Generated"
               },
+              "profile_of_employee.f__age_by_year": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "F. Age by Year"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Age": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "profile_of_employee.i__education_level": {
                 "Definition": {
                   "Binding": {
@@ -17363,7 +17520,19 @@
                     "ConceptualProperty": "I. Education Level"
                   }
                 },
-                "State": "Generated"
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Education Level": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
               },
               "profile_of_employee.k__department": {
                 "Definition": {
@@ -17372,7 +17541,19 @@
                     "ConceptualProperty": "K. Department"
                   }
                 },
-                "State": "Generated"
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Department": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
               },
               "profile_of_employee.l__job_title": {
                 "Definition": {
@@ -17381,7 +17562,40 @@
                     "ConceptualProperty": "L. Job Title"
                   }
                 },
-                "State": "Generated"
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Job Title": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "profile_of_employee.o__country": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "O. Country"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Country": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
               },
               "profile_of_employee.r__employment_type": {
                 "Definition": {
@@ -17399,7 +17613,61 @@
                     "ConceptualProperty": "S. Employment Status"
                   }
                 },
-                "State": "Generated"
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Employment Status": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "profile_of_employee.u__base_salary_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "U. Base Salary ($)"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Base Salary": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "profile_of_employee.z__assessment_potential_category": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Profile of Employee",
+                    "ConceptualProperty": "Z. Assessment Potential Category"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Potential": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
               },
               "resignation_prediction": {
                 "Definition": {
@@ -38415,11 +38683,15 @@
               {
                 "name": "UnderlyingDateTimeDataType",
                 "value": "Date"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
               }
             ],
             "dataType": "dateTime",
             "description": "Date the employee was hired",
-            "formatString": "Long Date",
+            "formatString": "mmmm d\\, yyyy",
             "isHidden": true,
             "lineageTag": "d5fc471d-c165-454e-bc1e-30ebaada1b40",
             "sourceColumn": "Hire Date",
@@ -47835,6 +48107,368 @@
           }
         ],
         "lineageTag": "8c2b2965-eeb0-4753-b286-db0c311efcc5",
+        "measures": [
+          {
+            "name": "Rank by aspiring",
+            "displayFolder": "measures",
+            "expression": [
+              "RANKX(",
+              "    ALLSELECTED('Profile of Employee'[K. Department]),",
+              "    [# Aspiring performer],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "0e559183-fc51-4557-9dd3-ce338d5e46da"
+          },
+          {
+            "name": "Color aspiring-deppt",
+            "displayFolder": "measures",
+            "expression": [
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by aspiring] = 1, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by aspiring] > 1, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")"
+            ],
+            "lineageTag": "bcfced31-928c-4e46-bb7c-94ceb3ef26b1"
+          },
+          {
+            "name": "# Aspiring performer",
+            "displayFolder": "measures",
+            "expression": [
+              "CALCULATE(",
+              "        COUNTROWS('Profile of Employee'),",
+              "        'Profile of Employee'[AE. Grid Name] = \"Aspiring Performer\"",
+              "    )"
+            ],
+            "formatString": "0",
+            "lineageTag": "cf05277a-4465-4ab8-9eb4-7d010f13e993"
+          },
+          {
+            "name": "# of High Achiever",
+            "displayFolder": "measures",
+            "expression": [
+              "CALCULATE(",
+              "        COUNTROWS('Profile of Employee'),",
+              "        'Profile of Employee'[AE. Grid Name] = \"High Achiever\"",
+              "    )"
+            ],
+            "formatString": "0",
+            "lineageTag": "2d127e7d-7b54-403d-b302-eaa42b7581db"
+          },
+          {
+            "name": "Color High Achiever-deppt",
+            "displayFolder": "measures",
+            "expression": [
+              "",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by High Achiever] = 1, \"#741d83\",        -- Blue for the second-highest value",
+              "    [Rank by High Achiever] > 1, \"#D3D3D3\",        -- Gray for all other values",
+              "    \"#FFFF99\"                              -- Default white (optional)",
+              ")"
+            ],
+            "lineageTag": "360973f1-a418-46f4-b6b8-c01ca97fb0c3"
+          },
+          {
+            "name": "Rank by High Achiever",
+            "displayFolder": "measures",
+            "expression": [
+              "",
+              "RANKX(",
+              "    ALLSELECTED('Profile of Employee'[K. Department]),",
+              "    [# of High Achiever],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "12ef2170-3014-4deb-a044-a8bc585429cd"
+          },
+          {
+            "name": "# of Top Talent",
+            "displayFolder": "measures",
+            "expression": [
+              "CALCULATE(",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AE. Grid Name] = \"Top Talent\"",
+              ")",
+              ""
+            ],
+            "lineageTag": "973ea4fd-b748-481f-9df3-5375a8a3dc2b"
+          },
+          {
+            "name": "# of Emerging Contributor",
+            "displayFolder": "measures",
+            "expression": [
+              "CALCULATE(",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AE. Grid Name] = \"Emerging Contributor\"",
+              ")"
+            ],
+            "lineageTag": "faefa7c0-45ec-44a4-9ad0-146e37e5d21e"
+          },
+          {
+            "name": "# of Core Performer",
+            "displayFolder": "measures",
+            "expression": [
+              "CALCULATE(",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AE. Grid Name] = \"Core Performer\"",
+              ")",
+              ""
+            ],
+            "lineageTag": "424470b7-86b4-4a3f-a628-142c280e2432"
+          },
+          {
+            "name": "# of Rising Potential",
+            "displayFolder": "measures",
+            "expression": [
+              "CALCULATE(",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AE. Grid Name] = \"Rising Potential\"",
+              ")"
+            ],
+            "lineageTag": "290e351b-abf8-453b-b489-13b1cf693ea9"
+          },
+          {
+            "name": "# of Growth Opportunity",
+            "displayFolder": "measures",
+            "expression": [
+              "CALCULATE(",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AE. Grid Name] = \"Growth Opportunity\"",
+              ")",
+              ""
+            ],
+            "lineageTag": "3dd0f0c4-3f31-485e-87fb-a7acb24fd3a3"
+          },
+          {
+            "name": "# of Reliable Contributor",
+            "displayFolder": "measures",
+            "expression": [
+              "CALCULATE(",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AE. Grid Name] = \"Reliable Contributor\"",
+              ")",
+              ""
+            ],
+            "lineageTag": "8a409be1-55ce-487f-b647-8756488aeab7"
+          },
+          {
+            "name": "# of Consistent Performer",
+            "displayFolder": "measures",
+            "expression": [
+              "CALCULATE(",
+              "    COUNTROWS('Profile of Employee'),",
+              "    'Profile of Employee'[AE. Grid Name] = \"Consistent Performer\"",
+              ")"
+            ],
+            "lineageTag": "37c5c50b-ab78-4e62-8cd5-5474accaa898"
+          },
+          {
+            "name": "Rank by Top Talent",
+            "displayFolder": "measures",
+            "expression": [
+              "RANKX(",
+              "    ALLSELECTED('Profile of Employee'[K. Department]),",
+              "    [# of Top Talent],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "lineageTag": "a6bb1ec4-0151-4fc2-98a8-2d11a4757965"
+          },
+          {
+            "name": "Rank by Emerging Contributor",
+            "displayFolder": "measures",
+            "expression": [
+              "RANKX(",
+              "    ALLSELECTED('Profile of Employee'[K. Department]),",
+              "    [# of Emerging Contributor],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")",
+              ""
+            ],
+            "lineageTag": "e819d1c2-efc1-4788-9057-8311a1ee06ce"
+          },
+          {
+            "name": "Rank by Core Performer",
+            "displayFolder": "measures",
+            "expression": [
+              "RANKX(",
+              "    ALLSELECTED('Profile of Employee'[K. Department]),",
+              "    [# of Core Performer],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "lineageTag": "a928815e-a556-40be-b235-d0d235a42038"
+          },
+          {
+            "name": "Rank by Rising Potential",
+            "displayFolder": "measures",
+            "expression": [
+              "RANKX(",
+              "    ALLSELECTED('Profile of Employee'[K. Department]),",
+              "    [# of Rising Potential],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "lineageTag": "7241460f-e69f-4e32-9c0d-d3c12e0914a6"
+          },
+          {
+            "name": "Rank by Growth Opportunity",
+            "displayFolder": "measures",
+            "expression": [
+              "RANKX(",
+              "    ALLSELECTED('Profile of Employee'[K. Department]),",
+              "    [# of Growth Opportunity],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "lineageTag": "a5f53ca1-c72d-48cf-bb09-71726e2718e1"
+          },
+          {
+            "name": "Rank by Reliable Contributor",
+            "displayFolder": "measures",
+            "expression": [
+              "RANKX(",
+              "    ALLSELECTED('Profile of Employee'[K. Department]),",
+              "    [# of Reliable Contributor],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "lineageTag": "79101ffd-a328-4b3f-ae28-26c71414286c"
+          },
+          {
+            "name": "Rank by Consistent Performer",
+            "displayFolder": "measures",
+            "expression": [
+              "RANKX(",
+              "    ALLSELECTED('Profile of Employee'[K. Department]),",
+              "    [# of Consistent Performer],",
+              "    ,",
+              "    DESC,",
+              "    DENSE",
+              ")"
+            ],
+            "lineageTag": "793c1240-787a-43d4-8d2e-2cc0b901da51"
+          },
+          {
+            "name": "Color Top Talent",
+            "displayFolder": "measures",
+            "expression": [
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Top Talent] = 1, \"#741d83\",",
+              "    [Rank by Top Talent] > 1, \"#D3D3D3\",",
+              "    \"#FFFF99\"",
+              ")"
+            ],
+            "lineageTag": "87548456-ee3c-4b24-ae72-89c7ecc2978f"
+          },
+          {
+            "name": "Color Emerging Contributor",
+            "displayFolder": "measures",
+            "expression": [
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Emerging Contributor] = 1, \"#741d83\",",
+              "    [Rank by Emerging Contributor] > 1, \"#D3D3D3\",",
+              "    \"#FFFF99\"",
+              ")",
+              ""
+            ],
+            "lineageTag": "8e2a8343-06e9-489f-84f4-9f25faf172a6"
+          },
+          {
+            "name": "Color Core Performer",
+            "displayFolder": "measures",
+            "expression": [
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Core Performer] = 1, \"#741d83\",",
+              "    [Rank by Core Performer] > 1, \"#D3D3D3\",",
+              "    \"#FFFF99\"",
+              ")"
+            ],
+            "lineageTag": "2bdd600a-72bd-4c15-b214-ef7adc18bcc5"
+          },
+          {
+            "name": "Color Rising Potential",
+            "displayFolder": "measures",
+            "expression": [
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Rising Potential] = 1, \"#741d83\",",
+              "    [Rank by Rising Potential] > 1, \"#D3D3D3\",",
+              "    \"#FFFF99\"",
+              ")"
+            ],
+            "lineageTag": "c7160a02-f9b3-4d06-992f-9e67eefd018a"
+          },
+          {
+            "name": "Color Growth Opportunity",
+            "displayFolder": "measures",
+            "expression": [
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Growth Opportunity] = 1, \"#741d83\",",
+              "    [Rank by Growth Opportunity] > 1, \"#D3D3D3\",",
+              "    \"#FFFF99\"",
+              ")"
+            ],
+            "lineageTag": "4d873809-246e-4ade-a071-279f9cf14fac"
+          },
+          {
+            "name": "Color Reliable Contributor",
+            "displayFolder": "measures",
+            "expression": [
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Reliable Contributor] = 1, \"#741d83\",",
+              "    [Rank by Reliable Contributor] > 1, \"#D3D3D3\",",
+              "    \"#FFFF99\"",
+              ")"
+            ],
+            "lineageTag": "fe3e3b01-ccfb-44a1-bcfb-cb1b6bced31a"
+          },
+          {
+            "name": "Color Consistent Performer",
+            "displayFolder": "measures",
+            "expression": [
+              "SWITCH(",
+              "    TRUE(),",
+              "    [Rank by Consistent Performer] = 1, \"#741d83\",",
+              "    [Rank by Consistent Performer] > 1, \"#D3D3D3\",",
+              "    \"#FFFF99\"",
+              ")"
+            ],
+            "lineageTag": "961ddb02-5f3d-4cfa-864e-56ced9882c89"
+          },
+          {
+            "name": "Text",
+            "displayFolder": "measures",
+            "expression": "\"Return to 9-Box\"",
+            "lineageTag": "76410d6c-1534-49b7-a601-4d1044df0250"
+          }
+        ],
         "partitions": [
           {
             "name": "Profile of Employee",
@@ -49201,6 +49835,22 @@
             "sourceColumn": "[PDF]",
             "summarizeBy": "sum",
             "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "YEAR(Normal_Distribution_Six[Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "c42de0f8-fdc0-4aab-9374-8e182e30af19",
+            "summarizeBy": "sum",
+            "type": "calculated"
           }
         ],
         "lineageTag": "760d0ee9-e225-4755-879b-541c8c2a082b",
@@ -49654,6 +50304,108 @@
                 "    (\"Education Level\", NAMEOF('dim_employee'[Education Level]), 1),",
                 "    (\"Organization Level\", NAMEOF('dim_jobtitle'[Organization Level]), 2),",
                 "    (\"Department\", NAMEOF('dim_department'[Department]), 3)",
+                "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Payroll Parameter",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "40766aebfc9c4e019e69a0883b13bcf5"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Payroll Parameter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "b8e449ed-f201-4f43-abcb-5713fe772784",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Payroll Parameter Fields"
+                }
+              ]
+            },
+            "sortByColumn": "Payroll Parameter Order",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Payroll Parameter Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "3576c4c9-d704-4a08-bd7a-d87efd69b4cd",
+            "sortByColumn": "Payroll Parameter Order",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Payroll Parameter Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "342ee18a-2946-462f-831e-acf477e73f03",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "e713f9f7-80d7-44a4-804c-7a0e5d628d0a",
+        "partitions": [
+          {
+            "name": "Payroll Parameter",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"Gender\", NAMEOF('dim_employee'[Gender]), 0),",
+                "    (\"Ethnicity\", NAMEOF('dim_employee'[Ethnicity]), 1),",
+                "    (\"Education Level\", NAMEOF('dim_employee'[Education Level]), 2),",
+                "    (\"Age Band\", NAMEOF('fact_employee'[Age Band]), 3),",
+                "    (\"Tenure Banding\", NAMEOF('fact_resigned'[Tenure Banding]), 4),",
+                "    (\"Organization Level\", NAMEOF('dim_jobtitle'[Organization Level]), 5),",
+                "    (\"Department\", NAMEOF('dim_department'[Department]), 6)",
                 "}"
               ],
               "type": "calculated"
