@@ -1,0 +1,530 @@
+// C# script for Tabular Editor to document DAX measures using Claude 3.7 Sonnet API
+// This script generates explanations for DAX measures and places the resulting info in the measures' metadata Description field
+// Authored by Brian Julius, Feb 2025
+
+#r "System.Net.Http"
+#r "C:\\Windows\\System32\\DriverStore\\FileRepository\\hpcustomcapcomp.inf_amd64_c6d849cb3652cdf7\\x64\\Newtonsoft.Json.dll"
+#r "Microsoft.VisualBasic"
+using System;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using TabularEditor.TOMWrapper;
+using System.Threading;
+using System.IO;
+using System.Drawing;
+using Microsoft.VisualBasic;
+
+// Settings storage file path
+string settingsFilePath = Path.Combine(
+    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+    "TabularEditor",
+    "ClaudeApiSettings.json");
+
+// Configuration values
+string apiKey = "";
+string environmentVariableName = "ANTHROPIC_API_KEY";
+bool useEnvironmentVariable = true;
+var modelName = "claude-3-7-sonnet-20250219"; // Claude 3.7 Sonnet model string
+var apiUrl = "https://api.anthropic.com/v1/messages";
+bool skipExistingDescriptions = false;
+
+// Try to load saved settings
+LoadApiSettings();
+
+// Get table and API info
+Table selectedTable = null;
+bool setupSuccess = SetupApiAndSelectTable(out selectedTable);
+
+if (!setupSuccess || selectedTable == null)
+{
+    return; // User canceled
+}
+
+// Get measures from selected table
+var measures = selectedTable.Measures.ToList();
+
+if (measures.Count == 0)
+{
+    string message = string.Format("No measures found in table '{0}'.", selectedTable.Name);
+    MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    return;
+}
+
+// Filter measures based on settings
+var measuresToProcess = measures;
+if (skipExistingDescriptions)
+{
+    measuresToProcess = measures.Where(m => string.IsNullOrWhiteSpace(m.Description)).ToList();
+}
+
+if (measuresToProcess.Count == 0)
+{
+    string message = string.Format("No measures to process in table '{0}' based on your criteria.", selectedTable.Name);
+    MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    return;
+}
+
+// Show confirmation with count of measures to process
+string confirmationMessage = string.Format("This will process {0} measures in table '{1}'.\n\nDo you want to continue?", measuresToProcess.Count, selectedTable.Name);
+if (MessageBox.Show(confirmationMessage, "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+{
+    return;
+}
+
+// Create a progress form to display during processing
+Form progressForm = CreateProgressForm(measuresToProcess.Count);
+progressForm.TopMost = true;
+progressForm.ShowInTaskbar = false;
+progressForm.Show();
+progressForm.BringToFront();
+Label statusLabel = progressForm.Controls["statusLabel"] as Label;
+Label measureNameLabel = progressForm.Controls["measureNameLabel"] as Label;
+ProgressBar progressBar = progressForm.Controls["progressBar"] as ProgressBar;
+progressBar.Maximum = measuresToProcess.Count;
+progressBar.Value = 0;
+Application.DoEvents();
+
+// Create and configure HttpClient for API calls
+using (var httpClient = new HttpClient())
+{
+    // Configure HttpClient with headers for Anthropic API
+    httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+    httpClient.DefaultRequestHeaders.Add("anthropic-version", "2023-06-01");
+
+    if (useEnvironmentVariable)
+    {
+        string envApiKey = Environment.GetEnvironmentVariable(environmentVariableName);
+        if (string.IsNullOrEmpty(envApiKey))
+        {
+            string envErrorMessage = string.Format("Environment variable '{0}' not found or empty.", environmentVariableName);
+            MessageBox.Show(envErrorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            progressForm.Close();
+            return;
+        }
+        httpClient.DefaultRequestHeaders.Add("x-api-key", envApiKey);
+    }
+    else
+    {
+        httpClient.DefaultRequestHeaders.Add("x-api-key", apiKey);
+    }
+
+    // Process each measure
+    int successCount = 0;
+    int errorCount = 0;
+
+    for (int i = 0; i < measuresToProcess.Count; i++)
+    {
+        var measure = measuresToProcess[i];
+
+        // Update progress display
+        measureNameLabel.Text = string.Format("Measure: {0}", measure.Name);
+        statusLabel.Text = string.Format("Processing {0} of {1}", i + 1, measuresToProcess.Count);
+        progressBar.Value = i;
+        Application.DoEvents();
+
+        try
+        {
+            // Get the measure's DAX expression
+            var daxExpression = measure.Expression;
+
+            // Skip if no expression
+            if (string.IsNullOrEmpty(daxExpression))
+            {
+                statusLabel.Text = string.Format("Skipping measure '{0}' as it has no DAX expression", measure.Name);
+                Application.DoEvents();
+                Thread.Sleep(500);
+                continue;
+            }
+
+            // Call Claude API and update description
+            var description = Task.Run(async () =>
+                await CallClaudeApiAsync(httpClient, measure.Name, daxExpression)
+            ).GetAwaiter().GetResult();
+
+            // Update the measure's description
+            if (!string.IsNullOrEmpty(description))
+            {
+                measure.Description = description;
+                successCount++;
+            }
+            else
+            {
+                errorCount++;
+            }
+
+            // Add a delay between API calls to avoid rate limiting
+            Thread.Sleep(1000);
+        }
+        catch (Exception ex)
+        {
+            statusLabel.Text = string.Format("Error: {0}", ex.Message.Substring(0, Math.Min(ex.Message.Length, 80)));
+            Application.DoEvents();
+            Thread.Sleep(1000);
+            errorCount++;
+        }
+    }
+
+    // Update progress display for completion
+    statusLabel.Text = "Processing complete!";
+    progressBar.Value = measuresToProcess.Count;
+    Application.DoEvents();
+    Thread.Sleep(1000);
+
+    // Close progress form
+    progressForm.Close();
+
+    // Show completion message
+    MessageBox.Show(
+        string.Format("Processing complete!\n\nSuccessful: {0}\nErrors: {1}", successCount, errorCount),
+        "Complete",
+        MessageBoxButtons.OK,
+        MessageBoxIcon.Information);
+}
+
+// Function that combines API setup and table selection to simplify flow
+bool SetupApiAndSelectTable(out Table selectedTable)
+{
+    selectedTable = null;
+
+    // First handle API key setup
+    if (string.IsNullOrEmpty(apiKey) && string.IsNullOrEmpty(environmentVariableName))
+    {
+        // No saved settings, need to configure API
+        if (!ConfigureApi())
+            return false;
+    }
+    else
+    {
+        // We have saved settings, ask if user wants to use them
+        var useExistingSettings = MessageBox.Show(
+            useEnvironmentVariable
+                ? string.Format("Using environment variable: {0}\nContinue with this setting?", environmentVariableName)
+                : "Using saved API key. Continue with this setting?",
+            "Use Saved Settings",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+
+        if (useExistingSettings == DialogResult.No)
+        {
+            if (!ConfigureApi())
+                return false;
+        }
+    }
+
+    // Now handle table selection
+    var tables = Model.Tables.ToList();
+    if (tables.Count == 0)
+    {
+        MessageBox.Show("No tables found in the model.", "Error",
+            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return false;
+    }
+
+    // Now handle table selection - using a VERY simple approach with MessageBox
+    var tableNames = tables.Select(t => t.Name).ToArray();
+    var tableOptions = string.Join("\n", tableNames.Select((name, index) => string.Format("{0}: {1}", index + 1, name)));
+
+    var tableSelectionMsg = string.Format("Enter the number of the table to document:\n\n{0}", tableOptions);
+    var tableInputResult = Microsoft.VisualBasic.Interaction.InputBox(tableSelectionMsg, "Select Table", "1");
+
+    // Parse the selected table number
+    if (!int.TryParse(tableInputResult, out int selectedTableIndex) ||
+        selectedTableIndex < 1 ||
+        selectedTableIndex > tables.Count)
+    {
+        MessageBox.Show("Invalid table selection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return false;
+    }
+
+    // Get the selected table (adjusting for 0-based indexing)
+    selectedTable = tables[selectedTableIndex - 1];
+
+    // Ask about skipping existing descriptions
+    skipExistingDescriptions = (MessageBox.Show(
+        "Skip measures that already have descriptions?",
+        "Configuration",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question) == DialogResult.Yes);
+
+    return true;
+}
+
+// Function to configure API settings
+bool ConfigureApi()
+{
+    // Use simple InputBox for API configuration
+    var apiOptions = "1: Use Environment Variable (Recommended)\n2: Enter API Key Directly";
+    var apiOptionResult = Interaction.InputBox(
+        string.Format("How would you like to provide the Claude API key?\n\n{0}", apiOptions),
+        "Claude API Configuration",
+        "1");
+
+    if (string.IsNullOrEmpty(apiOptionResult))
+        return false; // User canceled
+
+    if (!int.TryParse(apiOptionResult, out int apiOption) || (apiOption != 1 && apiOption != 2))
+    {
+        MessageBox.Show("Invalid option selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return false;
+    }
+
+    useEnvironmentVariable = (apiOption == 1);
+
+    if (useEnvironmentVariable)
+    {
+        // Get environment variable name
+        var defaultVar = string.IsNullOrEmpty(environmentVariableName) ? "ANTHROPIC_API_KEY" : environmentVariableName;
+        var envVarResult = Interaction.InputBox(
+            "Enter the name of the environment variable containing your Claude API key:",
+            "Environment Variable",
+            defaultVar);
+
+        if (string.IsNullOrEmpty(envVarResult))
+            return false; // User canceled
+
+        environmentVariableName = envVarResult.Trim();
+
+        // Validate that the environment variable exists
+        string envValue = Environment.GetEnvironmentVariable(environmentVariableName);
+        if (string.IsNullOrEmpty(envValue))
+        {
+            MessageBox.Show(string.Format("Environment variable '{0}' not found or is empty.", environmentVariableName),
+                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        apiKey = ""; // Clear API key when using environment variable
+    }
+    else
+    {
+        // Get direct API key
+        var defaultKey = string.IsNullOrEmpty(apiKey) ? "" : apiKey;
+        var apiKeyResult = Interaction.InputBox(
+            "Enter your Claude API key:",
+            "API Key",
+            defaultKey);
+
+        if (string.IsNullOrEmpty(apiKeyResult))
+            return false; // User canceled
+
+        apiKey = apiKeyResult.Trim();
+        environmentVariableName = ""; // Clear environment variable name
+    }
+
+    // Ask to save settings
+    var saveSettings = MessageBox.Show(
+        "Would you like to save these API settings for future use?",
+        "Save Settings",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question);
+
+    if (saveSettings == DialogResult.Yes)
+    {
+        SaveApiSettings();
+    }
+
+    return true;
+}
+
+// Create progress form
+Form CreateProgressForm(int totalMeasures)
+{
+    var form = new Form
+    {
+        Text = "Processing DAX Measures",
+        Size = new Size(450, 150), // Much smaller size
+        StartPosition = FormStartPosition.CenterScreen,
+        FormBorderStyle = FormBorderStyle.FixedDialog,
+        ControlBox = false,
+        MaximizeBox = false,
+        MinimizeBox = false,
+        TopMost = true,
+        ShowInTaskbar = false
+    };
+
+    var measureNameLabel = new Label
+    {
+        Name = "measureNameLabel",
+        Text = "Initializing...",
+        Left = 10,
+        Top = 10,
+        Width = 430,
+        Height = 20,
+        Font = new Font("Arial", 9) // Smaller font
+    };
+
+    var progressBar = new ProgressBar
+    {
+        Name = "progressBar",
+        Left = 10,
+        Top = 40,
+        Width = 430,
+        Height = 25,
+        Minimum = 0,
+        Maximum = totalMeasures,
+        Value = 0
+    };
+
+    var statusLabel = new Label
+    {
+        Name = "statusLabel",
+        Text = "Starting...",
+        Left = 10,
+        Top = 75,
+        Width = 430,
+        Height = 20,
+        Font = new Font("Arial", 9) // Smaller font
+    };
+
+    form.Controls.AddRange(new Control[] { measureNameLabel, progressBar, statusLabel });
+
+    return form;
+}
+
+// Function to save API settings
+void SaveApiSettings()
+{
+    try
+    {
+        // Create settings directory if it doesn't exist
+        string directory = Path.GetDirectoryName(settingsFilePath);
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+
+        // Create settings object
+        var settings = new
+        {
+            UseEnvironmentVariable = useEnvironmentVariable,
+            EnvironmentVariableName = environmentVariableName,
+            ApiKey = apiKey
+        };
+
+        // Save settings to file
+        string json = JsonConvert.SerializeObject(settings, Formatting.Indented);
+        File.WriteAllText(settingsFilePath, json);
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show(string.Format("Failed to save API settings: {0}", ex.Message),
+            "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+    }
+}
+
+// Function to load API settings
+void LoadApiSettings()
+{
+    try
+    {
+        if (File.Exists(settingsFilePath))
+        {
+            string json = File.ReadAllText(settingsFilePath);
+            var settings = JsonConvert.DeserializeObject<JObject>(json);
+
+            useEnvironmentVariable = settings["UseEnvironmentVariable"].Value<bool>();
+            environmentVariableName = settings["EnvironmentVariableName"].Value<string>();
+            apiKey = settings["ApiKey"].Value<string>();
+        }
+    }
+    catch (Exception)
+    {
+        // Silently ignore errors loading settings
+    }
+}
+
+// Async method to call Claude API
+async Task<string> CallClaudeApiAsync(HttpClient client, string measureName, string daxExpression)
+{
+    try
+    {
+        // Construct the prompt for Claude
+        var prompt = string.Format(@"I have a DAX measure named '{0}' with the following DAX expression:
+
+Please provide:
+1. A one-sentence explanation labeled 'PURPOSE' that describes what this measure does
+2. A detailed explanation labeled 'EXPLANATION' (maximum 1000 characters) that explains exactly how this measure works in clear, plain language
+
+For the EXPLANATION section:
+- Break up long explanations into bullets or numbered lists where appropriate
+- Use line breaks to separate different concepts
+- Make it easy to scan by using clear formatting
+- Highlight important functions or steps in the calculation
+
+Format your response exactly as:
+
+PURPOSE: [One sentence explanation]
+
+EXPLANATION:
+[Detailed explanation of how the measure works, with appropriate formatting, not exceeding 1000 characters]
+
+Do not include any other text or explanation.", measureName, daxExpression);
+
+        // Create the request body according to Claude API specification
+        var requestBody = new
+        {
+            model = modelName,
+            max_tokens = 1024,
+            messages = new[]
+            {
+                new { role = "user", content = prompt }
+            }
+        };
+
+        // Serialize the request to JSON
+        var jsonContent = JsonConvert.SerializeObject(requestBody);
+        var stringContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+        // Send the request
+        var response = await client.PostAsync(apiUrl, stringContent);
+
+        // Check if request was successful
+        if (!response.IsSuccessStatusCode)
+        {
+            var errorContent = await response.Content.ReadAsStringAsync();
+            throw new Exception(string.Format("API request failed with status {0}: {1}", response.StatusCode, errorContent));
+        }
+
+        // Parse the response
+        var responseBody = await response.Content.ReadAsStringAsync();
+        var responseObj = JObject.Parse(responseBody);
+
+        // Extract the content from Claude's response
+        var contentArray = responseObj["content"] as JArray;
+        if (contentArray != null && contentArray.Count > 0)
+        {
+            foreach (var item in contentArray)
+            {
+                if (item["type"]?.ToString() == "text")
+                {
+                    var text = item["text"]?.ToString()?.Trim();
+
+                    // Validate response format
+                    if (text != null &&
+                        text.Contains("PURPOSE:") &&
+                        text.Contains("EXPLANATION:"))
+                    {
+                        return text;
+                    }
+                    else
+                    {
+                        throw new Exception("Response does not match expected format");
+                    }
+                }
+            }
+        }
+
+        throw new Exception("Unable to parse API response");
+    }
+    catch (Exception ex)
+    {
+        throw new Exception(string.Format("API call error: {0}", ex.Message));
+    }
+}
